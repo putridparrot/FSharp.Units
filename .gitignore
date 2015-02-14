@@ -1,0 +1,7 @@
+/FSharp.Units/obj
+/FSharp.Units/bin
+/FSharp.Units.Tests/obj
+/FSharp.Units.Tests/bin
+
+*.suo
+/packages

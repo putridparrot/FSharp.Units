@@ -1,2 +1,24 @@
 # FSharp.Units
-Some standard F# units of measure and conversion functions
+
+Currently includes Mass, Length and Temperature units of measure.
+
+The main aim for this project was to produce conversion functions for the various mass units, lengths units and temperature units and at the same time implement various units of measure.
+
+### Example
+
+let fahrenheit = C.toFahrenheit 12.<C>
+let celsius = C.create someValue
+
+Each unit of measure then includes functions to convert to each for example, converting each Temperature unit of measure to each other Temperature - it also includes a function to take a value and apply a unit of measure to it.
+
+### Temperature
+
+Includes units of measure, Celsius (C), Fahrenheit (F) and Kelvin (K). The create function simply turns a floating point value into one with a unit of measure applied. 
+
+### Mass 
+
+Includes unit of measure for milligrams (mg), grams (g), kilograms (kg), metric tonne (tonne), ounces (oz), pounds (lb), stones (stone).
+
+### Length
+
+Includes unit of measure millimetres (mm), centimetres (cm), metres (m), kilometre (km), inch (inch), feet (ft), yard (yard) mile(mile) and nautical miles (NM).
