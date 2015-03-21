@@ -85,39 +85,39 @@ module TonneTests =
         let milligrams= tonne.toMilligrams 1560.0<tonne>
 
         milligrams
-        |> should (equalWithin 0.1) 1.56e+12<mg>
+        |> should (equalWithin 0.1) 1.56e+12
 
     [<Fact>]
     let ``Convert known tonne to gram`` () =
         let grams = tonne.toGrams 1560.0<tonne>
 
         grams
-        |> should (equalWithin 0.1) 1.56e+9<g>
+        |> should (equalWithin 0.1) 1.56e+9
 
     [<Fact>]
     let ``Convert known tonne to kilogram`` () =
         let kilograms = tonne.toKilograms 1560.0<tonne>
 
         kilograms
-        |> should (equalWithin 0.1) 1560000<kg>
+        |> should (equalWithin 0.1) 1560000
 
     [<Fact>]
     let ``Convert known tonne to ounce`` () =
         let ounces = tonne.toOunces 256.0<tonne>
 
         ounces
-        |> should (equalWithin 0.1) 9030134.2670558<oz>
+        |> should (equalWithin 0.1) 9030134.2670558
 
     [<Fact>]
     let ``Convert known tonne to pound`` () =
         let pounds = tonne.toPounds 256.0<tonne>
 
         pounds
-        |> should (equalWithin 0.1) 564383.39119329<lb>
+        |> should (equalWithin 0.1) 564383.39119329
 
     [<Fact>]
     let ``Convert known tonne to stone`` () =
         let stones = tonne.toStones 1234.0<tonne>
 
         stones
-        |> should (equalWithin 0.1) 194321.7<stone>
+        |> should (equalWithin 0.1) 194321.7

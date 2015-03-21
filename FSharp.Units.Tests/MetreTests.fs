@@ -107,53 +107,53 @@ module MetreTests =
         let millimetres = m.toMillimetres 123.<m>
 
         millimetres
-        |> should (equalWithin 0.1) 123000.<mm>
+        |> should (equalWithin 0.1) 123000.
 
     [<Fact>]
     let ``Convert known metre to centimetre`` () =
         let centimetres = m.toCentimetres 123.<m>
 
         centimetres
-        |> should (equalWithin 0.1) 12300.<cm>
+        |> should (equalWithin 0.1) 12300.
 
     [<Fact>]
     let ``Convert known metre to kilometre`` () =
         let kilometres = m.toKilometres 1025.<m>
 
         kilometres
-        |> should (equalWithin 0.1) 1.025<km>
+        |> should (equalWithin 0.1) 1.025
 
     [<Fact>]
     let ``Convert known metre to inch`` () =
         let inches = m.toInches 3.1242<m>
 
         inches
-        |> should (equalWithin 0.1) 123.<inch>
+        |> should (equalWithin 0.1) 123.
 
     [<Fact>]
     let ``Convert known metre to feet`` () =
         let f = m.toFeet 12.<m>
 
         f
-        |> should (equalWithin 0.1) 39.37007874<ft>
+        |> should (equalWithin 0.1) 39.37007874
 
     [<Fact>]
     let ``Convert known metre to yard`` () =
         let yards = m.toYards 24.<m>
 
         yards
-        |> should (equalWithin 0.1) 26.24671916<yard>
+        |> should (equalWithin 0.1) 26.24671916
 
     [<Fact>]
     let ``Convert known metre to mile`` () =
         let miles = m.toMiles 10460.736<m>
 
         miles
-        |> should (equalWithin 0.1) 6.5<mile>
+        |> should (equalWithin 0.1) 6.5
 
     [<Fact>]
     let ``Convert known metre to nauticalmile`` () =
         let nauticalmiles = m.toNauticalMiles 1234.<m>
 
         nauticalmiles
-        |> should (equalWithin 0.1) 0.6663067<NM>
+        |> should (equalWithin 0.1) 0.6663067

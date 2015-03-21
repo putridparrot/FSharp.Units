@@ -7,6 +7,7 @@ The main aim for this project was to produce conversion functions for the variou
 ### Example
 
 let fahrenheit = C.toFahrenheit 12.<C>
+
 let celsius = C.create someValue
 
 Each unit of measure then includes functions to convert to each for example, converting each Temperature unit of measure to each other Temperature - it also includes a function to take a value and apply a unit of measure to it.
@@ -22,3 +23,11 @@ Includes unit of measure for milligrams (mg), grams (g), kilograms (kg), metric 
 ### Length
 
 Includes unit of measure millimetres (mm), centimetres (cm), metres (m), kilometre (km), inch (inch), feet (ft), yard (yard) mile(mile) and nautical miles (NM).
+
+### Volume
+
+Includes unit of measure millilitre (ml), litre (l), kilolitre (kl), imperial teaspoon (tsp), imperial tablespoon (tbsp), imperial quart (qt), imperial pint (pt), imperial gallon (gal), imperial fluid ounces (floz), Us teaspoon (ustsp), US tablespoon (ustbsp), US quart (usqt), US pint (uspt), US gallon (usgal), US fluid ounces (usfloz), US cup (uscup)
+
+###Health
+
+Includes unit of measure beats per minute (bpm), kilojoules (kJ) and kilocalories (kCal).

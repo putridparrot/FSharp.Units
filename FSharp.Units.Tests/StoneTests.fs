@@ -86,39 +86,39 @@ module StoneTests =
         let milligrams= stone.toMilligrams 1560.0<stone>
 
         milligrams
-        |> should (equalWithin 0.1) 9906457360.8<mg>
+        |> should (equalWithin 0.1) 9906457360.8
 
     [<Fact>]
     let ``Convert known stone to gram`` () =
         let grams = stone.toGrams 1560.0<stone>
 
         grams
-        |> should (equalWithin 0.1) 9906457.3608<g>
+        |> should (equalWithin 0.1) 9906457.3608
 
     [<Fact>]
     let ``Convert known stone to kilogram`` () =
         let kilograms = stone.toKilograms 1560.0<stone>
 
         kilograms
-        |> should (equalWithin 0.1) 9906.4573608<kg>
+        |> should (equalWithin 0.1) 9906.4573608
 
     [<Fact>]
     let ``Convert known stone to tonne`` () =
         let tonnes = stone.toTonnes 256.0<stone>
 
         tonnes
-        |> should (equalWithin 0.1) 1.62567505<oz>
+        |> should (equalWithin 0.1) 1.62567505
 
     [<Fact>]
     let ``Convert known stone to ounce`` () =
         let ounces = stone.toOunces 256.0<stone>
 
         ounces
-        |> should (equalWithin 0.1) 57344.<lb>
+        |> should (equalWithin 0.1) 57344.
 
     [<Fact>]
     let ``Convert known stone to pound`` () =
         let pounds = stone.toPounds 1234.0<stone>
 
         pounds
-        |> should (equalWithin 0.1) 17276.<stone>
+        |> should (equalWithin 0.1) 17276.

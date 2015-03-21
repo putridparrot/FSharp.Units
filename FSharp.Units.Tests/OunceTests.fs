@@ -86,39 +86,39 @@ module OunceTests =
         let milligrams= oz.toMilligrams 1560.0<oz>
 
         milligrams
-        |> should (equalWithin 0.1) 44225256.036<mg>
+        |> should (equalWithin 0.1) 44225256.036
 
     [<Fact>]
     let ``Convert known ounce to gram`` () =
         let grams = oz.toGrams 1560.0<oz>
 
         grams
-        |> should (equalWithin 0.1) 44225.26<g>
+        |> should (equalWithin 0.1) 44225.26
 
     [<Fact>]
     let ``Convert known ounce to kilogram`` () =
         let kilograms = oz.toKilograms 1560.0<oz>
 
         kilograms
-        |> should (equalWithin 0.1) 44.22526<kg>
+        |> should (equalWithin 0.1) 44.22526
 
     [<Fact>]
     let ``Convert known ounce to tonne`` () =
         let tonnes = oz.toTonnes 256.0<oz>
 
         tonnes
-        |> should (equalWithin 0.1) 0.00725748<oz>
+        |> should (equalWithin 0.1) 0.00725748
 
     [<Fact>]
     let ``Convert known ounce to pound`` () =
         let pounds = oz.toPounds 256.0<oz>
 
         pounds
-        |> should (equalWithin 0.1) 16<lb>
+        |> should (equalWithin 0.1) 16
 
     [<Fact>]
     let ``Convert known ounce to stone`` () =
         let stones = oz.toStones 1234.0<oz>
 
         stones
-        |> should (equalWithin 0.1) 5.508929<stone>
+        |> should (equalWithin 0.1) 5.508929

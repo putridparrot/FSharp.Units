@@ -86,39 +86,39 @@ module PoundTests =
         let milligrams= lb.toMilligrams 1560.0<lb>
 
         milligrams
-        |> should (equalWithin 0.1) 707604097.2<mg>
+        |> should (equalWithin 0.1) 707604097.2
 
     [<Fact>]
     let ``Convert known pound to gram`` () =
         let grams = lb.toGrams 1560.0<lb>
 
         grams
-        |> should (equalWithin 0.1) 707604.0972<g>
+        |> should (equalWithin 0.1) 707604.0972
 
     [<Fact>]
     let ``Convert known pound to kilogram`` () =
         let kilograms = lb.toKilograms 1560.0<lb>
 
         kilograms
-        |> should (equalWithin 0.1) 707.6040972<kg>
+        |> should (equalWithin 0.1) 707.6040972
 
     [<Fact>]
     let ``Convert known pound to tonne`` () =
         let tonnes = lb.toTonnes 256.0<lb>
 
         tonnes
-        |> should (equalWithin 0.1) 0.11611965<oz>
+        |> should (equalWithin 0.1) 0.11611965
 
     [<Fact>]
     let ``Convert known pound to ounce`` () =
         let ounces = lb.toOunces 16.<lb>
 
         ounces
-        |> should (equalWithin 0.1) 256<lb>
+        |> should (equalWithin 0.1) 256
 
     [<Fact>]
     let ``Convert known pound to stone`` () =
         let stones = lb.toStones 1234.0<lb>
 
         stones
-        |> should (equalWithin 0.1) 88.14285714<stone>
+        |> should (equalWithin 0.1) 88.14285714

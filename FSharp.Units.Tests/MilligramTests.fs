@@ -85,39 +85,39 @@ module MilligramTests =
         let grams = mg.toGrams 123.0<mg>
 
         grams
-        |> should equal 0.123<g>
+        |> should equal 0.123
 
     [<Fact>]
     let ``Convert known milligram to kilogram`` () =
         let kilograms = mg.toKilograms 1024.0<mg>
 
         kilograms
-        |> should equal 0.001024<kg>
+        |> should equal 0.001024
 
     [<Fact>]
     let ``Convert known milligram to tonne`` () =
         let tonnes = mg.toTonnes 1024.0<mg>
 
         tonnes
-        |> should equal 1.024e-6<tonne>
+        |> should equal 1.024e-6
 
     [<Fact>]
     let ``Convert known milligram to ounce`` () =
         let ounces = mg.toOunces 345.0<mg>
 
         ounces
-        |> should (equalWithin 0.1) 0.0121695<oz>
+        |> should (equalWithin 0.1) 0.0121695
 
     [<Fact>]
     let ``Convert known milligram to pound`` () =
         let pounds = mg.toStones 87.0<mg>
 
         pounds
-        |> should (equalWithin 0.1) 0.000191802<lb>
+        |> should (equalWithin 0.1) 0.000191802
 
     [<Fact>]
     let ``Convert known milligram to stone`` () =
         let stones = mg.toStones 678.0<mg>
 
         stones
-        |> should (equalWithin 0.1) 0.000106767<stone>
+        |> should (equalWithin 0.1) 0.000106767

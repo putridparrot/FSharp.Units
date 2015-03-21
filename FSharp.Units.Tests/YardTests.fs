@@ -107,53 +107,53 @@ module YardTests =
         let millimetres = yard.toMillimetres 34.<yard>
 
         millimetres
-        |> should (equalWithin 0.1) 31089.6<inch>
+        |> should (equalWithin 0.1) 31089.6
 
     [<Fact>]
     let ``Convert known yard to centimetre`` () =
         let centimetres = yard.toCentimetres 23.<yard>
 
         centimetres
-        |> should (equalWithin 0.1) 2103.12<inch>
+        |> should (equalWithin 0.1) 2103.12
 
     [<Fact>]
     let ``Convert known yard to metre`` () =
         let metres = yard.toMetres 23.<yard>
 
         metres
-        |> should (equalWithin 0.1) 21.0312<inch>
+        |> should (equalWithin 0.1) 21.0312
 
     [<Fact>]
     let ``Convert known yard to kilometre`` () =
         let kilometres = yard.toKilometres 1200.<yard>
 
         kilometres
-        |> should (equalWithin 0.1) 1.09728<km>
+        |> should (equalWithin 0.1) 1.09728
 
     [<Fact>]
     let ``Convert known yard to inch`` () =
         let inches = yard.toInches 12.<yard>
 
         inches
-        |> should (equalWithin 0.1) 432.<inch>
+        |> should (equalWithin 0.1) 432.
 
     [<Fact>]
     let ``Convert known yard to feet`` () =
         let f = yard.toFeet 23.<yard>
 
         f
-        |> should (equalWithin 0.1) 69.<ft>
+        |> should (equalWithin 0.1) 69.
 
     [<Fact>]
     let ``Convert known yard to mile`` () =
         let miles = yard.toMiles 1245.<yard>
 
         miles
-        |> should (equalWithin 0.1) 0.70738636<mile>
+        |> should (equalWithin 0.1) 0.70738636
 
     [<Fact>]
     let ``Convert known yard to nautical mile`` () =
         let nauticalmiles = yard.toNauticalMiles 7000.<yard>
 
         nauticalmiles
-        |> should (equalWithin 0.1) 3.456156<NM>
+        |> should (equalWithin 0.1) 3.456156

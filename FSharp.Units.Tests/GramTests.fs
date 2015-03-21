@@ -86,32 +86,32 @@ module GramTests =
         let kilograms = g.toKilograms 167.0<g>
 
         kilograms
-        |> should (equalWithin 0.1) 0.167<kg>
+        |> should (equalWithin 0.1) 0.167
 
     [<Fact>]
     let ``Convert known gram to tonne`` () =
         let tonnes = g.toTonnes 1560.0<g>
 
         tonnes
-        |> should (equalWithin 0.1) 0.00156<tonne>
+        |> should (equalWithin 0.1) 0.00156
 
     [<Fact>]
     let ``Convert known gram to ounce`` () =
         let ounces = g.toOunces 256.0<g>
 
         ounces
-        |> should (equalWithin 0.1) 9.03013<oz>
+        |> should (equalWithin 0.1) 9.03013
 
     [<Fact>]
     let ``Convert known gram to pound`` () =
         let pounds = g.toPounds 256.0<g>
 
         pounds
-        |> should (equalWithin 0.1) 0.564383<lb>
+        |> should (equalWithin 0.1) 0.564383
 
     [<Fact>]
     let ``Convert known gram to stone`` () =
         let stones = g.toStones 1234.0<g>
 
         stones
-        |> should (equalWithin 0.1) 0.1943217<stone>
+        |> should (equalWithin 0.1) 0.1943217

@@ -45,6 +45,8 @@
     <Compile Include="Mass.fs" />
     <Compile Include="Length.fs" />
     <Compile Include="Temperature.fs" />
+    <Compile Include="Volume.fs" />
+    <Compile Include="Health.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

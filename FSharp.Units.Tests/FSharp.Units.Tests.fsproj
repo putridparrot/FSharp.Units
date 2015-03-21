@@ -71,6 +71,24 @@
     <Compile Include="YardTests.fs" />
     <Compile Include="MileTests.fs" />
     <Compile Include="NauticalMileTests.fs" />
+    <Compile Include="MillilitreTests.fs" />
+    <Compile Include="LitreTests.fs" />
+    <Compile Include="TeaspoonTests.fs" />
+    <Compile Include="TablespoonTests.fs" />
+    <Compile Include="KilojouleTests.fs" />
+    <Compile Include="KiloCalorieTests.fs" />
+    <Compile Include="KilolitreTests.fs" />
+    <Compile Include="QuartTests.fs" />
+    <Compile Include="PintTests.fs" />
+    <Compile Include="GallonTests.fs" />
+    <Compile Include="FluidOunceTests.fs" />
+    <Compile Include="USTeaspoonTests.fs" />
+    <Compile Include="USTablespoonTests.fs" />
+    <Compile Include="USQuartTests.fs" />
+    <Compile Include="USPintTests.fs" />
+    <Compile Include="USGallonTests.fs" />
+    <Compile Include="USFluidOunceTests.fs" />
+    <Compile Include="USCupTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FsCheck">

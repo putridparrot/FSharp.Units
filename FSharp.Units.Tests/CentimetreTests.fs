@@ -107,46 +107,46 @@ module CentimetreTests =
         let millimetres = cm.toMillimetres 12.3<cm>
 
         millimetres
-        |> should (equalWithin 0.1) 123<mm>
+        |> should (equalWithin 0.1) 123
 
     [<Fact>]
     let ``Convert known centimetre to metre`` () =
         let metres = cm.toMetres 12.3<cm>
 
         metres
-        |> should (equalWithin 0.1) 0.123<m>
+        |> should (equalWithin 0.1) 0.123
 
     [<Fact>]
     let ``Convert known centimetre to inch`` () =
         let inches = cm.toInches 142.24<cm>
 
         inches
-        |> should (equalWithin 0.1) 56<inch>
+        |> should (equalWithin 0.1) 56
 
     [<Fact>]
     let ``Convert known centimetre to feet`` () =
         let ft = cm.toFeet 456.<cm>
 
         ft
-        |> should (equalWithin 0.1) 14.96062992<ft>
+        |> should (equalWithin 0.1) 14.96062992
 
     [<Fact>]
     let ``Convert known centimetre to yard`` () =
         let yards = cm.toYards 567.<cm>
 
         yards
-        |> should (equalWithin 0.1) 6.2007874<yard>
+        |> should (equalWithin 0.1) 6.2007874
 
     [<Fact>]
     let ``Convert known centimetre to mile`` () =
         let miles = cm.toMiles 67880.<cm>
 
         miles
-        |> should (equalWithin 0.1) 0.42178677<mile>
+        |> should (equalWithin 0.1) 0.42178677
 
     [<Fact>]
     let ``Convert known centimetre to nauticalmile`` () =
         let inches = cm.toNauticalMiles 1200000.<cm>
 
         inches
-        |> should (equalWithin 0.1) 6.479481641<NM>
+        |> should (equalWithin 0.1) 6.479481641

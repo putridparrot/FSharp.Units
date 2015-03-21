@@ -41,5 +41,5 @@ module FarenheitTests =
         let kelvin = F.toKelvin 123.<F>
 
         kelvin
-        |> should (equalWithin 0.1) 323.706<C>
+        |> should (equalWithin 0.1) 323.706
 

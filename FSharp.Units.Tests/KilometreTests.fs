@@ -107,53 +107,53 @@ module KilometreTests =
         let millimetres = km.toMillimetres 2.3<km>
 
         millimetres
-        |> should (equalWithin 0.1) 2300000.<mm>
+        |> should (equalWithin 0.1) 2300000.
 
     [<Fact>]
     let ``Convert known kilometre to centimetre`` () =
         let centimetres = km.toCentimetres 1.5<km>
 
         centimetres
-        |> should (equalWithin 0.1) 150000.<cm>
+        |> should (equalWithin 0.1) 150000.
 
     [<Fact>]
     let ``Convert known kilometre to metre`` () =
         let metres = km.toMetres 1.025<km>
 
         metres
-        |> should (equalWithin 0.1) 1025.<m>
+        |> should (equalWithin 0.1) 1025.
 
     [<Fact>]
     let ``Convert known kilometre to inch`` () =
         let inches = km.toInches 0.0480314<km>
 
         inches
-        |> should (equalWithin 0.1) 1891.<inch>
+        |> should (equalWithin 0.1) 1891.
 
     [<Fact>]
     let ``Convert known kilometre to feet`` () =
         let feet = km.toFeet 0.0480314<km>
 
         feet
-        |> should (equalWithin 0.1) 157.58333333<ft>
+        |> should (equalWithin 0.1) 157.58333333
 
     [<Fact>]
     let ``Convert known kilometre to yards`` () =
         let yards = km.toYards 43.<km>
 
         yards
-        |> should (equalWithin 0.1) 47025.37182852<yard>
+        |> should (equalWithin 0.1) 47025.37182852
 
     [<Fact>]
     let ``Convert known kilometre to mile`` () =
         let miles = km.toMiles 123.<km>
 
         miles
-        |> should (equalWithin 0.1) 76.42865665<mile>
+        |> should (equalWithin 0.1) 76.42865665
 
     [<Fact>]
     let ``Convert known kilometre to nautical mile`` () =
         let miles = km.toNauticalMiles 800.<km>
 
         miles
-        |> should (equalWithin 0.1) 431.965<NM>
+        |> should (equalWithin 0.1) 431.965

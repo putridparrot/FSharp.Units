@@ -41,11 +41,11 @@ module CelsiusTests =
         let fahrenheit = C.toFahrenheit 12.<C>
 
         fahrenheit
-        |> should (equalWithin 0.1) 53.6<C>
+        |> should (equalWithin 0.1) 53.6
 
     [<Fact>]
     let ``Convert known celsius to kelvin`` () =
         let kelvin = C.toKelvin 23.<C>
 
         kelvin
-        |> should (equalWithin 0.1) 296.15<K>
+        |> should (equalWithin 0.1) 296.15
