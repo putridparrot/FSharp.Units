@@ -5,7 +5,8 @@ open Microsoft.FSharp.Core
 module Health =
 
     [<Measure>]
-    type bpm
+    type bpm =
+        static member create(value : float) = LanguagePrimitives.FloatWithMeasure<bpm> value
 
     // http://www.convertunits.com/from/kilojoules/to/calorie+[nutritional]
 
