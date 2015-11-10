@@ -89,6 +89,11 @@
     <Compile Include="USGallonTests.fs" />
     <Compile Include="USFluidOunceTests.fs" />
     <Compile Include="USCupTests.fs" />
+    <Compile Include="AtmosphereTests.fs" />
+    <Compile Include="BarTests.fs" />
+    <Compile Include="PascalTests.fs" />
+    <Compile Include="TorrTests.fs" />
+    <Compile Include="PsiTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FsCheck">
