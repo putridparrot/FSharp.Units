@@ -48,6 +48,9 @@
     <Compile Include="Volume.fs" />
     <Compile Include="Health.fs" />
     <Compile Include="Pressure.fs" />
+    <Compile Include="LuminousIntensity.fs" />
+    <Compile Include="LuminousEnergy.fs" />
+    <Compile Include="MagnetomotiveForce.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

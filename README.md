@@ -35,3 +35,7 @@ Includes unit of measure beats per minute (bpm), kilojoules (kJ) and kilocalorie
 ###Pressure 
 
 Includes unit of measure atmosphere (atm), pascal (Pa), torr (Torr), pounds per square inch (psi), bar (b)
+
+###Magnetomotive Force
+
+Includes unit of measure Gilbert (Gi) and Ampere turn (AT)

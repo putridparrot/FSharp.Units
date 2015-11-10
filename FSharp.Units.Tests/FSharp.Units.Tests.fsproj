@@ -94,6 +94,8 @@
     <Compile Include="PascalTests.fs" />
     <Compile Include="TorrTests.fs" />
     <Compile Include="PsiTests.fs" />
+    <Compile Include="AmpereTurnTests.fs" />
+    <Compile Include="GilbertTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FsCheck">
