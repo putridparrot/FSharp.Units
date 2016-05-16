@@ -2,7 +2,7 @@
 
 open Microsoft.FSharp.Core
 
-module LuminousEnery =
+module LuminousEnergy =
 
     [<Measure>]
     type lmh = // Lumen hour (lm.h)

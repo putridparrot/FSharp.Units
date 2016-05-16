@@ -51,6 +51,8 @@
     <Compile Include="LuminousIntensity.fs" />
     <Compile Include="LuminousEnergy.fs" />
     <Compile Include="MagnetomotiveForce.fs" />
+    <Compile Include="Time.fs" />
+    <Compile Include="Speed.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
