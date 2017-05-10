@@ -54,6 +54,7 @@
     <Compile Include="MagnetomotiveForce.fs" />
     <Compile Include="Time.fs" />
     <Compile Include="Speed.fs" />
+    <Compile Include="AssemblyInfo.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

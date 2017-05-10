@@ -6,3 +6,4 @@
 *.suo
 /packages
 *.user
+/*.nupkg
