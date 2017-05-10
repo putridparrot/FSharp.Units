@@ -96,4 +96,4 @@ module Length =
         static member toYards(value : float<NM>) = value * 2025.37<yard/NM>
         static member toMiles(value : float<NM>) = value * 1.15078<mile/NM>
 
-    //http://www.checkyourmath.com/convert/length/inches_km.php
+    
