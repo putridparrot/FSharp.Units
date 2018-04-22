@@ -2,7 +2,6 @@
 
 module Helpers =
 
-    open System
     open FsCheck
 
     let testRange f value =

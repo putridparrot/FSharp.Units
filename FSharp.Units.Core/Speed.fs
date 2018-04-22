@@ -4,9 +4,6 @@ open Microsoft.FSharp.Core
 
 module Speed =
 
-    open FSharp.Units.Length
-    open FSharp.Units.Time
-
     // needs testing - is there a way to associate something like mps and m/s
     [<Measure>]
     type mph = // miles per hour

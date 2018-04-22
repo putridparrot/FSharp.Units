@@ -2,13 +2,10 @@
 
 module CelsiusTests =
 
-    open System
     open Xunit
     open FsCheck
     open FsCheck.Xunit
-    open FsUnit
     open FsUnit.Xunit
-    open FSharp.Units
     open FSharp.Units.Temperature
     open Helpers
 

@@ -3,13 +3,10 @@
 module OunceTests =
 
     //http://www.checkyourmath.com/convert/weight_mass/oz_metric_ton.php
-    open System
     open Xunit
     open FsCheck
     open FsCheck.Xunit
-    open FsUnit
     open FsUnit.Xunit
-    open FSharp.Units
     open FSharp.Units.Mass
     open Helpers
 

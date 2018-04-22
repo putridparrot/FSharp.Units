@@ -7,3 +7,5 @@
 /packages
 *.user
 /*.nupkg
+/FSharp.Units.Core/bin
+/FSharp.Units.Core/obj

@@ -2,13 +2,10 @@
 
 module PsiTests =
 
-    open System
     open Xunit
     open FsCheck
     open FsCheck.Xunit
-    open FsUnit
     open FsUnit.Xunit
-    open FSharp.Units
     open FSharp.Units.Pressure
     open Helpers
 
