@@ -1,5 +1,7 @@
 # FSharp.Units
 
+[![Build status](https://ci.appveyor.com/api/projects/status/goy007ku97j9iog6?svg=true)](https://ci.appveyor.com/project/putridparrot/fsharp-units)
+
 Currently includes Mass, Length and Temperature units of measure.
 
 The main aim for this project was to produce conversion functions for the various mass units, lengths units and temperature units and at the same time implement various units of measure.
