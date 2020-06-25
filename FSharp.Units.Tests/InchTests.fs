@@ -2,10 +2,10 @@
 
 module InchTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Length
     open Helpers
 
@@ -99,56 +99,56 @@ module InchTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known inch to millimetre`` () =
         let millimetres = inch.toMillimetres 123.<inch>
 
         millimetres
         |> should (equalWithin 0.1) 3124.2
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known inch to centimetre`` () =
         let centimetres = inch.toCentimetres 56.<inch>
 
         centimetres
         |> should (equalWithin 0.1) 142.24
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known inch to metre`` () =
         let metres = inch.toMetres 123.<inch>
 
         metres
         |> should (equalWithin 0.1) 3.1242
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known inch to kilometre`` () =
         let kilometres = inch.toKilometres 1891.<inch>
 
         kilometres
         |> should (equalWithin 0.1) 0.0480314
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known inch to feet`` () =
         let ft = inch.toFeet 1891.<inch>
 
         ft
         |> should (equalWithin 0.1) 157.58333333
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known inch to yards`` () =
         let yards = inch.toYards 1891.<inch>
 
         yards
         |> should (equalWithin 0.1) 52.52777778
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known inch to miles`` () =
         let miles = inch.toMiles 1891.<inch>
 
         miles
         |> should (equalWithin 0.1) 0.02984533
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known inch to nauticalmiles`` () =
         let nauticalmiles = inch.toNauticalMiles 8900.<inch>
 

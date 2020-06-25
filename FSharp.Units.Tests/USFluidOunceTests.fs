@@ -2,10 +2,10 @@
 
 module USFluidOunceTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Volume
     open Helpers
        
@@ -176,105 +176,105 @@ module USFluidOunceTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to millilitres`` () =
         let millilitres = usfloz.toMillilitres 8.7<usfloz>
 
         millilitres
         |> should (equalWithin 0.1) 257.2897071937
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to litres`` () =
         let litres = usfloz.toLitres 450.<usfloz>
 
         litres
         |> should (equalWithin 0.1) 13.3080883031
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to kilolitres`` () =
         let kilolitres = usfloz.toKilolitres 567.<usfloz>
 
         kilolitres
         |> should (equalWithin 0.1) 0.0167681913
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to teaspoons`` () =
         let teaspoons = usfloz.toTeaspoons 0.1<usfloz>
 
         teaspoons
         |> should (equalWithin 0.1) 0.4996043043
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to tablespoons`` () =
         let tablespoons = usfloz.toTablespoons 0.56<usfloz>
 
         tablespoons
         |> should (equalWithin 0.1) 0.9325947013
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to quarts`` () =
         let quarts = usfloz.toQuarts 600.<usfloz>
 
         quarts
         |> should (equalWithin 0.1) 15.6126345087
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to pints`` () =
         let pints = usfloz.toPints 67.<usfloz>
 
         pints
         |> should (equalWithin 0.1) 3.486821707
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to gallons`` () =
         let gallons = usfloz.toGallons 3450.<usfloz>
 
         gallons
         |> should (equalWithin 0.1) 22.4431621063
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to fluid ounces`` () =
         let fluidOunces = usfloz.toFluidOunces 23.<usfloz>
 
         fluidOunces
         |> should (equalWithin 0.1) 23.9393729134
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to US teaspoons`` () =
         let usTeaspoons = usfloz.toUSTeaspoons 466.<usfloz>
 
         usTeaspoons
         |> should (equalWithin 0.1) 2796.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to US tablespoons`` () =
         let usTablespoons = usfloz.toUSTablespoons 15.<usfloz>
 
         usTablespoons
         |> should (equalWithin 0.1) 30.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to US quarts`` () =
         let usQuarts = usfloz.toUSQuarts 45.<usfloz>
 
         usQuarts
         |> should (equalWithin 0.1) 1.40625
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to US pints`` () =
         let usPints = usfloz.toUSPints 12.<usfloz>
 
         usPints
         |> should (equalWithin 0.1) 0.75
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to US gallons`` () =
         let usGallons = usfloz.toUSGallons 190.<usfloz>
 
         usGallons
         |> should (equalWithin 0.1) 1.484375
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US fluid ounces to US cups`` () =
         let usCups = usfloz.toUSCups 899.<usfloz>
 

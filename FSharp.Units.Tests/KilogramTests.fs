@@ -2,10 +2,10 @@
 
 module KilogramTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Mass
     open Helpers
 
@@ -77,42 +77,42 @@ module KilogramTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilogram to milligram`` () =
         let milligrams= kg.toMilligrams 1560.0<kg>
 
         milligrams
         |> should (equalWithin 0.1) 1.56e+9
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilogram to gram`` () =
         let grams = kg.toGrams 1560.0<kg>
 
         grams
         |> should (equalWithin 0.1) 1560000
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilogram to tonne`` () =
         let tonnes = kg.toTonnes 1560.0<kg>
 
         tonnes
         |> should (equalWithin 0.1) 1.56
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilogram to ounce`` () =
         let ounces = kg.toOunces 256.0<kg>
 
         ounces
         |> should (equalWithin 0.1) 9030.13
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilogram to pound`` () =
         let pounds = kg.toPounds 256.0<kg>
 
         pounds
         |> should (equalWithin 0.1) 564.383
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilogram to stone`` () =
         let stones = kg.toStones 1234.0<kg>
 

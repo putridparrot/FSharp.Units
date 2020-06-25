@@ -2,10 +2,10 @@
 
 module PsiTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Pressure
     open Helpers
 
@@ -55,28 +55,28 @@ module PsiTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Psi to Bar`` () =
         let bar = psi.toBar 121.<psi>
 
         bar
         |> should (equalWithin 0.1) 8.34266
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Psi to Atmosphere`` () =
         let atmosphere = psi.toAtmosphere 345.<psi>
 
         atmosphere
         |> should (equalWithin 0.1) 23.4759
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Psi to Pascal`` () =
         let pascal = psi.toPascal 5.6<psi>
 
         pascal
         |> should (equalWithin 0.1) 38610.6
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Psi to Torr`` () =
         let torr = psi.toTorr 1.34<psi>
 

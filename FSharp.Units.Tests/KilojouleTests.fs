@@ -2,10 +2,10 @@
 
 module KilojouleTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Health
     open Helpers
 
@@ -22,7 +22,7 @@ module KilojouleTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilojoule to kilocalorie`` () =
         let kilocalories = kJ.toKilocalories 1200.<kJ>
 

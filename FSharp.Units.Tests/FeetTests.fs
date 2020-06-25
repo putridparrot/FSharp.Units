@@ -2,10 +2,10 @@
 
 module FeetTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Length
     open Helpers
 
@@ -99,56 +99,56 @@ module FeetTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known feet to millimetre`` () =
         let millimetres = ft.toMillimetres 1.4<ft>
 
         millimetres
         |> should (equalWithin 0.1) 426.72
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known feet to centimetre`` () =
         let centimetres = ft.toCentimetres 5.8<ft>
 
         centimetres
         |> should (equalWithin 0.1) 176.784
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known feet to metre`` () =
         let metres = ft.toMetres 13.<ft>
 
         metres
         |> should (equalWithin 0.1) 3.9624
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known feet to kilometre`` () =
         let kilometres = ft.toKilometres 1234.<ft>
 
         kilometres
         |> should (equalWithin 0.1) 0.3761232
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known feet to inches`` () =
         let inches = ft.toInches 23.<ft>
 
         inches
         |> should (equalWithin 0.1) 276.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known feet to yards`` () =
         let yards = ft.toYards 23.<ft>
 
         yards
         |> should (equalWithin 0.1) 7.66666667
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known feet to miles`` () =
         let miles = ft.toMiles 2345.<ft>
 
         miles
         |> should (equalWithin 0.1) 0.44412879
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known feet to nautical miles`` () =
         let nauticalmiles = ft.toNauticalMiles 8912.<ft>
 

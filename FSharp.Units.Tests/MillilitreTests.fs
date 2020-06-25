@@ -2,10 +2,10 @@
 
 module MillilitreTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Volume
     open Helpers
        
@@ -176,105 +176,105 @@ module MillilitreTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to litre`` () =
         let litre = ml.toLitres 2567.0<ml>
 
         litre
         |> should (equalWithin 0.1) 2.567
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to kilolitre`` () =
         let kilolitre = ml.toKilolitres 145.0<ml>
 
         kilolitre
         |> should (equalWithin 0.1) 0.000145
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to teaspoon`` () =
         let teaspoons = ml.toTeaspoons 1230.0<ml>
 
         teaspoons
         |> should (equalWithin 0.1) 207.7916648283
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to tablespoon`` () =
         let tablespoons = ml.toTablespoons 4000.0<ml>
 
         tablespoons
         |> should (equalWithin 0.1) 225.2484171581
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to quarts`` () =
         let quarts = ml.toQuarts 3900.<ml>
 
         quarts
         |> should (equalWithin 0.1) 3.4315188551
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to pints`` () =
         let pints = ml.toPints 19099.<ml>
 
         pints
         |> should (equalWithin 0.1) 33.6095274945
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to gallons`` () =
         let gallons = ml.toGallons 129000.<ml>
 
         gallons
         |> should (equalWithin 0.1) 28.3760213021
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to fluid ounces`` () =
         let fluidOunces = ml.toFluidOunces 2900.<ml>
 
         fluidOunces
         |> should (equalWithin 0.1) 102.0656890248
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to US teaspoons`` () =
         let usTeaspoons = ml.toUSTeaspoons 1234.<ml>
 
         usTeaspoons
         |> should (equalWithin 0.1) 250.3590240844
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to US tablespoons`` () =
         let usTablespoons = ml.toUSTablespoons 5009.<ml>
 
         usTablespoons
         |> should (equalWithin 0.1) 338.7488794271
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to US quarts`` () =
         let usQuarts = ml.toUSQuarts 8888.<ml>
 
         usQuarts
         |> should (equalWithin 0.1) 9.3918448054
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to US pints`` () =
         let usPints = ml.toUSPints 48903.<ml>
 
         usPints
         |> should (equalWithin 0.1) 103.3504470118
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to US gallons`` () =
         let usGallons = ml.toUSGallons 50600.<ml>
 
         usGallons
         |> should (equalWithin 0.1) 13.3671058493
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to US fluid ounces`` () =
         let usFluidOunces = ml.toUSFluidOunces 5900.<ml>
 
         usFluidOunces
         |> should (equalWithin 0.1) 199.5027339409
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known millilitre to US cups`` () =
         let usCups = ml.toUSCups 9000.0<ml>
 

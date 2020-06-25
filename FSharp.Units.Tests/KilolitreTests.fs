@@ -2,10 +2,10 @@
 
 module KilolitreTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Volume
     open Helpers
        
@@ -165,105 +165,105 @@ module KilolitreTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to millilitre`` () =
         let millilitres = kl.toMillilitres 0.063<kl>
 
         millilitres
         |> should (equalWithin 0.1) 63000.0
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to litre`` () =
         let litres = kl.toLitres 123.9<kl>
 
         litres
         |> should (equalWithin 0.1) 123900.0
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to teaspoons`` () =
         let teaspoons = kl.toTeaspoons 0.098<kl>
 
         teaspoons
         |> should (equalWithin 0.1) 16555.7586611197
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to tablespoons`` () =
         let tablespoons = kl.toTablespoons 0.086<kl>
 
         tablespoons
         |> should (equalWithin 0.1) 4842.8409688989
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to quarts`` () =
         let quarts = kl.toQuarts 0.75<kl>
 
         quarts
         |> should (equalWithin 0.1) 659.9074721428
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to pints`` () =
         let pints = kl.toPints 0.56<kl>
 
         pints
         |> should (equalWithin 0.1) 985.4618250666
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to gallons`` () =
         let gallons = kl.toGallons 1456.<kl>
 
         gallons
         |> should (equalWithin 0.1) 320275.0931466601
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to fluid ounces`` () =
         let fluidOunces = kl.toFluidOunces 0.76<kl>
 
         fluidOunces
         |> should (equalWithin 0.1) 26748.2495375233
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to US teaspoons`` () =
         let usTeaspoons = kl.toUSTeaspoons 0.00876<kl>
 
         usTeaspoons
         |> should (equalWithin 0.1) 1777.2650332089
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to US tablespoons`` () =
         let usTablespoons = kl.toUSTablespoons 0.007<kl>
 
         usTablespoons
         |> should (equalWithin 0.1) 473.3963178258
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to US quarts`` () =
         let usQuarts = kl.toUSQuarts 0.098<kl>
 
         usQuarts
         |> should (equalWithin 0.1) 103.5554445244
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to US pints`` () =
         let usPints = kl.toUSPints 0.03<kl>
 
         usPints
         |> should (equalWithin 0.1) 63.401292566
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to US gallons`` () =
         let usGallons = kl.toUSGallons 5.<kl>
 
         usGallons
         |> should (equalWithin 0.1) 1320.8602617907
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to US fluid ounces`` () =
         let usFluidOunces = kl.toUSFluidOunces 0.03<kl>
 
         usFluidOunces
         |> should (equalWithin 0.1) 1014.420679769
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilolitre to US cups`` () =
         let usCups = kl.toUSCups 0.02<kl>
 

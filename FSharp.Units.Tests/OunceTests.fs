@@ -3,10 +3,10 @@
 module OunceTests =
 
     //http://www.checkyourmath.com/convert/weight_mass/oz_metric_ton.php
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Mass
     open Helpers
 
@@ -78,42 +78,42 @@ module OunceTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known ounce to milligram`` () =
         let milligrams= oz.toMilligrams 1560.0<oz>
 
         milligrams
         |> should (equalWithin 0.1) 44225256.036
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known ounce to gram`` () =
         let grams = oz.toGrams 1560.0<oz>
 
         grams
         |> should (equalWithin 0.1) 44225.26
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known ounce to kilogram`` () =
         let kilograms = oz.toKilograms 1560.0<oz>
 
         kilograms
         |> should (equalWithin 0.1) 44.22526
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known ounce to tonne`` () =
         let tonnes = oz.toTonnes 256.0<oz>
 
         tonnes
         |> should (equalWithin 0.1) 0.00725748
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known ounce to pound`` () =
         let pounds = oz.toPounds 256.0<oz>
 
         pounds
         |> should (equalWithin 0.1) 16
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known ounce to stone`` () =
         let stones = oz.toStones 1234.0<oz>
 

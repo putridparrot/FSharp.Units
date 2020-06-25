@@ -2,10 +2,10 @@
 
 module MilligramTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Mass
     open Helpers
        
@@ -77,42 +77,42 @@ module MilligramTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known milligram to gram`` () =
         let grams = mg.toGrams 123.0<mg>
 
         grams
         |> should equal 0.123
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known milligram to kilogram`` () =
         let kilograms = mg.toKilograms 1024.0<mg>
 
         kilograms
         |> should equal 0.001024
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known milligram to tonne`` () =
         let tonnes = mg.toTonnes 1024.0<mg>
 
         tonnes
         |> should equal 1.024e-6
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known milligram to ounce`` () =
         let ounces = mg.toOunces 345.0<mg>
 
         ounces
         |> should (equalWithin 0.1) 0.0121695
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known milligram to pound`` () =
         let pounds = mg.toStones 87.0<mg>
 
         pounds
         |> should (equalWithin 0.1) 0.000191802
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known milligram to stone`` () =
         let stones = mg.toStones 678.0<mg>
 

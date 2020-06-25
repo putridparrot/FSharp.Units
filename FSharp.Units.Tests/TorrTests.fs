@@ -2,10 +2,10 @@
 
 module TorrTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Pressure
     open Helpers
 
@@ -55,28 +55,28 @@ module TorrTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Torr to Pascal`` () =
         let pascal = Torr.toPascal 1.34<Torr>
 
         pascal
         |> should (equalWithin 0.1) 178.652
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Torr to Atmosphere`` () =
         let atmosphere = Torr.toAtmosphere 9002.<Torr>
 
         atmosphere
         |> should (equalWithin 0.1) 11.84474
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Torr to Bar`` () =
         let bar = Torr.toBar 4567.<Torr>
 
         bar
         |> should (equalWithin 0.1) 6.088833
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Torr to Psi`` () =
         let poundsPerSquareInch = Torr.toPsi 1901.<Torr>
 

@@ -2,10 +2,10 @@
 
 module TablespoonTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Volume
     open Helpers
        
@@ -176,105 +176,105 @@ module TablespoonTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to millilitre`` () =
         let millilitre = tbsp.toMillilitres 2.5<tbsp>
 
         millilitre
         |> should (equalWithin 0.1) 44.3954285059
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to litre`` () =
         let litre = tbsp.toLitres 998.9<tbsp>
 
         litre
         |> should (equalWithin 0.1) 17.7386374138
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to kilolitre`` () =
         let kilolitre = tbsp.toKilolitres 180007.<tbsp>
 
         kilolitre
         |> should (equalWithin 0.1) 3.1965951596
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to teaspoons`` () =
         let teaspoons = tbsp.toTeaspoons 20.04<tbsp>
 
         teaspoons
         |> should (equalWithin 0.1) 60.12
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to quarts`` () =
         let quarts = tbsp.toQuarts 1690.<tbsp>
 
         quarts
         |> should (equalWithin 0.1) 26.40625
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to pints`` () =
         let pints = tbsp.toPints 109.98<tbsp>
 
         pints
         |> should (equalWithin 0.1) 3.436875
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to gallons`` () =
         let gallons = tbsp.toGallons 999.1<tbsp>
 
         gallons
         |> should (equalWithin 0.1) 3.902734375
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to fluid ounces`` () =
         let fluidOunces = tbsp.toFluidOunces 1098.<tbsp>
 
         fluidOunces
         |> should (equalWithin 0.1) 686.25
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to US teaspoons`` () =
         let usTeaspoons = tbsp.toUSTeaspoons 3.<tbsp>
 
         usTeaspoons
         |> should (equalWithin 0.1) 10.808553797
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to US tablespoons`` () =
         let usTablespoons = tbsp.toUSTablespoons 12.7<tbsp>
 
         usTablespoons
         |> should (equalWithin 0.1) 15.2520703579
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to US quarts`` () =
         let usQuarts = tbsp.toUSQuarts 777.34<tbsp>
 
         usQuarts
         |> should (equalWithin 0.1) 14.5866687648
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to US pints`` () =
         let usPints = tbsp.toUSPints 5930.123<tbsp>
 
         usPints
         |> should (equalWithin 0.1) 222.5557412086
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to US gallons`` () =
         let usGallons = tbsp.toUSGallons 8000.9<tbsp>
 
         usGallons
         |> should (equalWithin 0.1) 37.5339227752
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to US fluid ounces`` () =
         let usFluidOunces = tbsp.toUSFluidOunces 304.<tbsp>
 
         usFluidOunces
         |> should (equalWithin 0.1) 182.5444641264
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known tablepoon to US cups`` () =
         let usCups = tbsp.toUSCups 600.<tbsp>
 

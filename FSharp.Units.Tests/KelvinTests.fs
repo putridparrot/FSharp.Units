@@ -2,10 +2,10 @@
 
 module KelvinTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Temperature
     open Helpers
 
@@ -34,14 +34,14 @@ module KelvinTests =
         Check.QuickThrowOnFailure (testRange property)
 
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kelvin to celsius`` () =
         let celsius = K.toCelsius 123.<K>
 
         celsius
         |> should (equalWithin 0.1) -150.15
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kelvin to fahrenheit`` () =
         let fahrenheit = K.toFahrenheit 34.<K>
 

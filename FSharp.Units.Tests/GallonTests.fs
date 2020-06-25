@@ -2,10 +2,10 @@
 
 module GallonTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Volume
     open Helpers
        
@@ -176,105 +176,105 @@ module GallonTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to millilitre`` () =
         let millilitres = gal.toMillilitres 0.15<gal>
 
         millilitres
         |> should (equalWithin 0.1) 681.91378185
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to litre`` () =
         let litres = gal.toLitres 0.9<gal>
 
         litres
         |> should (equalWithin 0.1) 4.0914826911
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to kilolitre`` () =
         let kilolitres = gal.toKilolitres 15.<gal>
 
         kilolitres
         |> should (equalWithin 0.1) 0.0681913782
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to teaspoons`` () =
         let teaspoons = gal.toTeaspoons 0.7<gal>
 
         teaspoons
         |> should (equalWithin 0.1) 537.6
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to tablespoons`` () =
         let tablespoons = gal.toTablespoons 0.87<gal>
 
         tablespoons
         |> should (equalWithin 0.1) 222.72
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to quarts`` () =
         let quarts = gal.toQuarts 0.67<gal>
 
         quarts
         |> should (equalWithin 0.1) 2.68
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to pints`` () =
         let pints = gal.toPints 3.1<gal>
 
         pints
         |> should (equalWithin 0.1) 24.8
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to fluid ounces`` () =
         let fluidOunces = gal.toFluidOunces 0.123<gal>
 
         fluidOunces
         |> should (equalWithin 0.1) 19.68
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to US teaspoons`` () =
         let usTeaspoons = gal.toUSTeaspoons 0.2<gal>
 
         usTeaspoons
         |> should (equalWithin 0.1) 184.4659848014
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to US tablespoons`` () =
         let usTablespoons = gal.toUSTablespoons 0.9<gal>
 
         usTablespoons
         |> should (equalWithin 0.1) 276.6989772021
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to US quarts`` () =
         let usQuarts = gal.toUSQuarts 12.4<gal>
 
         usQuarts
         |> should (equalWithin 0.1) 59.5671409255
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to US pints`` () =
         let usPints = gal.toUSPints 5.123<gal>
 
         usPints
         |> should (equalWithin 0.1) 49.2197520905
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to US gallons`` () =
         let usGallons = gal.toUSGallons 50.2<gal>
 
         usGallons
         |> should (equalWithin 0.1) 60.2877111786
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to US fluid ounces`` () =
         let usFluidOunces = gal.toUSFluidOunces 8.<gal>
 
         usFluidOunces
         |> should (equalWithin 0.1) 1229.7732320094
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known gallon to US cups`` () =
         let usCups = gal.toUSCups 7.5<gal>
 

@@ -2,10 +2,10 @@
 
 module USQuartTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Volume
     open Helpers
        
@@ -176,105 +176,105 @@ module USQuartTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to millilitres`` () =
         let millilitres = usqt.toMillilitres 0.01<usqt>
 
         millilitres
         |> should (equalWithin 0.1) 9.46352946
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to litres`` () =
         let litres = usqt.toLitres 23.<usqt>
 
         litres
         |> should (equalWithin 0.1) 21.766117758
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to kilolitres`` () =
         let kilolitres = usqt.toKilolitres 304.<usqt>
 
         kilolitres
         |> should (equalWithin 0.1) 0.2876912956
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to teaspoons`` () =
         let teaspoons = usqt.toTeaspoons 0.09<usqt>
 
         teaspoons
         |> should (equalWithin 0.1) 14.3886039633
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to tablespoons`` () =
         let tablespoons = usqt.toTablespoons 0.6<usqt>
 
         tablespoons
         |> should (equalWithin 0.1) 31.9746754739
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to quarts`` () =
         let quarts = usqt.toQuarts 12.<usqt>
 
         quarts
         |> should (equalWithin 0.1) 9.9920860856
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to pints`` () =
         let pints = usqt.toPints 45.8<usqt>
 
         pints
         |> should (equalWithin 0.1) 76.2729237867
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to gallons`` () =
         let gallons = usqt.toGallons 56.<usqt>
 
         gallons
         |> should (equalWithin 0.1) 11.6574337665
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to fluid ounces`` () =
         let fluidOunces = usqt.toFluidOunces 56.<usqt>
 
         fluidOunces
         |> should (equalWithin 0.1) 1865.1894026447
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to US teaspoons`` () =
         let usTeaspoons = usqt.toUSTeaspoons 0.5<usqt>
 
         usTeaspoons
         |> should (equalWithin 0.1) 96.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to US tablespoons`` () =
         let usTablespoons = usqt.toUSTablespoons 0.4<usqt>
 
         usTablespoons
         |> should (equalWithin 0.1) 25.6
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to US pints`` () =
         let usPints = usqt.toUSPints 7.<usqt>
 
         usPints
         |> should (equalWithin 0.1) 14.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to US gallons`` () =
         let usGallons = usqt.toUSGallons 44.<usqt>
 
         usGallons
         |> should (equalWithin 0.1) 11.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to US fluid ounces`` () =
         let usFluidOunces = usqt.toUSFluidOunces 1.2<usqt>
 
         usFluidOunces
         |> should (equalWithin 0.1) 38.4
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US quarts to US cups`` () =
         let usCups = usqt.toUSCups 123.<usqt>
 

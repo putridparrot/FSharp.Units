@@ -2,10 +2,10 @@
 
 module USTeaspoonTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Volume
     open Helpers
        
@@ -176,105 +176,105 @@ module USTeaspoonTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to millilitres`` () =
         let millilitres = ustsp.toMillilitres 6.9<ustsp>
 
         millilitres
         |> should (equalWithin 0.1) 34.0095589969
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to litres`` () =
         let litres = ustsp.toLitres 56090.<ustsp>
 
         litres
         |> should (equalWithin 0.1) 276.4632121934
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to kilolitres`` () =
         let kilolitres = ustsp.toKilolitres 9600.<ustsp>
 
         kilolitres
         |> should (equalWithin 0.1) 0.0473176473
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to teaspoons`` () =
         let teaspoons = ustsp.toTeaspoons 5.<ustsp>
 
         teaspoons
         |> should (equalWithin 0.1) 4.1633692023
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to tablespoons`` () =
         let tablespoons = ustsp.toTablespoons 80.<ustsp>
 
         tablespoons
         |> should (equalWithin 0.1) 22.2046357458
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to quarts`` () =
         let quarts = ustsp.toQuarts 19000.<ustsp>
 
         quarts
         |> should (equalWithin 0.1) 82.4000154628
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to pints`` () =
         let pints = ustsp.toPints 1000.<ustsp>
 
         pints
         |> should (equalWithin 0.1) 8.6736858382
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to gallons`` () =
         let gallons = ustsp.toGallons 4555.<ustsp>
 
         gallons
         |> should (equalWithin 0.1) 4.9385798741
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to fluid ounces`` () =
         let fluidOunces = ustsp.toFluidOunces 400.<ustsp>
 
         fluidOunces
         |> should (equalWithin 0.1) 69.3894867055
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to US tablespoons`` () =
         let usTablespoons = ustsp.toUSTablespoons 700.<ustsp>
 
         usTablespoons
         |> should (equalWithin 0.1) 233.3333333333
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to US quarts`` () =
         let usQuarts = ustsp.toUSQuarts 46009.<ustsp>
 
         usQuarts
         |> should (equalWithin 0.1) 239.6302083333
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to US pints`` () =
         let usPints = ustsp.toUSPints 900.<ustsp>
 
         usPints
         |> should (equalWithin 0.1) 9.375
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to US gallons`` () =
         let usGallons = ustsp.toUSGallons 50000.<ustsp>
 
         usGallons
         |> should (equalWithin 0.1) 65.1041666667
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to US fluid ounces`` () =
         let usFluidOunces = ustsp.toUSFluidOunces 3099.<ustsp>
 
         usFluidOunces
         |> should (equalWithin 0.1) 516.5
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US teaspoons to US cups`` () =
         let usCups = ustsp.toUSCups 6000.<ustsp>
 

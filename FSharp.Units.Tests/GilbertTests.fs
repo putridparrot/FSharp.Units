@@ -2,10 +2,10 @@
 
 module GilbertTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.MagnetomotiveForce
     open Helpers
        
@@ -22,7 +22,7 @@ module GilbertTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Gilbert to Ampere turn`` () =
         let at = Gi.toAmpereTurn 6000.<Gi>
 

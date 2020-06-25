@@ -2,10 +2,10 @@
 
 module USCupTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Volume
     open Helpers
        
@@ -176,105 +176,105 @@ module USCupTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to millilitres`` () =
         let millilitres = uscup.toMillilitres 1.2<uscup>
 
         millilitres
         |> should (equalWithin 0.1) 283.9058838
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to litres`` () =
         let litres = uscup.toLitres 23.8<uscup>
 
         litres
         |> should (equalWithin 0.1) 5.6308000287
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to kilolitres`` () =
         let kilolitres = uscup.toKilolitres 5079.<uscup>
 
         kilolitres
         |> should (equalWithin 0.1) 1.2016316532
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to teaspoons`` () =
         let teaspoons = uscup.toTeaspoons 1.8<uscup>
 
         teaspoons
         |> should (equalWithin 0.1) 71.9430198163
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to tablespoons`` () =
         let tablespoons = uscup.toTablespoons 0.5<uscup>
 
         tablespoons
         |> should (equalWithin 0.1) 6.6613907237
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to quarts`` () =
         let quarts = uscup.toQuarts 43.2<uscup>
 
         quarts
         |> should (equalWithin 0.1) 8.992877477
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to pints`` () =
         let pints = uscup.toPints 45.6<uscup>
 
         pints
         |> should (equalWithin 0.1) 18.9849635626
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to gallons`` () =
         let gallons = uscup.toGallons 800.<uscup>
 
         gallons
         |> should (equalWithin 0.1) 41.6336920233
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to fluid ounces`` () =
         let fluidOunces = uscup.toFluidOunces 1.3<uscup>
 
         fluidOunces
         |> should (equalWithin 0.1) 10.8247599261
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to US teaspoons`` () =
         let usTeaspoons = uscup.toUSTeaspoons 102.<uscup>
 
         usTeaspoons
         |> should (equalWithin 0.1) 4896.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to US tablespoons`` () =
         let usTablespoons = uscup.toUSTablespoons 0.3<uscup>
 
         usTablespoons
         |> should (equalWithin 0.1) 4.8
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to US quarts`` () =
         let usQuarts = uscup.toUSQuarts 13.9<uscup>
 
         usQuarts
         |> should (equalWithin 0.1) 3.475
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to US pints`` () =
         let usPints = uscup.toUSPints 4.3<uscup>
 
         usPints
         |> should (equalWithin 0.1) 2.15
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to US gallons`` () =
         let usGallons = uscup.toUSGallons 45.6<uscup>
 
         usGallons
         |> should (equalWithin 0.1) 2.85
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known US cup to US fluid ounces`` () =
         let usFluidOunces = uscup.toUSFluidOunces 3.2<uscup>
 

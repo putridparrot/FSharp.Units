@@ -2,10 +2,10 @@
 
 module AtmosphereTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Pressure
     open Helpers
 
@@ -56,28 +56,28 @@ module AtmosphereTests =
         Check.QuickThrowOnFailure (testRange property)
 
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Atmosphere to Bar`` () =
         let bar = atm.toBar 940.<atm>
 
         bar
         |> should (equalWithin 0.1) 952.455
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Atmosphere to Pascal`` () =
         let pascals = atm.toPascal 2.3<atm>
 
         pascals
         |> should (equalWithin 0.1) 233047.5
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Atmosphere to Torr`` () =
         let torr = atm.toTorr 98.<atm>
 
         torr
         |> should (equalWithin 0.1) 74480.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Atmosphere to psi`` () =
         let psi = atm.toPsi 12.6<atm>
 

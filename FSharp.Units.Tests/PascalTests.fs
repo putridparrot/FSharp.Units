@@ -2,10 +2,10 @@
 
 module PascalTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Pressure
     open Helpers
 
@@ -55,28 +55,28 @@ module PascalTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Pascal to Atmosphere`` () =
         let atmosphere = Pa.toAtmosphere 2300.<Pa>
 
         atmosphere
         |> should (equalWithin 0.1) 0.02269924
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Pascal to Bar`` () =
         let bar = Pa.toBar 6789.<Pa>
 
         bar
         |> should (equalWithin 0.1) 0.06789
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Pascal to Torr`` () =
         let torr = Pa.toTorr 7899.<Pa>
 
         torr
         |> should (equalWithin 0.1) 59.24737
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Pascal to psi`` () =
         let psi = Pa.toPsi 1090.<Pa>
 

@@ -2,10 +2,10 @@
 
 module BarTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Pressure
     open Helpers
 
@@ -55,28 +55,28 @@ module BarTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Bar to Atmospehere`` () =
         let atmosphere = b.toAtmosphere 34.4<b>
 
         atmosphere
         |> should (equalWithin 0.1) 33.95016
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Bar to Pascal`` () =
         let pascal = b.toPascal 0.67<b>
 
         pascal
         |> should (equalWithin 0.1) 67000.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Bar to Torr`` () =
         let torr = b.toTorr 5.<b>
 
         torr
         |> should (equalWithin 0.1) 3750.31
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known Bar to psi`` () =
         let psi = b.toPsi 3.45<b>
 

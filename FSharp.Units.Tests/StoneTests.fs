@@ -3,10 +3,10 @@
 module StoneTests =
 
     //http://www.checkyourmath.com/convert/weight_mass/oz_metric_ton.php
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Mass
     open Helpers
 
@@ -78,42 +78,42 @@ module StoneTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known stone to milligram`` () =
         let milligrams= stone.toMilligrams 1560.0<stone>
 
         milligrams
         |> should (equalWithin 0.1) 9906457360.8
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known stone to gram`` () =
         let grams = stone.toGrams 1560.0<stone>
 
         grams
         |> should (equalWithin 0.1) 9906457.3608
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known stone to kilogram`` () =
         let kilograms = stone.toKilograms 1560.0<stone>
 
         kilograms
         |> should (equalWithin 0.1) 9906.4573608
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known stone to tonne`` () =
         let tonnes = stone.toTonnes 256.0<stone>
 
         tonnes
         |> should (equalWithin 0.1) 1.62567505
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known stone to ounce`` () =
         let ounces = stone.toOunces 256.0<stone>
 
         ounces
         |> should (equalWithin 0.1) 57344.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known stone to pound`` () =
         let pounds = stone.toPounds 1234.0<stone>
 

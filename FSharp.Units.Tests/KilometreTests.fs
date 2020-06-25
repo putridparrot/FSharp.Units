@@ -2,10 +2,10 @@
 
 module KilometreTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Length
     open Helpers
 
@@ -99,56 +99,56 @@ module KilometreTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilometre to millimetre`` () =
         let millimetres = km.toMillimetres 2.3<km>
 
         millimetres
         |> should (equalWithin 0.1) 2300000.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilometre to centimetre`` () =
         let centimetres = km.toCentimetres 1.5<km>
 
         centimetres
         |> should (equalWithin 0.1) 150000.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilometre to metre`` () =
         let metres = km.toMetres 1.025<km>
 
         metres
         |> should (equalWithin 0.1) 1025.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilometre to inch`` () =
         let inches = km.toInches 0.0480314<km>
 
         inches
         |> should (equalWithin 0.1) 1891.
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilometre to feet`` () =
         let feet = km.toFeet 0.0480314<km>
 
         feet
         |> should (equalWithin 0.1) 157.58333333
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilometre to yards`` () =
         let yards = km.toYards 43.<km>
 
         yards
         |> should (equalWithin 0.1) 47025.37182852
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilometre to mile`` () =
         let miles = km.toMiles 123.<km>
 
         miles
         |> should (equalWithin 0.1) 76.42865665
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known kilometre to nautical mile`` () =
         let miles = km.toNauticalMiles 800.<km>
 

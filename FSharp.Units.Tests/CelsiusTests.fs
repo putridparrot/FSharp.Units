@@ -2,10 +2,10 @@
 
 module CelsiusTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Temperature
     open Helpers
 
@@ -33,14 +33,14 @@ module CelsiusTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known celsius to fahrenheit`` () =
         let fahrenheit = C.toFahrenheit 12.<C>
 
         fahrenheit
         |> should (equalWithin 0.1) 53.6
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known celsius to kelvin`` () =
         let kelvin = C.toKelvin 23.<C>
 

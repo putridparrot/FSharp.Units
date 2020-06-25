@@ -2,10 +2,10 @@
 
 module FarenheitTests =
 
-    open Xunit
+    open NUnit.Framework
     open FsCheck
-    open FsCheck.Xunit
-    open FsUnit.Xunit
+    open FsCheck.NUnit
+    open FsUnit
     open FSharp.Units.Temperature
     open Helpers
 
@@ -33,7 +33,7 @@ module FarenheitTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Fact>]
+    [<Test>]
     let ``Convert known fahrenheit to kelvin`` () =
         let kelvin = F.toKelvin 123.<F>
 
