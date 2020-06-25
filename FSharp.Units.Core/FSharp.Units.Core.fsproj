@@ -1,9 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+     <TargetFrameworks>netcoreapp3.1;net472</TargetFrameworks>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="Health.fs" />
     <Compile Include="Length.fs" />
@@ -18,5 +16,7 @@
     <Compile Include="Volume.fs" />
     <Compile Include="AssemblyInfo.fs" />
   </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.7.2" />
+  </ItemGroup>
 </Project>
