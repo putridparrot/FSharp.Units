@@ -7,3 +7,6 @@ build:
 
 before_build:
 - cmd: nuget restore
+
+test_script:
+- cmd: dotnet test FSharp.Units.Tests
