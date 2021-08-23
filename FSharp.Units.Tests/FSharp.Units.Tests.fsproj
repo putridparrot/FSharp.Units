@@ -4,8 +4,26 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <Compile Include="Helpers.fs" />
+    <Compile Include="InchSquared.fs" />
+    <Compile Include="FeetSquared.fs" />
+    <Compile Include="YardSquared.fs" />
+    <Compile Include="KilometreSquared.fs" />
+    <Compile Include="MetreSquared.fs" />
+    <Compile Include="MilesSquared.fs" />
+    <Compile Include="AcreTests.fs" />
+    <Compile Include="HectareTests.fs" />
+    <Compile Include="MetreSquaredTests.fs" />
+    <Compile Include="GigahertzTests.fs" />
+    <Compile Include="MegahertzTests.fs" />
+    <Compile Include="HertzTests.fs" />
+    <Compile Include="SecondsOfArcTests.fs" />
+    <Compile Include="MinuteofArcTests.fs" />
+    <Compile Include="MilliradianTests.fs" />
+    <Compile Include="GradiansTests.fs" />
+    <Compile Include="RadiansTests.fs" />
+    <Compile Include="DegreeTests.fs" />
+    <None Include="app.config" />
     <Compile Include="AmpereTurnTests.fs" />
     <Compile Include="AtmosphereTests.fs" />
     <Compile Include="BarTests.fs" />

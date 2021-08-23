@@ -36,3 +36,4 @@ module Pressure =
         static member toPascal(value : float<psi>) = value / 0.0001450378911491<psi/Pa>
         static member toBar(value : float<psi>) = value / 14.50378911491<psi/b>
         static member toTorr(value : float<psi>) = value / 0.01933679515879<psi/Torr>
+ 

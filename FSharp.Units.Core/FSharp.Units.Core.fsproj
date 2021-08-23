@@ -3,6 +3,10 @@
      <TargetFrameworks>netcoreapp3.1;net472</TargetFrameworks>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Utils.fs" />
+    <Compile Include="Angle.fs" />
+    <Compile Include="Area.fs" />
+    <Compile Include="Frequency.fs" />
     <Compile Include="Health.fs" />
     <Compile Include="Length.fs" />
     <Compile Include="LuminousEnergy.fs" />

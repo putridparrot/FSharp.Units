@@ -107,7 +107,7 @@ module Volume =
         static member toUSGallons(value : float<qt>) = value / 3.3306953618655629312<qt/usgal>
         static member toUSFluidOunces(value : float<qt>) = value / 0.026021057514574708736<qt/usfloz>
         static member toUSCups(value : float<qt>) = value / 0.20816846011659767808<qt/uscup>
-    and [<Measure>] pt = // imperial quart
+    and [<Measure>] pt = // imperial pint
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<pt> value
         static member toMillilitres(value : float<pt>) = value * 568.26148487499988992<ml/pt>
         static member toLitres(value : float<pt>) = value * 0.56826148487499988992<l/pt>
@@ -277,4 +277,3 @@ module Volume =
         static member toUSPints(value : float<uscup>) = value / 2.<uscup/uspt>
         static member toUSGallons(value : float<uscup>) = value / 16.<uscup/usgal>
         static member toUSFluidOunces(value : float<uscup>) = value * 8.<usfloz/uscup>
-

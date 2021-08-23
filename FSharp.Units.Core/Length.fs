@@ -95,5 +95,4 @@ module Length =
         static member toFeet(value : float<NM>) = value * 6076.12<ft/NM>
         static member toYards(value : float<NM>) = value * 2025.37<yard/NM>
         static member toMiles(value : float<NM>) = value * 1.15078<mile/NM>
-
     

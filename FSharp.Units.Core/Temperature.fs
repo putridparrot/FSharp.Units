@@ -18,4 +18,3 @@ module Temperature =
         static member toCelsius(value : float<K>) = C.create (float value - 273.15)
         static member toFahrenheit(value : float<K>) = F.create (((float value - 273.15) * 1.8) + 32.0)
 
-
