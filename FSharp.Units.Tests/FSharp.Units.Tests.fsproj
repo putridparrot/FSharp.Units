@@ -5,6 +5,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Helpers.fs" />
+    <Compile Include="BtuTests.fs" />
+    <Compile Include="JoulesTests.fs" />
+    <Compile Include="TalbotTests.fs" />
+    <Compile Include="LumenSecondTests.fs" />
+    <Compile Include="LumenMinuteTests.fs" />
+    <Compile Include="LumenHourTests.fs" />
     <Compile Include="InchSquared.fs" />
     <Compile Include="FeetSquared.fs" />
     <Compile Include="YardSquared.fs" />

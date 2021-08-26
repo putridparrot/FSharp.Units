@@ -27,5 +27,5 @@ module KiloCalorieTests =
         let kilojoules = kCal.toKilojoules 2500.<kCal>
 
         kilojoules
-        |> should equal 10467.
+        |> should equal 10460.
 

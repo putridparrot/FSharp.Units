@@ -27,4 +27,4 @@ module KilojouleTests =
         let kilocalories = kJ.toKilocalories 1200.<kJ>
 
         kilocalories
-        |> should equal 286.61507595299514
+        |> should (equalWithin 0.001) 286.8069
