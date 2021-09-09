@@ -5,8 +5,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Helpers.fs" />
+    <Compile Include="KiloBytesPerSecondTests.fs" />
+    <Compile Include="GigaBitsPerSecondTests.fs" />
+    <Compile Include="MegaBitsPerSecondTests.fs" />
+    <Compile Include="KiloBitsPerSecondTests.fs" />
+    <Compile Include="BitsPerSecondTests.fs" />
     <Compile Include="BtuTests.fs" />
     <Compile Include="JoulesTests.fs" />
+    <Compile Include="ThermTests.fs" />
     <Compile Include="TalbotTests.fs" />
     <Compile Include="LumenSecondTests.fs" />
     <Compile Include="LumenMinuteTests.fs" />

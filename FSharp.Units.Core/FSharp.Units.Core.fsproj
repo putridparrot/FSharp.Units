@@ -6,6 +6,8 @@
     <Compile Include="Angle.fs" />
     <Compile Include="Area.fs" />
     <Compile Include="Frequency.fs" />
+    <Compile Include="Energy.fs" />
+    <Compile Include="DataTransferRate.fs" />
     <Compile Include="Health.fs" />
     <Compile Include="Length.fs" />
     <Compile Include="LuminousEnergy.fs" />

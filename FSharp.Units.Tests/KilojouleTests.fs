@@ -6,7 +6,7 @@ module KilojouleTests =
     open FsCheck
     open FsCheck.NUnit
     open FsUnit
-    open FSharp.Units.Health
+    open FSharp.Units.Energy
     open Helpers
 
    // kilojoules to X and back

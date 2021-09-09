@@ -6,7 +6,7 @@ module KiloCalorieTests =
     open FsCheck
     open FsCheck.NUnit
     open FsUnit
-    open FSharp.Units.Health
+    open FSharp.Units.Energy
     open Helpers
 
      // kilocalories to X and back
