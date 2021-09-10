@@ -5,6 +5,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Helpers.fs" />
+    <Compile Include="MebibitPerSecondTests.fs" />
+    <Compile Include="KibibitPerSecondTests.fs" />
     <Compile Include="KiloBytesPerSecondTests.fs" />
     <Compile Include="GigaBitsPerSecondTests.fs" />
     <Compile Include="MegaBitsPerSecondTests.fs" />
