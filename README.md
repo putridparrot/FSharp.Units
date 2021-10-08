@@ -1,6 +1,5 @@
 # FSharp.Units
 
-[![Build status](https://ci.appveyor.com/api/projects/status/goy007ku97j9iog6?svg=true)](https://ci.appveyor.com/project/putridparrot/fsharp-units)
 [![Build FSharp.Units](https://github.com/putridparrot/FSharp.Units/actions/workflows/dotnet-core.yml/badge.svg)](https://github.com/putridparrot/FSharp.Units/actions/workflows/dotnet-core.yml)
 
 Currently includes Mass, Length and Temperature units of measure.
