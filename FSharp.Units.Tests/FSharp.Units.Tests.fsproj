@@ -38,7 +38,6 @@
     <Compile Include="GradiansTests.fs" />
     <Compile Include="RadiansTests.fs" />
     <Compile Include="DegreeTests.fs" />
-    <None Include="app.config" />
     <Compile Include="AmpereTurnTests.fs" />
     <Compile Include="AtmosphereTests.fs" />
     <Compile Include="BarTests.fs" />
