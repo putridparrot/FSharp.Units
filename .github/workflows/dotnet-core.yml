@@ -24,6 +24,4 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: |
-        ls
-        # dotnet test FSharp.Units.Tests\FSharp.Units.Tests.fsproj --no-restore --verbosity normal
+      run: dotnet test FSharp.Units.Tests/FSharp.Units.Tests.fsproj --no-restore --verbosity normal
