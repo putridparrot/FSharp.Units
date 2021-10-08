@@ -71,7 +71,7 @@ module MilliradiansTests =
         let mr = grad.toMilliradians 678.<grad>
 
         mr
-        |> should (equalWithin 0.01) 10650.0
+        |> should (equalWithin 0.01) 10650.024
 
     [<Test>]
     let ``Convert known Milliradian turn to Gradian`` () =
