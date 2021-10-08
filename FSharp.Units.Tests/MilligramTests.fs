@@ -18,7 +18,7 @@ module MilligramTests =
             let milligrams = g.toMilligrams grams
 
             milligrams 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module MilligramTests =
             let milligrams = kg.toMilligrams kilograms
 
             milligrams 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module MilligramTests =
             let milligrams = tonne.toMilligrams tonnes
 
             milligrams 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module MilligramTests =
             let milligrams = oz.toMilligrams ounces
 
             milligrams 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module MilligramTests =
             let milligrams = lb.toMilligrams lbs
 
             milligrams 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module MilligramTests =
             let milligrams = stone.toMilligrams stones
 
             milligrams 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -103,18 +103,18 @@ module MilligramTests =
         let ounces = mg.toOunces 345.0<mg>
 
         ounces
-        |> should (equalWithin 0.1) 0.0121695
+        |> should (equalWithin 0.01) 0.0121695
 
     [<Test>]
     let ``Convert known milligram to pound`` () =
         let pounds = mg.toStones 87.0<mg>
 
         pounds
-        |> should (equalWithin 0.1) 0.000191802
+        |> should (equalWithin 0.01) 0.000191802
 
     [<Test>]
     let ``Convert known milligram to stone`` () =
         let stones = mg.toStones 678.0<mg>
 
         stones
-        |> should (equalWithin 0.1) 0.000106767
+        |> should (equalWithin 0.01) 0.000106767

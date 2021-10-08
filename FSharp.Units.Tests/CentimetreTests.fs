@@ -18,7 +18,7 @@ module CentimetreTests =
             let centimetres = mm.toCentimetres millimetres
 
             centimetres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module CentimetreTests =
             let centimetres = m.toCentimetres metres
 
             centimetres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module CentimetreTests =
             let centimetres = km.toCentimetres kilometres
 
             centimetres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module CentimetreTests =
             let centimetres = inch.toCentimetres inches
 
             centimetres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module CentimetreTests =
             let centimetres = ft.toCentimetres f
 
             centimetres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module CentimetreTests =
             let centimetres = yard.toCentimetres yards
 
             centimetres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module CentimetreTests =
             let centimetres = mile.toCentimetres miles
 
             centimetres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module CentimetreTests =
             let centimetres = NM.toCentimetres nauticalmiles
 
             centimetres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -104,46 +104,46 @@ module CentimetreTests =
         let millimetres = cm.toMillimetres 12.3<cm>
 
         millimetres
-        |> should (equalWithin 0.1) 123
+        |> should (equalWithin 0.01) 123
 
     [<Test>]
     let ``Convert known centimetre to metre`` () =
         let metres = cm.toMetres 12.3<cm>
 
         metres
-        |> should (equalWithin 0.1) 0.123
+        |> should (equalWithin 0.01) 0.123
 
     [<Test>]
     let ``Convert known centimetre to inch`` () =
         let inches = cm.toInches 142.24<cm>
 
         inches
-        |> should (equalWithin 0.1) 56
+        |> should (equalWithin 0.01) 56
 
     [<Test>]
     let ``Convert known centimetre to feet`` () =
         let ft = cm.toFeet 456.<cm>
 
         ft
-        |> should (equalWithin 0.1) 14.96062992
+        |> should (equalWithin 0.01) 14.96062992
 
     [<Test>]
     let ``Convert known centimetre to yard`` () =
         let yards = cm.toYards 567.<cm>
 
         yards
-        |> should (equalWithin 0.1) 6.2007874
+        |> should (equalWithin 0.01) 6.2007874
 
     [<Test>]
     let ``Convert known centimetre to mile`` () =
         let miles = cm.toMiles 67880.<cm>
 
         miles
-        |> should (equalWithin 0.1) 0.42178677
+        |> should (equalWithin 0.01) 0.42178677
 
     [<Test>]
     let ``Convert known centimetre to nauticalmile`` () =
         let inches = cm.toNauticalMiles 1200000.<cm>
 
         inches
-        |> should (equalWithin 0.1) 6.479481641
+        |> should (equalWithin 0.01) 6.479481641

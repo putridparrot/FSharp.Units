@@ -48,7 +48,7 @@ module Energy =
         static member toKilojoules(value: float<therm>) = kJ.create(float value * 2.521e+7)
         static member toKilocalories(value : float<therm>) = kCal.create(float value * 25210.)
         static member toJoules(value : float<therm>) = J.create(float value * 1.055e+8)
-        static member toBtu(value: float<therm>) = btu.create(float value * 99976.)
+        static member toBtu(value: float<therm>) = btu.create(float value * 99976.1)
         static member toCal(value : float<therm>) = cal.create(float value * 2.521e+7)
 
         // TODO: Add watt hour, kWh, electron volt, foot pound

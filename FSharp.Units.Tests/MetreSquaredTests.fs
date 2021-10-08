@@ -18,7 +18,7 @@ module MetreSquaredTests =
             let metresSequared = acre.toSquareMetre a
 
             metresSequared 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module MetreSquaredTests =
             let metresSequared = hectare.toSquareMetre a
     
             metresSequared 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module MetreSquaredTests =
             let metresSequared = feet2.toSquareMetre a
     
             metresSequared 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module MetreSquaredTests =
             let metresSequared = inch2.toSquareMetre a
     
             metresSequared 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module MetreSquaredTests =
             let metresSequared = km2.toSquareMetre a
     
             metresSequared 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module MetreSquaredTests =
             let metresSequared = mile2.toSquareMetre a
     
             metresSequared 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,6 +84,6 @@ module MetreSquaredTests =
             let metresSequared = yard2.toSquareMetre a
     
             metresSequared 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)

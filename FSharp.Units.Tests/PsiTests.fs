@@ -18,7 +18,7 @@ module PsiTests =
             let poundsPerSquareInch = atm.toPsi atmosphere
 
             poundsPerSquareInch 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module PsiTests =
             let poundsPerSquareInch = b.toPsi bar
 
             poundsPerSquareInch 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module PsiTests =
             let poundsPerSquareInch = Torr.toPsi torr
 
             poundsPerSquareInch 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module PsiTests =
             let poundsPerSquareInch = Pa.toPsi pascal
 
             poundsPerSquareInch 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -60,25 +60,25 @@ module PsiTests =
         let bar = psi.toBar 121.<psi>
 
         bar
-        |> should (equalWithin 0.1) 8.34266
+        |> should (equalWithin 0.01) 8.34266
 
     [<Test>]
     let ``Convert known Psi to Atmosphere`` () =
         let atmosphere = psi.toAtmosphere 345.<psi>
 
         atmosphere
-        |> should (equalWithin 0.1) 23.4759
+        |> should (equalWithin 0.01) 23.4759
 
     [<Test>]
     let ``Convert known Psi to Pascal`` () =
         let pascal = psi.toPascal 5.6<psi>
 
         pascal
-        |> should (equalWithin 0.1) 38610.6
+        |> should (equalWithin 0.01) 38610.6
 
     [<Test>]
     let ``Convert known Psi to Torr`` () =
         let torr = psi.toTorr 1.34<psi>
 
         torr
-        |> should (equalWithin 0.1) 69.29801
+        |> should (equalWithin 0.01) 69.29801

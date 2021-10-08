@@ -18,7 +18,7 @@ module InchTests =
             let inches = mm.toInches millimetres
 
             inches
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module InchTests =
             let inches = cm.toInches centimetres
 
             inches
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module InchTests =
             let inches = m.toInches metres
 
             inches
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module InchTests =
             let inches = km.toInches kilometres
 
             inches
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module InchTests =
             let inches = ft.toInches feet
 
             inches
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module InchTests =
             let inches = yard.toInches yards
 
             inches
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module InchTests =
             let inches = mile.toInches miles
 
             inches
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module InchTests =
             let inches = NM.toInches nauticalmiles
 
             inches
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -104,53 +104,53 @@ module InchTests =
         let millimetres = inch.toMillimetres 123.<inch>
 
         millimetres
-        |> should (equalWithin 0.1) 3124.2
+        |> should (equalWithin 0.01) 3124.2
 
     [<Test>]
     let ``Convert known inch to centimetre`` () =
         let centimetres = inch.toCentimetres 56.<inch>
 
         centimetres
-        |> should (equalWithin 0.1) 142.24
+        |> should (equalWithin 0.01) 142.24
 
     [<Test>]
     let ``Convert known inch to metre`` () =
         let metres = inch.toMetres 123.<inch>
 
         metres
-        |> should (equalWithin 0.1) 3.1242
+        |> should (equalWithin 0.01) 3.1242
 
     [<Test>]
     let ``Convert known inch to kilometre`` () =
         let kilometres = inch.toKilometres 1891.<inch>
 
         kilometres
-        |> should (equalWithin 0.1) 0.0480314
+        |> should (equalWithin 0.01) 0.0480314
 
     [<Test>]
     let ``Convert known inch to feet`` () =
         let ft = inch.toFeet 1891.<inch>
 
         ft
-        |> should (equalWithin 0.1) 157.58333333
+        |> should (equalWithin 0.01) 157.58333333
 
     [<Test>]
     let ``Convert known inch to yards`` () =
         let yards = inch.toYards 1891.<inch>
 
         yards
-        |> should (equalWithin 0.1) 52.52777778
+        |> should (equalWithin 0.01) 52.52777778
 
     [<Test>]
     let ``Convert known inch to miles`` () =
         let miles = inch.toMiles 1891.<inch>
 
         miles
-        |> should (equalWithin 0.1) 0.02984533
+        |> should (equalWithin 0.01) 0.02984533
 
     [<Test>]
     let ``Convert known inch to nauticalmiles`` () =
         let nauticalmiles = inch.toNauticalMiles 8900.<inch>
 
         nauticalmiles
-        |> should (equalWithin 0.1) 0.1220626
+        |> should (equalWithin 0.01) 0.1220626

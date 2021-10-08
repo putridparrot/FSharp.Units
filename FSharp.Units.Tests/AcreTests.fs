@@ -18,7 +18,7 @@ module AcreTests =
             let a = hectare.toAcre result
 
             a 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module AcreTests =
             let a = m2.toAcre result
     
             a 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module AcreTests =
             let a = feet2.toAcre result
     
             a 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module AcreTests =
             let a = inch2.toAcre result
     
             a 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module AcreTests =
             let a = km2.toAcre result
     
             a 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module AcreTests =
             let a = mile2.toAcre result
     
             a 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,6 +84,6 @@ module AcreTests =
             let a = yard2.toAcre result
     
             a 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)

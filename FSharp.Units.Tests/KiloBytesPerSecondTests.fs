@@ -18,7 +18,7 @@ module KiloBytesPerSecondTests =
             let back = bps.toKiloBytesPerSecond result
 
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module KiloBytesPerSecondTests =
             let back = Mbps.toKiloBytesPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module KiloBytesPerSecondTests =
             let back = Tbps.toKiloBytesPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module KiloBytesPerSecondTests =
             let back = MBps.toKiloBytesPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module KiloBytesPerSecondTests =
             let back = GBps.toKiloBytesPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module KiloBytesPerSecondTests =
             let back = TBps.toKiloBytesPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 

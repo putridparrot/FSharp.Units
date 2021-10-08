@@ -18,7 +18,7 @@ module BitsPerSecondTests =
             let back = kbps.toBitsPerSecond result
 
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module BitsPerSecondTests =
             let back = Mbps.toBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module BitsPerSecondTests =
             let back = Gbps.toBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module BitsPerSecondTests =
             let back = Tbps.toBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module BitsPerSecondTests =
             let back = kBps.toBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module BitsPerSecondTests =
             let back = MBps.toBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module BitsPerSecondTests =
             let back = GBps.toBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module BitsPerSecondTests =
             let back = TBps.toBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 

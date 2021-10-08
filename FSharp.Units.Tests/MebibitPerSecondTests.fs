@@ -18,7 +18,7 @@ module MebibitPerSecondTests =
             let back = bps.toMebibitPerSecond result
 
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module MebibitPerSecondTests =
             let back = Mbps.toMebibitPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module MebibitPerSecondTests =
             let back = Tbps.toMebibitPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module MebibitPerSecondTests =
             let back = kBps.toMebibitPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module MebibitPerSecondTests =
             let back = MBps.toMebibitPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module MebibitPerSecondTests =
             let back = GBps.toMebibitPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module MebibitPerSecondTests =
             let back = TBps.toMebibitPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module MebibitPerSecondTests =
             let back = Kibitps.toMebibitPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -104,7 +104,7 @@ module MebibitPerSecondTests =
         let result = Mibit.toBitsPerSecond 0.1<Mibit>
     
         result
-        |> should (equalWithin 0.1) 104858.
+        |> should (equalWithin 0.01) 104857.6
     
     [<Test>]
     let ``Convert known Mebibit per second to kilo bits per second`` () =
@@ -118,7 +118,7 @@ module MebibitPerSecondTests =
         let result = Mibit.toMegaBitsPerSecond 456.<Mibit>
     
         result
-        |> should (equalWithin 0.1) 478.151
+        |> should (equalWithin 0.01) 478.151
 
 
     [<Test>]
@@ -133,7 +133,7 @@ module MebibitPerSecondTests =
         let result = Mibit.toMegaBytesPerSecond 13456.<Mibit>
     
         result
-        |> should (equalWithin 0.1) 1763.7048
+        |> should (equalWithin 0.01) 1763.7048
 
     [<Test>]
     let ``Convert known Mebibit per second to giga bytes per second`` () =

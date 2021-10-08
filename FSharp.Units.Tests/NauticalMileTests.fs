@@ -18,7 +18,7 @@ module NauticalMileTests =
             let nauticalmiles = mm.toNauticalMiles millimetres
 
             nauticalmiles
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module NauticalMileTests =
             let nauticalmiles = cm.toNauticalMiles centimetres
 
             nauticalmiles
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module NauticalMileTests =
             let nauticalmiles = km.toNauticalMiles kilometres
 
             nauticalmiles
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module NauticalMileTests =
             let nauticalmiles = inch.toNauticalMiles inches
 
             nauticalmiles
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module NauticalMileTests =
             let nauticalmiles = ft.toNauticalMiles f
 
             nauticalmiles
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module NauticalMileTests =
             let nauticalmiles = yard.toNauticalMiles yards
 
             nauticalmiles
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module NauticalMileTests =
             let nauticalmiles = mile.toNauticalMiles miles
 
             nauticalmiles
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -93,53 +93,53 @@ module NauticalMileTests =
         let millimetres = NM.toMillimetres 0.1<NM>
 
         millimetres
-        |> should (equalWithin 0.1) 185200.
+        |> should (equalWithin 0.01) 185200.
 
     [<Test>]
     let ``Convert known nautical miles to centimetre`` () =
         let centimetres = NM.toCentimetres 0.7<NM>
 
         centimetres
-        |> should (equalWithin 0.1) 129640
+        |> should (equalWithin 0.01) 129640
 
     [<Test>]
     let ``Convert known nautical miles to metre`` () =
         let metres = NM.toMetres 2.3<NM>
 
         metres
-        |> should (equalWithin 0.1) 4259.6
+        |> should (equalWithin 0.01) 4259.6
 
     [<Test>]
     let ``Convert known nautical miles to kilometre`` () =
         let kilometres = NM.toKilometres 1.45<NM>
 
         kilometres
-        |> should (equalWithin 0.1) 2.6854
+        |> should (equalWithin 0.01) 2.6854
 
     [<Test>]
     let ``Convert known nautical miles to inch`` () =
         let inches = NM.toInches 0.2<NM>
 
         inches
-        |> should (equalWithin 0.1) 14582.7
+        |> should (equalWithin 0.01) 14582.68
 
     [<Test>]
     let ``Convert known nautical miles to yard`` () =
         let yards = NM.toYards 0.9<NM>
 
         yards
-        |> should (equalWithin 0.1) 1822.83
+        |> should (equalWithin 0.01) 1822.83
 
     [<Test>]
     let ``Convert known nautical miles to feet`` () =
         let f = NM.toFeet 0.7<NM>
 
         f
-        |> should (equalWithin 0.1) 4253.28
+        |> should (equalWithin 0.01) 4253.28
 
     [<Test>]
     let ``Convert known nautical miles to miles`` () =
         let miles = NM.toMiles 22.8<NM>
 
         miles
-        |> should (equalWithin 0.1) 26.23777
+        |> should (equalWithin 0.01) 26.23777

@@ -18,7 +18,7 @@ module MinuteOfArcTests =
             let marc = rad.toMinuteOfArc radians
 
             marc
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module MinuteOfArcTests =
             let marc = mrad.toMinuteOfArc milliRadian
 
             marc
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module MinuteOfArcTests =
             let marc = grad.toMinuteOfArc gradians
 
             marc
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module MinuteOfArcTests =
             let marc = deg.toMinuteOfArc degrees
 
             marc
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module MinuteOfArcTests =
             let marc = arcseconds.toMinuteOfArc sarc
 
             marc
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -71,7 +71,7 @@ module MinuteOfArcTests =
         let mr = arcmin.toMilliradians 123.<arcmin>
 
         mr
-        |> should (equalWithin 0.1) 35.7792
+        |> should (equalWithin 0.01) 35.7792
 
     [<Test>]
     let ``Convert known Minute of arc turn to Gradian`` () =

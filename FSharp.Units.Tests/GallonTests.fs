@@ -18,7 +18,7 @@ module GallonTests =
             let gallons = ml.toGallons millilitres
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module GallonTests =
             let gallons = l.toGallons litres
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module GallonTests =
             let gallons = kl.toGallons kilolitres
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module GallonTests =
             let gallons = tsp.toGallons teaspoons
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module GallonTests =
             let gallons = tbsp.toGallons tablespoons
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module GallonTests =
             let gallons = qt.toGallons quarts
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module GallonTests =
             let gallons = pt.toGallons pints
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module GallonTests =
             let gallons = floz.toGallons fluidOunces
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -106,7 +106,7 @@ module GallonTests =
             let gallons = ustsp.toGallons usTeaspoons
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -117,7 +117,7 @@ module GallonTests =
             let gallons = ustbsp.toGallons usTablespoons
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -128,7 +128,7 @@ module GallonTests =
             let gallons = usqt.toGallons usQuarts
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -139,7 +139,7 @@ module GallonTests =
             let gallons = uspt.toGallons usPints
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -150,7 +150,7 @@ module GallonTests =
             let gallons = usgal.toGallons usGallons
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -161,7 +161,7 @@ module GallonTests =
             let gallons = usfloz.toGallons usFluidOunces
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -172,7 +172,7 @@ module GallonTests =
             let gallons = uscup.toGallons usCups
 
             gallons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -181,102 +181,102 @@ module GallonTests =
         let millilitres = gal.toMillilitres 0.15<gal>
 
         millilitres
-        |> should (equalWithin 0.1) 681.91378185
+        |> should (equalWithin 0.01) 681.91378185
 
     [<Test>]
     let ``Convert known gallon to litre`` () =
         let litres = gal.toLitres 0.9<gal>
 
         litres
-        |> should (equalWithin 0.1) 4.0914826911
+        |> should (equalWithin 0.01) 4.0914826911
 
     [<Test>]
     let ``Convert known gallon to kilolitre`` () =
         let kilolitres = gal.toKilolitres 15.<gal>
 
         kilolitres
-        |> should (equalWithin 0.1) 0.0681913782
+        |> should (equalWithin 0.01) 0.0681913782
 
     [<Test>]
     let ``Convert known gallon to teaspoons`` () =
         let teaspoons = gal.toTeaspoons 0.7<gal>
 
         teaspoons
-        |> should (equalWithin 0.1) 537.6
+        |> should (equalWithin 0.01) 537.6
 
     [<Test>]
     let ``Convert known gallon to tablespoons`` () =
         let tablespoons = gal.toTablespoons 0.87<gal>
 
         tablespoons
-        |> should (equalWithin 0.1) 222.72
+        |> should (equalWithin 0.01) 222.72
 
     [<Test>]
     let ``Convert known gallon to quarts`` () =
         let quarts = gal.toQuarts 0.67<gal>
 
         quarts
-        |> should (equalWithin 0.1) 2.68
+        |> should (equalWithin 0.01) 2.68
 
     [<Test>]
     let ``Convert known gallon to pints`` () =
         let pints = gal.toPints 3.1<gal>
 
         pints
-        |> should (equalWithin 0.1) 24.8
+        |> should (equalWithin 0.01) 24.8
 
     [<Test>]
     let ``Convert known gallon to fluid ounces`` () =
         let fluidOunces = gal.toFluidOunces 0.123<gal>
 
         fluidOunces
-        |> should (equalWithin 0.1) 19.68
+        |> should (equalWithin 0.01) 19.68
 
     [<Test>]
     let ``Convert known gallon to US teaspoons`` () =
         let usTeaspoons = gal.toUSTeaspoons 0.2<gal>
 
         usTeaspoons
-        |> should (equalWithin 0.1) 184.4659848014
+        |> should (equalWithin 0.01) 184.4659848014
 
     [<Test>]
     let ``Convert known gallon to US tablespoons`` () =
         let usTablespoons = gal.toUSTablespoons 0.9<gal>
 
         usTablespoons
-        |> should (equalWithin 0.1) 276.6989772021
+        |> should (equalWithin 0.01) 276.6989772021
 
     [<Test>]
     let ``Convert known gallon to US quarts`` () =
         let usQuarts = gal.toUSQuarts 12.4<gal>
 
         usQuarts
-        |> should (equalWithin 0.1) 59.5671409255
+        |> should (equalWithin 0.01) 59.5671409255
 
     [<Test>]
     let ``Convert known gallon to US pints`` () =
         let usPints = gal.toUSPints 5.123<gal>
 
         usPints
-        |> should (equalWithin 0.1) 49.2197520905
+        |> should (equalWithin 0.01) 49.2197520905
 
     [<Test>]
     let ``Convert known gallon to US gallons`` () =
         let usGallons = gal.toUSGallons 50.2<gal>
 
         usGallons
-        |> should (equalWithin 0.1) 60.2877111786
+        |> should (equalWithin 0.01) 60.2877111786
 
     [<Test>]
     let ``Convert known gallon to US fluid ounces`` () =
         let usFluidOunces = gal.toUSFluidOunces 8.<gal>
 
         usFluidOunces
-        |> should (equalWithin 0.1) 1229.7732320094
+        |> should (equalWithin 0.01) 1229.7732320094
 
     [<Test>]
     let ``Convert known gallon to US cups`` () =
         let usCups = gal.toUSCups 7.5<gal>
 
         usCups
-        |> should (equalWithin 0.1) 144.1140506261
+        |> should (equalWithin 0.01) 144.1140506261

@@ -18,7 +18,7 @@ module USTeaspoonTests =
             let usTeaspoons = ml.toUSTeaspoons millilitres
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module USTeaspoonTests =
             let usTeaspoons = l.toUSTeaspoons litres
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module USTeaspoonTests =
             let usTeaspoons = kl.toUSTeaspoons kilolitres
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module USTeaspoonTests =
             let usTeaspoons = tsp.toUSTeaspoons teaspoons
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module USTeaspoonTests =
             let usTeaspoons = tbsp.toUSTeaspoons tablespoons
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module USTeaspoonTests =
             let usTeaspoons = qt.toUSTeaspoons quarts
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module USTeaspoonTests =
             let usTeaspoons = pt.toUSTeaspoons pints
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module USTeaspoonTests =
             let usTeaspoons = gal.toUSTeaspoons gallons
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -106,7 +106,7 @@ module USTeaspoonTests =
             let usTeaspoons = floz.toUSTeaspoons fluidOunces
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -117,7 +117,7 @@ module USTeaspoonTests =
             let usTeaspoons = ustbsp.toUSTeaspoons tableSpoons
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -128,7 +128,7 @@ module USTeaspoonTests =
             let usTeaspoons = usqt.toUSTeaspoons usQuarts
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -139,7 +139,7 @@ module USTeaspoonTests =
             let usTeaspoons = uspt.toUSTeaspoons usPints
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -150,7 +150,7 @@ module USTeaspoonTests =
             let usTeaspoons = usgal.toUSTeaspoons usGallons
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -161,7 +161,7 @@ module USTeaspoonTests =
             let usTeaspoons = usfloz.toUSTeaspoons usFluidOunces
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -172,7 +172,7 @@ module USTeaspoonTests =
             let usTeaspoons = uscup.toUSTeaspoons usCups
 
             usTeaspoons
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -181,102 +181,102 @@ module USTeaspoonTests =
         let millilitres = ustsp.toMillilitres 6.9<ustsp>
 
         millilitres
-        |> should (equalWithin 0.1) 34.0095589969
+        |> should (equalWithin 0.01) 34.0095589969
 
     [<Test>]
     let ``Convert known US teaspoons to litres`` () =
         let litres = ustsp.toLitres 56090.<ustsp>
 
         litres
-        |> should (equalWithin 0.1) 276.4632121934
+        |> should (equalWithin 0.01) 276.4632121934
 
     [<Test>]
     let ``Convert known US teaspoons to kilolitres`` () =
         let kilolitres = ustsp.toKilolitres 9600.<ustsp>
 
         kilolitres
-        |> should (equalWithin 0.1) 0.0473176473
+        |> should (equalWithin 0.01) 0.0473176473
 
     [<Test>]
     let ``Convert known US teaspoons to teaspoons`` () =
         let teaspoons = ustsp.toTeaspoons 5.<ustsp>
 
         teaspoons
-        |> should (equalWithin 0.1) 4.1633692023
+        |> should (equalWithin 0.01) 4.1633692023
 
     [<Test>]
     let ``Convert known US teaspoons to tablespoons`` () =
         let tablespoons = ustsp.toTablespoons 80.<ustsp>
 
         tablespoons
-        |> should (equalWithin 0.1) 22.2046357458
+        |> should (equalWithin 0.01) 22.2046357458
 
     [<Test>]
     let ``Convert known US teaspoons to quarts`` () =
         let quarts = ustsp.toQuarts 19000.<ustsp>
 
         quarts
-        |> should (equalWithin 0.1) 82.4000154628
+        |> should (equalWithin 0.01) 82.4000154628
 
     [<Test>]
     let ``Convert known US teaspoons to pints`` () =
         let pints = ustsp.toPints 1000.<ustsp>
 
         pints
-        |> should (equalWithin 0.1) 8.6736858382
+        |> should (equalWithin 0.01) 8.6736858382
 
     [<Test>]
     let ``Convert known US teaspoons to gallons`` () =
         let gallons = ustsp.toGallons 4555.<ustsp>
 
         gallons
-        |> should (equalWithin 0.1) 4.9385798741
+        |> should (equalWithin 0.01) 4.9385798741
 
     [<Test>]
     let ``Convert known US teaspoons to fluid ounces`` () =
         let fluidOunces = ustsp.toFluidOunces 400.<ustsp>
 
         fluidOunces
-        |> should (equalWithin 0.1) 69.3894867055
+        |> should (equalWithin 0.01) 69.3894867055
 
     [<Test>]
     let ``Convert known US teaspoons to US tablespoons`` () =
         let usTablespoons = ustsp.toUSTablespoons 700.<ustsp>
 
         usTablespoons
-        |> should (equalWithin 0.1) 233.3333333333
+        |> should (equalWithin 0.01) 233.3333333333
 
     [<Test>]
     let ``Convert known US teaspoons to US quarts`` () =
         let usQuarts = ustsp.toUSQuarts 46009.<ustsp>
 
         usQuarts
-        |> should (equalWithin 0.1) 239.6302083333
+        |> should (equalWithin 0.01) 239.6302083333
 
     [<Test>]
     let ``Convert known US teaspoons to US pints`` () =
         let usPints = ustsp.toUSPints 900.<ustsp>
 
         usPints
-        |> should (equalWithin 0.1) 9.375
+        |> should (equalWithin 0.01) 9.375
 
     [<Test>]
     let ``Convert known US teaspoons to US gallons`` () =
         let usGallons = ustsp.toUSGallons 50000.<ustsp>
 
         usGallons
-        |> should (equalWithin 0.1) 65.1041666667
+        |> should (equalWithin 0.01) 65.1041666667
 
     [<Test>]
     let ``Convert known US teaspoons to US fluid ounces`` () =
         let usFluidOunces = ustsp.toUSFluidOunces 3099.<ustsp>
 
         usFluidOunces
-        |> should (equalWithin 0.1) 516.5
+        |> should (equalWithin 0.01) 516.5
 
     [<Test>]
     let ``Convert known US teaspoons to US cups`` () =
         let usCups = ustsp.toUSCups 6000.<ustsp>
 
         usCups
-        |> should (equalWithin 0.1) 125.
+        |> should (equalWithin 0.01) 125.

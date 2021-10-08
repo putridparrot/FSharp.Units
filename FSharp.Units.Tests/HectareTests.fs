@@ -18,7 +18,7 @@ module HectareTests =
             let hectare = acre.toHectare h
 
             hectare 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module HectareTests =
             let hectare = m2.toHectare h
     
             hectare 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module HectareTests =
             let hectare = feet2.toHectare h
     
             hectare 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module HectareTests =
             let hectare = inch2.toHectare h
     
             hectare 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module HectareTests =
             let hectare = km2.toHectare h
     
             hectare 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module HectareTests =
             let hectare = mile2.toHectare h
     
             hectare 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,6 +84,6 @@ module HectareTests =
             let hectare = yard2.toHectare h
     
             hectare 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)

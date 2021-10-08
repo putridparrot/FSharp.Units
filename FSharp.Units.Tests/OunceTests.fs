@@ -19,7 +19,7 @@ module OunceTests =
             let ounces = mg.toOunces milligrams
 
             ounces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -30,7 +30,7 @@ module OunceTests =
             let ounces = g.toOunces grams
 
             ounces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -41,7 +41,7 @@ module OunceTests =
             let ounces = kg.toOunces kilogram
 
             ounces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -52,7 +52,7 @@ module OunceTests =
             let ounces = tonne.toOunces tonnes
 
             ounces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -63,7 +63,7 @@ module OunceTests =
             let ounces = lb.toOunces pounds
 
             ounces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -74,7 +74,7 @@ module OunceTests =
             let ounces = stone.toOunces stones
 
             ounces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -83,39 +83,39 @@ module OunceTests =
         let milligrams= oz.toMilligrams 1560.0<oz>
 
         milligrams
-        |> should (equalWithin 0.1) 44225256.036
+        |> should (equalWithin 0.01) 44225256.036
 
     [<Test>]
     let ``Convert known ounce to gram`` () =
         let grams = oz.toGrams 1560.0<oz>
 
         grams
-        |> should (equalWithin 0.1) 44225.26
+        |> should (equalWithin 0.01) 44225.26
 
     [<Test>]
     let ``Convert known ounce to kilogram`` () =
         let kilograms = oz.toKilograms 1560.0<oz>
 
         kilograms
-        |> should (equalWithin 0.1) 44.22526
+        |> should (equalWithin 0.01) 44.22526
 
     [<Test>]
     let ``Convert known ounce to tonne`` () =
         let tonnes = oz.toTonnes 256.0<oz>
 
         tonnes
-        |> should (equalWithin 0.1) 0.00725748
+        |> should (equalWithin 0.01) 0.00725748
 
     [<Test>]
     let ``Convert known ounce to pound`` () =
         let pounds = oz.toPounds 256.0<oz>
 
         pounds
-        |> should (equalWithin 0.1) 16
+        |> should (equalWithin 0.01) 16
 
     [<Test>]
     let ``Convert known ounce to stone`` () =
         let stones = oz.toStones 1234.0<oz>
 
         stones
-        |> should (equalWithin 0.1) 5.508929
+        |> should (equalWithin 0.01) 5.508929

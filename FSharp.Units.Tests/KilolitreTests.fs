@@ -18,7 +18,7 @@ module KilolitreTests =
             let kilolitres = ml.toKilolitres millilitres
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module KilolitreTests =
             let kilolitres = l.toKilolitres litres
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module KilolitreTests =
             let kilolitres = tsp.toKilolitres teaspoons
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module KilolitreTests =
             let kilolitres = l.toKilolitres tablespoons
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module KilolitreTests =
             let kilolitres = qt.toKilolitres quarts
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module KilolitreTests =
             let kilolitres = gal.toKilolitres gallons
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module KilolitreTests =
             let kilolitres = floz.toKilolitres fluidOunces
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module KilolitreTests =
             let kilolitres = ustsp.toKilolitres usteaspoons
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -106,7 +106,7 @@ module KilolitreTests =
             let kilolitres = ustbsp.toKilolitres ustablespoons
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -117,7 +117,7 @@ module KilolitreTests =
             let kilolitres = usqt.toKilolitres usquarts
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -128,7 +128,7 @@ module KilolitreTests =
             let kilolitres = uspt.toKilolitres uspints
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -139,7 +139,7 @@ module KilolitreTests =
             let kilolitres = usgal.toKilolitres usgallons
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -150,7 +150,7 @@ module KilolitreTests =
             let kilolitres = usfloz.toKilolitres usfluidounces
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -161,7 +161,7 @@ module KilolitreTests =
             let kilolitres = uscup.toKilolitres uscups
 
             kilolitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -170,102 +170,102 @@ module KilolitreTests =
         let millilitres = kl.toMillilitres 0.063<kl>
 
         millilitres
-        |> should (equalWithin 0.1) 63000.0
+        |> should (equalWithin 0.01) 63000.0
 
     [<Test>]
     let ``Convert known kilolitre to litre`` () =
         let litres = kl.toLitres 123.9<kl>
 
         litres
-        |> should (equalWithin 0.1) 123900.0
+        |> should (equalWithin 0.01) 123900.0
 
     [<Test>]
     let ``Convert known kilolitre to teaspoons`` () =
         let teaspoons = kl.toTeaspoons 0.098<kl>
 
         teaspoons
-        |> should (equalWithin 0.1) 16555.7586611197
+        |> should (equalWithin 0.01) 16555.7586611197
 
     [<Test>]
     let ``Convert known kilolitre to tablespoons`` () =
         let tablespoons = kl.toTablespoons 0.086<kl>
 
         tablespoons
-        |> should (equalWithin 0.1) 4842.8409688989
+        |> should (equalWithin 0.01) 4842.8409688989
 
     [<Test>]
     let ``Convert known kilolitre to quarts`` () =
         let quarts = kl.toQuarts 0.75<kl>
 
         quarts
-        |> should (equalWithin 0.1) 659.9074721428
+        |> should (equalWithin 0.01) 659.9074721428
 
     [<Test>]
     let ``Convert known kilolitre to pints`` () =
         let pints = kl.toPints 0.56<kl>
 
         pints
-        |> should (equalWithin 0.1) 985.4618250666
+        |> should (equalWithin 0.01) 985.4618250666
 
     [<Test>]
     let ``Convert known kilolitre to gallons`` () =
         let gallons = kl.toGallons 1456.<kl>
 
         gallons
-        |> should (equalWithin 0.1) 320275.0931466601
+        |> should (equalWithin 0.01) 320275.0931466601
 
     [<Test>]
     let ``Convert known kilolitre to fluid ounces`` () =
         let fluidOunces = kl.toFluidOunces 0.76<kl>
 
         fluidOunces
-        |> should (equalWithin 0.1) 26748.2495375233
+        |> should (equalWithin 0.01) 26748.2495375233
 
     [<Test>]
     let ``Convert known kilolitre to US teaspoons`` () =
         let usTeaspoons = kl.toUSTeaspoons 0.00876<kl>
 
         usTeaspoons
-        |> should (equalWithin 0.1) 1777.2650332089
+        |> should (equalWithin 0.01) 1777.2650332089
 
     [<Test>]
     let ``Convert known kilolitre to US tablespoons`` () =
         let usTablespoons = kl.toUSTablespoons 0.007<kl>
 
         usTablespoons
-        |> should (equalWithin 0.1) 473.3963178258
+        |> should (equalWithin 0.01) 473.3963178258
 
     [<Test>]
     let ``Convert known kilolitre to US quarts`` () =
         let usQuarts = kl.toUSQuarts 0.098<kl>
 
         usQuarts
-        |> should (equalWithin 0.1) 103.5554445244
+        |> should (equalWithin 0.01) 103.5554445244
 
     [<Test>]
     let ``Convert known kilolitre to US pints`` () =
         let usPints = kl.toUSPints 0.03<kl>
 
         usPints
-        |> should (equalWithin 0.1) 63.401292566
+        |> should (equalWithin 0.01) 63.401292566
 
     [<Test>]
     let ``Convert known kilolitre to US gallons`` () =
         let usGallons = kl.toUSGallons 5.<kl>
 
         usGallons
-        |> should (equalWithin 0.1) 1320.8602617907
+        |> should (equalWithin 0.01) 1320.8602617907
 
     [<Test>]
     let ``Convert known kilolitre to US fluid ounces`` () =
         let usFluidOunces = kl.toUSFluidOunces 0.03<kl>
 
         usFluidOunces
-        |> should (equalWithin 0.1) 1014.420679769
+        |> should (equalWithin 0.01) 1014.420679769
 
     [<Test>]
     let ``Convert known kilolitre to US cups`` () =
         let usCups = kl.toUSCups 0.02<kl>
 
         usCups
-        |> should (equalWithin 0.1) 84.5350567546
+        |> should (equalWithin 0.01) 84.5350567546

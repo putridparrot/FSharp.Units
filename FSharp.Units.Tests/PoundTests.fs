@@ -19,7 +19,7 @@ module PoundTests =
             let pounds = mg.toPounds milligrams
 
             pounds
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -30,7 +30,7 @@ module PoundTests =
             let pounds = g.toPounds grams
 
             pounds
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -41,7 +41,7 @@ module PoundTests =
             let pounds = kg.toPounds kilogram
 
             pounds
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -52,7 +52,7 @@ module PoundTests =
             let pounds = tonne.toPounds tonnes
 
             pounds
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -63,7 +63,7 @@ module PoundTests =
             let pounds = oz.toPounds ounces
 
             pounds
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -74,7 +74,7 @@ module PoundTests =
             let pounds = stone.toPounds stones
 
             pounds
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -83,39 +83,39 @@ module PoundTests =
         let milligrams= lb.toMilligrams 1560.0<lb>
 
         milligrams
-        |> should (equalWithin 0.1) 707604097.2
+        |> should (equalWithin 0.01) 707604097.2
 
     [<Test>]
     let ``Convert known pound to gram`` () =
         let grams = lb.toGrams 1560.0<lb>
 
         grams
-        |> should (equalWithin 0.1) 707604.0972
+        |> should (equalWithin 0.01) 707604.0972
 
     [<Test>]
     let ``Convert known pound to kilogram`` () =
         let kilograms = lb.toKilograms 1560.0<lb>
 
         kilograms
-        |> should (equalWithin 0.1) 707.6040972
+        |> should (equalWithin 0.01) 707.6040972
 
     [<Test>]
     let ``Convert known pound to tonne`` () =
         let tonnes = lb.toTonnes 256.0<lb>
 
         tonnes
-        |> should (equalWithin 0.1) 0.11611965
+        |> should (equalWithin 0.01) 0.11611965
 
     [<Test>]
     let ``Convert known pound to ounce`` () =
         let ounces = lb.toOunces 16.<lb>
 
         ounces
-        |> should (equalWithin 0.1) 256
+        |> should (equalWithin 0.01) 256
 
     [<Test>]
     let ``Convert known pound to stone`` () =
         let stones = lb.toStones 1234.0<lb>
 
         stones
-        |> should (equalWithin 0.1) 88.14285714
+        |> should (equalWithin 0.01) 88.14285714

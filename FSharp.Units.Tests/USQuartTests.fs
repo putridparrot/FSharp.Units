@@ -18,7 +18,7 @@ module USQuartTests =
             let usQuarts = ml.toUSQuarts millilitres
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module USQuartTests =
             let usQuarts = l.toUSQuarts litres
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module USQuartTests =
             let usQuarts = kl.toUSQuarts kilolitres
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module USQuartTests =
             let usQuarts = tsp.toUSQuarts teaspoons
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module USQuartTests =
             let usQuarts = tbsp.toUSQuarts tablespoons
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module USQuartTests =
             let usQuarts = qt.toUSQuarts quarts
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module USQuartTests =
             let usQuarts = pt.toUSQuarts pints
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module USQuartTests =
             let usQuarts = gal.toUSQuarts gallons
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -106,7 +106,7 @@ module USQuartTests =
             let usQuarts = floz.toUSQuarts fluidOunces
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -117,7 +117,7 @@ module USQuartTests =
             let usQuarts = ustsp.toUSQuarts teaSpoons
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -128,7 +128,7 @@ module USQuartTests =
             let usQuarts = ustbsp.toUSQuarts usTablespoons
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -139,7 +139,7 @@ module USQuartTests =
             let usQuarts = uspt.toUSQuarts usPints
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -150,7 +150,7 @@ module USQuartTests =
             let usQuarts = usgal.toUSQuarts usGallons
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -161,7 +161,7 @@ module USQuartTests =
             let usQuarts = usfloz.toUSQuarts usFluidOunces
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -172,7 +172,7 @@ module USQuartTests =
             let usQuarts = uscup.toUSQuarts usCups
 
             usQuarts
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -181,102 +181,102 @@ module USQuartTests =
         let millilitres = usqt.toMillilitres 0.01<usqt>
 
         millilitres
-        |> should (equalWithin 0.1) 9.46352946
+        |> should (equalWithin 0.01) 9.46352946
 
     [<Test>]
     let ``Convert known US quarts to litres`` () =
         let litres = usqt.toLitres 23.<usqt>
 
         litres
-        |> should (equalWithin 0.1) 21.766117758
+        |> should (equalWithin 0.01) 21.766117758
 
     [<Test>]
     let ``Convert known US quarts to kilolitres`` () =
         let kilolitres = usqt.toKilolitres 304.<usqt>
 
         kilolitres
-        |> should (equalWithin 0.1) 0.2876912956
+        |> should (equalWithin 0.01) 0.2876912956
 
     [<Test>]
     let ``Convert known US quarts to teaspoons`` () =
         let teaspoons = usqt.toTeaspoons 0.09<usqt>
 
         teaspoons
-        |> should (equalWithin 0.1) 14.3886039633
+        |> should (equalWithin 0.01) 14.3886039633
 
     [<Test>]
     let ``Convert known US quarts to tablespoons`` () =
         let tablespoons = usqt.toTablespoons 0.6<usqt>
 
         tablespoons
-        |> should (equalWithin 0.1) 31.9746754739
+        |> should (equalWithin 0.01) 31.9746754739
 
     [<Test>]
     let ``Convert known US quarts to quarts`` () =
         let quarts = usqt.toQuarts 12.<usqt>
 
         quarts
-        |> should (equalWithin 0.1) 9.9920860856
+        |> should (equalWithin 0.01) 9.9920860856
 
     [<Test>]
     let ``Convert known US quarts to pints`` () =
         let pints = usqt.toPints 45.8<usqt>
 
         pints
-        |> should (equalWithin 0.1) 76.2729237867
+        |> should (equalWithin 0.01) 76.2729237867
 
     [<Test>]
     let ``Convert known US quarts to gallons`` () =
         let gallons = usqt.toGallons 56.<usqt>
 
         gallons
-        |> should (equalWithin 0.1) 11.6574337665
+        |> should (equalWithin 0.01) 11.6574337665
 
     [<Test>]
     let ``Convert known US quarts to fluid ounces`` () =
         let fluidOunces = usqt.toFluidOunces 56.<usqt>
 
         fluidOunces
-        |> should (equalWithin 0.1) 1865.1894026447
+        |> should (equalWithin 0.01) 1865.1894026447
 
     [<Test>]
     let ``Convert known US quarts to US teaspoons`` () =
         let usTeaspoons = usqt.toUSTeaspoons 0.5<usqt>
 
         usTeaspoons
-        |> should (equalWithin 0.1) 96.
+        |> should (equalWithin 0.01) 96.
 
     [<Test>]
     let ``Convert known US quarts to US tablespoons`` () =
         let usTablespoons = usqt.toUSTablespoons 0.4<usqt>
 
         usTablespoons
-        |> should (equalWithin 0.1) 25.6
+        |> should (equalWithin 0.01) 25.6
 
     [<Test>]
     let ``Convert known US quarts to US pints`` () =
         let usPints = usqt.toUSPints 7.<usqt>
 
         usPints
-        |> should (equalWithin 0.1) 14.
+        |> should (equalWithin 0.01) 14.
 
     [<Test>]
     let ``Convert known US quarts to US gallons`` () =
         let usGallons = usqt.toUSGallons 44.<usqt>
 
         usGallons
-        |> should (equalWithin 0.1) 11.
+        |> should (equalWithin 0.01) 11.
 
     [<Test>]
     let ``Convert known US quarts to US fluid ounces`` () =
         let usFluidOunces = usqt.toUSFluidOunces 1.2<usqt>
 
         usFluidOunces
-        |> should (equalWithin 0.1) 38.4
+        |> should (equalWithin 0.01) 38.4
 
     [<Test>]
     let ``Convert known US quarts to US cups`` () =
         let usCups = usqt.toUSCups 123.<usqt>
 
         usCups
-        |> should (equalWithin 0.1) 492.
+        |> should (equalWithin 0.01) 492.

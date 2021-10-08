@@ -18,7 +18,7 @@ module YardSquaredTests =
             let squareMile = acre.toSquareYard result
 
             squareMile 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module YardSquaredTests =
             let squareMile = mile2.toSquareYard result
     
             squareMile 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module YardSquaredTests =
             let squareMile = feet2.toSquareYard result
     
             squareMile 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module YardSquaredTests =
             let squareMile = inch2.toSquareYard result
     
             squareMile 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module YardSquaredTests =
             let squareMile = m2.toSquareYard result
     
             squareMile 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module YardSquaredTests =
             let squareMile = hectare.toSquareYard result
     
             squareMile 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,6 +84,6 @@ module YardSquaredTests =
             let squareMile = km2.toSquareYard result
     
             squareMile 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)

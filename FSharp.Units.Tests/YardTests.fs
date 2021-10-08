@@ -18,7 +18,7 @@ module YardTests =
             let yard = mm.toYards millimetres
 
             yard
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module YardTests =
             let yard = cm.toYards centimetres
 
             yard
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module YardTests =
             let yard = m.toYards metres
 
             yard
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module YardTests =
             let yard = km.toYards kilometres
 
             yard
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module YardTests =
             let yard = inch.toYards inches
 
             yard
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module YardTests =
             let yard = ft.toYards feet
 
             yard
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module YardTests =
             let yard = mile.toYards miles
 
             yard
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module YardTests =
             let yard = NM.toYards nauticalmiles
 
             yard
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -104,53 +104,53 @@ module YardTests =
         let millimetres = yard.toMillimetres 34.<yard>
 
         millimetres
-        |> should (equalWithin 0.1) 31089.6
+        |> should (equalWithin 0.01) 31089.6
 
     [<Test>]
     let ``Convert known yard to centimetre`` () =
         let centimetres = yard.toCentimetres 23.<yard>
 
         centimetres
-        |> should (equalWithin 0.1) 2103.12
+        |> should (equalWithin 0.01) 2103.12
 
     [<Test>]
     let ``Convert known yard to metre`` () =
         let metres = yard.toMetres 23.<yard>
 
         metres
-        |> should (equalWithin 0.1) 21.0312
+        |> should (equalWithin 0.01) 21.0312
 
     [<Test>]
     let ``Convert known yard to kilometre`` () =
         let kilometres = yard.toKilometres 1200.<yard>
 
         kilometres
-        |> should (equalWithin 0.1) 1.09728
+        |> should (equalWithin 0.01) 1.09728
 
     [<Test>]
     let ``Convert known yard to inch`` () =
         let inches = yard.toInches 12.<yard>
 
         inches
-        |> should (equalWithin 0.1) 432.
+        |> should (equalWithin 0.01) 432.
 
     [<Test>]
     let ``Convert known yard to feet`` () =
         let f = yard.toFeet 23.<yard>
 
         f
-        |> should (equalWithin 0.1) 69.
+        |> should (equalWithin 0.01) 69.
 
     [<Test>]
     let ``Convert known yard to mile`` () =
         let miles = yard.toMiles 1245.<yard>
 
         miles
-        |> should (equalWithin 0.1) 0.70738636
+        |> should (equalWithin 0.01) 0.70738636
 
     [<Test>]
     let ``Convert known yard to nautical mile`` () =
         let nauticalmiles = yard.toNauticalMiles 7000.<yard>
 
         nauticalmiles
-        |> should (equalWithin 0.1) 3.456156
+        |> should (equalWithin 0.01) 3.456156

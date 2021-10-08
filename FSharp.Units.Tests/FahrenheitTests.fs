@@ -18,7 +18,7 @@ module FarenheitTests =
             let fahrenheit = C.toFahrenheit celsius
 
             fahrenheit
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module FarenheitTests =
             let fahrenheit = K.toFahrenheit kelvin
 
             fahrenheit
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -38,5 +38,5 @@ module FarenheitTests =
         let kelvin = F.toKelvin 123.<F>
 
         kelvin
-        |> should (equalWithin 0.1) 323.706
+        |> should (equalWithin 0.01) 323.706
 

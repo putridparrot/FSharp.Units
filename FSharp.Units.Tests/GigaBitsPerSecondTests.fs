@@ -18,7 +18,7 @@ module GigaBitsPerSecondTests =
             let back = bps.toGigaBitsPerSecond result
 
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module GigaBitsPerSecondTests =
             let back = kbps.toGigaBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module GigaBitsPerSecondTests =
             let back = Mbps.toGigaBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module GigaBitsPerSecondTests =
             let back = Tbps.toGigaBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module GigaBitsPerSecondTests =
             let back = MBps.toGigaBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module GigaBitsPerSecondTests =
             let back = GBps.toGigaBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module GigaBitsPerSecondTests =
             let back = TBps.toGigaBitsPerSecond result
     
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 

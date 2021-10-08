@@ -18,7 +18,7 @@ module MilliradiansTests =
             let milliRadians = rad.toMilliradians radians
 
             milliRadians
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module MilliradiansTests =
             let milliRadians = grad.toMilliradians gradians
 
             milliRadians
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module MilliradiansTests =
             let milliRadians = arcmin.toMilliradians minArc
 
             milliRadians
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module MilliradiansTests =
             let milliRadians = deg.toMilliradians degrees
 
             milliRadians
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module MilliradiansTests =
             let milliRadians = arcseconds.toMilliradians sarc
 
             milliRadians
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -71,11 +71,11 @@ module MilliradiansTests =
         let mr = grad.toMilliradians 678.<grad>
 
         mr
-        |> should (equalWithin 0.1) 10650.0
+        |> should (equalWithin 0.01) 10650.0
 
     [<Test>]
     let ``Convert known Milliradian turn to Gradian`` () =
         let gradians = mrad.toGradians 1234.<mrad>
 
         gradians
-        |> should (equalWithin 0.1) 78.55888
+        |> should (equalWithin 0.01) 78.55888

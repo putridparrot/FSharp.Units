@@ -18,7 +18,7 @@ module TonneTests =
             let tonnes = mg.toTonnes milligrams
 
             tonnes 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module TonneTests =
             let tonnes = g.toTonnes grams
 
             tonnes
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module TonneTests =
             let tonnes = kg.toTonnes kilogram
 
             tonnes
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module TonneTests =
             let tonnes = oz.toTonnes ounces
 
             tonnes
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module TonneTests =
             let tonnes = lb.toTonnes pounds
 
             tonnes
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module TonneTests =
             let tonnes = stone.toTonnes stones
 
             tonnes
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -82,39 +82,39 @@ module TonneTests =
         let milligrams= tonne.toMilligrams 1560.0<tonne>
 
         milligrams
-        |> should (equalWithin 0.1) 1.56e+12
+        |> should (equalWithin 0.01) 1.56e+12
 
     [<Test>]
     let ``Convert known tonne to gram`` () =
         let grams = tonne.toGrams 1560.0<tonne>
 
         grams
-        |> should (equalWithin 0.1) 1.56e+9
+        |> should (equalWithin 0.01) 1.56e+9
 
     [<Test>]
     let ``Convert known tonne to kilogram`` () =
         let kilograms = tonne.toKilograms 1560.0<tonne>
 
         kilograms
-        |> should (equalWithin 0.1) 1560000
+        |> should (equalWithin 0.01) 1560000
 
     [<Test>]
     let ``Convert known tonne to ounce`` () =
         let ounces = tonne.toOunces 256.0<tonne>
 
         ounces
-        |> should (equalWithin 0.1) 9030134.2670558
+        |> should (equalWithin 0.01) 9030134.2670558
 
     [<Test>]
     let ``Convert known tonne to pound`` () =
         let pounds = tonne.toPounds 256.0<tonne>
 
         pounds
-        |> should (equalWithin 0.1) 564383.39119329
+        |> should (equalWithin 0.01) 564383.39119329
 
     [<Test>]
     let ``Convert known tonne to stone`` () =
         let stones = tonne.toStones 1234.0<tonne>
 
         stones
-        |> should (equalWithin 0.1) 194321.7
+        |> should (equalWithin 0.01) 194321.682

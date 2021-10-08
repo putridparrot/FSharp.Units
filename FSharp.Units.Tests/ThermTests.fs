@@ -18,7 +18,7 @@ module ThermTests =
             let back = btu.toTherm converetd
 
             back
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -27,4 +27,4 @@ module ThermTests =
         let converted = therm.toBtu 0.12<therm>
 
         converted
-        |> should (equalWithin 0.1) 11997.14
+        |> should (equalWithin 0.01) 11997.14

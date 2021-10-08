@@ -18,7 +18,7 @@ module KilogramTests =
             let kilograms = mg.toKilograms milligrams
 
             kilograms 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module KilogramTests =
             let kilograms = g.toKilograms grams
 
             kilograms
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module KilogramTests =
             let kilograms = tonne.toKilograms tonnes
 
             kilograms
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module KilogramTests =
             let kilograms = oz.toKilograms ounces
 
             kilograms
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module KilogramTests =
             let kilograms = lb.toKilograms pounds
 
             kilograms
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module KilogramTests =
             let kilograms = stone.toKilograms stones
 
             kilograms
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -82,39 +82,39 @@ module KilogramTests =
         let milligrams= kg.toMilligrams 1560.0<kg>
 
         milligrams
-        |> should (equalWithin 0.1) 1.56e+9
+        |> should (equalWithin 0.01) 1.56e+9
 
     [<Test>]
     let ``Convert known kilogram to gram`` () =
         let grams = kg.toGrams 1560.0<kg>
 
         grams
-        |> should (equalWithin 0.1) 1560000
+        |> should (equalWithin 0.01) 1560000
 
     [<Test>]
     let ``Convert known kilogram to tonne`` () =
         let tonnes = kg.toTonnes 1560.0<kg>
 
         tonnes
-        |> should (equalWithin 0.1) 1.56
+        |> should (equalWithin 0.01) 1.56
 
     [<Test>]
     let ``Convert known kilogram to ounce`` () =
         let ounces = kg.toOunces 256.0<kg>
 
         ounces
-        |> should (equalWithin 0.1) 9030.13
+        |> should (equalWithin 0.01) 9030.144
 
     [<Test>]
     let ``Convert known kilogram to pound`` () =
         let pounds = kg.toPounds 256.0<kg>
 
         pounds
-        |> should (equalWithin 0.1) 564.383
+        |> should (equalWithin 0.01) 564.383
 
     [<Test>]
     let ``Convert known kilogram to stone`` () =
         let stones = kg.toStones 1234.0<kg>
 
         stones
-        |> should (equalWithin 0.1) 194.3217
+        |> should (equalWithin 0.01) 194.3217

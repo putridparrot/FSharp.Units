@@ -18,7 +18,7 @@ module GramTests =
             let grams = mg.toGrams milligrams
 
             grams 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module GramTests =
             let grams = kg.toGrams kilograms
 
             grams 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module GramTests =
             let grams = tonne.toGrams tonnes
 
             grams 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module GramTests =
             let grams = oz.toGrams ounces
 
             grams 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module GramTests =
             let grams = lb.toGrams pounds
 
             grams 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module GramTests =
             let grams = stone.toGrams stones
 
             grams 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -83,32 +83,32 @@ module GramTests =
         let kilograms = g.toKilograms 167.0<g>
 
         kilograms
-        |> should (equalWithin 0.1) 0.167
+        |> should (equalWithin 0.01) 0.167
 
     [<Test>]
     let ``Convert known gram to tonne`` () =
         let tonnes = g.toTonnes 1560.0<g>
 
         tonnes
-        |> should (equalWithin 0.1) 0.00156
+        |> should (equalWithin 0.01) 0.00156
 
     [<Test>]
     let ``Convert known gram to ounce`` () =
         let ounces = g.toOunces 256.0<g>
 
         ounces
-        |> should (equalWithin 0.1) 9.03013
+        |> should (equalWithin 0.01) 9.03013
 
     [<Test>]
     let ``Convert known gram to pound`` () =
         let pounds = g.toPounds 256.0<g>
 
         pounds
-        |> should (equalWithin 0.1) 0.564383
+        |> should (equalWithin 0.01) 0.564383
 
     [<Test>]
     let ``Convert known gram to stone`` () =
         let stones = g.toStones 1234.0<g>
 
         stones
-        |> should (equalWithin 0.1) 0.1943217
+        |> should (equalWithin 0.01) 0.1943217

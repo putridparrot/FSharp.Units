@@ -18,7 +18,7 @@ module BarTests =
             let bar = atm.toBar atmospehere
 
             bar
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module BarTests =
             let bar = Pa.toBar pascal
 
             bar
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module BarTests =
             let bar = Torr.toBar torr
 
             bar
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module BarTests =
             let bar = psi.toBar poundsPerSquareInch
 
             bar
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -60,25 +60,25 @@ module BarTests =
         let atmosphere = b.toAtmosphere 34.4<b>
 
         atmosphere
-        |> should (equalWithin 0.1) 33.95016
+        |> should (equalWithin 0.01) 33.95016
 
     [<Test>]
     let ``Convert known Bar to Pascal`` () =
         let pascal = b.toPascal 0.67<b>
 
         pascal
-        |> should (equalWithin 0.1) 67000.
+        |> should (equalWithin 0.01) 67000.
 
     [<Test>]
     let ``Convert known Bar to Torr`` () =
         let torr = b.toTorr 5.<b>
 
         torr
-        |> should (equalWithin 0.1) 3750.31
+        |> should (equalWithin 0.01) 3750.31
 
     [<Test>]
     let ``Convert known Bar to psi`` () =
         let psi = b.toPsi 3.45<b>
 
         psi
-        |> should (equalWithin 0.1) 50.03802
+        |> should (equalWithin 0.01) 50.03802

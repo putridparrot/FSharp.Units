@@ -18,7 +18,7 @@ module KelvinTests =
             let kelvin = C.toKelvin celsius
 
             kelvin
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module KelvinTests =
             let kelvin = F.toKelvin fahrenheit
 
             kelvin
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -39,11 +39,11 @@ module KelvinTests =
         let celsius = K.toCelsius 123.<K>
 
         celsius
-        |> should (equalWithin 0.1) -150.15
+        |> should (equalWithin 0.01) -150.15
 
     [<Test>]
     let ``Convert known kelvin to fahrenheit`` () =
         let fahrenheit = K.toFahrenheit 34.<K>
 
         fahrenheit
-        |> should (equalWithin 0.1) -398.47
+        |> should (equalWithin 0.01) -398.47

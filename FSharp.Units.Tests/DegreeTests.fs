@@ -18,7 +18,7 @@ module DegreeTests =
             let degree = grad.toDegrees gradian
 
             degree
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module DegreeTests =
             let degree = mrad.toDegrees milliRadian
 
             degree
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module DegreeTests =
             let degree = arcmin.toDegrees minArc
 
             degree
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module DegreeTests =
             let degree = rad.toDegrees rads
 
             degree
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module DegreeTests =
             let degree = arcseconds.toDegrees sarc
 
             degree
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -71,4 +71,4 @@ module DegreeTests =
         let mr = deg.toMilliradians 999.<deg>
 
         mr
-        |> should (equalWithin 0.1) 17435.8
+        |> should (equalWithin 0.01) 17435.8467

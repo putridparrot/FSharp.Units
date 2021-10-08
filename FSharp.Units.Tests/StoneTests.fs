@@ -19,7 +19,7 @@ module StoneTests =
             let stones = mg.toStones milligrams
 
             stones
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -30,7 +30,7 @@ module StoneTests =
             let stones = g.toStones grams
 
             stones
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -41,7 +41,7 @@ module StoneTests =
             let stones = kg.toStones kilogram
 
             stones
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -52,7 +52,7 @@ module StoneTests =
             let stones = tonne.toStones tonnes
 
             stones
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -63,7 +63,7 @@ module StoneTests =
             let stones = oz.toStones ounces
 
             stones
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -74,7 +74,7 @@ module StoneTests =
             let stones = lb.toStones pounds
 
             stones
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -83,39 +83,39 @@ module StoneTests =
         let milligrams= stone.toMilligrams 1560.0<stone>
 
         milligrams
-        |> should (equalWithin 0.1) 9906457360.8
+        |> should (equalWithin 0.01) 9906457360.8
 
     [<Test>]
     let ``Convert known stone to gram`` () =
         let grams = stone.toGrams 1560.0<stone>
 
         grams
-        |> should (equalWithin 0.1) 9906457.3608
+        |> should (equalWithin 0.01) 9906457.3608
 
     [<Test>]
     let ``Convert known stone to kilogram`` () =
         let kilograms = stone.toKilograms 1560.0<stone>
 
         kilograms
-        |> should (equalWithin 0.1) 9906.4573608
+        |> should (equalWithin 0.01) 9906.4573608
 
     [<Test>]
     let ``Convert known stone to tonne`` () =
         let tonnes = stone.toTonnes 256.0<stone>
 
         tonnes
-        |> should (equalWithin 0.1) 1.62567505
+        |> should (equalWithin 0.01) 1.62567505
 
     [<Test>]
     let ``Convert known stone to ounce`` () =
         let ounces = stone.toOunces 256.0<stone>
 
         ounces
-        |> should (equalWithin 0.1) 57344.
+        |> should (equalWithin 0.01) 57344.
 
     [<Test>]
     let ``Convert known stone to pound`` () =
         let pounds = stone.toPounds 1234.0<stone>
 
         pounds
-        |> should (equalWithin 0.1) 17276.
+        |> should (equalWithin 0.01) 17276.

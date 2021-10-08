@@ -18,7 +18,7 @@ module TalbotTests =
             let original = lms.toTalbot result
 
             original 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module TalbotTests =
             let original = lmh.toTalbot result
     
             original 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module TalbotTests =
             let original = lmmin.toTalbot result
     
             original 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -49,7 +49,7 @@ module TalbotTests =
         let result = T.toLumenSecond 5678.<T>
     
         result
-        |> should (equalWithin 0.1) 5678.0
+        |> should (equalWithin 0.01) 5678.0
 
     [<Test>]
     let ``Convert known Talbot to Lumen hour`` () =

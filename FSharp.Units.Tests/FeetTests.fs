@@ -18,7 +18,7 @@ module FeetTests =
             let feet = mm.toFeet millimetres
 
             feet
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module FeetTests =
             let feet = cm.toFeet centimetres
 
             feet
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module FeetTests =
             let feet = m.toFeet metres
 
             feet
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module FeetTests =
             let feet = km.toFeet kilometres
 
             feet
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module FeetTests =
             let feet = inch.toFeet inches
 
             feet
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module FeetTests =
             let feet = yard.toFeet yards
 
             feet
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module FeetTests =
             let feet = mile.toFeet miles
 
             feet
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module FeetTests =
             let feet = NM.toFeet nauticalmiles
 
             feet
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -104,53 +104,53 @@ module FeetTests =
         let millimetres = ft.toMillimetres 1.4<ft>
 
         millimetres
-        |> should (equalWithin 0.1) 426.72
+        |> should (equalWithin 0.01) 426.72
 
     [<Test>]
     let ``Convert known feet to centimetre`` () =
         let centimetres = ft.toCentimetres 5.8<ft>
 
         centimetres
-        |> should (equalWithin 0.1) 176.784
+        |> should (equalWithin 0.01) 176.784
 
     [<Test>]
     let ``Convert known feet to metre`` () =
         let metres = ft.toMetres 13.<ft>
 
         metres
-        |> should (equalWithin 0.1) 3.9624
+        |> should (equalWithin 0.01) 3.9624
 
     [<Test>]
     let ``Convert known feet to kilometre`` () =
         let kilometres = ft.toKilometres 1234.<ft>
 
         kilometres
-        |> should (equalWithin 0.1) 0.3761232
+        |> should (equalWithin 0.01) 0.3761232
 
     [<Test>]
     let ``Convert known feet to inches`` () =
         let inches = ft.toInches 23.<ft>
 
         inches
-        |> should (equalWithin 0.1) 276.
+        |> should (equalWithin 0.01) 276.
 
     [<Test>]
     let ``Convert known feet to yards`` () =
         let yards = ft.toYards 23.<ft>
 
         yards
-        |> should (equalWithin 0.1) 7.66666667
+        |> should (equalWithin 0.01) 7.66666667
 
     [<Test>]
     let ``Convert known feet to miles`` () =
         let miles = ft.toMiles 2345.<ft>
 
         miles
-        |> should (equalWithin 0.1) 0.44412879
+        |> should (equalWithin 0.01) 0.44412879
 
     [<Test>]
     let ``Convert known feet to nautical miles`` () =
         let nauticalmiles = ft.toNauticalMiles 8912.<ft>
 
         nauticalmiles
-        |> should (equalWithin 0.1) 1.466727
+        |> should (equalWithin 0.01) 1.466727

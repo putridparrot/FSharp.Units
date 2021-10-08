@@ -18,7 +18,7 @@ module MegahertzTests =
             let megaHertz = kHz.toMegahertz kiloHertz
 
             megaHertz 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module MegahertzTests =
             let megaHertz = Hz.toMegahertz hertz 
 
             megaHertz 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module MegahertzTests =
             let megaHertz = GHz.toMegahertz gigaHertz
         
             megaHertz 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
         
         Check.QuickThrowOnFailure (testRange property)
 

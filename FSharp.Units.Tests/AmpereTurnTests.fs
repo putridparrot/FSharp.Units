@@ -18,7 +18,7 @@ module AmpereTurnTests =
             let at = Gi.toAmpereTurn gi
 
             at 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 

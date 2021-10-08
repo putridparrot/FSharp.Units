@@ -18,7 +18,7 @@ module RadiansTests =
             let radians = grad.toRadians gradian
 
             radians
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module RadiansTests =
             let radians = mrad.toRadians milliRadian
 
             radians
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module RadiansTests =
             let radians = arcmin.toRadians minArc
 
             radians
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module RadiansTests =
             let radians = deg.toRadians degrees
 
             radians
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module RadiansTests =
             let radians = arcseconds.toRadians sarc
 
             radians
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -71,4 +71,4 @@ module RadiansTests =
         let mr = rad.toMilliradians 999.<rad>
 
         mr
-        |> should (equalWithin 0.1) 999000.0
+        |> should (equalWithin 0.01) 999000.0

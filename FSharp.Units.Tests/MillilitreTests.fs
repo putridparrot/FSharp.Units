@@ -18,7 +18,7 @@ module MillilitreTests =
             let millilitres = l.toMillilitres litres
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module MillilitreTests =
             let millilitres = kl.toMillilitres kilolitres
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module MillilitreTests =
             let millilitres = tsp.toMillilitres teaspoons
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module MillilitreTests =
             let millilitres = tbsp.toMillilitres tablespoons
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module MillilitreTests =
             let millilitres = qt.toMillilitres quarts
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module MillilitreTests =
             let millilitres = pt.toMillilitres pints
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module MillilitreTests =
             let millilitres = gal.toMillilitres gallons
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module MillilitreTests =
             let millilitres = floz.toMillilitres fluidOunces
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -106,7 +106,7 @@ module MillilitreTests =
             let millilitres = ustsp.toMillilitres usTeaspoons
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -117,7 +117,7 @@ module MillilitreTests =
             let millilitres = ustbsp.toMillilitres usTablespoons
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -128,7 +128,7 @@ module MillilitreTests =
             let millilitres = usqt.toMillilitres usQuarts
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -139,7 +139,7 @@ module MillilitreTests =
             let millilitres = uspt.toMillilitres usPints
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -150,7 +150,7 @@ module MillilitreTests =
             let millilitres = usgal.toMillilitres usGallons
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -161,7 +161,7 @@ module MillilitreTests =
             let millilitres = usfloz.toMillilitres usFluidOunces
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -172,7 +172,7 @@ module MillilitreTests =
             let millilitres = uscup.toMillilitres usCups
 
             millilitres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -181,102 +181,102 @@ module MillilitreTests =
         let litre = ml.toLitres 2567.0<ml>
 
         litre
-        |> should (equalWithin 0.1) 2.567
+        |> should (equalWithin 0.01) 2.567
 
     [<Test>]
     let ``Convert known millilitre to kilolitre`` () =
         let kilolitre = ml.toKilolitres 145.0<ml>
 
         kilolitre
-        |> should (equalWithin 0.1) 0.000145
+        |> should (equalWithin 0.01) 0.000145
 
     [<Test>]
     let ``Convert known millilitre to teaspoon`` () =
         let teaspoons = ml.toTeaspoons 1230.0<ml>
 
         teaspoons
-        |> should (equalWithin 0.1) 207.7916648283
+        |> should (equalWithin 0.01) 207.7916648283
 
     [<Test>]
     let ``Convert known millilitre to tablespoon`` () =
         let tablespoons = ml.toTablespoons 4000.0<ml>
 
         tablespoons
-        |> should (equalWithin 0.1) 225.2484171581
+        |> should (equalWithin 0.01) 225.2484171581
 
     [<Test>]
     let ``Convert known millilitre to quarts`` () =
         let quarts = ml.toQuarts 3900.<ml>
 
         quarts
-        |> should (equalWithin 0.1) 3.4315188551
+        |> should (equalWithin 0.01) 3.4315188551
 
     [<Test>]
     let ``Convert known millilitre to pints`` () =
         let pints = ml.toPints 19099.<ml>
 
         pints
-        |> should (equalWithin 0.1) 33.6095274945
+        |> should (equalWithin 0.01) 33.6095274945
 
     [<Test>]
     let ``Convert known millilitre to gallons`` () =
         let gallons = ml.toGallons 129000.<ml>
 
         gallons
-        |> should (equalWithin 0.1) 28.3760213021
+        |> should (equalWithin 0.01) 28.3760213021
 
     [<Test>]
     let ``Convert known millilitre to fluid ounces`` () =
         let fluidOunces = ml.toFluidOunces 2900.<ml>
 
         fluidOunces
-        |> should (equalWithin 0.1) 102.0656890248
+        |> should (equalWithin 0.01) 102.0656890248
 
     [<Test>]
     let ``Convert known millilitre to US teaspoons`` () =
         let usTeaspoons = ml.toUSTeaspoons 1234.<ml>
 
         usTeaspoons
-        |> should (equalWithin 0.1) 250.3590240844
+        |> should (equalWithin 0.01) 250.3590240844
 
     [<Test>]
     let ``Convert known millilitre to US tablespoons`` () =
         let usTablespoons = ml.toUSTablespoons 5009.<ml>
 
         usTablespoons
-        |> should (equalWithin 0.1) 338.7488794271
+        |> should (equalWithin 0.01) 338.7488794271
 
     [<Test>]
     let ``Convert known millilitre to US quarts`` () =
         let usQuarts = ml.toUSQuarts 8888.<ml>
 
         usQuarts
-        |> should (equalWithin 0.1) 9.3918448054
+        |> should (equalWithin 0.01) 9.3918448054
 
     [<Test>]
     let ``Convert known millilitre to US pints`` () =
         let usPints = ml.toUSPints 48903.<ml>
 
         usPints
-        |> should (equalWithin 0.1) 103.3504470118
+        |> should (equalWithin 0.01) 103.3504470118
 
     [<Test>]
     let ``Convert known millilitre to US gallons`` () =
         let usGallons = ml.toUSGallons 50600.<ml>
 
         usGallons
-        |> should (equalWithin 0.1) 13.3671058493
+        |> should (equalWithin 0.01) 13.3671058493
 
     [<Test>]
     let ``Convert known millilitre to US fluid ounces`` () =
         let usFluidOunces = ml.toUSFluidOunces 5900.<ml>
 
         usFluidOunces
-        |> should (equalWithin 0.1) 199.5027339409
+        |> should (equalWithin 0.01) 199.5027339409
 
     [<Test>]
     let ``Convert known millilitre to US cups`` () =
         let usCups = ml.toUSCups 9000.0<ml>
 
         usCups
-        |> should (equalWithin 0.1) 38.0407755396
+        |> should (equalWithin 0.01) 38.0407755396

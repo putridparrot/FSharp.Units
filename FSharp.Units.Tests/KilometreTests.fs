@@ -18,7 +18,7 @@ module KilometreTests =
             let kilometres = mm.toKilometres millimetres
 
             kilometres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module KilometreTests =
             let kilometres = cm.toKilometres centimetres
 
             kilometres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module KilometreTests =
             let kilometres = m.toKilometres metres
 
             kilometres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module KilometreTests =
             let kilometres = inch.toKilometres inches
 
             kilometres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module KilometreTests =
             let kilometres = ft.toKilometres feet
 
             kilometres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module KilometreTests =
             let kilometres = yard.toKilometres yards
 
             kilometres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module KilometreTests =
             let kilometres = mile.toKilometres miles
 
             kilometres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module KilometreTests =
             let kilometres = NM.toKilometres nauticalmiles
 
             kilometres
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -104,53 +104,53 @@ module KilometreTests =
         let millimetres = km.toMillimetres 2.3<km>
 
         millimetres
-        |> should (equalWithin 0.1) 2300000.
+        |> should (equalWithin 0.01) 2300000.
 
     [<Test>]
     let ``Convert known kilometre to centimetre`` () =
         let centimetres = km.toCentimetres 1.5<km>
 
         centimetres
-        |> should (equalWithin 0.1) 150000.
+        |> should (equalWithin 0.01) 150000.
 
     [<Test>]
     let ``Convert known kilometre to metre`` () =
         let metres = km.toMetres 1.025<km>
 
         metres
-        |> should (equalWithin 0.1) 1025.
+        |> should (equalWithin 0.01) 1025.
 
     [<Test>]
     let ``Convert known kilometre to inch`` () =
         let inches = km.toInches 0.0480314<km>
 
         inches
-        |> should (equalWithin 0.1) 1891.
+        |> should (equalWithin 0.01) 1891.
 
     [<Test>]
     let ``Convert known kilometre to feet`` () =
         let feet = km.toFeet 0.0480314<km>
 
         feet
-        |> should (equalWithin 0.1) 157.58333333
+        |> should (equalWithin 0.01) 157.58333333
 
     [<Test>]
     let ``Convert known kilometre to yards`` () =
         let yards = km.toYards 43.<km>
 
         yards
-        |> should (equalWithin 0.1) 47025.37182852
+        |> should (equalWithin 0.01) 47025.37182852
 
     [<Test>]
     let ``Convert known kilometre to mile`` () =
         let miles = km.toMiles 123.<km>
 
         miles
-        |> should (equalWithin 0.1) 76.42865665
+        |> should (equalWithin 0.01) 76.42865665
 
     [<Test>]
     let ``Convert known kilometre to nautical mile`` () =
         let miles = km.toNauticalMiles 800.<km>
 
         miles
-        |> should (equalWithin 0.1) 431.965
+        |> should (equalWithin 0.01) 431.965

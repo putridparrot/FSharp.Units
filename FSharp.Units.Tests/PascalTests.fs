@@ -18,7 +18,7 @@ module PascalTests =
             let pascal = atm.toPascal atmosphere
 
             pascal 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module PascalTests =
             let pascal = b.toPascal bar
 
             pascal
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module PascalTests =
             let pascal = Torr.toPascal torr
 
             pascal
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module PascalTests =
             let pascal = psi.toPascal poundsPerSqaureInch
 
             pascal
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -60,25 +60,25 @@ module PascalTests =
         let atmosphere = Pa.toAtmosphere 2300.<Pa>
 
         atmosphere
-        |> should (equalWithin 0.1) 0.02269924
+        |> should (equalWithin 0.01) 0.02269924
 
     [<Test>]
     let ``Convert known Pascal to Bar`` () =
         let bar = Pa.toBar 6789.<Pa>
 
         bar
-        |> should (equalWithin 0.1) 0.06789
+        |> should (equalWithin 0.01) 0.06789
 
     [<Test>]
     let ``Convert known Pascal to Torr`` () =
         let torr = Pa.toTorr 7899.<Pa>
 
         torr
-        |> should (equalWithin 0.1) 59.24737
+        |> should (equalWithin 0.01) 59.24737
 
     [<Test>]
     let ``Convert known Pascal to psi`` () =
         let psi = Pa.toPsi 1090.<Pa>
 
         psi
-        |> should (equalWithin 0.1) 0.1580911
+        |> should (equalWithin 0.01) 0.1580911

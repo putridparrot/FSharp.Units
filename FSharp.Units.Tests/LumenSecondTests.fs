@@ -18,7 +18,7 @@ module LumenSecondTests =
             let original = T.toLumenSecond result
 
             original 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module LumenSecondTests =
             let original = lmh.toLumenSecond result
     
             original 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module LumenSecondTests =
             let original = lmmin.toLumenSecond result
     
             original 
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
     
         Check.QuickThrowOnFailure (testRange property)
 
@@ -49,7 +49,7 @@ module LumenSecondTests =
         let result = lms.toTalbot 5678.<lms>
     
         result
-        |> should (equalWithin 0.1) 5678.0
+        |> should (equalWithin 0.01) 5678.0
 
     [<Test>]
     let ``Convert known Lumen second to Lumen hour`` () =

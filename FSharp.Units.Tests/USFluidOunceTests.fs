@@ -18,7 +18,7 @@ module USFluidOunceTests =
             let usFluidOunces = ml.toUSFluidOunces millilitres
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -29,7 +29,7 @@ module USFluidOunceTests =
             let usFluidOunces = l.toUSFluidOunces litres
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -40,7 +40,7 @@ module USFluidOunceTests =
             let usFluidOunces = kl.toUSFluidOunces kilolitres
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -51,7 +51,7 @@ module USFluidOunceTests =
             let usFluidOunces = tsp.toUSFluidOunces teaspoons
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -62,7 +62,7 @@ module USFluidOunceTests =
             let usFluidOunces = tbsp.toUSFluidOunces tablespoons
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -73,7 +73,7 @@ module USFluidOunceTests =
             let usFluidOunces = qt.toUSFluidOunces quarts
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -84,7 +84,7 @@ module USFluidOunceTests =
             let usFluidOunces = pt.toUSFluidOunces pints
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -95,7 +95,7 @@ module USFluidOunceTests =
             let usFluidOunces = gal.toUSFluidOunces gallons
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -106,7 +106,7 @@ module USFluidOunceTests =
             let usFluidOunces = floz.toUSFluidOunces fluidOunces
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -117,7 +117,7 @@ module USFluidOunceTests =
             let usFluidOunces = ustsp.toUSFluidOunces teaSpoons
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -128,7 +128,7 @@ module USFluidOunceTests =
             let usFluidOunces = ustbsp.toUSFluidOunces usTablespoons
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -139,7 +139,7 @@ module USFluidOunceTests =
             let usFluidOunces = usqt.toUSFluidOunces usQuarts
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -150,7 +150,7 @@ module USFluidOunceTests =
             let usFluidOunces = uspt.toUSFluidOunces usPints
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -161,7 +161,7 @@ module USFluidOunceTests =
             let usFluidOunces = usgal.toUSFluidOunces usGallons
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -172,7 +172,7 @@ module USFluidOunceTests =
             let usFluidOunces = uscup.toUSFluidOunces usCups
 
             usFluidOunces
-            |> should (equalWithin 0.1) value
+            |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
 
@@ -181,102 +181,102 @@ module USFluidOunceTests =
         let millilitres = usfloz.toMillilitres 8.7<usfloz>
 
         millilitres
-        |> should (equalWithin 0.1) 257.2897071937
+        |> should (equalWithin 0.01) 257.2897071937
 
     [<Test>]
     let ``Convert known US fluid ounces to litres`` () =
         let litres = usfloz.toLitres 450.<usfloz>
 
         litres
-        |> should (equalWithin 0.1) 13.3080883031
+        |> should (equalWithin 0.01) 13.3080883031
 
     [<Test>]
     let ``Convert known US fluid ounces to kilolitres`` () =
         let kilolitres = usfloz.toKilolitres 567.<usfloz>
 
         kilolitres
-        |> should (equalWithin 0.1) 0.0167681913
+        |> should (equalWithin 0.01) 0.0167681913
 
     [<Test>]
     let ``Convert known US fluid ounces to teaspoons`` () =
         let teaspoons = usfloz.toTeaspoons 0.1<usfloz>
 
         teaspoons
-        |> should (equalWithin 0.1) 0.4996043043
+        |> should (equalWithin 0.01) 0.4996043043
 
     [<Test>]
     let ``Convert known US fluid ounces to tablespoons`` () =
         let tablespoons = usfloz.toTablespoons 0.56<usfloz>
 
         tablespoons
-        |> should (equalWithin 0.1) 0.9325947013
+        |> should (equalWithin 0.01) 0.9325947013
 
     [<Test>]
     let ``Convert known US fluid ounces to quarts`` () =
         let quarts = usfloz.toQuarts 600.<usfloz>
 
         quarts
-        |> should (equalWithin 0.1) 15.6126345087
+        |> should (equalWithin 0.01) 15.6126345087
 
     [<Test>]
     let ``Convert known US fluid ounces to pints`` () =
         let pints = usfloz.toPints 67.<usfloz>
 
         pints
-        |> should (equalWithin 0.1) 3.486821707
+        |> should (equalWithin 0.01) 3.486821707
 
     [<Test>]
     let ``Convert known US fluid ounces to gallons`` () =
         let gallons = usfloz.toGallons 3450.<usfloz>
 
         gallons
-        |> should (equalWithin 0.1) 22.4431621063
+        |> should (equalWithin 0.01) 22.4431621063
 
     [<Test>]
     let ``Convert known US fluid ounces to fluid ounces`` () =
         let fluidOunces = usfloz.toFluidOunces 23.<usfloz>
 
         fluidOunces
-        |> should (equalWithin 0.1) 23.9393729134
+        |> should (equalWithin 0.01) 23.9393729134
 
     [<Test>]
     let ``Convert known US fluid ounces to US teaspoons`` () =
         let usTeaspoons = usfloz.toUSTeaspoons 466.<usfloz>
 
         usTeaspoons
-        |> should (equalWithin 0.1) 2796.
+        |> should (equalWithin 0.01) 2796.
 
     [<Test>]
     let ``Convert known US fluid ounces to US tablespoons`` () =
         let usTablespoons = usfloz.toUSTablespoons 15.<usfloz>
 
         usTablespoons
-        |> should (equalWithin 0.1) 30.
+        |> should (equalWithin 0.01) 30.
 
     [<Test>]
     let ``Convert known US fluid ounces to US quarts`` () =
         let usQuarts = usfloz.toUSQuarts 45.<usfloz>
 
         usQuarts
-        |> should (equalWithin 0.1) 1.40625
+        |> should (equalWithin 0.01) 1.40625
 
     [<Test>]
     let ``Convert known US fluid ounces to US pints`` () =
         let usPints = usfloz.toUSPints 12.<usfloz>
 
         usPints
-        |> should (equalWithin 0.1) 0.75
+        |> should (equalWithin 0.01) 0.75
 
     [<Test>]
     let ``Convert known US fluid ounces to US gallons`` () =
         let usGallons = usfloz.toUSGallons 190.<usfloz>
 
         usGallons
-        |> should (equalWithin 0.1) 1.484375
+        |> should (equalWithin 0.01) 1.484375
 
     [<Test>]
     let ``Convert known US fluid ounces to US cups`` () =
         let usCups = usfloz.toUSCups 899.<usfloz>
 
         usCups
-        |> should (equalWithin 0.1) 112.375
+        |> should (equalWithin 0.01) 112.375
