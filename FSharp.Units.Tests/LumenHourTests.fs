@@ -45,24 +45,18 @@ module LumenHourTests =
         Check.QuickThrowOnFailure (testRange property)
 
 
-    [<Test>]
-    let ``Convert known Lumen hour to Talbot`` () =
-        let talbot = lmh.toTalbot 1.2<lmh>
-    
-        talbot
-        |> should (equalWithin 0.01) 4320.0
+    [<TestCase(1.2<lmh>, 4320.0)>]
+    let ``Convert known Lumen hour to Talbot`` (input, expectation) =
+        lmh.toTalbot input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Lumen hour to Lumen minute`` () =
-        let lumenMinute = lmh.toLumenMinute 89.12<lmh>
-    
-        lumenMinute
-        |> should (equalWithin 0.01) 5347.2
+    [<TestCase(89.12<lmh>, 5347.2)>]
+    let ``Convert known Lumen hour to Lumen minute`` (input, expectation) =
+        lmh.toLumenMinute input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Lumen hour to Lumen second`` () =
-        let lumenSeconds = lmh.toLumenSecond 67.9<lmh>
-    
-        lumenSeconds
-        |> should (equalWithin 0.01) 244440.0
+    [<TestCase(67.9<lmh>, 244440.)>]
+    let ``Convert known Lumen hour to Lumen second`` (input, expectation) =
+        lmh.toLumenSecond input
+        |> should (equalWithin 0.01) expectation
 

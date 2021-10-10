@@ -66,9 +66,7 @@ module RadiansTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Radians turn to Millradian`` () =
-        let mr = rad.toMilliradians 999.<rad>
-
-        mr
-        |> should (equalWithin 0.01) 999000.0
+    [<TestCase(999.<rad>, 999000.0)>]
+    let ``Convert known Radians turn to Millradian`` (input, expectation) =
+        rad.toMilliradians input
+        |> should (equalWithin 0.01) expectation

@@ -99,58 +99,58 @@ module YardTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known yard to millimetre`` () =
-        let millimetres = yard.toMillimetres 34.<yard>
+    [<TestCase(1.<yard>, 914.4)>]
+    [<TestCase(97.<yard>, 88696.8)>]
+    [<TestCase(0.456<yard>, 416.9664)>]
+    let ``Convert known yard to millimetre`` (input, expectation) =
+        yard.toMillimetres input
+        |> should (equalWithin 0.01) expectation
 
-        millimetres
-        |> should (equalWithin 0.01) 31089.6
+    [<TestCase(23.<yard>, 2103.12)>]
+    [<TestCase(97.<yard>, 8869.68)>]
+    [<TestCase(0.456<yard>, 41.69664)>]
+    let ``Convert known yard to centimetre`` (input, expectation) =
+        yard.toCentimetres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known yard to centimetre`` () =
-        let centimetres = yard.toCentimetres 23.<yard>
+    [<TestCase(23.<yard>, 21.0312)>]
+    [<TestCase(97.<yard>, 88.6968)>]
+    [<TestCase(0.981<yard>, 0.8970264)>]
+    let ``Convert known yard to metre`` (input, expectation) =
+        yard.toMetres input
+        |> should (equalWithin 0.01) expectation
 
-        centimetres
-        |> should (equalWithin 0.01) 2103.12
+    [<TestCase(1200.<yard>, 1.09728)>]
+    [<TestCase(97.<yard>, 0.0886968)>]
+    [<TestCase(0.981<yard>, 0.0008970264)>]
+    let ``Convert known yard to kilometre`` (input, expectation) =
+        yard.toKilometres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known yard to metre`` () =
-        let metres = yard.toMetres 23.<yard>
+    [<TestCase(12.<yard>, 432.)>]
+    [<TestCase(97.<yard>, 3492)>]
+    [<TestCase(0.981<yard>, 35.316)>]
+    let ``Convert known yard to inch`` (input, expectation) =
+        yard.toInches input
+        |> should (equalWithin 0.01) expectation
 
-        metres
-        |> should (equalWithin 0.01) 21.0312
+    [<TestCase(23.<yard>, 69.)>]
+    [<TestCase(97.<yard>, 291)>]
+    [<TestCase(0.981<yard>, 2.943)>]
+    let ``Convert known yard to feet`` (input, expectation) =
+        yard.toFeet input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known yard to kilometre`` () =
-        let kilometres = yard.toKilometres 1200.<yard>
+    [<TestCase(1245.<yard>, 0.70738636)>]
+    [<TestCase(97.<yard>, 0.0551136)>]
+    [<TestCase(7111.<yard>, 4.040341)>]
+    let ``Convert known yard to mile`` (input, expectation) =
+        yard.toMiles input
+        |> should (equalWithin 0.01) expectation
 
-        kilometres
-        |> should (equalWithin 0.01) 1.09728
-
-    [<Test>]
-    let ``Convert known yard to inch`` () =
-        let inches = yard.toInches 12.<yard>
-
-        inches
-        |> should (equalWithin 0.01) 432.
-
-    [<Test>]
-    let ``Convert known yard to feet`` () =
-        let f = yard.toFeet 23.<yard>
-
-        f
-        |> should (equalWithin 0.01) 69.
-
-    [<Test>]
-    let ``Convert known yard to mile`` () =
-        let miles = yard.toMiles 1245.<yard>
-
-        miles
-        |> should (equalWithin 0.01) 0.70738636
-
-    [<Test>]
-    let ``Convert known yard to nautical mile`` () =
-        let nauticalmiles = yard.toNauticalMiles 7000.<yard>
-
-        nauticalmiles
-        |> should (equalWithin 0.01) 3.456156
+    [<TestCase(7000.<yard>, 3.456156)>]
+    [<TestCase(97.<yard>, 0.0478924)>]
+    [<TestCase(8910<yard>, 4.399192)>]
+    let ``Convert known yard to nautical mile`` (input, expectation) =
+        yard.toNauticalMiles input
+        |> should (equalWithin 0.01) expectation

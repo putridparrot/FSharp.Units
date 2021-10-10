@@ -88,58 +88,42 @@ module NauticalMileTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known nautical miles to millimetre`` () =
-        let millimetres = NM.toMillimetres 0.1<NM>
+    [<TestCase(0.1<NM>, 185200.)>]
+    let ``Convert known nautical miles to millimetre`` (input, expectation) =
+        NM.toMillimetres input
+        |> should (equalWithin 0.01) expectation
 
-        millimetres
-        |> should (equalWithin 0.01) 185200.
+    [<TestCase(0.7<NM>, 129640.)>]
+    let ``Convert known nautical miles to centimetre`` (input, expectation) =
+        NM.toCentimetres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known nautical miles to centimetre`` () =
-        let centimetres = NM.toCentimetres 0.7<NM>
+    [<TestCase(2.3<NM>, 4259.6)>]
+    let ``Convert known nautical miles to metre`` (input, expectation) =
+        NM.toMetres input
+        |> should (equalWithin 0.01) expectation
 
-        centimetres
-        |> should (equalWithin 0.01) 129640
+    [<TestCase(1.45<NM>, 2.6854)>]
+    let ``Convert known nautical miles to kilometre`` (input, expectation) =
+        NM.toKilometres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known nautical miles to metre`` () =
-        let metres = NM.toMetres 2.3<NM>
+    [<TestCase(0.2<NM>, 14582.68)>]
+    let ``Convert known nautical miles to inch`` (input, expectation) =
+        NM.toInches input
+        |> should (equalWithin 0.01) expectation
 
-        metres
-        |> should (equalWithin 0.01) 4259.6
+    [<TestCase(0.9<NM>, 1822.83)>]
+    let ``Convert known nautical miles to yard`` (input, expectation) =
+        NM.toYards input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known nautical miles to kilometre`` () =
-        let kilometres = NM.toKilometres 1.45<NM>
+    [<TestCase(0.7<NM>, 4253.28)>]
+    let ``Convert known nautical miles to feet`` (input, expectation) =
+        NM.toFeet input
+        |> should (equalWithin 0.01) expectation
 
-        kilometres
-        |> should (equalWithin 0.01) 2.6854
-
-    [<Test>]
-    let ``Convert known nautical miles to inch`` () =
-        let inches = NM.toInches 0.2<NM>
-
-        inches
-        |> should (equalWithin 0.01) 14582.68
-
-    [<Test>]
-    let ``Convert known nautical miles to yard`` () =
-        let yards = NM.toYards 0.9<NM>
-
-        yards
-        |> should (equalWithin 0.01) 1822.83
-
-    [<Test>]
-    let ``Convert known nautical miles to feet`` () =
-        let f = NM.toFeet 0.7<NM>
-
-        f
-        |> should (equalWithin 0.01) 4253.28
-
-    [<Test>]
-    let ``Convert known nautical miles to miles`` () =
-        let miles = NM.toMiles 22.8<NM>
-
-        miles
-        |> should (equalWithin 0.01) 26.23777
+    [<TestCase(22.8<NM>, 26.23777)>]
+    let ``Convert known nautical miles to miles`` (input, expectation) =
+        NM.toMiles input
+        |> should (equalWithin 0.01) expectation

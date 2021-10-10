@@ -77,53 +77,39 @@ module KiloBytesPerSecondTests =
     
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Kilo bytes per second to bits per second`` () =
-        let result = kBps.toBitsPerSecond 1.2<kBps>
+    [<TestCase(1.2<kBps>, 9600.)>]
+    let ``Convert known Kilo bytes per second to bits per second`` (input, expectation) =
+        kBps.toBitsPerSecond input
+        |> should (equalWithin 0.01) expectation
     
-        result
-        |> should (equalWithin 0.01) 9600.
-    
-    [<Test>]
-    let ``Convert known Kilo bytes per second to kilo bits per second`` () =
-        let result = kBps.toKiloBitsPerSecond 1.23<kBps>
-    
-        result
-        |> should (equalWithin 0.01) 9.84
+    [<TestCase(1.23<kBps>, 9.84)>]
+    let ``Convert known Kilo bytes per second to kilo bits per second`` (input, expectation) =
+        kBps.toKiloBitsPerSecond input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Kilo bytes per second to mega bits per second`` () =
-        let result = kBps.toMegaBitsPerSecond 456.<kBps>
-    
-        result
-        |> should (equalWithin 0.01) 3.648
+    [<TestCase(456.<kBps>, 3.648)>]
+    let ``Convert known Kilo bytes per second to mega bits per second`` (input, expectation) =
+        kBps.toMegaBitsPerSecond input
+        |> should (equalWithin 0.01) expectation
 
 
-    [<Test>]
-    let ``Convert known Kilo bytes per second to giga bits per second`` () =
-        let result = kBps.toGigaBitsPerSecond 13456.<kBps>
-    
-        result
-        |> should (equalWithin 0.01) 0.107648
+    [<TestCase(13456.<kBps>, 0.107648)>]
+    let ``Convert known Kilo bytes per second to giga bits per second`` (input, expectation) =
+        kBps.toGigaBitsPerSecond input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Kilo bytes per second to mega bytes per second`` () =
-        let result = kBps.toMegaBytesPerSecond 13456.<kBps>
-    
-        result
-        |> should (equalWithin 0.01) 13.456
+    [<TestCase(13456.<kBps>, 13.456)>]
+    let ``Convert known Kilo bytes per second to mega bytes per second`` (input, expectation) =
+        kBps.toMegaBytesPerSecond input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Kilo bytes per second to giga bytes per second`` () =
-        let result = kBps.toGigaBytesPerSecond 10990.<kBps>
+    [<TestCase(10990.<kBps>, 0.01099)>]
+    let ``Convert known Kilo bytes per second to giga bytes per second`` (input, expectation) =
+        kBps.toGigaBytesPerSecond input
+        |> should (equalWithin 0.01) expectation
     
-        result
-        |> should (equalWithin 0.01) 0.01099
-    
-    [<Test>]
-    let ``Convert known Kilo bytes per second to tera bytes per second`` () =
-        let result = kBps.toTeraBytesPerSecond 8912345.<kBps>
-
-        result
-        |> should (equalWithin 0.01) 0.008912345
+    [<TestCase(8912345.<kBps>, 0.008912345)>]
+    let ``Convert known Kilo bytes per second to tera bytes per second`` (input, expectation) =
+        kBps.toTeraBytesPerSecond input
+        |> should (equalWithin 0.01) expectation
 

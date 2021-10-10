@@ -22,9 +22,7 @@ module AmpereTurnTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Ampere turn to Gilbert`` () =
-        let gi = AT.toGilbert 999.<AT>
-
-        gi
-        |> should (equalWithin 0.0001) 1255.380424374
+    [<TestCase(999.<AT>, 1255.380424374)>]
+    let ``Convert known Ampere turn to Gilbert`` (input, expectation) =
+        AT.toGilbert input
+        |> should (equalWithin 0.0001) expectation

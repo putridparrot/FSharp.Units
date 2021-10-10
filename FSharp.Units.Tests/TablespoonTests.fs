@@ -176,107 +176,77 @@ module TablespoonTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known tablepoon to millilitre`` () =
-        let millilitre = tbsp.toMillilitres 2.5<tbsp>
+    [<TestCase(2.5<tbsp>, 44.3954285059)>]
+    let ``Convert known tablepoon to millilitre`` (input, expectation) =
+        tbsp.toMillilitres input
+        |> should (equalWithin 0.01) expectation
 
-        millilitre
-        |> should (equalWithin 0.01) 44.3954285059
+    [<TestCase(998.9<tbsp>, 17.7386374138)>]
+    let ``Convert known tablepoon to litre`` (input, expectation) =
+        tbsp.toLitres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known tablepoon to litre`` () =
-        let litre = tbsp.toLitres 998.9<tbsp>
+    [<TestCase(180007.<tbsp>, 3.1965951596)>]
+    let ``Convert known tablepoon to kilolitre`` (input, expectation) =
+        tbsp.toKilolitres input
+        |> should (equalWithin 0.01) expectation
 
-        litre
-        |> should (equalWithin 0.01) 17.7386374138
+    [<TestCase(20.04<tbsp>, 60.12)>]
+    let ``Convert known tablepoon to teaspoons`` (input, expectation) =
+        tbsp.toTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known tablepoon to kilolitre`` () =
-        let kilolitre = tbsp.toKilolitres 180007.<tbsp>
+    [<TestCase(1690.<tbsp>, 26.40625)>]
+    let ``Convert known tablepoon to quarts`` (input, expectation) =
+        tbsp.toQuarts input
+        |> should (equalWithin 0.01) expectation
 
-        kilolitre
-        |> should (equalWithin 0.01) 3.1965951596
+    [<TestCase(109.98<tbsp>, 3.436875)>]
+    let ``Convert known tablepoon to pints`` (input, expectation) =
+        tbsp.toPints input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known tablepoon to teaspoons`` () =
-        let teaspoons = tbsp.toTeaspoons 20.04<tbsp>
+    [<TestCase(999.1<tbsp>, 3.902734375)>]
+    let ``Convert known tablepoon to gallons`` (input, expectation) =
+        tbsp.toGallons input
+        |> should (equalWithin 0.01) expectation
 
-        teaspoons
-        |> should (equalWithin 0.01) 60.12
+    [<TestCase(1098.<tbsp>, 686.25)>]
+    let ``Convert known tablepoon to fluid ounces`` (input, expectation) =
+        tbsp.toFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known tablepoon to quarts`` () =
-        let quarts = tbsp.toQuarts 1690.<tbsp>
+    [<TestCase(3.<tbsp>, 10.808553797)>]
+    let ``Convert known tablepoon to US teaspoons`` (input, expectation) =
+        tbsp.toUSTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-        quarts
-        |> should (equalWithin 0.01) 26.40625
+    [<TestCase(12.7<tbsp>, 15.2520703579)>]
+    let ``Convert known tablepoon to US tablespoons`` (input, expectation) =
+        tbsp.toUSTablespoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known tablepoon to pints`` () =
-        let pints = tbsp.toPints 109.98<tbsp>
+    [<TestCase(777.34<tbsp>, 14.5866687648)>]
+    let ``Convert known tablepoon to US quarts`` (input, expectation) =
+        tbsp.toUSQuarts input
+        |> should (equalWithin 0.01) expectation
 
-        pints
-        |> should (equalWithin 0.01) 3.436875
+    [<TestCase(5930.123<tbsp>, 222.5557412086)>]
+    let ``Convert known tablepoon to US pints`` (input, expectation) =
+        tbsp.toUSPints input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known tablepoon to gallons`` () =
-        let gallons = tbsp.toGallons 999.1<tbsp>
+    [<TestCase(8000.9<tbsp>, 37.5339227752)>]
+    let ``Convert known tablepoon to US gallons`` (input, expectation) =
+        tbsp.toUSGallons input
+        |> should (equalWithin 0.01) expectation
 
-        gallons
-        |> should (equalWithin 0.01) 3.902734375
+    [<TestCase(304.<tbsp>, 182.5444641264)>]
+    let ``Convert known tablepoon to US fluid ounces`` (input, expectation) =
+        tbsp.toUSFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known tablepoon to fluid ounces`` () =
-        let fluidOunces = tbsp.toFluidOunces 1098.<tbsp>
-
-        fluidOunces
-        |> should (equalWithin 0.01) 686.25
-
-    [<Test>]
-    let ``Convert known tablepoon to US teaspoons`` () =
-        let usTeaspoons = tbsp.toUSTeaspoons 3.<tbsp>
-
-        usTeaspoons
-        |> should (equalWithin 0.01) 10.808553797
-
-    [<Test>]
-    let ``Convert known tablepoon to US tablespoons`` () =
-        let usTablespoons = tbsp.toUSTablespoons 12.7<tbsp>
-
-        usTablespoons
-        |> should (equalWithin 0.01) 15.2520703579
-
-    [<Test>]
-    let ``Convert known tablepoon to US quarts`` () =
-        let usQuarts = tbsp.toUSQuarts 777.34<tbsp>
-
-        usQuarts
-        |> should (equalWithin 0.01) 14.5866687648
-
-    [<Test>]
-    let ``Convert known tablepoon to US pints`` () =
-        let usPints = tbsp.toUSPints 5930.123<tbsp>
-
-        usPints
-        |> should (equalWithin 0.01) 222.5557412086
-
-    [<Test>]
-    let ``Convert known tablepoon to US gallons`` () =
-        let usGallons = tbsp.toUSGallons 8000.9<tbsp>
-
-        usGallons
-        |> should (equalWithin 0.01) 37.5339227752
-
-    [<Test>]
-    let ``Convert known tablepoon to US fluid ounces`` () =
-        let usFluidOunces = tbsp.toUSFluidOunces 304.<tbsp>
-
-        usFluidOunces
-        |> should (equalWithin 0.01) 182.5444641264
-
-    [<Test>]
-    let ``Convert known tablepoon to US cups`` () =
-        let usCups = tbsp.toUSCups 600.<tbsp>
-
-        usCups
-        |> should (equalWithin 0.01) 45.0356408207
+    [<TestCase(600.<tbsp>, 45.0356408207)>]
+    let ``Convert known tablepoon to US cups`` (input, expectation) =
+        tbsp.toUSCups input
+        |> should (equalWithin 0.01) expectation

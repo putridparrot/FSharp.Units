@@ -88,58 +88,42 @@ module MileTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known mile to millimetre`` () =
-        let millimetres = mile.toMillimetres 0.03<mile>
+    [<TestCase(0.03<mile>, 48280.32)>]
+    let ``Convert known mile to millimetre`` (input, expectation) =
+        mile.toMillimetres input
+        |> should (equalWithin 0.01) expectation
 
-        millimetres
-        |> should (equalWithin 0.01) 48280.32
+    [<TestCase(2.<mile>, 321868.8)>]
+    let ``Convert known mile to centimetre`` (input, expectation) =
+        mile.toCentimetres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known mile to centimetre`` () =
-        let centimetres = mile.toCentimetres 2.<mile>
+    [<TestCase(0.9<mile>, 1448.41)>]
+    let ``Convert known mile to metre`` (input, expectation) =
+        mile.toMetres input
+        |> should (equalWithin 0.01) expectation
 
-        centimetres
-        |> should (equalWithin 0.01) 321868.8
+    [<TestCase(3.<mile>, 4.82803)>]
+    let ``Convert known mile to kilometre`` (input, expectation) =
+        mile.toKilometres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known mile to metre`` () =
-        let metres = mile.toMetres 0.9<mile>
+    [<TestCase(1.2<mile>, 76032.)>]
+    let ``Convert known mile to inch`` (input, expectation) =
+        mile.toInches input
+        |> should (equalWithin 0.01) expectation
 
-        metres
-        |> should (equalWithin 0.01) 1448.41
+    [<TestCase(2.1<mile>, 3696.)>]
+    let ``Convert known mile to yard`` (input, expectation) =
+        mile.toYards input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known mile to kilometre`` () =
-        let kilometres = mile.toKilometres 3.<mile>
+    [<TestCase(2.2<mile>, 11616.)>]
+    let ``Convert known mile to feet`` (input, expectation) =
+        mile.toFeet input
+        |> should (equalWithin 0.01) expectation
 
-        kilometres
-        |> should (equalWithin 0.01) 4.82803
-
-    [<Test>]
-    let ``Convert known mile to inch`` () =
-        let inches = mile.toInches 1.2<mile>
-
-        inches
-        |> should (equalWithin 0.01) 76032.
-
-    [<Test>]
-    let ``Convert known mile to yard`` () =
-        let inches = mile.toYards 2.1<mile>
-
-        inches
-        |> should (equalWithin 0.01) 3696.
-
-    [<Test>]
-    let ``Convert known mile to feet`` () =
-        let f = mile.toFeet 2.2<mile>
-
-        f
-        |> should (equalWithin 0.01) 11616.
-
-    [<Test>]
-    let ``Convert known mile to nautical mile`` () =
-        let nauticalmiles = mile.toNauticalMiles 5.<mile>
-
-        nauticalmiles
-        |> should (equalWithin 0.01) 4.34488
+    [<TestCase(5.<mile>, 4.34488)>]
+    let ``Convert known mile to nautical mile`` (input, expectation) =
+        mile.toNauticalMiles input
+        |> should (equalWithin 0.01) expectation

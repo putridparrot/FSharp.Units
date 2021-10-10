@@ -55,30 +55,22 @@ module PsiTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Psi to Bar`` () =
-        let bar = psi.toBar 121.<psi>
+    [<TestCase(121.<psi>, 8.34266)>]
+    let ``Convert known Psi to Bar`` (input, expectation) =
+        psi.toBar input
+        |> should (equalWithin 0.01) expectation
 
-        bar
-        |> should (equalWithin 0.01) 8.34266
+    [<TestCase(345.<psi>, 23.4759)>]
+    let ``Convert known Psi to Atmosphere`` (input, expectation) =
+        psi.toAtmosphere input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Psi to Atmosphere`` () =
-        let atmosphere = psi.toAtmosphere 345.<psi>
+    [<TestCase(5.6<psi>, 38610.6)>]
+    let ``Convert known Psi to Pascal`` (input, expectation) =
+        psi.toPascal input
+        |> should (equalWithin 0.01) expectation
 
-        atmosphere
-        |> should (equalWithin 0.01) 23.4759
-
-    [<Test>]
-    let ``Convert known Psi to Pascal`` () =
-        let pascal = psi.toPascal 5.6<psi>
-
-        pascal
-        |> should (equalWithin 0.01) 38610.6
-
-    [<Test>]
-    let ``Convert known Psi to Torr`` () =
-        let torr = psi.toTorr 1.34<psi>
-
-        torr
-        |> should (equalWithin 0.01) 69.29801
+    [<TestCase(1.34<psi>, 69.29801)>]
+    let ``Convert known Psi to Torr`` (input, expectation) =
+        psi.toTorr input
+        |> should (equalWithin 0.01) expectation

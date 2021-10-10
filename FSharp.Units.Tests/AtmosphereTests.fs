@@ -56,30 +56,22 @@ module AtmosphereTests =
         Check.QuickThrowOnFailure (testRange property)
 
 
-    [<Test>]
-    let ``Convert known Atmosphere to Bar`` () =
-        let bar = atm.toBar 940.<atm>
+    [<TestCase(940.<atm>, 952.455)>]
+    let ``Convert known Atmosphere to Bar`` (input, expectation) =
+        atm.toBar input
+        |> should (equalWithin 0.01) expectation
 
-        bar
-        |> should (equalWithin 0.01) 952.455
+    [<TestCase(2.3<atm>, 233047.5)>]
+    let ``Convert known Atmosphere to Pascal`` (input, expectation) =
+        atm.toPascal input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Atmosphere to Pascal`` () =
-        let pascals = atm.toPascal 2.3<atm>
+    [<TestCase(98.<atm>, 74480.)>]
+    let ``Convert known Atmosphere to Torr`` (input, expectation) =
+        atm.toTorr input
+        |> should (equalWithin 0.01) expectation
 
-        pascals
-        |> should (equalWithin 0.01) 233047.5
-
-    [<Test>]
-    let ``Convert known Atmosphere to Torr`` () =
-        let torr = atm.toTorr 98.<atm>
-
-        torr
-        |> should (equalWithin 0.01) 74480.
-
-    [<Test>]
-    let ``Convert known Atmosphere to psi`` () =
-        let psi = atm.toPsi 12.6<atm>
-
-        psi
-        |> should (equalWithin 0.01) 185.169
+    [<TestCase(12.6<atm>, 185.169)>]
+    let ``Convert known Atmosphere to psi`` (input, expectation) =
+        atm.toPsi input
+        |> should (equalWithin 0.01) expectation

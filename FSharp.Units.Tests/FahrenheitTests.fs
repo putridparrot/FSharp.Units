@@ -33,10 +33,8 @@ module FarenheitTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known fahrenheit to kelvin`` () =
-        let kelvin = F.toKelvin 123.<F>
-
-        kelvin
-        |> should (equalWithin 0.01) 323.706
+    [<TestCase(123.<F>, 323.706)>]
+    let ``Convert known fahrenheit to kelvin`` (input, expectation) =
+        F.toKelvin input
+        |> should (equalWithin 0.01) expectation
 

@@ -22,9 +22,7 @@ module GilbertTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Gilbert to Ampere turn`` () =
-        let at = Gi.toAmpereTurn 6000.<Gi>
-
-        at
-        |> should equal 4774.648292757
+    [<TestCase(6000.<Gi>, 4774.648292757)>]
+    let ``Convert known Gilbert to Ampere turn`` (input, expectation) =
+        Gi.toAmpereTurn input
+        |> should equal expectation

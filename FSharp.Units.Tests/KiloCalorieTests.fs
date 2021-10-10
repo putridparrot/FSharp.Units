@@ -22,10 +22,8 @@ module KiloCalorieTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known kilocalorie to kilojoule`` () =
-        let kilojoules = kCal.toKilojoules 2500.<kCal>
-
-        kilojoules
-        |> should equal 10460.
+    [<TestCase(2500.<kCal>, 10460.)>]
+    let ``Convert known kilocalorie to kilojoule`` (input, expectation) =
+        kCal.toKilojoules input
+        |> should equal expectation
 

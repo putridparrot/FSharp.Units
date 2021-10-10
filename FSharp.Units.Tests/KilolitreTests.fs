@@ -165,107 +165,77 @@ module KilolitreTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known kilolitre to millilitre`` () =
-        let millilitres = kl.toMillilitres 0.063<kl>
+    [<TestCase(0.063<kl>, 63000.0)>]
+    let ``Convert known kilolitre to millilitre`` (input, expectation) =
+        kl.toMillilitres input
+        |> should (equalWithin 0.01) expectation
 
-        millilitres
-        |> should (equalWithin 0.01) 63000.0
+    [<TestCase(123.9<kl>, 123900.0)>]
+    let ``Convert known kilolitre to litre`` (input, expectation) =
+        kl.toLitres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known kilolitre to litre`` () =
-        let litres = kl.toLitres 123.9<kl>
+    [<TestCase(0.098<kl>, 16555.7586611197)>]
+    let ``Convert known kilolitre to teaspoons`` (input, expectation) =
+        kl.toTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-        litres
-        |> should (equalWithin 0.01) 123900.0
+    [<TestCase(0.086<kl>, 4842.8409688989)>]
+    let ``Convert known kilolitre to tablespoons`` (input, expectation) =
+        kl.toTablespoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known kilolitre to teaspoons`` () =
-        let teaspoons = kl.toTeaspoons 0.098<kl>
+    [<TestCase(0.75<kl>, 659.9074721428)>]
+    let ``Convert known kilolitre to quarts`` (input, expectation) =
+        kl.toQuarts input
+        |> should (equalWithin 0.01) expectation
 
-        teaspoons
-        |> should (equalWithin 0.01) 16555.7586611197
+    [<TestCase(0.56<kl>, 985.4618250666)>]
+    let ``Convert known kilolitre to pints`` (input, expectation) =
+        kl.toPints input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known kilolitre to tablespoons`` () =
-        let tablespoons = kl.toTablespoons 0.086<kl>
+    [<TestCase(1456.<kl>, 320275.0931466601)>]
+    let ``Convert known kilolitre to gallons`` (input, expectation) =
+        kl.toGallons input
+        |> should (equalWithin 0.01) expectation
 
-        tablespoons
-        |> should (equalWithin 0.01) 4842.8409688989
+    [<TestCase(0.76<kl>, 26748.2495375233)>]
+    let ``Convert known kilolitre to fluid ounces`` (input, expectation) =
+        kl.toFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known kilolitre to quarts`` () =
-        let quarts = kl.toQuarts 0.75<kl>
+    [<TestCase(0.00876<kl>, 1777.2650332089)>]
+    let ``Convert known kilolitre to US teaspoons`` (input, expectation) =
+        kl.toUSTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-        quarts
-        |> should (equalWithin 0.01) 659.9074721428
+    [<TestCase(0.007<kl>, 473.3963178258)>]
+    let ``Convert known kilolitre to US tablespoons`` (input, expectation) =
+        kl.toUSTablespoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known kilolitre to pints`` () =
-        let pints = kl.toPints 0.56<kl>
+    [<TestCase(0.098<kl>, 103.5554445244)>]
+    let ``Convert known kilolitre to US quarts`` (input, expectation) =
+        kl.toUSQuarts input
+        |> should (equalWithin 0.01) expectation
 
-        pints
-        |> should (equalWithin 0.01) 985.4618250666
+    [<TestCase(0.03<kl>, 63.401292566)>]
+    let ``Convert known kilolitre to US pints`` (input, expectation) =
+        kl.toUSPints input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known kilolitre to gallons`` () =
-        let gallons = kl.toGallons 1456.<kl>
+    [<TestCase(5.<kl>, 1320.8602617907)>]
+    let ``Convert known kilolitre to US gallons`` (input, expectation) =
+        kl.toUSGallons input
+        |> should (equalWithin 0.01) expectation
 
-        gallons
-        |> should (equalWithin 0.01) 320275.0931466601
+    [<TestCase(0.03<kl>, 1014.420679769)>]
+    let ``Convert known kilolitre to US fluid ounces`` (input, expectation) =
+        kl.toUSFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known kilolitre to fluid ounces`` () =
-        let fluidOunces = kl.toFluidOunces 0.76<kl>
-
-        fluidOunces
-        |> should (equalWithin 0.01) 26748.2495375233
-
-    [<Test>]
-    let ``Convert known kilolitre to US teaspoons`` () =
-        let usTeaspoons = kl.toUSTeaspoons 0.00876<kl>
-
-        usTeaspoons
-        |> should (equalWithin 0.01) 1777.2650332089
-
-    [<Test>]
-    let ``Convert known kilolitre to US tablespoons`` () =
-        let usTablespoons = kl.toUSTablespoons 0.007<kl>
-
-        usTablespoons
-        |> should (equalWithin 0.01) 473.3963178258
-
-    [<Test>]
-    let ``Convert known kilolitre to US quarts`` () =
-        let usQuarts = kl.toUSQuarts 0.098<kl>
-
-        usQuarts
-        |> should (equalWithin 0.01) 103.5554445244
-
-    [<Test>]
-    let ``Convert known kilolitre to US pints`` () =
-        let usPints = kl.toUSPints 0.03<kl>
-
-        usPints
-        |> should (equalWithin 0.01) 63.401292566
-
-    [<Test>]
-    let ``Convert known kilolitre to US gallons`` () =
-        let usGallons = kl.toUSGallons 5.<kl>
-
-        usGallons
-        |> should (equalWithin 0.01) 1320.8602617907
-
-    [<Test>]
-    let ``Convert known kilolitre to US fluid ounces`` () =
-        let usFluidOunces = kl.toUSFluidOunces 0.03<kl>
-
-        usFluidOunces
-        |> should (equalWithin 0.01) 1014.420679769
-
-    [<Test>]
-    let ``Convert known kilolitre to US cups`` () =
-        let usCups = kl.toUSCups 0.02<kl>
-
-        usCups
-        |> should (equalWithin 0.01) 84.5350567546
+    [<TestCase(0.02<kl>, 84.5350567546)>]
+    let ``Convert known kilolitre to US cups`` (input, expectation) =
+        kl.toUSCups input
+        |> should (equalWithin 0.01) expectation

@@ -55,30 +55,22 @@ module BarTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Bar to Atmospehere`` () =
-        let atmosphere = b.toAtmosphere 34.4<b>
+    [<TestCase(34.4<b>, 33.95016)>]
+    let ``Convert known Bar to Atmospehere`` (input, expectation) =
+        b.toAtmosphere input
+        |> should (equalWithin 0.01) expectation
 
-        atmosphere
-        |> should (equalWithin 0.01) 33.95016
+    [<TestCase(0.67<b>, 67000.)>]
+    let ``Convert known Bar to Pascal`` (input, expectation) =
+        b.toPascal input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Bar to Pascal`` () =
-        let pascal = b.toPascal 0.67<b>
+    [<TestCase(5.<b>, 3750.31)>]
+    let ``Convert known Bar to Torr`` (input, expectation) =
+        b.toTorr input
+        |> should (equalWithin 0.01) expectation
 
-        pascal
-        |> should (equalWithin 0.01) 67000.
-
-    [<Test>]
-    let ``Convert known Bar to Torr`` () =
-        let torr = b.toTorr 5.<b>
-
-        torr
-        |> should (equalWithin 0.01) 3750.31
-
-    [<Test>]
-    let ``Convert known Bar to psi`` () =
-        let psi = b.toPsi 3.45<b>
-
-        psi
-        |> should (equalWithin 0.01) 50.03802
+    [<TestCase(3.45<b>, 50.03802)>]
+    let ``Convert known Bar to psi`` (input, expectation) =
+        b.toPsi input
+        |> should (equalWithin 0.01) expectation

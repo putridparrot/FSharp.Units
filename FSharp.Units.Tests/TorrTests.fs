@@ -55,30 +55,22 @@ module TorrTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Torr to Pascal`` () =
-        let pascal = Torr.toPascal 1.34<Torr>
+    [<TestCase(1.34<Torr>, 178.652)>]
+    let ``Convert known Torr to Pascal`` (input, expectation) =
+        Torr.toPascal input
+        |> should (equalWithin 0.01) expectation
 
-        pascal
-        |> should (equalWithin 0.01) 178.652
+    [<TestCase(9002.<Torr>, 11.84474)>]
+    let ``Convert known Torr to Atmosphere`` (input, expectation) =
+        Torr.toAtmosphere input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Torr to Atmosphere`` () =
-        let atmosphere = Torr.toAtmosphere 9002.<Torr>
+    [<TestCase(4567.<Torr>, 6.088833)>]
+    let ``Convert known Torr to Bar`` (input, expectation) =
+        Torr.toBar input
+        |> should (equalWithin 0.01) expectation
 
-        atmosphere
-        |> should (equalWithin 0.01) 11.84474
-
-    [<Test>]
-    let ``Convert known Torr to Bar`` () =
-        let bar = Torr.toBar 4567.<Torr>
-
-        bar
-        |> should (equalWithin 0.01) 6.088833
-
-    [<Test>]
-    let ``Convert known Torr to Psi`` () =
-        let poundsPerSquareInch = Torr.toPsi 1901.<Torr>
-
-        poundsPerSquareInch
-        |> should (equalWithin 0.01) 36.75921
+    [<TestCase(1901.<Torr>, 36.75921)>]
+    let ``Convert known Torr to Psi`` (input, expectation) =
+        Torr.toPsi input
+        |> should (equalWithin 0.01) expectation

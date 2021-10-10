@@ -66,9 +66,7 @@ module DegreeTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Degree turn to Millradian`` () =
-        let mr = deg.toMilliradians 999.<deg>
-
-        mr
-        |> should (equalWithin 0.01) 17435.8467
+    [<TestCase(999.<deg>, 17435.8467)>]
+    let ``Convert known Degree turn to Millradian`` (input, expectation) =
+        deg.toMilliradians input
+        |> should (equalWithin 0.01) expectation

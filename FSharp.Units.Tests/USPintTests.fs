@@ -176,107 +176,77 @@ module USPintTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known US pints to millilitres`` () =
-        let millilitres = uspt.toMillilitres 5.6<uspt>
+    [<TestCase(5.6<uspt>, 2649.7882488)>]
+    let ``Convert known US pints to millilitres`` (input, expectation) =
+        uspt.toMillilitres input
+        |> should (equalWithin 0.01) expectation
 
-        millilitres
-        |> should (equalWithin 0.01) 2649.7882488
+    [<TestCase(239.<uspt>, 113.089177047)>]
+    let ``Convert known US pints to litres`` (input, expectation) =
+        uspt.toLitres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US pints to litres`` () =
-        let litres = uspt.toLitres 239.<uspt>
+    [<TestCase(1020.<uspt>, 0.4826400025)>]
+    let ``Convert known US pints to kilolitres`` (input, expectation) =
+        uspt.toKilolitres input
+        |> should (equalWithin 0.01) expectation
 
-        litres
-        |> should (equalWithin 0.01) 113.089177047
+    [<TestCase(0.87<uspt>, 69.5449191558)>]
+    let ``Convert known US pints to teaspoons`` (input, expectation) =
+        uspt.toTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US pints to kilolitres`` () =
-        let kilolitres = uspt.toKilolitres 1020.<uspt>
+    [<TestCase(4.<uspt>, 106.5822515797)>]
+    let ``Convert known US pints to tablespoons`` (input, expectation) =
+        uspt.toTablespoons input
+        |> should (equalWithin 0.01) expectation
 
-        kilolitres
-        |> should (equalWithin 0.01) 0.4826400025
+    [<TestCase(45.<uspt>, 18.7351614105)>]
+    let ``Convert known US pints to quarts`` (input, expectation) =
+        uspt.toQuarts input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US pints to teaspoons`` () =
-        let teaspoons = uspt.toTeaspoons 0.87<uspt>
+    [<TestCase(23.<uspt>, 19.1514983307)>]
+    let ``Convert known US pints to pints`` (input, expectation) =
+        uspt.toPints input
+        |> should (equalWithin 0.01) expectation
 
-        teaspoons
-        |> should (equalWithin 0.01) 69.5449191558
+    [<TestCase(45.2<uspt>, 4.7046071986)>]
+    let ``Convert known US pints to gallons`` (input, expectation) =
+        uspt.toGallons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US pints to tablespoons`` () =
-        let tablespoons = uspt.toTablespoons 4.<uspt>
+    [<TestCase(44.<uspt>, 732.7529796104)>]
+    let ``Convert known US pints to fluid ounces`` (input, expectation) =
+        uspt.toFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-        tablespoons
-        |> should (equalWithin 0.01) 106.5822515797
+    [<TestCase(0.04<uspt>, 3.84)>]
+    let ``Convert known US pints to US teaspoons`` (input, expectation) =
+        uspt.toUSTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US pints to quarts`` () =
-        let quarts = uspt.toQuarts 45.<uspt>
+    [<TestCase(0.45<uspt>, 14.4)>]
+    let ``Convert known US pints to US tablespoons`` (input, expectation) =
+        uspt.toUSTablespoons input
+        |> should (equalWithin 0.01) expectation
 
-        quarts
-        |> should (equalWithin 0.01) 18.7351614105
+    [<TestCase(12.<uspt>, 6.)>]
+    let ``Convert known US pints to US quarts`` (input, expectation) =
+        uspt.toUSQuarts input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US pints to pints`` () =
-        let pints = uspt.toPints 23.<uspt>
+    [<TestCase(600.<uspt>, 75.)>]
+    let ``Convert known US pints to US gallons`` (input, expectation) =
+        uspt.toUSGallons input
+        |> should (equalWithin 0.01) expectation
 
-        pints
-        |> should (equalWithin 0.01) 19.1514983307
+    [<TestCase(0.123<uspt>, 1.968)>]
+    let ``Convert known US pints to US fluid ounces`` (input, expectation) =
+        uspt.toUSFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US pints to gallons`` () =
-        let gallons = uspt.toGallons 45.2<uspt>
-
-        gallons
-        |> should (equalWithin 0.01) 4.7046071986
-
-    [<Test>]
-    let ``Convert known US pints to fluid ounces`` () =
-        let fluidOunces = uspt.toFluidOunces 44.<uspt>
-
-        fluidOunces
-        |> should (equalWithin 0.01) 732.7529796104
-
-    [<Test>]
-    let ``Convert known US pints to US teaspoons`` () =
-        let usTeaspoons = uspt.toUSTeaspoons 0.04<uspt>
-
-        usTeaspoons
-        |> should (equalWithin 0.01) 3.84
-
-    [<Test>]
-    let ``Convert known US pints to US tablespoons`` () =
-        let usTablespoons = uspt.toUSTablespoons 0.45<uspt>
-
-        usTablespoons
-        |> should (equalWithin 0.01) 14.4
-
-    [<Test>]
-    let ``Convert known US pints to US quarts`` () =
-        let usQuarts = uspt.toUSQuarts 12.<uspt>
-
-        usQuarts
-        |> should (equalWithin 0.01) 6.
-
-    [<Test>]
-    let ``Convert known US pints to US gallons`` () =
-        let usGallons = uspt.toUSGallons 600.<uspt>
-
-        usGallons
-        |> should (equalWithin 0.01) 75.
-
-    [<Test>]
-    let ``Convert known US pints to US fluid ounces`` () =
-        let usFluidOunces = uspt.toUSFluidOunces 0.123<uspt>
-
-        usFluidOunces
-        |> should (equalWithin 0.01) 1.968
-
-    [<Test>]
-    let ``Convert known US pints to US cups`` () =
-        let usCups = uspt.toUSCups 546.<uspt>
-
-        usCups
-        |> should (equalWithin 0.01) 1092.
+    [<TestCase(546.<uspt>, 1092.)>]
+    let ``Convert known US pints to US cups`` (input, expectation) =
+        uspt.toUSCups input
+        |> should (equalWithin 0.01) expectation

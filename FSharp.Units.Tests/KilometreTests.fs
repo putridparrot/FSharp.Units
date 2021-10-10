@@ -99,58 +99,42 @@ module KilometreTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known kilometre to millimetre`` () =
-        let millimetres = km.toMillimetres 2.3<km>
+    [<TestCase(2.3<km>, 2300000.)>]
+    let ``Convert known kilometre to millimetre`` (input, expectation) =
+        km.toMillimetres input
+        |> should (equalWithin 0.01) expectation
 
-        millimetres
-        |> should (equalWithin 0.01) 2300000.
+    [<TestCase(1.5<km>, 150000.)>]
+    let ``Convert known kilometre to centimetre`` (input, expectation) =
+        km.toCentimetres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known kilometre to centimetre`` () =
-        let centimetres = km.toCentimetres 1.5<km>
+    [<TestCase(1.025<km>, 1025.)>]
+    let ``Convert known kilometre to metre`` (input, expectation) =
+        km.toMetres input
+        |> should (equalWithin 0.01) expectation
 
-        centimetres
-        |> should (equalWithin 0.01) 150000.
+    [<TestCase(0.0480314<km>, 1891.)>]
+    let ``Convert known kilometre to inch`` (input, expectation) =
+        km.toInches input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known kilometre to metre`` () =
-        let metres = km.toMetres 1.025<km>
+    [<TestCase(0.0480314<km>, 157.58333333)>]
+    let ``Convert known kilometre to feet`` (input, expectation) =
+        km.toFeet input
+        |> should (equalWithin 0.01) expectation
 
-        metres
-        |> should (equalWithin 0.01) 1025.
+    [<TestCase(43.<km>, 47025.37182852)>]
+    let ``Convert known kilometre to yards`` (input, expectation) =
+        km.toYards input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known kilometre to inch`` () =
-        let inches = km.toInches 0.0480314<km>
+    [<TestCase(123.<km>, 76.42865665)>]
+    let ``Convert known kilometre to mile`` (input, expectation) =
+        km.toMiles input
+        |> should (equalWithin 0.01) expectation
 
-        inches
-        |> should (equalWithin 0.01) 1891.
-
-    [<Test>]
-    let ``Convert known kilometre to feet`` () =
-        let feet = km.toFeet 0.0480314<km>
-
-        feet
-        |> should (equalWithin 0.01) 157.58333333
-
-    [<Test>]
-    let ``Convert known kilometre to yards`` () =
-        let yards = km.toYards 43.<km>
-
-        yards
-        |> should (equalWithin 0.01) 47025.37182852
-
-    [<Test>]
-    let ``Convert known kilometre to mile`` () =
-        let miles = km.toMiles 123.<km>
-
-        miles
-        |> should (equalWithin 0.01) 76.42865665
-
-    [<Test>]
-    let ``Convert known kilometre to nautical mile`` () =
-        let miles = km.toNauticalMiles 800.<km>
-
-        miles
-        |> should (equalWithin 0.01) 431.965
+    [<TestCase(800.<km>, 431.965)>]
+    let ``Convert known kilometre to nautical mile`` (input, expectation) =
+        km.toNauticalMiles input
+        |> should (equalWithin 0.01) expectation

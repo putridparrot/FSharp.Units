@@ -78,44 +78,32 @@ module PoundTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known pound to milligram`` () =
-        let milligrams= lb.toMilligrams 1560.0<lb>
+    [<TestCase(1560.0<lb>, 707604097.2)>]
+    let ``Convert known pound to milligram`` (input, expectation) =
+        lb.toMilligrams input
+        |> should (equalWithin 0.01) expectation
 
-        milligrams
-        |> should (equalWithin 0.01) 707604097.2
+    [<TestCase(1560.0<lb>, 707604.0972)>]
+    let ``Convert known pound to gram`` (input, expectation) =
+        lb.toGrams input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known pound to gram`` () =
-        let grams = lb.toGrams 1560.0<lb>
+    [<TestCase(1560.0<lb>, 707.6040972)>]
+    let ``Convert known pound to kilogram`` (input, expectation) =
+        lb.toKilograms input
+        |> should (equalWithin 0.01) expectation
 
-        grams
-        |> should (equalWithin 0.01) 707604.0972
+    [<TestCase(256.0<lb>, 0.11611965)>]
+    let ``Convert known pound to tonne`` (input, expectation) =
+        lb.toTonnes input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known pound to kilogram`` () =
-        let kilograms = lb.toKilograms 1560.0<lb>
+    [<TestCase(16.<lb>, 256.)>]
+    let ``Convert known pound to ounce`` (input, expectation) =
+        lb.toOunces input
+        |> should (equalWithin 0.01) expectation
 
-        kilograms
-        |> should (equalWithin 0.01) 707.6040972
-
-    [<Test>]
-    let ``Convert known pound to tonne`` () =
-        let tonnes = lb.toTonnes 256.0<lb>
-
-        tonnes
-        |> should (equalWithin 0.01) 0.11611965
-
-    [<Test>]
-    let ``Convert known pound to ounce`` () =
-        let ounces = lb.toOunces 16.<lb>
-
-        ounces
-        |> should (equalWithin 0.01) 256
-
-    [<Test>]
-    let ``Convert known pound to stone`` () =
-        let stones = lb.toStones 1234.0<lb>
-
-        stones
-        |> should (equalWithin 0.01) 88.14285714
+    [<TestCase(1234.0<lb>, 88.14285714)>]
+    let ``Convert known pound to stone`` (input, expectation) =
+        lb.toStones input
+        |> should (equalWithin 0.01) expectation

@@ -78,37 +78,27 @@ module GramTests =
         Check.QuickThrowOnFailure (testRange property)
 
 
-    [<Test>]
-    let ``Convert known gram to kilogram`` () =
-        let kilograms = g.toKilograms 167.0<g>
+    [<TestCase(167.0<g>, 0.167)>]
+    let ``Convert known gram to kilogram`` (input, expectation) =
+        g.toKilograms input
+        |> should (equalWithin 0.01) expectation
 
-        kilograms
-        |> should (equalWithin 0.01) 0.167
+    [<TestCase(1560.0<g>, 0.00156)>]
+    let ``Convert known gram to tonne`` (input, expectation) =
+        g.toTonnes input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known gram to tonne`` () =
-        let tonnes = g.toTonnes 1560.0<g>
+    [<TestCase(256.0<g>, 9.03013)>]
+    let ``Convert known gram to ounce`` (input, expectation) =
+        g.toOunces input
+        |> should (equalWithin 0.01) expectation
 
-        tonnes
-        |> should (equalWithin 0.01) 0.00156
+    [<TestCase(256.0<g>, 0.564383)>]
+    let ``Convert known gram to pound`` (input, expectation) =
+        g.toPounds input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known gram to ounce`` () =
-        let ounces = g.toOunces 256.0<g>
-
-        ounces
-        |> should (equalWithin 0.01) 9.03013
-
-    [<Test>]
-    let ``Convert known gram to pound`` () =
-        let pounds = g.toPounds 256.0<g>
-
-        pounds
-        |> should (equalWithin 0.01) 0.564383
-
-    [<Test>]
-    let ``Convert known gram to stone`` () =
-        let stones = g.toStones 1234.0<g>
-
-        stones
-        |> should (equalWithin 0.01) 0.1943217
+    [<TestCase(1234.0<g>, 0.1943217)>]
+    let ``Convert known gram to stone`` (input, expectation) =
+        g.toStones input
+        |> should (equalWithin 0.01) expectation

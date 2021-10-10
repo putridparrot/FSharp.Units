@@ -66,16 +66,12 @@ module SecondsOfArcTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Seconds of arc turn to Milliradian`` () =
-        let mr = arcseconds.toMilliradians 123.<arcseconds>
+    [<TestCase(123.<arcseconds>, 0.596321)>]
+    let ``Convert known Seconds of arc turn to Milliradian`` (input, expectation) =
+        arcseconds.toMilliradians input
+        |> should (equalWithin 0.01) expectation
 
-        mr
-        |> should (equalWithin 0.01) 0.596321
-
-    [<Test>]
-    let ``Convert known Seconds of arc turn to Gradian`` () =
-        let gradian = arcseconds.toGradians 34.<arcseconds>
-
-        gradian
-        |> should (equalWithin 0.001) 0.0104938
+    [<TestCase(34.<arcseconds>, 0.0104938)>]
+    let ``Convert known Seconds of arc turn to Gradian`` (input, expectation) =
+        arcseconds.toGradians input
+        |> should (equalWithin 0.001) expectation

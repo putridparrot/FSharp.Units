@@ -176,107 +176,77 @@ module QuartTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known quart to millilitres`` () =
-        let millilitres = qt.toMillilitres 0.567<qt>
+    [<TestCase(0.567<qt>, 644.4085238483)>]
+    let ``Convert known quart to millilitres`` (input, expectation) =
+        qt.toMillilitres input
+        |> should (equalWithin 0.01) expectation
 
-        millilitres
-        |> should (equalWithin 0.01) 644.4085238483
+    [<TestCase(8.9<qt>, 10.1150544308)>]
+    let ``Convert known quart to litres`` (input, expectation) =
+        qt.toLitres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known quart to litres`` () =
-        let litres = qt.toLitres 8.9<qt>
+    [<TestCase(1200.<qt>, 1.3638275637)>]
+    let ``Convert known quart to kilolitres`` (input, expectation) =
+        qt.toKilolitres input
+        |> should (equalWithin 0.01) expectation
 
-        litres
-        |> should (equalWithin 0.01) 10.1150544308
+    [<TestCase(0.008<qt>, 1.536)>]
+    let ``Convert known quart to teaspoons`` (input, expectation) =
+        qt.toTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known quart to kilolitres`` () =
-        let kilolitres = qt.toKilolitres 1200.<qt>
+    [<TestCase(0.09<qt>, 5.76)>]
+    let ``Convert known quart to tablespoons`` (input, expectation) =
+        qt.toTablespoons input
+        |> should (equalWithin 0.01) expectation
 
-        kilolitres
-        |> should (equalWithin 0.01) 1.3638275637
+    [<TestCase(16.98<qt>, 33.96)>]
+    let ``Convert known quart to pints`` (input, expectation) =
+        qt.toPints input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known quart to teaspoons`` () =
-        let teaspoons = qt.toTeaspoons 0.008<qt>
+    [<TestCase(109.2<qt>, 27.3)>]
+    let ``Convert known quart to gallons`` (input, expectation) =
+        qt.toGallons input
+        |> should (equalWithin 0.01) expectation
 
-        teaspoons
-        |> should (equalWithin 0.01) 1.536
+    [<TestCase(3.12<qt>, 124.8)>]
+    let ``Convert known quart to fluid ounces`` (input, expectation) =
+        qt.toFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known quart to tablespoons`` () =
-        let tablespoons = qt.toTablespoons 0.09<qt>
+    [<TestCase(0.001<qt>, 0.230582481)>]
+    let ``Convert known quart to US teaspoons`` (input, expectation) =
+        qt.toUSTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-        tablespoons
-        |> should (equalWithin 0.01) 5.76
+    [<TestCase(0.006<qt>, 0.461164962)>]
+    let ``Convert known quart to US tablespoons`` (input, expectation) =
+        qt.toUSTablespoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known quart to pints`` () =
-        let pints = qt.toPints 16.98<qt>
+    [<TestCase(87.<qt>, 104.4826867039)>]
+    let ``Convert known quart to US quarts`` (input, expectation) =
+        qt.toUSQuarts input
+        |> should (equalWithin 0.01) expectation
 
-        pints
-        |> should (equalWithin 0.01) 33.96
+    [<TestCase(908.2<qt>, 2181.4063463104)>]
+    let ``Convert known quart to US pints`` (input, expectation) =
+        qt.toUSPints input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known quart to gallons`` () =
-        let gallons = qt.toGallons 109.2<qt>
+    [<TestCase(108.3<qt>, 32.5157326725)>]
+    let ``Convert known quart to US gallons`` (input, expectation) =
+        qt.toUSGallons input
+        |> should (equalWithin 0.01) expectation
 
-        gallons
-        |> should (equalWithin 0.01) 27.3
+    [<TestCase(34.<qt>, 1306.6340590099)>]
+    let ``Convert known quart to US fluid ounces`` (input, expectation) =
+        qt.toUSFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known quart to fluid ounces`` () =
-        let fluidOunces = qt.toFluidOunces 3.12<qt>
-
-        fluidOunces
-        |> should (equalWithin 0.01) 124.8
-
-    [<Test>]
-    let ``Convert known quart to US teaspoons`` () =
-        let usTeaspoons = qt.toUSTeaspoons 0.001<qt>
-
-        usTeaspoons
-        |> should (equalWithin 0.01) 0.230582481
-
-    [<Test>]
-    let ``Convert known quart to US tablespoons`` () =
-        let usTablespoons = qt.toUSTablespoons 0.006<qt>
-
-        usTablespoons
-        |> should (equalWithin 0.01) 0.461164962
-
-    [<Test>]
-    let ``Convert known quart to US quarts`` () =
-        let usQuarts = qt.toUSQuarts 87.<qt>
-
-        usQuarts
-        |> should (equalWithin 0.01) 104.4826867039
-
-    [<Test>]
-    let ``Convert known quart to US pints`` () =
-        let usPints = qt.toUSPints 908.2<qt>
-
-        usPints
-        |> should (equalWithin 0.01) 2181.4063463104
-
-    [<Test>]
-    let ``Convert known quart to US gallons`` () =
-        let usGallons = qt.toUSGallons 108.3<qt>
-
-        usGallons
-        |> should (equalWithin 0.01) 32.5157326725
-
-    [<Test>]
-    let ``Convert known quart to US fluid ounces`` () =
-        let usFluidOunces = qt.toUSFluidOunces 34.<qt>
-
-        usFluidOunces
-        |> should (equalWithin 0.01) 1306.6340590099
-
-    [<Test>]
-    let ``Convert known quart to US cups`` () =
-        let usCups = qt.toUSCups 12.8<qt>
-
-        usCups
-        |> should (equalWithin 0.01) 61.4886616005
+    [<TestCase(12.8<qt>, 61.4886616005)>]
+    let ``Convert known quart to US cups`` (input, expectation) =
+        qt.toUSCups input
+        |> should (equalWithin 0.01) expectation

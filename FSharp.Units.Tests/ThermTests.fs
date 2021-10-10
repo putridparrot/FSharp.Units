@@ -22,9 +22,7 @@ module ThermTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known therm to btu`` () =
-        let converted = therm.toBtu 0.12<therm>
-
-        converted
-        |> should (equalWithin 0.01) 11997.14
+    [<TestCase(0.12<therm>, 11997.14)>]
+    let ``Convert known therm to btu`` (input, expectation) =
+        therm.toBtu input
+        |> should (equalWithin 0.01) expectation

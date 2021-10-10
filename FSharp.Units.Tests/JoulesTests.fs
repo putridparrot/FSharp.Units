@@ -22,10 +22,8 @@ module JouleTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Joules to kilojoule`` () =
-        let result = J.toKilojoules 123.<J>
-
-        result
-        |> should (equalWithin 0.01) 0.123
+    [<TestCase(123.<J>, 0.123)>]
+    let ``Convert known Joules to kilojoule`` (input, expectation) =
+        J.toKilojoules input
+        |> should (equalWithin 0.01) expectation
 

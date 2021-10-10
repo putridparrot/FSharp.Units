@@ -99,10 +99,8 @@ module BitsPerSecondTests =
     
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Bits per second to Tera bytes per second`` () =
-        let result = bps.toTeraBytesPerSecond 908.<bps>
-
-        result
-        |> should (equalWithin 0.01) 1.135e-10
+    [<TestCase(908.<bps>, 1.135e-10)>]
+    let ``Convert known Bits per second to Tera bytes per second`` (input, expectation) =
+        bps.toTeraBytesPerSecond input
+        |> should (equalWithin 0.01) expectation
 

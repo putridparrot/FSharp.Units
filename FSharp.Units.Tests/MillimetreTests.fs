@@ -99,58 +99,42 @@ module MillimetreTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known millimetre to centimetre`` () =
-        let centimetres = mm.toCentimetres 123.<mm>
+    [<TestCase(123.<mm>, 12.3)>]
+    let ``Convert known millimetre to centimetre`` (input, expectation) =
+        mm.toCentimetres input
+        |> should (equalWithin 0.01) expectation
 
-        centimetres
-        |> should (equalWithin 0.01) 12.3
+    [<TestCase(123.<mm>, 0.123)>]
+    let ``Convert known millimetre to metre`` (input, expectation) =
+        mm.toMetres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known millimetre to metre`` () =
-        let metres = mm.toMetres 123.<mm>
+    [<TestCase(10981.<mm>, 0.010981)>]
+    let ``Convert known millimetre to kilometre`` (input, expectation) =
+        mm.toKilometres input
+        |> should (equalWithin 0.01) expectation
 
-        metres
-        |> should (equalWithin 0.01) 0.123
+    [<TestCase(1422.4<mm>, 56.)>]
+    let ``Convert known millimetre to inch`` (input, expectation) =
+        mm.toInches input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known millimetre to kilometre`` () =
-        let metres = mm.toKilometres 10981.<mm>
+    [<TestCase(1234.<mm>, 4.04855643)>]
+    let ``Convert known millimetre to feet`` (input, expectation) =
+        mm.toFeet input
+        |> should (equalWithin 0.01) expectation
 
-        metres
-        |> should (equalWithin 0.01) 0.010981
+    [<TestCase(3940.<mm>, 4.3088364)>]
+    let ``Convert known millimetre to yard`` (input, expectation) =
+        mm.toYards input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known millimetre to inch`` () =
-        let metres = mm.toInches 1422.4<mm>
+    [<TestCase(4023360.<mm>, 2.5)>]
+    let ``Convert known millimetre to mile`` (input, expectation) =
+        mm.toMiles input
+        |> should (equalWithin 0.01) expectation
 
-        metres
-        |> should (equalWithin 0.01) 56.
-
-    [<Test>]
-    let ``Convert known millimetre to feet`` () =
-        let ft = mm.toFeet 1234.<mm>
-
-        ft
-        |> should (equalWithin 0.01) 4.04855643
-
-    [<Test>]
-    let ``Convert known millimetre to yard`` () =
-        let yard = mm.toYards 3940.<mm>
-
-        yard
-        |> should (equalWithin 0.01) 4.3088364
-
-    [<Test>]
-    let ``Convert known millimetre to mile`` () =
-        let miles = mm.toMiles 4023360.<mm>
-
-        miles
-        |> should (equalWithin 0.01) 2.5
-
-    [<Test>]
-    let ``Convert known millimetre to nauticalmile`` () =
-        let ft = mm.toNauticalMiles 123456.<mm>
-
-        ft
-        |> should (equalWithin 0.01) 0.0666609071
+    [<TestCase(123456.<mm>, 0.0666609071)>]
+    let ``Convert known millimetre to nauticalmile`` (input, expectation) =
+        mm.toNauticalMiles input
+        |> should (equalWithin 0.01) expectation

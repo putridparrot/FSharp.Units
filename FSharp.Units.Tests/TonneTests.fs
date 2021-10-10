@@ -77,44 +77,32 @@ module TonneTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known tonne to milligram`` () =
-        let milligrams= tonne.toMilligrams 1560.0<tonne>
+    [<TestCase(1560.0<tonne>, 1.56e+12)>]
+    let ``Convert known tonne to milligram`` (input, expectation) =
+        tonne.toMilligrams input
+        |> should (equalWithin 0.01) expectation
 
-        milligrams
-        |> should (equalWithin 0.01) 1.56e+12
+    [<TestCase(1560.0<tonne>, 1.56e+9)>]
+    let ``Convert known tonne to gram`` (input, expectation) =
+        tonne.toGrams input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known tonne to gram`` () =
-        let grams = tonne.toGrams 1560.0<tonne>
+    [<TestCase(1560.0<tonne>, 1560000)>]
+    let ``Convert known tonne to kilogram`` (input, expectation) =
+        tonne.toKilograms input
+        |> should (equalWithin 0.01) expectation
 
-        grams
-        |> should (equalWithin 0.01) 1.56e+9
+    [<TestCase(256.0<tonne>, 9030134.2670558)>]
+    let ``Convert known tonne to ounce`` (input, expectation) =
+        tonne.toOunces input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known tonne to kilogram`` () =
-        let kilograms = tonne.toKilograms 1560.0<tonne>
+    [<TestCase(256.0<tonne>, 564383.39119329)>]
+    let ``Convert known tonne to pound`` (input, expectation) =
+        tonne.toPounds input
+        |> should (equalWithin 0.01) expectation
 
-        kilograms
-        |> should (equalWithin 0.01) 1560000
-
-    [<Test>]
-    let ``Convert known tonne to ounce`` () =
-        let ounces = tonne.toOunces 256.0<tonne>
-
-        ounces
-        |> should (equalWithin 0.01) 9030134.2670558
-
-    [<Test>]
-    let ``Convert known tonne to pound`` () =
-        let pounds = tonne.toPounds 256.0<tonne>
-
-        pounds
-        |> should (equalWithin 0.01) 564383.39119329
-
-    [<Test>]
-    let ``Convert known tonne to stone`` () =
-        let stones = tonne.toStones 1234.0<tonne>
-
-        stones
-        |> should (equalWithin 0.01) 194321.682
+    [<TestCase(1234.0<tonne>, 194321.682)>]
+    let ``Convert known tonne to stone`` (input, expectation) =
+        tonne.toStones input
+        |> should (equalWithin 0.01) expectation

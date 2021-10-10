@@ -55,30 +55,22 @@ module PascalTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Pascal to Atmosphere`` () =
-        let atmosphere = Pa.toAtmosphere 2300.<Pa>
+    [<TestCase(2300.<Pa>, 0.02269924)>]
+    let ``Convert known Pascal to Atmosphere`` (input, expectation) =
+        Pa.toAtmosphere input
+        |> should (equalWithin 0.01) expectation
 
-        atmosphere
-        |> should (equalWithin 0.01) 0.02269924
+    [<TestCase(6789.<Pa>, 0.06789)>]
+    let ``Convert known Pascal to Bar`` (input, expectation) =
+        Pa.toBar input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Pascal to Bar`` () =
-        let bar = Pa.toBar 6789.<Pa>
+    [<TestCase(7899.<Pa>, 59.24737)>]
+    let ``Convert known Pascal to Torr`` (input, expectation) =
+        Pa.toTorr input
+        |> should (equalWithin 0.01) expectation
 
-        bar
-        |> should (equalWithin 0.01) 0.06789
-
-    [<Test>]
-    let ``Convert known Pascal to Torr`` () =
-        let torr = Pa.toTorr 7899.<Pa>
-
-        torr
-        |> should (equalWithin 0.01) 59.24737
-
-    [<Test>]
-    let ``Convert known Pascal to psi`` () =
-        let psi = Pa.toPsi 1090.<Pa>
-
-        psi
-        |> should (equalWithin 0.01) 0.1580911
+    [<TestCase(1090.<Pa>, 0.1580911)>]
+    let ``Convert known Pascal to psi`` (input, expectation) =
+        Pa.toPsi input
+        |> should (equalWithin 0.01) expectation

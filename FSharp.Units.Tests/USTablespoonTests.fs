@@ -176,107 +176,77 @@ module USTablespoonTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known US tablespoons to millilites`` () =
-        let millilitres = ustbsp.toMillilitres 5.<ustbsp>
+    [<TestCase(5.<ustbsp>, 73.9338239062)>]
+    let ``Convert known US tablespoons to millilites`` (input, expectation) =
+        ustbsp.toMillilitres input
+        |> should (equalWithin 0.01) expectation
 
-        millilitres
-        |> should (equalWithin 0.01) 73.9338239062
+    [<TestCase(1020.<ustbsp>, 15.0825000769)>]
+    let ``Convert known US tablespoons to lites`` (input, expectation) =
+        ustbsp.toLitres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US tablespoons to lites`` () =
-        let litres = ustbsp.toLitres 1020.<ustbsp>
+    [<TestCase(7009.<ustbsp>, 0.1036404344)>]
+    let ``Convert known US tablespoons to kilolites`` (input, expectation) =
+        ustbsp.toKilolitres input
+        |> should (equalWithin 0.01) expectation
 
-        litres
-        |> should (equalWithin 0.01) 15.0825000769
+    [<TestCase(23.<ustbsp>, 57.4544949922)>]
+    let ``Convert known US tablespoons to teaspoons`` (input, expectation) =
+        ustbsp.toTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US tablespoons to kilolites`` () =
-        let kilolitres = ustbsp.toKilolitres 7009.<ustbsp>
+    [<TestCase(101.<ustbsp>, 84.1000578871)>]
+    let ``Convert known US tablespoons to tablespoons`` (input, expectation) =
+        ustbsp.toTablespoons input
+        |> should (equalWithin 0.01) expectation
 
-        kilolitres
-        |> should (equalWithin 0.01) 0.1036404344
+    [<TestCase(3400.<ustbsp>, 44.2357977748)>]
+    let ``Convert known US tablespoons to quarts`` (input, expectation) =
+        ustbsp.toQuarts input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US tablespoons to teaspoons`` () =
-        let teaspoons = ustbsp.toTeaspoons 23.<ustbsp>
+    [<TestCase(3000.<ustbsp>, 78.0631725437)>]
+    let ``Convert known US tablespoons to pints`` (input, expectation) =
+        ustbsp.toPints input
+        |> should (equalWithin 0.01) expectation
 
-        teaspoons
-        |> should (equalWithin 0.01) 57.4544949922
+    [<TestCase(1234.<ustbsp>, 4.0137481216)>]
+    let ``Convert known US tablespoons to gallons`` (input, expectation) =
+        ustbsp.toGallons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US tablespoons to tablespoons`` () =
-        let tablespoons = ustbsp.toTablespoons 101.<ustbsp>
+    [<TestCase(12.5<ustbsp>, 6.5052643786)>]
+    let ``Convert known US tablespoons to fluid ounces`` (input, expectation) =
+        ustbsp.toFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-        tablespoons
-        |> should (equalWithin 0.01) 84.1000578871
+    [<TestCase(4.<ustbsp>, 12.)>]
+    let ``Convert known US tablespoons to US teaspoons`` (input, expectation) =
+        ustbsp.toUSTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US tablespoons to quarts`` () =
-        let quarts = ustbsp.toQuarts 3400.<ustbsp>
+    [<TestCase(3444.<ustbsp>, 53.8125)>]
+    let ``Convert known US tablespoons to US quarts`` (input, expectation) =
+        ustbsp.toUSQuarts input
+        |> should (equalWithin 0.01) expectation
 
-        quarts
-        |> should (equalWithin 0.01) 44.2357977748
+    [<TestCase(555.<ustbsp>, 17.34375)>]
+    let ``Convert known US tablespoons to US pints`` (input, expectation) =
+        ustbsp.toUSPints input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US tablespoons to pints`` () =
-        let pints = ustbsp.toPints 3000.<ustbsp>
+    [<TestCase(1500.<ustbsp>, 5.859375)>]
+    let ``Convert known US tablespoons to US gallons`` (input, expectation) =
+        ustbsp.toUSGallons input
+        |> should (equalWithin 0.01) expectation
 
-        pints
-        |> should (equalWithin 0.01) 78.0631725437
+    [<TestCase(44.<ustbsp>, 22.)>]
+    let ``Convert known US tablespoons to US fluid ounces`` (input, expectation) =
+        ustbsp.toUSFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US tablespoons to gallons`` () =
-        let gallons = ustbsp.toGallons 1234.<ustbsp>
-
-        gallons
-        |> should (equalWithin 0.01) 4.0137481216
-
-    [<Test>]
-    let ``Convert known US tablespoons to fluid ounces`` () =
-        let fluidOunces = ustbsp.toFluidOunces 12.5<ustbsp>
-
-        fluidOunces
-        |> should (equalWithin 0.01) 6.5052643786
-
-    [<Test>]
-    let ``Convert known US tablespoons to US teaspoons`` () =
-        let usTeaspoons = ustbsp.toUSTeaspoons 4.<ustbsp>
-
-        usTeaspoons
-        |> should (equalWithin 0.01) 12.
-
-    [<Test>]
-    let ``Convert known US tablespoons to US quarts`` () =
-        let usQuarts = ustbsp.toUSQuarts 3444.<ustbsp>
-
-        usQuarts
-        |> should (equalWithin 0.01) 53.8125
-
-    [<Test>]
-    let ``Convert known US tablespoons to US pints`` () =
-        let usPints = ustbsp.toUSPints 555.<ustbsp>
-
-        usPints
-        |> should (equalWithin 0.01) 17.34375
-
-    [<Test>]
-    let ``Convert known US tablespoons to US gallons`` () =
-        let usGallons = ustbsp.toUSGallons 1500.<ustbsp>
-
-        usGallons
-        |> should (equalWithin 0.01) 5.859375
-
-    [<Test>]
-    let ``Convert known US tablespoons to US fluid ounces`` () =
-        let usFluidOunces = ustbsp.toUSFluidOunces 44.<ustbsp>
-
-        usFluidOunces
-        |> should (equalWithin 0.01) 22.
-
-    [<Test>]
-    let ``Convert known US tablespoons to US cups`` () =
-        let usCups = ustbsp.toUSCups 800.<ustbsp>
-
-        usCups
-        |> should (equalWithin 0.01) 50.
+    [<TestCase(800.<ustbsp>, 50.)>]
+    let ``Convert known US tablespoons to US cups`` (input, expectation) =
+        ustbsp.toUSCups input
+        |> should (equalWithin 0.01) expectation

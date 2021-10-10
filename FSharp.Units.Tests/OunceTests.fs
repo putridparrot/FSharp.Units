@@ -78,44 +78,32 @@ module OunceTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known ounce to milligram`` () =
-        let milligrams= oz.toMilligrams 1560.0<oz>
+    [<TestCase(1560.0<oz>, 44225256.036)>]
+    let ``Convert known ounce to milligram`` (input, expectation) =
+        oz.toMilligrams input
+        |> should (equalWithin 0.01) expectation
 
-        milligrams
-        |> should (equalWithin 0.01) 44225256.036
+    [<TestCase(1560.0<oz>, 44225.26)>]
+    let ``Convert known ounce to gram`` (input, expectation) =
+        oz.toGrams input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known ounce to gram`` () =
-        let grams = oz.toGrams 1560.0<oz>
+    [<TestCase(1560.0<oz>, 44.22526)>]
+    let ``Convert known ounce to kilogram`` (input, expectation) =
+        oz.toKilograms input
+        |> should (equalWithin 0.01) expectation
 
-        grams
-        |> should (equalWithin 0.01) 44225.26
+    [<TestCase(256.0<oz>, 0.00725748)>]
+    let ``Convert known ounce to tonne`` (input, expectation) =
+        oz.toTonnes input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known ounce to kilogram`` () =
-        let kilograms = oz.toKilograms 1560.0<oz>
+    [<TestCase(256.0<oz>, 16.)>]
+    let ``Convert known ounce to pound`` (input, expectation) =
+        oz.toPounds input
+        |> should (equalWithin 0.01) expectation
 
-        kilograms
-        |> should (equalWithin 0.01) 44.22526
-
-    [<Test>]
-    let ``Convert known ounce to tonne`` () =
-        let tonnes = oz.toTonnes 256.0<oz>
-
-        tonnes
-        |> should (equalWithin 0.01) 0.00725748
-
-    [<Test>]
-    let ``Convert known ounce to pound`` () =
-        let pounds = oz.toPounds 256.0<oz>
-
-        pounds
-        |> should (equalWithin 0.01) 16
-
-    [<Test>]
-    let ``Convert known ounce to stone`` () =
-        let stones = oz.toStones 1234.0<oz>
-
-        stones
-        |> should (equalWithin 0.01) 5.508929
+    [<TestCase(1234.0<oz>, 5.508929)>]
+    let ``Convert known ounce to stone`` (input, expectation) =
+        oz.toStones input
+        |> should (equalWithin 0.01) expectation

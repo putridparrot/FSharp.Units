@@ -99,60 +99,60 @@ module MebibitPerSecondTests =
     
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Mebibit per second to bits per second`` () =
-        let result = Mibit.toBitsPerSecond 0.1<Mibit>
+    [<TestCase(0.1<Mibit>, 104857.6)>]
+    [<TestCase(78.<Mibit>, 8.179e+7)>]
+    [<TestCase(0.0067<Mibit>, 7025.4592)>]
+    let ``Convert known Mebibit per second to bits per second`` (input, expectation) =
+        Mibit.toBitsPerSecond input
+        |> should (equalWithin 0.01) expectation
     
-        result
-        |> should (equalWithin 0.01) 104857.6
-    
-    [<Test>]
-    let ``Convert known Mebibit per second to kilo bits per second`` () =
-        let result = Mibit.toKiloBitsPerSecond 1.23<Mibit>
-    
-        result
-        |> should (equalWithin 0.01) 1289.748
+    [<TestCase(1.23<Mibit>, 1289.748)>]
+    [<TestCase(78.<Mibit>, 81788.9)>]
+    [<TestCase(0.9<Mibit>, 943.718)>]
+    let ``Convert known Mebibit per second to kilo bits per second`` (input, expectation) =
+        Mibit.toKiloBitsPerSecond input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Mebibit per second to mega bits per second`` () =
-        let result = Mibit.toMegaBitsPerSecond 456.<Mibit>
-    
-        result
-        |> should (equalWithin 0.01) 478.151
+    [<TestCase(456.<Mibit>, 478.151)>]
+    [<TestCase(78.12<Mibit>, 81.914757)>]
+    [<TestCase(0.98<Mibit>, 1.027604)>]
+    let ``Convert known Mebibit per second to mega bits per second`` (input, expectation) =
+        Mibit.toMegaBitsPerSecond input
+        |> should (equalWithin 0.01) expectation
 
 
-    [<Test>]
-    let ``Convert known Mebibit per second to giga bits per second`` () =
-        let result = Mibit.toGigaBitsPerSecond 13456.<Mibit>
-    
-        result
-        |> should (equalWithin 0.01) 14.109639
+    [<TestCase(13456.<Mibit>, 14.109639)>]
+    [<TestCase(99.15<Mibit>, 0.10396631)>]
+    [<TestCase(0.9<Mibit>, 0.000943718)>]
+    let ``Convert known Mebibit per second to giga bits per second`` (input, expectation) =
+        Mibit.toGigaBitsPerSecond input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Mebibit per second to mega bytes per second`` () =
-        let result = Mibit.toMegaBytesPerSecond 13456.<Mibit>
-    
-        result
-        |> should (equalWithin 0.01) 1763.7048
+    [<TestCase(13456.<Mibit>, 1763.7048)>]
+    [<TestCase(99.15<Mibit>, 12.995789)>]
+    [<TestCase(0.9<Mibit>, 0.117965)>]
+    let ``Convert known Mebibit per second to mega bytes per second`` (input, expectation) =
+        Mibit.toMegaBytesPerSecond input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Mebibit per second to giga bytes per second`` () =
-        let result = Mibit.toGigaBytesPerSecond 10990.<Mibit>
+    [<TestCase(10990.<Mibit>, 1.4404813)>]
+    [<TestCase(99.15<Mibit>, 0.012995789)>]
+    [<TestCase(1.9<Mibit>, 0.000249037)>]
+    let ``Convert known Mebibit per second to giga bytes per second`` (input, expectation) =
+        Mibit.toGigaBytesPerSecond input
+        |> should (equalWithin 0.01) expectation
     
-        result
-        |> should (equalWithin 0.01) 1.4404813
-    
-    [<Test>]
-    let ``Convert known Mebibit per second to tera bytes per second`` () =
-        let result = Mibit.toTeraBytesPerSecond 8912345.<Mibit>
+    [<TestCase(8912345.<Mibit>, 1.168158884)>]
+    [<TestCase(99999<Mibit>, 0.013107069)>]
+    [<TestCase(1.9<Mibit>, 2.4904e-7)>]
+    let ``Convert known Mebibit per second to tera bytes per second`` (input, expectation) =
+        Mibit.toTeraBytesPerSecond input
+        |> should (equalWithin 0.01) expectation
 
-        result
-        |> should (equalWithin 0.01) 1.168158884
-
-    [<Test>]
-    let ``Convert known Mebibit per second to kibibit bytes per second`` () =
-        let result = Mibit.toKibibitPerSecond 123.<Mibit>
-    
-        result
-        |> should (equalWithin 0.01) 125952.
+    [<TestCase(123.<Mibit>, 125952.)>]
+    [<TestCase(99<Mibit>, 101376)>]
+    [<TestCase(1.9<Mibit>, 1945.6)>]
+    let ``Convert known Mebibit per second to kibibit bytes per second`` (input, expectation) =
+        Mibit.toKibibitPerSecond input
+        |> should (equalWithin 0.01) expectation
     

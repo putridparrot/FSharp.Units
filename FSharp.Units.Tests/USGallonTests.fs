@@ -176,107 +176,77 @@ module USGallonTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known US gallons to millilitres`` () =
-        let millilitres = usgal.toMillilitres 0.01<usgal>
+    [<TestCase(0.01<usgal>, 37.85411784)>]
+    let ``Convert known US gallons to millilitres`` (input, expectation) =
+        usgal.toMillilitres input
+        |> should (equalWithin 0.01) expectation
 
-        millilitres
-        |> should (equalWithin 0.01) 37.85411784
+    [<TestCase(2.5<usgal>, 9.46352946)>]
+    let ``Convert known US gallons to litres`` (input, expectation) =
+        usgal.toLitres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US gallons to litres`` () =
-        let litres = usgal.toLitres 2.5<usgal>
+    [<TestCase(34.<usgal>, 0.1287040007)>]
+    let ``Convert known US gallons to kilolitres`` (input, expectation) =
+        usgal.toKilolitres input
+        |> should (equalWithin 0.01) expectation
 
-        litres
-        |> should (equalWithin 0.01) 9.46352946
+    [<TestCase(0.003<usgal>, 1.9184805284)>]
+    let ``Convert known US gallons to teaspoons`` (input, expectation) =
+        usgal.toTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US gallons to kilolitres`` () =
-        let kilolitres = usgal.toKilolitres 34.<usgal>
+    [<TestCase(0.009<usgal>, 1.9184805284)>]
+    let ``Convert known US gallons to tablespoons`` (input, expectation) =
+        usgal.toTablespoons input
+        |> should (equalWithin 0.01) expectation
 
-        kilolitres
-        |> should (equalWithin 0.01) 0.1287040007
+    [<TestCase(0.8<usgal>, 2.6645562895)>]
+    let ``Convert known US gallons to quarts`` (input, expectation) =
+        usgal.toQuarts input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US gallons to teaspoons`` () =
-        let teaspoons = usgal.toTeaspoons 0.003<usgal>
+    [<TestCase(5.1<usgal>, 33.973092691)>]
+    let ``Convert known US gallons to pints`` (input, expectation) =
+        usgal.toPints input
+        |> should (equalWithin 0.01) expectation
 
-        teaspoons
-        |> should (equalWithin 0.01) 1.9184805284
+    [<TestCase(506.<usgal>, 421.332963276)>]
+    let ``Convert known US gallons to gallons`` (input, expectation) =
+        usgal.toGallons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US gallons to tablespoons`` () =
-        let tablespoons = usgal.toTablespoons 0.009<usgal>
+    [<TestCase(0.98<usgal>, 130.5632581851)>]
+    let ``Convert known US gallons to fluid ounces`` (input, expectation) =
+        usgal.toFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-        tablespoons
-        |> should (equalWithin 0.01) 1.9184805284
+    [<TestCase(0.34<usgal>, 261.12)>]
+    let ``Convert known US gallons to US teaspoons`` (input, expectation) =
+        usgal.toUSTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US gallons to quarts`` () =
-        let quarts = usgal.toQuarts 0.8<usgal>
+    [<TestCase(0.9<usgal>, 230.4)>]
+    let ``Convert known US gallons to US tablespoons`` (input, expectation) =
+        usgal.toUSTablespoons input
+        |> should (equalWithin 0.01) expectation
 
-        quarts
-        |> should (equalWithin 0.01) 2.6645562895
+    [<TestCase(12.3<usgal>, 49.2)>]
+    let ``Convert known US gallons to US quarts`` (input, expectation) =
+        usgal.toUSQuarts input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US gallons to pints`` () =
-        let pints = usgal.toPints 5.1<usgal>
+    [<TestCase(0.09<usgal>, 0.72)>]
+    let ``Convert known US gallons to US pints`` (input, expectation) =
+        usgal.toUSPints input
+        |> should (equalWithin 0.01) expectation
 
-        pints
-        |> should (equalWithin 0.01) 33.973092691
+    [<TestCase(0.9<usgal>, 115.2)>]
+    let ``Convert known US gallons to US fluid ounces`` (input, expectation) =
+        usgal.toUSFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known US gallons to gallons`` () =
-        let gallons = usgal.toGallons 506.<usgal>
-
-        gallons
-        |> should (equalWithin 0.01) 421.332963276
-
-    [<Test>]
-    let ``Convert known US gallons to fluid ounces`` () =
-        let fluidOunces = usgal.toFluidOunces 0.98<usgal>
-
-        fluidOunces
-        |> should (equalWithin 0.01) 130.5632581851
-
-    [<Test>]
-    let ``Convert known US gallons to US teaspoons`` () =
-        let usTeaspoons = usgal.toUSTeaspoons 0.34<usgal>
-
-        usTeaspoons
-        |> should (equalWithin 0.01) 261.12
-
-    [<Test>]
-    let ``Convert known US gallons to US tablespoons`` () =
-        let ustablespoons = usgal.toUSTablespoons 0.9<usgal>
-
-        ustablespoons
-        |> should (equalWithin 0.01) 230.4
-
-    [<Test>]
-    let ``Convert known US gallons to US quarts`` () =
-        let usQuarts = usgal.toUSQuarts 12.3<usgal>
-
-        usQuarts
-        |> should (equalWithin 0.01) 49.2
-
-    [<Test>]
-    let ``Convert known US gallons to US pints`` () =
-        let usPints = usgal.toUSPints 0.09<usgal>
-
-        usPints
-        |> should (equalWithin 0.01) 0.72
-
-    [<Test>]
-    let ``Convert known US gallons to US fluid ounces`` () =
-        let usFluidOunces = usgal.toUSFluidOunces 0.9<usgal>
-
-        usFluidOunces
-        |> should (equalWithin 0.01) 115.2
-
-    [<Test>]
-    let ``Convert known US gallons to US cups`` () =
-        let usCups = usgal.toUSCups 56.<usgal>
-
-        usCups
-        |> should (equalWithin 0.01) 896.
+    [<TestCase(56.<usgal>, 896.)>]
+    let ``Convert known US gallons to US cups`` (input, expectation) =
+        usgal.toUSCups input
+        |> should (equalWithin 0.01) expectation

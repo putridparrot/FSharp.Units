@@ -176,107 +176,77 @@ module FluidOunceTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known fluid ounces to millilitres`` () =
-        let millilitres = floz.toMillilitres 9.8<floz>
+    [<TestCase(9.8<floz>, 278.4481275887)>]
+    let ``Convert known fluid ounces to millilitres`` (input, expectation) =
+        floz.toMillilitres input
+        |> should (equalWithin 0.01) expectation
 
-        millilitres
-        |> should (equalWithin 0.01) 278.4481275887
+    [<TestCase(4567.<floz>, 129.7625100712)>]
+    let ``Convert known fluid ounces to litres`` (input, expectation) =
+        floz.toLitres input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known fluid ounces to litres`` () =
-        let litres = floz.toLitres 4567.<floz>
+    [<TestCase(130034.<floz>, 3.6946656962)>]
+    let ``Convert known fluid ounces to kilolitres`` (input, expectation) =
+        floz.toKilolitres input
+        |> should (equalWithin 0.01) expectation
 
-        litres
-        |> should (equalWithin 0.01) 129.7625100712
+    [<TestCase(0.123<floz>, 0.5904)>]
+    let ``Convert known fluid ounces to teaspoons`` (input, expectation) =
+        floz.toTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known fluid ounces to kilolitres`` () =
-        let kilolitres = floz.toKilolitres 130034.<floz>
+    [<TestCase(0.78<floz>, 1.248)>]
+    let ``Convert known fluid ounces to tablespoons`` (input, expectation) =
+        floz.toTablespoons input
+        |> should (equalWithin 0.01) expectation
 
-        kilolitres
-        |> should (equalWithin 0.01) 3.6946656962
+    [<TestCase(6.5<floz>, 0.16)>]
+    let ``Convert known fluid ounces to quarts`` (input, expectation) =
+        floz.toQuarts input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known fluid ounces to teaspoons`` () =
-        let teaspoons = floz.toTeaspoons 0.123<floz>
+    [<TestCase(12.<floz>, 0.6)>]
+    let ``Convert known fluid ounces to pints`` (input, expectation) =
+        floz.toPints input
+        |> should (equalWithin 0.01) expectation
 
-        teaspoons
-        |> should (equalWithin 0.01) 0.5904
+    [<TestCase(1234.<floz>, 7.7125)>]
+    let ``Convert known fluid ounces to gallons`` (input, expectation) =
+        floz.toGallons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known fluid ounces to tablespoons`` () =
-        let tablespoons = floz.toTablespoons 0.78<floz>
+    [<TestCase(0.6<floz>, 3.458737215)>]
+    let ``Convert known fluid ounces to US teapoons`` (input, expectation) =
+        floz.toUSTeaspoons input
+        |> should (equalWithin 0.01) expectation
 
-        tablespoons
-        |> should (equalWithin 0.01) 1.248
+    [<TestCase(8.1<floz>, 15.5643174676)>]
+    let ``Convert known fluid ounces to US tablepoons`` (input, expectation) =
+        floz.toUSTablespoons input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known fluid ounces to quarts`` () =
-        let quarts = floz.toQuarts 6.5<floz>
+    [<TestCase(3.45<floz>, 0.1035819739)>]
+    let ``Convert known fluid ounces to US quarts`` (input, expectation) =
+        floz.toUSQuarts input
+        |> should (equalWithin 0.01) expectation
 
-        quarts
-        |> should (equalWithin 0.01) 0.16
+    [<TestCase(6.5<floz>, 0.3903088871)>]
+    let ``Convert known fluid ounces to US pints`` (input, expectation) =
+        floz.toUSPints input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known fluid ounces to pints`` () =
-        let pints = floz.toPints 12.<floz>
+    [<TestCase(123.<floz>, 0.9232306368)>]
+    let ``Convert known fluid ounces to US gallons`` (input, expectation) =
+        floz.toUSGallons input
+        |> should (equalWithin 0.01) expectation
 
-        pints
-        |> should (equalWithin 0.01) 0.6
+    [<TestCase(8.12<floz>, 7.8013739406)>]
+    let ``Convert known fluid ounces to US fluid ounces`` (input, expectation) =
+        floz.toUSFluidOunces input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known fluid ounces to gallons`` () =
-        let gallons = floz.toGallons 1234.<floz>
-
-        gallons
-        |> should (equalWithin 0.01) 7.7125
-
-    [<Test>]
-    let ``Convert known fluid ounces to US teapoons`` () =
-        let usTeaspoons = floz.toUSTeaspoons 0.6<floz>
-
-        usTeaspoons
-        |> should (equalWithin 0.01) 3.458737215
-
-    [<Test>]
-    let ``Convert known fluid ounces to US tablepoons`` () =
-        let usTablespoons = floz.toUSTablespoons 8.1<floz>
-
-        usTablespoons
-        |> should (equalWithin 0.01) 15.5643174676
-
-    [<Test>]
-    let ``Convert known fluid ounces to US quarts`` () =
-        let usQuarts = floz.toUSQuarts 3.45<floz>
-
-        usQuarts
-        |> should (equalWithin 0.01) 0.1035819739
-
-    [<Test>]
-    let ``Convert known fluid ounces to US pints`` () =
-        let usPints = floz.toUSPints 6.5<floz>
-
-        usPints
-        |> should (equalWithin 0.01) 0.3903088871
-
-    [<Test>]
-    let ``Convert known fluid ounces to US gallons`` () =
-        let usGallons = floz.toUSGallons 123.<floz>
-
-        usGallons
-        |> should (equalWithin 0.01) 0.9232306368
-
-    [<Test>]
-    let ``Convert known fluid ounces to US fluid ounces`` () =
-        let usFluidOunces = floz.toUSFluidOunces 8.12<floz>
-
-        usFluidOunces
-        |> should (equalWithin 0.01) 7.8013739406
-
-    [<Test>]
-    let ``Convert known fluid ounces to US cups`` () =
-        let usCups = floz.toUSCups 3.4<floz>
-
-        usCups
-        |> should (equalWithin 0.01) 0.4083231434
+    [<TestCase(3.4<floz>, 0.4083231434)>]
+    let ``Convert known fluid ounces to US cups`` (input, expectation) =
+        floz.toUSCups input
+        |> should (equalWithin 0.01) expectation

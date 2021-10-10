@@ -22,10 +22,8 @@ module BtuTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Btu to kilojoule`` () =
-        let result = btu.toKilojoules 123.<btu>
-
-        result
-        |> should (equalWithin 0.01) 129.772
+    [<TestCase(123.<btu>, 129.772)>]
+    let ``Convert known Btu to kilojoule`` (input, expectation) =
+        btu.toKilojoules input
+        |> should (equalWithin 0.01) expectation
 

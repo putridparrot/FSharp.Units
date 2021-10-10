@@ -34,16 +34,12 @@ module KelvinTests =
         Check.QuickThrowOnFailure (testRange property)
 
 
-    [<Test>]
-    let ``Convert known kelvin to celsius`` () =
-        let celsius = K.toCelsius 123.<K>
+    [<TestCase(123.<K>, -150.15)>]
+    let ``Convert known kelvin to celsius`` (input, expectation) =
+        K.toCelsius input
+        |> should (equalWithin 0.01) expectation
 
-        celsius
-        |> should (equalWithin 0.01) -150.15
-
-    [<Test>]
-    let ``Convert known kelvin to fahrenheit`` () =
-        let fahrenheit = K.toFahrenheit 34.<K>
-
-        fahrenheit
-        |> should (equalWithin 0.01) -398.47
+    [<TestCase(34.<K>, -398.47)>]
+    let ``Convert known kelvin to fahrenheit`` (input, expectation) =
+        K.toFahrenheit input
+        |> should (equalWithin 0.01) expectation

@@ -44,23 +44,17 @@ module TalbotTests =
     
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Talbot to Lumen second`` () =
-        let result = T.toLumenSecond 5678.<T>
-    
-        result
-        |> should (equalWithin 0.01) 5678.0
+    [<TestCase(5678.<T>, 5678.0)>]
+    let ``Convert known Talbot to Lumen second`` (input, expectation) =
+        T.toLumenSecond input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Talbot to Lumen hour`` () =
-        let result = T.toLumenHour 5678.<T>
-    
-        result
-        |> should (equalWithin 0.01) 1.5772
+    [<TestCase(5678.<T>, 1.5772)>]
+    let ``Convert known Talbot to Lumen hour`` (input, expectation) =
+        T.toLumenHour input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Talbot to Lumen minute`` () =
-        let result = T.toLumenMinute 1456.0<T>
-    
-        result
-        |> should (equalWithin 0.01) 24.2667
+    [<TestCase(1456.0<T>, 24.2667)>]
+    let ``Convert known Talbot to Lumen minute`` (input, expectation) =
+        T.toLumenMinute input
+        |> should (equalWithin 0.01) expectation

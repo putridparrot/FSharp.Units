@@ -88,53 +88,39 @@ module KibibitPerSecondTests =
     
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Kibibit per second to bits per second`` () =
-        let result = Kibitps.toBitsPerSecond 1.2<Kibitps>
+    [<TestCase(1.2<Kibitps>, 1228.8)>]
+    let ``Convert known Kibibit per second to bits per second`` (input, expectation) =
+        Kibitps.toBitsPerSecond input
+        |> should (equalWithin 0.01) expectation
     
-        result
-        |> should (equalWithin 0.01) 1228.8
-    
-    [<Test>]
-    let ``Convert known Kibibit per second to kilo bits per second`` () =
-        let result = Kibitps.toKiloBitsPerSecond 1.23<Kibitps>
-    
-        result
-        |> should (equalWithin 0.01) 1.25952
+    [<TestCase(1.23<Kibitps>, 1.25952)>]
+    let ``Convert known Kibibit per second to kilo bits per second`` (input, expectation) =
+        Kibitps.toKiloBitsPerSecond input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Kibibit per second to mega bits per second`` () =
-        let result = Kibitps.toMegaBitsPerSecond 456.<Kibitps>
-    
-        result
-        |> should (equalWithin 0.01) 0.466944
+    [<TestCase(456.<Kibitps>, 0.466944)>]
+    let ``Convert known Kibibit per second to mega bits per second`` (input, expectation) =
+        Kibitps.toMegaBitsPerSecond input
+        |> should (equalWithin 0.01) expectation
 
 
-    [<Test>]
-    let ``Convert known Kibibit per second to giga bits per second`` () =
-        let result = Kibitps.toGigaBitsPerSecond 13456.<Kibitps>
-    
-        result
-        |> should (equalWithin 0.01) 0.013778944
+    [<TestCase(13456.<Kibitps>, 0.013778944)>]
+    let ``Convert known Kibibit per second to giga bits per second`` (input, expectation) =
+        Kibitps.toGigaBitsPerSecond input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Kibibit per second to mega bytes per second`` () =
-        let result = Kibitps.toMegaBytesPerSecond 13456.<Kibitps>
-    
-        result
-        |> should (equalWithin 0.01) 1.722368
+    [<TestCase(13456.<Kibitps>, 1.722368)>]
+    let ``Convert known Kibibit per second to mega bytes per second`` (input, expectation) =
+        Kibitps.toMegaBytesPerSecond input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known Kibibit per second to giga bytes per second`` () =
-        let result = Kibitps.toGigaBytesPerSecond 10990.<Kibitps>
+    [<TestCase(10990.<Kibitps>, 0.01099)>]
+    let ``Convert known Kibibit per second to giga bytes per second`` (input, expectation) =
+        Kibitps.toGigaBytesPerSecond input
+        |> should (equalWithin 0.01) expectation
     
-        result
-        |> should (equalWithin 0.01) 0.01099
-    
-    [<Test>]
-    let ``Convert known Kibibit per second to tera bytes per second`` () =
-        let result = Kibitps.toTeraBytesPerSecond 8912345.<Kibitps>
-
-        result
-        |> should (equalWithin 0.01) 0.008912345
+    [<TestCase(8912345.<Kibitps>, 0.008912345)>]
+    let ``Convert known Kibibit per second to tera bytes per second`` (input, expectation) =
+        Kibitps.toTeraBytesPerSecond input
+        |> should (equalWithin 0.01) expectation
 

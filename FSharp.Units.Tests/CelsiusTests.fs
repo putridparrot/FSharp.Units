@@ -33,16 +33,12 @@ module CelsiusTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known celsius to fahrenheit`` () =
-        let fahrenheit = C.toFahrenheit 12.<C>
+    [<TestCase(12.<C>, 53.6)>]
+    let ``Convert known celsius to fahrenheit`` (input, expectation) =
+        C.toFahrenheit input
+        |> should (equalWithin 0.01) expectation
 
-        fahrenheit
-        |> should (equalWithin 0.01) 53.6
-
-    [<Test>]
-    let ``Convert known celsius to kelvin`` () =
-        let kelvin = C.toKelvin 23.<C>
-
-        kelvin
-        |> should (equalWithin 0.01) 296.15
+    [<TestCase(23.<C>, 296.15)>]
+    let ``Convert known celsius to kelvin`` (input, expectation) =
+        C.toKelvin input
+        |> should (equalWithin 0.01) expectation

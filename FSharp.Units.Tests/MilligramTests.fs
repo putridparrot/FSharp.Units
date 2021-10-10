@@ -77,44 +77,32 @@ module MilligramTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known milligram to gram`` () =
-        let grams = mg.toGrams 123.0<mg>
+    [<TestCase(123.0<mg>, 0.123)>]
+    let ``Convert known milligram to gram`` (input, expectation) =
+        mg.toGrams input
+        |> should equal expectation
 
-        grams
-        |> should equal 0.123
+    [<TestCase(1024.0<mg>, 0.001024)>]
+    let ``Convert known milligram to kilogram`` (input, expectation) =
+        mg.toKilograms input
+        |> should equal expectation
 
-    [<Test>]
-    let ``Convert known milligram to kilogram`` () =
-        let kilograms = mg.toKilograms 1024.0<mg>
+    [<TestCase(1024.0<mg>, 1.024e-6)>]
+    let ``Convert known milligram to tonne`` (input, expectation) =
+        mg.toTonnes input
+        |> should equal expectation
 
-        kilograms
-        |> should equal 0.001024
+    [<TestCase(345.0<mg>, 0.0121695)>]
+    let ``Convert known milligram to ounce`` (input, expectation) =
+        mg.toOunces input
+        |> should (equalWithin 0.01) expectation
 
-    [<Test>]
-    let ``Convert known milligram to tonne`` () =
-        let tonnes = mg.toTonnes 1024.0<mg>
+    [<TestCase(87.0<mg>, 0.000191802)>]
+    let ``Convert known milligram to pound`` (input, expectation) =
+        mg.toStones input
+        |> should (equalWithin 0.01) expectation
 
-        tonnes
-        |> should equal 1.024e-6
-
-    [<Test>]
-    let ``Convert known milligram to ounce`` () =
-        let ounces = mg.toOunces 345.0<mg>
-
-        ounces
-        |> should (equalWithin 0.01) 0.0121695
-
-    [<Test>]
-    let ``Convert known milligram to pound`` () =
-        let pounds = mg.toStones 87.0<mg>
-
-        pounds
-        |> should (equalWithin 0.01) 0.000191802
-
-    [<Test>]
-    let ``Convert known milligram to stone`` () =
-        let stones = mg.toStones 678.0<mg>
-
-        stones
-        |> should (equalWithin 0.01) 0.000106767
+    [<TestCase(678.0<mg>, 0.000106767)>]
+    let ``Convert known milligram to stone`` (input, expectation) =
+        mg.toStones input
+        |> should (equalWithin 0.01) expectation

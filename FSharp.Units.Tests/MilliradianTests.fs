@@ -66,16 +66,12 @@ module MilliradiansTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<Test>]
-    let ``Convert known Gradians turn to Milliradian`` () =
-        let mr = grad.toMilliradians 678.<grad>
+    [<TestCase(678.<grad>, 10650.024)>]
+    let ``Convert known Gradians turn to Milliradian`` (input, expectation) =
+        grad.toMilliradians input
+        |> should (equalWithin 0.01) expectation
 
-        mr
-        |> should (equalWithin 0.01) 10650.024
-
-    [<Test>]
-    let ``Convert known Milliradian turn to Gradian`` () =
-        let gradians = mrad.toGradians 1234.<mrad>
-
-        gradians
-        |> should (equalWithin 0.01) 78.55888
+    [<TestCase(1234.<mrad>, 78.55888)>]
+    let ``Convert known Milliradian turn to Gradian`` (input, expectation) =
+        mrad.toGradians input
+        |> should (equalWithin 0.01) expectation
