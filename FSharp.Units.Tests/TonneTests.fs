@@ -77,31 +77,43 @@ module TonneTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
+    [<TestCase(0.09<tonne>, 9e+7)>]
+    [<TestCase(0.0005<tonne>, 500000.)>]
     [<TestCase(1560.0<tonne>, 1.56e+12)>]
     let ``Convert known tonne to milligram`` (input, expectation) =
         tonne.toMilligrams input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(0.09<tonne>, 90000.)>]
+    [<TestCase(0.0005<tonne>, 500.)>]
     [<TestCase(1560.0<tonne>, 1.56e+9)>]
     let ``Convert known tonne to gram`` (input, expectation) =
         tonne.toGrams input
         |> should (equalWithin 0.01) expectation
 
-    [<TestCase(1560.0<tonne>, 1560000)>]
+    [<TestCase(0.90<tonne>, 900.)>]
+    [<TestCase(89.<tonne>, 89000.)>]
+    [<TestCase(1560.0<tonne>, 1560000.)>]
     let ``Convert known tonne to kilogram`` (input, expectation) =
         tonne.toKilograms input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(0.09<tonne>, 3174.657)>]
+    [<TestCase(0.0011<tonne>, 38.8013581)>]
     [<TestCase(256.0<tonne>, 9030134.2670558)>]
     let ``Convert known tonne to ounce`` (input, expectation) =
         tonne.toOunces input
         |> should (equalWithin 0.01) expectation
 
-    [<TestCase(256.0<tonne>, 564383.39119329)>]
+    [<TestCase(0.09<tonne>, 198.416)>]
+    [<TestCase(34.0<tonne>, 74957.08)>]
+    [<TestCase(256.0<tonne>, 564382.72)>]
     let ``Convert known tonne to pound`` (input, expectation) =
         tonne.toPounds input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(12.0<tonne>, 1889.68)>]
+    [<TestCase(9.7<tonne>, 1527.49)>]
     [<TestCase(1234.0<tonne>, 194321.682)>]
     let ``Convert known tonne to stone`` (input, expectation) =
         tonne.toStones input

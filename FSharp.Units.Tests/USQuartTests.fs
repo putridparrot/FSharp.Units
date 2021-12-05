@@ -176,76 +176,106 @@ module USQuartTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
+    [<TestCase(8.<usqt>, 7570.82)>]
+    [<TestCase(0.78<usqt>, 738.1553)>]
     [<TestCase(0.01<usqt>, 9.46352946)>]
     let ``Convert known US quarts to millilitres`` (input, expectation) =
         usqt.toMillilitres input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(3.<usqt>, 2.83906)>]
+    [<TestCase(0.9<usqt>, 0.851718)>]
     [<TestCase(23.<usqt>, 21.766117758)>]
     let ``Convert known US quarts to litres`` (input, expectation) =
         usqt.toLitres input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(3.<usqt>, 0.00283906)>]
+    [<TestCase(900<usqt>, 0.851718)>]
     [<TestCase(304.<usqt>, 0.2876912956)>]
     let ``Convert known US quarts to kilolitres`` (input, expectation) =
         usqt.toKilolitres input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(9.<usqt>, 1438.86)>]
+    [<TestCase(87.2<usqt>, 13940.96)>]
     [<TestCase(0.09<usqt>, 14.3886039633)>]
     let ``Convert known US quarts to teaspoons`` (input, expectation) =
         usqt.toTeaspoons input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(9.5<usqt>, 506.266)>]
+    [<TestCase(19.<usqt>, 1012.53)>]
     [<TestCase(0.6<usqt>, 31.9746754739)>]
     let ``Convert known US quarts to tablespoons`` (input, expectation) =
         usqt.toTablespoons input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(9.1<usqt>, 7.57734)>]
+    [<TestCase(14.2<usqt>, 11.82397)>]
     [<TestCase(12.<usqt>, 9.9920860856)>]
     let ``Convert known US quarts to quarts`` (input, expectation) =
         usqt.toQuarts input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(15.<usqt>, 24.9802)>]
+    [<TestCase(900.<usqt>, 1498.81)>]
     [<TestCase(45.8<usqt>, 76.2729237867)>]
     let ``Convert known US quarts to pints`` (input, expectation) =
         usqt.toPints input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(89.<usqt>, 18.527)>]
+    [<TestCase(1901.<usqt>, 395.7284)>]
     [<TestCase(56.<usqt>, 11.6574337665)>]
     let ``Convert known US quarts to gallons`` (input, expectation) =
         usqt.toGallons input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(190.<usqt>, 6328.32)>]
+    [<TestCase(7.3<usqt>, 243.141)>]
     [<TestCase(56.<usqt>, 1865.1894026447)>]
     let ``Convert known US quarts to fluid ounces`` (input, expectation) =
         usqt.toFluidOunces input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(7.<usqt>, 1344.)>]
+    [<TestCase(89.<usqt>, 17088.)>]
     [<TestCase(0.5<usqt>, 96.)>]
     let ``Convert known US quarts to US teaspoons`` (input, expectation) =
         usqt.toUSTeaspoons input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(78.<usqt>, 4992.)>]
+    [<TestCase(981.1<usqt>, 62790.4)>]
     [<TestCase(0.4<usqt>, 25.6)>]
     let ``Convert known US quarts to US tablespoons`` (input, expectation) =
         usqt.toUSTablespoons input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(981.8<usqt>, 1963.6)>]
+    [<TestCase(14.91<usqt>, 29.82)>]
     [<TestCase(7.<usqt>, 14.)>]
     let ``Convert known US quarts to US pints`` (input, expectation) =
         usqt.toUSPints input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(8.123<usqt>, 2.03075)>]
+    [<TestCase(709.<usqt>, 177.25)>]
     [<TestCase(44.<usqt>, 11.)>]
     let ``Convert known US quarts to US gallons`` (input, expectation) =
         usqt.toUSGallons input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(901.56<usqt>, 28849.92)>]
+    [<TestCase(6.45<usqt>, 206.4)>]
     [<TestCase(1.2<usqt>, 38.4)>]
     let ``Convert known US quarts to US fluid ounces`` (input, expectation) =
         usqt.toUSFluidOunces input
         |> should (equalWithin 0.01) expectation
 
+    [<TestCase(6.45<usqt>, 25.8)>]
+    [<TestCase(981.<usqt>, 3924.)>]
     [<TestCase(123.<usqt>, 492.)>]
     let ``Convert known US quarts to US cups`` (input, expectation) =
         usqt.toUSCups input
