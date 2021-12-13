@@ -1,103 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net5</TargetFrameworks>
+    <TargetFrameworks>net6</TargetFrameworks>
 	  <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 	  <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Helpers.fs" />
-    <Compile Include="MebibitPerSecondTests.fs" />
-    <Compile Include="KibibitPerSecondTests.fs" />
-    <Compile Include="KiloBytesPerSecondTests.fs" />
-    <Compile Include="GigaBitsPerSecondTests.fs" />
-    <Compile Include="MegaBitsPerSecondTests.fs" />
-    <Compile Include="KiloBitsPerSecondTests.fs" />
-    <Compile Include="BitsPerSecondTests.fs" />
-    <Compile Include="BtuTests.fs" />
-    <Compile Include="JoulesTests.fs" />
-    <Compile Include="ThermTests.fs" />
-    <Compile Include="TalbotTests.fs" />
-    <Compile Include="LumenSecondTests.fs" />
-    <Compile Include="LumenMinuteTests.fs" />
-    <Compile Include="LumenHourTests.fs" />
-    <Compile Include="InchSquared.fs" />
-    <Compile Include="FeetSquared.fs" />
-    <Compile Include="YardSquared.fs" />
-    <Compile Include="KilometreSquared.fs" />
-    <Compile Include="MetreSquared.fs" />
-    <Compile Include="MilesSquared.fs" />
-    <Compile Include="AcreTests.fs" />
-    <Compile Include="HectareTests.fs" />
-    <Compile Include="MetreSquaredTests.fs" />
-    <Compile Include="GigahertzTests.fs" />
-    <Compile Include="MegahertzTests.fs" />
-    <Compile Include="HertzTests.fs" />
-    <Compile Include="SecondsOfArcTests.fs" />
-    <Compile Include="MinuteofArcTests.fs" />
-    <Compile Include="MilliradianTests.fs" />
-    <Compile Include="GradiansTests.fs" />
-    <Compile Include="RadiansTests.fs" />
-    <Compile Include="DegreeTests.fs" />
-    <Compile Include="AmpereTurnTests.fs" />
-    <Compile Include="AtmosphereTests.fs" />
-    <Compile Include="BarTests.fs" />
-    <Compile Include="CelsiusTests.fs" />
-    <Compile Include="CentimetreTests.fs" />
-    <Compile Include="FahrenheitTests.fs" />
-    <Compile Include="FeetTests.fs" />
-    <Compile Include="FluidOunceTests.fs" />
-    <Compile Include="GallonTests.fs" />
-    <Compile Include="GilbertTests.fs" />
-    <Compile Include="GramTests.fs" />
-    <Compile Include="InchTests.fs" />
-    <Compile Include="KelvinTests.fs" />
-    <Compile Include="KiloCalorieTests.fs" />
-    <Compile Include="KilogramTests.fs" />
-    <Compile Include="KilojouleTests.fs" />
-    <Compile Include="KilolitreTests.fs" />
-    <Compile Include="KilometreTests.fs" />
-    <Compile Include="LitreTests.fs" />
-    <Compile Include="MetreTests.fs" />
-    <Compile Include="MileTests.fs" />
-    <Compile Include="MilligramTests.fs" />
-    <Compile Include="MillilitreTests.fs" />
-    <Compile Include="MillimetreTests.fs" />
-    <Compile Include="NauticalMileTests.fs" />
-    <Compile Include="OunceTests.fs" />
-    <Compile Include="PascalTests.fs" />
-    <Compile Include="PintTests.fs" />
-    <Compile Include="PoundTests.fs" />
-    <Compile Include="PsiTests.fs" />
-    <Compile Include="QuartTests.fs" />
-    <Compile Include="StoneTests.fs" />
-    <Compile Include="TablespoonTests.fs" />
-    <Compile Include="TeaspoonTests.fs" />
-    <Compile Include="TonneTests.fs" />
-    <Compile Include="TorrTests.fs" />
-    <Compile Include="USCupTests.fs" />
-    <Compile Include="USFluidOunceTests.fs" />
-    <Compile Include="USGallonTests.fs" />
-    <Compile Include="USPintTests.fs" />
-    <Compile Include="USQuartTests.fs" />
-    <Compile Include="USTablespoonTests.fs" />
-    <Compile Include="USTeaspoonTests.fs" />
-    <Compile Include="YardTests.fs" />
+    <Compile Include="MagnetomotiveForceTests.fs" />
+    <Compile Include="TemperatureTests.fs" />
+    <Compile Include="VolumeTests.fs" />
+    <Compile Include="TimeTests.fs" />
+    <Compile Include="SpeedTests.fs" />
+    <Compile Include="PressureTests.fs" />
+    <Compile Include="MassTests.fs" />
+    <Compile Include="LuminousEnergyTests.fs" />
+    <Compile Include="LengthTests.fs" />
+    <Compile Include="DataTransferRateTests.fs" />
+    <Compile Include="EnergyTests.fs" />
+    <Compile Include="FrequencyTests.fs" />
+    <Compile Include="AngleTests.fs" />
+    <Compile Include="AreaTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FsCheck" Version="2.16.3" />
     <PackageReference Include="FsCheck.NUnit" Version="2.16.3" />
-    <PackageReference Include="FsUnit" Version="4.0.6" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+    <PackageReference Include="FsUnit" Version="4.1.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
     <PackageReference Include="NUnit" Version="3.13.2" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.0.0">
+    <PackageReference Include="NUnit3TestAdapter" Version="4.1.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FSharp.Units.Core\FSharp.Units.Core.fsproj" />
+    <ProjectReference Include="..\FSharp.Units\FSharp.Units.fsproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Update="FSharp.Core" Version="6.0.0" />
+    <PackageReference Update="FSharp.Core" Version="6.0.1" />
   </ItemGroup>
 </Project>

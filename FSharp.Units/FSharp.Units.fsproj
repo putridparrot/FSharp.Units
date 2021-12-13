@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+     <TargetFrameworks>net6</TargetFrameworks>
+	 <Description>Unit of measurement converters</Description>
+     <RepositoryUrl>https://github.com/putridparrot/FSharp.Units</RepositoryUrl>
+     <PackageTags>Units of measurement;Unit Converters</PackageTags>
+     <PackageReadmeFile>README.md</PackageReadmeFile>
+     <PackageIcon>FSharp.Units.png</PackageIcon>
+     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Angle.fs" />
+    <Compile Include="Area.fs" />
+    <Compile Include="Frequency.fs" />
+    <Compile Include="Energy.fs" />
+    <Compile Include="DataTransferRate.fs" />
+    <Compile Include="Health.fs" />
+    <Compile Include="Length.fs" />
+    <Compile Include="LuminousEnergy.fs" />
+    <Compile Include="LuminousIntensity.fs" />
+    <Compile Include="MagnetomotiveForce.fs" />
+    <Compile Include="Mass.fs" />
+    <Compile Include="Pressure.fs" />
+    <Compile Include="Speed.fs" />
+    <Compile Include="Temperature.fs" />
+    <Compile Include="Time.fs" />
+    <Compile Include="Volume.fs" />
+    <Compile Include="AssemblyInfo.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\FSharp.Units.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="6.0.1" />
+  </ItemGroup>
+</Project>
