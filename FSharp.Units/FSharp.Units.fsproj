@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-     <TargetFrameworks>net5</TargetFrameworks>
-     <Description>Unit of measurement converters</Description>
+     <TargetFrameworks>net6</TargetFrameworks>
+	 <Description>Unit of measurement converters</Description>
      <RepositoryUrl>https://github.com/putridparrot/FSharp.Units</RepositoryUrl>
      <PackageTags>Units of measurement;Unit Converters</PackageTags>
      <PackageReadmeFile>README.md</PackageReadmeFile>
