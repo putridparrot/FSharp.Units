@@ -30,5 +30,5 @@ jobs:
     - name: Create Artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: PutridParrot.Randomizer
+        name: FSharp.Units
         path: /home/runner/work/FSharp.Units/FSharp.Units/FSharp.Units/bin/Release/FSharp.Units.*.nupkg
