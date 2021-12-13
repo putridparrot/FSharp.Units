@@ -32,9 +32,9 @@ jobs:
       with:
         name: FSharp.Units
         path: /home/runner/work/FSharp.Units/FSharp.Units/FSharp.Units/bin/Release/FSharp.Units.*.nupkg
+    - name: Publish to Nuget
+      run: dotnet nuget push /home/runner/work/FSharp.Units/FSharp.Units/FSharp.Units/bin/Release/*.nupkg --skip-duplicate --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
     - name: Publish to GitHub
       run: |
         dotnet nuget add source https://nuget.pkg.github.com/putridparrot/index.json -n github -u putridparrot -p ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
         dotnet nuget push /home/runner/work/FSharp.Units/FSharp.Units/FSharp.Units/bin/Release/*.nupkg --skip-duplicate --api-key ${{secrets.GITHUB_TOKEN}} --source "github"
-    - name: Publish to Nuget
-      run: dotnet nuget push /home/runner/work/FSharp.Units/FSharp.Units/FSharp.Units/bin/Release/*.nupkg --skip-duplicate --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
