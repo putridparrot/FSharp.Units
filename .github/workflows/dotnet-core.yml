@@ -25,3 +25,10 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test FSharp.Units.Tests/FSharp.Units.Tests.fsproj --no-restore --verbosity normal
+    - name: Create Package
+      run: dotnet pack --configuration Release
+    - name: Create Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: PutridParrot.Randomizer
+        path: /home/runner/work/FSharp.Units/FSharp.Units/FSharp.Units/bin/Release/FSharp.Units.*.nupkg

@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30011.22
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FSharp.Units.Core", "FSharp.Units.Core\FSharp.Units.Core.fsproj", "{7A85E9F8-D981-466E-983E-C77D12A317F9}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FSharp.Units", "FSharp.Units\FSharp.Units.fsproj", "{7A85E9F8-D981-466E-983E-C77D12A317F9}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.Units.Tests", "FSharp.Units.Tests\FSharp.Units.Tests.fsproj", "{3C3E3FBC-92AD-4081-B7E4-2CA2691A29E3}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FSharp.Units.Tests", "FSharp.Units.Tests\FSharp.Units.Tests.fsproj", "{3C3E3FBC-92AD-4081-B7E4-2CA2691A29E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
