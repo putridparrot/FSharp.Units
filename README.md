@@ -2,11 +2,11 @@
 
 [![Build FSharp.Units](https://github.com/putridparrot/FSharp.Units/actions/workflows/dotnet-core.yml/badge.svg)](https://github.com/putridparrot/FSharp.Units/actions/workflows/dotnet-core.yml)
 
-Currently includes Mass, Length and Temperature units of measure.
-
-The main aim for this project was to produce conversion functions for the various mass units, lengths units and temperature units and at the same time implement various units of measure.
+The main aim for this project was to produce conversion functions for the various units of measurement (listed below).
 
 ### Example
+
+Example of usage:
 
 let fahrenheit = C.toFahrenheit 12.<C>
 
