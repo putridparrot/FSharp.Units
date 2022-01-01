@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-     <TargetFrameworks>net6;netstandard2.1;net48</TargetFrameworks>
+     <TargetFrameworks>net6;netstandard2.0;netstandard2.1;net48</TargetFrameworks>
 	 <Description>Unit of measurement converters</Description>
      <RepositoryUrl>https://github.com/putridparrot/FSharp.Units</RepositoryUrl>
      <PackageTags>Units of measurement;Unit Converters</PackageTags>
      <PackageReadmeFile>README.md</PackageReadmeFile>
      <PackageIcon>FSharp.Units.png</PackageIcon>
      <PackageLicenseExpression>MIT</PackageLicenseExpression>
-     <Version>1.0.1-alpha</Version>
+     <Version>1.0.3-alpha</Version>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Angle.fs" />
