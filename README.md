@@ -22,9 +22,11 @@ The code is written in the style of F# if you're after something aimed at C# che
 
 Example of usage:
 
+```
 let fahrenheit = C.toFahrenheit 12.<C>
 
 let celsius = C.create someValue
+```
 
 Each unit of measure then includes functions to convert to each for example, converting each Temperature unit of measure to each other Temperature - it also includes a function to take a value and apply a unit of measure to it.
 
