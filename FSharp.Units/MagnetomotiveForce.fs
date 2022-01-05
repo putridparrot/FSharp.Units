@@ -15,7 +15,7 @@ module MagnetomotiveForce =
     type AT =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<AT> value
         /// Converts the supplied Ampere-turns value to Gilberts
-        static member toGilberts(value : float<AT>) = Gi.create(float value * 1.256637061436)
+        static member toGilberts(value : float<AT>) = Gi.create(float value / 0.7957747154595)
     and /// Gilberts (Gi) units
         [<Measure>] Gi =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<Gi> value

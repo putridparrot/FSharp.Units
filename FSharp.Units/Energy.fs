@@ -79,7 +79,7 @@ module Energy =
         /// Converts the supplied Joules value to Kilocalories
         static member toKilocalories(value : float<J>) = kCal.create(float value / 4184.0)
         /// Converts the supplied Joules value to Btu
-        static member toBtu(value : float<J>) = btu.create(float value / 1055.0)
+        static member toBtu(value : float<J>) = btu.create(float value / 1055.06)
         /// Converts the supplied Joules value to Calories
         static member toCalories(value : float<J>) = cal.create(float value / 4.184)
         /// Converts the supplied Joules value to US Therms

@@ -351,7 +351,7 @@ module DataTransferRateTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<TestCase(0.8<Gbps>, 781250.4)>]
+    [<TestCase(0.8<Gbps>, 781250.0)>]
     [<TestCase(0.012<Gbps>, 11718.75)>]
     [<TestCase(0.002<Gbps>, 1953.125)>]
     let ``Convert known GigaBits Per Second to Kibibits Per Second`` (input, expectation) = 

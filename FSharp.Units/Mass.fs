@@ -40,7 +40,7 @@ module Mass =
         /// Converts the supplied Kilograms value to Pounds
         static member toPounds(value : float<kg>) = lb.create(float value * 2.20462)
         /// Converts the supplied Kilograms value to Stones
-        static member toStones(value : float<kg>) = stone.create(float value * 0.157473)
+        static member toStones(value : float<kg>) = stone.create(float value / 6.35029)
     and /// Milligrams (mg) units
         [<Measure>] mg =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<mg> value
@@ -64,13 +64,13 @@ module Mass =
         /// Converts the supplied Ounces value to Grams
         static member toGrams(value : float<oz>) = g.create(float value * 28.3495231)
         /// Converts the supplied Ounces value to Kilograms
-        static member toKilograms(value : float<oz>) = kg.create(float value * 0.0283495)
+        static member toKilograms(value : float<oz>) = kg.create(float value / 35.274)
         /// Converts the supplied Ounces value to Tonnes
         static member toTonnes(value : float<oz>) = tonne.create(float value * 0.0000283495231)
         /// Converts the supplied Ounces value to Pounds
         static member toPounds(value : float<oz>) = lb.create(float value * 0.0625)
         /// Converts the supplied Ounces value to Stones
-        static member toStones(value : float<oz>) = stone.create(float value * 0.00446429)
+        static member toStones(value : float<oz>) = stone.create(float value / 224.0)
     and /// Pounds (lb) units
         [<Measure>] lb =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<lb> value
@@ -79,7 +79,7 @@ module Mass =
         /// Converts the supplied Pounds value to Grams
         static member toGrams(value : float<lb>) = g.create(float value * 453.59237)
         /// Converts the supplied Pounds value to Kilograms
-        static member toKilograms(value : float<lb>) = kg.create(float value * 0.453592)
+        static member toKilograms(value : float<lb>) = kg.create(float value / 2.20462)
         /// Converts the supplied Pounds value to Tonnes
         static member toTonnes(value : float<lb>) = tonne.create(float value / 2204.62)
         /// Converts the supplied Pounds value to Ounces
@@ -96,7 +96,7 @@ module Mass =
         /// Converts the supplied Stones value to Kilograms
         static member toKilograms(value : float<stone>) = kg.create(float value * 6.35029)
         /// Converts the supplied Stones value to Tonnes
-        static member toTonnes(value : float<stone>) = tonne.create(float value * 0.00635029)
+        static member toTonnes(value : float<stone>) = tonne.create(float value / 157.473)
         /// Converts the supplied Stones value to Ounces
         static member toOunces(value : float<stone>) = oz.create(float value * 224.0)
         /// Converts the supplied Stones value to Pounds

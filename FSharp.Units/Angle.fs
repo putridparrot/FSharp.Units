@@ -6,8 +6,8 @@
 
 namespace FSharp.Units
 
-open System
 open Microsoft.FSharp.Core
+open System;
 
 module Angle =
 
@@ -20,7 +20,7 @@ module Angle =
         /// Converts the supplied Degrees value to Gradians
         static member toGradians(value : float<deg>) = grad.create(float value * 200.0/180.0)
         /// Converts the supplied Degrees value to Milliradians
-        static member toMilliradians(value : float<deg>) = mrad.create(float value * 17.4533)
+        static member toMilliradians(value : float<deg>) = mrad.create(float value * (1000.0 * Math.PI)/180.0)
         /// Converts the supplied Degrees value to Minute Of Arc
         static member toMinuteOfArc(value : float<deg>) = arcmin.create(float value * 60.0)
         /// Converts the supplied Degrees value to Seconds Of Arc
@@ -33,7 +33,7 @@ module Angle =
         /// Converts the supplied Gradians value to Radians
         static member toRadians(value : float<grad>) = rad.create(float value * Math.PI/200.0)
         /// Converts the supplied Gradians value to Milliradians
-        static member toMilliradians(value : float<grad>) = mrad.create(float value * 15.708)
+        static member toMilliradians(value : float<grad>) = mrad.create(float value * (1000.0*Math.PI)/200.0)
         /// Converts the supplied Gradians value to Minute Of Arc
         static member toMinuteOfArc(value : float<grad>) = arcmin.create(float value * 54.0)
         /// Converts the supplied Gradians value to Seconds Of Arc

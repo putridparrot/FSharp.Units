@@ -66,6 +66,7 @@ module AngleTests =
     [<TestCase(900.0<deg>, 15707.969)>]
     [<TestCase(76.0<deg>, 1326.45)>]
     [<TestCase(4.5<deg>, 78.5398)>]
+    [<TestCase(23333.11<deg>, 407239.5873)>]
     let ``Convert known Degrees to Milliradians`` (input, expectation) = 
         deg.toMilliradians input
         |> should (equalWithin 0.01) expectation
@@ -154,8 +155,8 @@ module AngleTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(8.1<grad>, 127.2348)>]
-    [<TestCase(900.0<grad>, 14137.2)>]
-    [<TestCase(1902.5<grad>, 29884.47)>]
+    [<TestCase(900.0<grad>, 14137.167)>]
+    [<TestCase(1902.5<grad>, 29884.4)>]
     let ``Convert known Gradians to Milliradians`` (input, expectation) = 
         grad.toMilliradians input
         |> should (equalWithin 0.01) expectation
@@ -210,6 +211,7 @@ module AngleTests =
     [<TestCase(5.9<mrad>, 0.338045)>]
     [<TestCase(109.0<mrad>, 6.24524)>]
     [<TestCase(7009.0<mrad>, 401.5861)>]
+    [<TestCase(407239.5873<mrad>, 23333.11)>]
     let ``Convert known Milliradians to Degrees`` (input, expectation) = 
         mrad.toDegrees input
         |> should (equalWithin 0.01) expectation

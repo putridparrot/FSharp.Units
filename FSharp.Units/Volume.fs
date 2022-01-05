@@ -52,7 +52,7 @@ module Volume =
         /// Converts the supplied Gallons value to Litres
         static member toLitres(value : float<gal>) = l.create(float value * 4.546091879)
         /// Converts the supplied Gallons value to Kilolitres
-        static member toKilolitres(value : float<gal>) = kl.create(float value * 0.004546091879)
+        static member toKilolitres(value : float<gal>) = kl.create(float value * 0.0045460918799)
         /// Converts the supplied Gallons value to Teaspoons
         static member toTeaspoons(value : float<gal>) = tsp.create(float value * 768.0)
         /// Converts the supplied Gallons value to Tablespoons

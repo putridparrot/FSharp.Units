@@ -6,6 +6,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Helpers.fs" />
+    <Compile Include="DataStorageTests.fs" />
+    <Compile Include="FuelEconomyTests.fs" />
     <Compile Include="MagnetomotiveForceTests.fs" />
     <Compile Include="TemperatureTests.fs" />
     <Compile Include="VolumeTests.fs" />

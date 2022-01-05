@@ -54,7 +54,7 @@ module DataTransferRate =
         /// Converts the supplied GigaBits Per Second value to TeraBytes Per Second
         static member toTeraBytesPerSecond(value : float<Gbps>) = TBps.create(float value / 8000.0)
         /// Converts the supplied GigaBits Per Second value to Kibibits Per Second
-        static member toKibibitsPerSecond(value : float<Gbps>) = Kibitps.create(float value * 976563.0)
+        static member toKibibitsPerSecond(value : float<Gbps>) = Kibitps.create(float value * 976562.5)
         /// Converts the supplied GigaBits Per Second value to Mebibits Per Second
         static member toMebibitsPerSecond(value : float<Gbps>) = Mibit.create(float value * 954.0)
     and /// GigaBytes Per Second (GBps) units
@@ -90,7 +90,7 @@ module DataTransferRate =
         /// Converts the supplied Kibibits Per Second value to MegaBits Per Second
         static member toMegaBitsPerSecond(value : float<Kibitps>) = Mbps.create(float value / 976.563)
         /// Converts the supplied Kibibits Per Second value to GigaBits Per Second
-        static member toGigaBitsPerSecond(value : float<Kibitps>) = Gbps.create(float value / 976562.0)
+        static member toGigaBitsPerSecond(value : float<Kibitps>) = Gbps.create(float value / 976562.5)
         /// Converts the supplied Kibibits Per Second value to TeraBits Per Second
         static member toTeraBitsPerSecond(value : float<Kibitps>) = Tbps.create(float value / 976562500.0)
         /// Converts the supplied Kibibits Per Second value to KiloBytes Per Second
@@ -194,7 +194,7 @@ module DataTransferRate =
         /// Converts the supplied MegaBits Per Second value to Kibibits Per Second
         static member toKibibitsPerSecond(value : float<Mbps>) = Kibitps.create(float value * 976.563)
         /// Converts the supplied MegaBits Per Second value to Mebibits Per Second
-        static member toMebibitsPerSecond(value : float<Mbps>) = Mibit.create(float value * 0.953674)
+        static member toMebibitsPerSecond(value : float<Mbps>) = Mibit.create(float value / 1.04858)
     and /// MegaBytes Per Second (MBps) units
         [<Measure>] MBps =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<MBps> value
