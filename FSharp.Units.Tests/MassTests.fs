@@ -17,6 +17,132 @@ module MassTests =
 
 
     [<Property>]
+    let ``From Carats to Milligrams and back`` () =
+        let property value =
+            let convertTo = ct.toMilligrams (ct.create value)
+            let convertBack = mg.toCarats convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(2.1<ct>, 420.0)>]
+    [<TestCase(123.0<ct>, 24600.0)>]
+    [<TestCase(0.8<ct>, 160.0)>]
+    let ``Convert known Carats to Milligrams`` (input, expectation) = 
+        ct.toMilligrams input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Carats to Grams and back`` () =
+        let property value =
+            let convertTo = ct.toGrams (ct.create value)
+            let convertBack = g.toCarats convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.8<ct>, 0.16)>]
+    [<TestCase(1.5<ct>, 0.3)>]
+    [<TestCase(12.0<ct>, 2.4)>]
+    let ``Convert known Carats to Grams`` (input, expectation) = 
+        ct.toGrams input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Carats to Kilograms and back`` () =
+        let property value =
+            let convertTo = ct.toKilograms (ct.create value)
+            let convertBack = kg.toCarats convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(1009.0<ct>, 0.2018)>]
+    [<TestCase(999.0<ct>, 0.1998)>]
+    [<TestCase(1234.5<ct>, 0.2469)>]
+    let ``Convert known Carats to Kilograms`` (input, expectation) = 
+        ct.toKilograms input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Carats to Tonnes and back`` () =
+        let property value =
+            let convertTo = ct.toTonnes (ct.create value)
+            let convertBack = tonne.toCarats convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(1234567.0<ct>, 0.2469134)>]
+    [<TestCase(9999999.0<ct>, 1.9999998)>]
+    [<TestCase(998877.99<ct>, 0.199775598)>]
+    let ``Convert known Carats to Tonnes`` (input, expectation) = 
+        ct.toTonnes input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Carats to Ounces and back`` () =
+        let property value =
+            let convertTo = ct.toOunces (ct.create value)
+            let convertBack = oz.toCarats convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(900.0<ct>, 6.34931)>]
+    [<TestCase(123.45<ct>, 0.870914121)>]
+    [<TestCase(800.0<ct>, 5.64383)>]
+    let ``Convert known Carats to Ounces`` (input, expectation) = 
+        ct.toOunces input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Carats to Pounds and back`` () =
+        let property value =
+            let convertTo = ct.toPounds (ct.create value)
+            let convertBack = lb.toCarats convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(1000.0<ct>, 0.440925)>]
+    [<TestCase(123456.0<ct>, 54.4347781)>]
+    [<TestCase(800.0<ct>, 0.35274)>]
+    let ``Convert known Carats to Pounds`` (input, expectation) = 
+        ct.toPounds input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Carats to Stones and back`` () =
+        let property value =
+            let convertTo = ct.toStones (ct.create value)
+            let convertBack = stone.toCarats convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(9000.0<ct>, 0.2834515)>]
+    [<TestCase(123456.0<ct>, 3.88819843)>]
+    [<TestCase(80000.8<ct>, 2.519593906)>]
+    let ``Convert known Carats to Stones`` (input, expectation) = 
+        ct.toStones input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Grams to Milligrams and back`` () =
         let property value =
             let convertTo = g.toMilligrams (g.create value)
@@ -122,6 +248,24 @@ module MassTests =
     [<TestCase(900.0<g>, 0.141726)>]
     let ``Convert known Grams to Stones`` (input, expectation) = 
         g.toStones input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Grams to Carats and back`` () =
+        let property value =
+            let convertTo = g.toCarats (g.create value)
+            let convertBack = ct.toGrams convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(123.0<g>, 615.0)>]
+    [<TestCase(90.1<g>, 450.5)>]
+    [<TestCase(5000.0<g>, 25000.0)>]
+    let ``Convert known Grams to Carats`` (input, expectation) = 
+        g.toCarats input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -233,6 +377,24 @@ module MassTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Kilograms to Carats and back`` () =
+        let property value =
+            let convertTo = kg.toCarats (kg.create value)
+            let convertBack = ct.toKilograms convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.1<kg>, 500.0)>]
+    [<TestCase(0.08<kg>, 400.0)>]
+    [<TestCase(2.0<kg>, 10000.0)>]
+    let ``Convert known Kilograms to Carats`` (input, expectation) = 
+        kg.toCarats input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Milligrams to Grams and back`` () =
         let property value =
             let convertTo = mg.toGrams (mg.create value)
@@ -338,6 +500,24 @@ module MassTests =
     [<TestCase(800100.0<mg>, 0.125994183)>]
     let ``Convert known Milligrams to Stones`` (input, expectation) = 
         mg.toStones input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Milligrams to Carats and back`` () =
+        let property value =
+            let convertTo = mg.toCarats (mg.create value)
+            let convertBack = ct.toMilligrams convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(600.0<mg>, 3.0)>]
+    [<TestCase(1234.0<mg>, 6.17)>]
+    [<TestCase(9090.0<mg>, 45.45)>]
+    let ``Convert known Milligrams to Carats`` (input, expectation) = 
+        mg.toCarats input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -449,6 +629,24 @@ module MassTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Ounces to Carats and back`` () =
+        let property value =
+            let convertTo = oz.toCarats (oz.create value)
+            let convertBack = ct.toOunces convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.0012<oz>, 0.170097139)>]
+    [<TestCase(4.0<oz>, 566.99)>]
+    [<TestCase(1.4<oz>, 198.447)>]
+    let ``Convert known Ounces to Carats`` (input, expectation) = 
+        oz.toCarats input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Pounds to Milligrams and back`` () =
         let property value =
             let convertTo = lb.toMilligrams (lb.create value)
@@ -554,6 +752,24 @@ module MassTests =
     [<TestCase(789.0<lb>, 56.3571)>]
     let ``Convert known Pounds to Stones`` (input, expectation) = 
         lb.toStones input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Pounds to Carats and back`` () =
+        let property value =
+            let convertTo = lb.toCarats (lb.create value)
+            let convertBack = ct.toPounds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(80.0<lb>, 181436.7522)>]
+    [<TestCase(2.34<lb>, 5307.031)>]
+    [<TestCase(0.9<lb>, 2041.17)>]
+    let ``Convert known Pounds to Carats`` (input, expectation) = 
+        lb.toCarats input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -665,6 +881,24 @@ module MassTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Stones to Carats and back`` () =
+        let property value =
+            let convertTo = stone.toCarats (stone.create value)
+            let convertBack = ct.toStones convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.01<stone>, 317.5147)>]
+    [<TestCase(0.006<stone>, 190.5088)>]
+    [<TestCase(2.1<stone>, 66677.25)>]
+    let ``Convert known Stones to Carats`` (input, expectation) = 
+        stone.toCarats input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Tonnes to Milligrams and back`` () =
         let property value =
             let convertTo = tonne.toMilligrams (tonne.create value)
@@ -770,5 +1004,23 @@ module MassTests =
     [<TestCase(0.3<tonne>, 47.2419)>]
     let ``Convert known Tonnes to Stones`` (input, expectation) = 
         tonne.toStones input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Tonnes to Carats and back`` () =
+        let property value =
+            let convertTo = tonne.toCarats (tonne.create value)
+            let convertBack = ct.toTonnes convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.003<tonne>, 15000.0)>]
+    [<TestCase(0.09<tonne>, 450000.0)>]
+    [<TestCase(0.0012<tonne>, 6000.0)>]
+    let ``Convert known Tonnes to Carats`` (input, expectation) = 
+        tonne.toCarats input
         |> should (equalWithin 0.01) expectation
 

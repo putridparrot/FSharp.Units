@@ -10,9 +10,26 @@ open Microsoft.FSharp.Core
 
 module Mass =
 
-    /// Grams (g) units
+    /// Carats (ct) units
     [<Measure>]
-    type g =
+    type ct =
+        static member create(value : float) = LanguagePrimitives.FloatWithMeasure<ct> value
+        /// Converts the supplied Carats value to Milligrams
+        static member toMilligrams(value : float<ct>) = mg.create(float value * 200.0)
+        /// Converts the supplied Carats value to Grams
+        static member toGrams(value : float<ct>) = g.create(float value / 5.0)
+        /// Converts the supplied Carats value to Kilograms
+        static member toKilograms(value : float<ct>) = kg.create(float value / 5000.0)
+        /// Converts the supplied Carats value to Tonnes
+        static member toTonnes(value : float<ct>) = tonne.create(float value / 5e+6)
+        /// Converts the supplied Carats value to Ounces
+        static member toOunces(value : float<ct>) = oz.create(float value * 0.00705479)
+        /// Converts the supplied Carats value to Pounds
+        static member toPounds(value : float<ct>) = lb.create(float value * 0.000440925)
+        /// Converts the supplied Carats value to Stones
+        static member toStones(value : float<ct>) = stone.create(float value * 3.1495e-5)
+    and /// Grams (g) units
+        [<Measure>] g =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<g> value
         /// Converts the supplied Grams value to Milligrams
         static member toMilligrams(value : float<g>) = mg.create(float value * 1000.0)
@@ -26,6 +43,8 @@ module Mass =
         static member toPounds(value : float<g>) = lb.create(float value / 453.59237)
         /// Converts the supplied Grams value to Stones
         static member toStones(value : float<g>) = stone.create(float value / 6350.29318)
+        /// Converts the supplied Grams value to Carats
+        static member toCarats(value : float<g>) = ct.create(float value * 5.0)
     and /// Kilograms (kg) units
         [<Measure>] kg =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<kg> value
@@ -41,6 +60,8 @@ module Mass =
         static member toPounds(value : float<kg>) = lb.create(float value * 2.20462)
         /// Converts the supplied Kilograms value to Stones
         static member toStones(value : float<kg>) = stone.create(float value / 6.35029)
+        /// Converts the supplied Kilograms value to Carats
+        static member toCarats(value : float<kg>) = ct.create(float value * 5000.0)
     and /// Milligrams (mg) units
         [<Measure>] mg =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<mg> value
@@ -56,6 +77,8 @@ module Mass =
         static member toPounds(value : float<mg>) = lb.create(float value / 453592.37)
         /// Converts the supplied Milligrams value to Stones
         static member toStones(value : float<mg>) = stone.create(float value / 6350293.18)
+        /// Converts the supplied Milligrams value to Carats
+        static member toCarats(value : float<mg>) = ct.create(float value / 200.0)
     and /// Ounces (oz) units
         [<Measure>] oz =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<oz> value
@@ -71,6 +94,8 @@ module Mass =
         static member toPounds(value : float<oz>) = lb.create(float value * 0.0625)
         /// Converts the supplied Ounces value to Stones
         static member toStones(value : float<oz>) = stone.create(float value / 224.0)
+        /// Converts the supplied Ounces value to Carats
+        static member toCarats(value : float<oz>) = ct.create(float value / 0.00705479)
     and /// Pounds (lb) units
         [<Measure>] lb =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<lb> value
@@ -86,6 +111,8 @@ module Mass =
         static member toOunces(value : float<lb>) = oz.create(float value * 16.0)
         /// Converts the supplied Pounds value to Stones
         static member toStones(value : float<lb>) = stone.create(float value / 14.0)
+        /// Converts the supplied Pounds value to Carats
+        static member toCarats(value : float<lb>) = ct.create(float value / 0.000440925)
     and /// Stones (stone) units
         [<Measure>] stone =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<stone> value
@@ -101,6 +128,8 @@ module Mass =
         static member toOunces(value : float<stone>) = oz.create(float value * 224.0)
         /// Converts the supplied Stones value to Pounds
         static member toPounds(value : float<stone>) = lb.create(float value * 14.0)
+        /// Converts the supplied Stones value to Carats
+        static member toCarats(value : float<stone>) = ct.create(float value / 3.1495e-5)
     and /// Tonnes (tonne) units
         [<Measure>] tonne =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<tonne> value
@@ -116,3 +145,5 @@ module Mass =
         static member toPounds(value : float<tonne>) = lb.create(float value * 2204.62)
         /// Converts the supplied Tonnes value to Stones
         static member toStones(value : float<tonne>) = stone.create(float value * 157.473)
+        /// Converts the supplied Tonnes value to Carats
+        static member toCarats(value : float<tonne>) = ct.create(float value * 5e+6)

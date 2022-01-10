@@ -117,6 +117,7 @@ Each unit of measure then includes functions to convert to each for example, con
 
 ### Mass
 
+	* Carats (ct)
 	* Grams (g)
 	* Kilograms (kg)
 	* Milligrams (mg)
