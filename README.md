@@ -14,6 +14,7 @@ The code is written in the style of F# if you're after something aimed at C# che
 ### Unit conversions also available for 
 
 [C#](https://github.com/putridparrot/PutridParrot.Units)  
+[Python](https://github.com/putridparrot/PyUnits)  
 [TypeScript](https://github.com/putridparrot/unit-conversions)  
 [Swift](https://github.com/putridparrot/SwiftUnits)  
 [Java](https://github.com/putridparrot/JavaUnits)
@@ -50,6 +51,20 @@ Each unit of measure then includes functions to convert to each for example, con
 	* Square Miles (mile2)
 	* Square Yards (yard2)
 
+### Data Storage
+
+	* Bits (b)
+	* Gigabits (Gb)
+	* Gigabytes (GB)
+	* Kibibits (kibibit)
+	* Kilobits (k)
+	* Kilobytes (KB)
+	* Mebibits (mebibit)
+	* Megabits (Mb)
+	* Megabytes (MB)
+	* Terabits (Tb)
+	* Terabytes (TB)
+
 ### Data Transfer Rate
 
 	* Bits Per Second (bps)
@@ -84,6 +99,12 @@ Each unit of measure then includes functions to convert to each for example, con
 	* Kilohertz (kHz)
 	* Megahertz (MHz)
 
+### Fuel Economy
+
+	* Kilometre Per Litre (kml)
+	* Miles Per Gallon (mpg)
+	* US Miles Per Gallon (usmpg)
+
 ### Length
 
 	* Centimetres (cm)
@@ -102,13 +123,6 @@ Each unit of measure then includes functions to convert to each for example, con
 	* LumenMinute (lmmin)
 	* LumenSecond (lms)
 	* Talbot (T)
-
-### Luminous Intensity
-
-	* Candela (cd)
-	* Candlepower (Candlepower)
-	* Hefnerkerse (HK)
-	* Lumen Per Steradian (lmsr)
 
 ### Magnetomotive Force
 
@@ -133,4 +147,50 @@ Each unit of measure then includes functions to convert to each for example, con
 	* Pascals (Pa)
 	* Psi (psi)
 	* Torrs (Torr)
+
+### Speed
+
+	* Feet Per Second (fps)
+	* Kilometres Per Hour (kph)
+	* Knots (knot)
+	* Metres Per Second (mps)
+	* Miles Per Hour (mph)
+
+### Temperature
+
+	* Celsius (C)
+	* Fahrenheit (F)
+	* Kelvin (K)
+	* Rankine (R)
+
+### Time
+
+	* Centuries (century)
+	* Days (day)
+	* Decades (decade)
+	* Hours (hour)
+	* Minutes (minute)
+	* Months (month)
+	* Seconds (second)
+	* Weeks (week)
+	* Years (year)
+
+### Volume
+
+	* Fluid Ounces (floz)
+	* Gallons (gal)
+	* Kilolitres (kl)
+	* Litres (l)
+	* Millilitres (ml)
+	* Pints (pt)
+	* Quarts (qt)
+	* Tablespoons (tbsp)
+	* Teaspoons (tsp)
+	* US Cups (uscup)
+	* US Fluid Ounces (usfloz)
+	* US Gallons (usgal)
+	* US Pints (uspt)
+	* US Quarts (usqt)
+	* US Tablespoons (ustbsp)
+	* US Teaspoons (ustsp)
 
