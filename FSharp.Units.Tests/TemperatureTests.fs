@@ -64,8 +64,8 @@ module TemperatureTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(900.0<C>, 2111.67)>]
-    [<TestCase(12<C>, 513.27)>]
-    [<TestCase(-3<C>, 486.27)>]
+    [<TestCase(12.0<C>, 513.27)>]
+    [<TestCase(-3.0<C>, 486.27)>]
     let ``Convert known Celsius to Rankine`` (input, expectation) = 
         C.toRankine input
         |> should (equalWithin 0.01) expectation

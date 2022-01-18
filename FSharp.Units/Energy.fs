@@ -17,7 +17,7 @@ module Energy =
         /// Converts the supplied Btu value to Kilojoules
         static member toKilojoules(value : float<btu>) = kJ.create(float value * 1.0550559)
         /// Converts the supplied Btu value to Kilocalories
-        static member toKilocalories(value : float<btu>) = kCal.create(float value / 3.966)
+        static member toKilocalories(value : float<btu>) = kCal.create(float value / 3.9673727240424)
         /// Converts the supplied Btu value to Joules
         static member toJoules(value : float<btu>) = J.create(float value * 1055.06)
         /// Converts the supplied Btu value to Calories
@@ -98,7 +98,7 @@ module Energy =
         /// Converts the supplied Kilocalories value to Joules
         static member toJoules(value : float<kCal>) = J.create(float value * 4184.0)
         /// Converts the supplied Kilocalories value to Btu
-        static member toBtu(value : float<kCal>) = btu.create(float value * 3.966)
+        static member toBtu(value : float<kCal>) = btu.create(float value * 3.9673727240424)
         /// Converts the supplied Kilocalories value to Calories
         static member toCalories(value : float<kCal>) = cal.create(float value * 1000.0)
         /// Converts the supplied Kilocalories value to US Therms
@@ -142,7 +142,7 @@ module Energy =
         /// Converts the supplied Kilowatt Hours value to Calories
         static member toCalories(value : float<kWh>) = cal.create(float value * 860421.0)
         /// Converts the supplied Kilowatt Hours value to US Therms
-        static member toUSTherms(value : float<kWh>) = ustherm.create(float value / 29.3)
+        static member toUSTherms(value : float<kWh>) = ustherm.create(float value / 29.3001)
         /// Converts the supplied Kilowatt Hours value to Watt Hours
         static member toWattHours(value : float<kWh>) = Wh.create(float value * 1000.0)
         /// Converts the supplied Kilowatt Hours value to Foot Pounds
@@ -163,7 +163,7 @@ module Energy =
         /// Converts the supplied US Therms value to Watt Hours
         static member toWattHours(value : float<ustherm>) = Wh.create(float value * 29300.1)
         /// Converts the supplied US Therms value to Kilowatt Hours
-        static member toKilowattHours(value : float<ustherm>) = kWh.create(float value * 29.3)
+        static member toKilowattHours(value : float<ustherm>) = kWh.create(float value * 29.3001)
         /// Converts the supplied US Therms value to Foot Pounds
         static member toFootPounds(value : float<ustherm>) = ftlb.create(float value * 77816937.099186)
     and /// Watt Hours (Wh) units

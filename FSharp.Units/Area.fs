@@ -36,7 +36,7 @@ module Area =
         /// Converts the supplied Hectares value to Square Metres
         static member toSquareMetres(value : float<hectare>) = m2.create(float value * 10000.0)
         /// Converts the supplied Hectares value to Square Miles
-        static member toSquareMiles(value : float<hectare>) = mile2.create(float value / 259.0)
+        static member toSquareMiles(value : float<hectare>) = mile2.create(float value / 258.99881103)
         /// Converts the supplied Hectares value to Square Yards
         static member toSquareYards(value : float<hectare>) = yard2.create(float value * 11959.900463011)
         /// Converts the supplied Hectares value to Square Feet
@@ -51,7 +51,7 @@ module Area =
         /// Converts the supplied Square Feet value to Square Kilometres
         static member toSquareKilometres(value : float<feet2>) = km2.create(float value / 10763910.41671)
         /// Converts the supplied Square Feet value to Square Metres
-        static member toSquareMetres(value : float<feet2>) = m2.create(float value / 10.764)
+        static member toSquareMetres(value : float<feet2>) = m2.create(float value / 10.76391042)
         /// Converts the supplied Square Feet value to Square Miles
         static member toSquareMiles(value : float<feet2>) = mile2.create(float value / 27878400.0)
         /// Converts the supplied Square Feet value to Square Yards
@@ -104,9 +104,9 @@ module Area =
         /// Converts the supplied Square Metres value to Square Miles
         static member toSquareMiles(value : float<m2>) = mile2.create(float value / 2589988.10)
         /// Converts the supplied Square Metres value to Square Yards
-        static member toSquareYards(value : float<m2>) = yard2.create(float value * 1.196)
+        static member toSquareYards(value : float<m2>) = yard2.create(float value * 1.1959900463)
         /// Converts the supplied Square Metres value to Square Feet
-        static member toSquareFeet(value : float<m2>) = feet2.create(float value * 10.764)
+        static member toSquareFeet(value : float<m2>) = feet2.create(float value * 10.76391042)
         /// Converts the supplied Square Metres value to Square Inches
         static member toSquareInches(value : float<m2>) = inch2.create(float value * 1550.0)
         /// Converts the supplied Square Metres value to Hectares
@@ -127,7 +127,7 @@ module Area =
         /// Converts the supplied Square Miles value to Square Inches
         static member toSquareInches(value : float<mile2>) = inch2.create(float value * 4014489600.0)
         /// Converts the supplied Square Miles value to Hectares
-        static member toHectares(value : float<mile2>) = hectare.create(float value * 259.0)
+        static member toHectares(value : float<mile2>) = hectare.create(float value * 258.99881103)
         /// Converts the supplied Square Miles value to Acres
         static member toAcres(value : float<mile2>) = acre.create(float value * 640.0)
     and /// Square Yards (yard2) units
@@ -136,7 +136,7 @@ module Area =
         /// Converts the supplied Square Yards value to Square Kilometres
         static member toSquareKilometres(value : float<yard2>) = km2.create(float value / 1195990.05)
         /// Converts the supplied Square Yards value to Square Metres
-        static member toSquareMetres(value : float<yard2>) = m2.create(float value / 1.196)
+        static member toSquareMetres(value : float<yard2>) = m2.create(float value / 1.1959900463)
         /// Converts the supplied Square Yards value to Square Miles
         static member toSquareMiles(value : float<yard2>) = mile2.create(float value / 3097600.0)
         /// Converts the supplied Square Yards value to Square Feet

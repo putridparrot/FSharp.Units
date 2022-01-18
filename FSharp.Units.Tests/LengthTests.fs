@@ -497,7 +497,7 @@ module LengthTests =
 
     [<TestCase(0.8<km>, 800.0)>]
     [<TestCase(45.0<km>, 45000.0)>]
-    [<TestCase(1.2<km>, 1200)>]
+    [<TestCase(1.2<km>, 1200.0)>]
     let ``Convert known Kilometres to Metres`` (input, expectation) = 
         km.toMetres input
         |> should (equalWithin 0.01) expectation
@@ -513,8 +513,8 @@ module LengthTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<TestCase(1.2<km>, 47244.1)>]
-    [<TestCase(0.65<km>, 25590.55)>]
+    [<TestCase(1.2<km>, 47244.094488)>]
+    [<TestCase(0.65<km>, 25590.551181)>]
     [<TestCase(5.0<km>, 196850.3937)>]
     let ``Convert known Kilometres to Inches`` (input, expectation) = 
         km.toInches input

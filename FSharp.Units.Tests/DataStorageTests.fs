@@ -388,7 +388,7 @@ module DataStorageTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(0.004<GB>, 32000000.0)>]
-    [<TestCase(0.012<GB>, 96000000)>]
+    [<TestCase(0.012<GB>, 96000000.0)>]
     [<TestCase(3e-9<GB>, 24.0)>]
     let ``Convert known Gigabytes to Bits`` (input, expectation) = 
         GB.toBits input
@@ -623,7 +623,7 @@ module DataStorageTests =
 
     [<TestCase(123456.0<kibibit>, 0.126418944)>]
     [<TestCase(8000000.0<kibibit>, 8.192)>]
-    [<TestCase(1276876<kibibit>, 1.307521024)>]
+    [<TestCase(1276876.0<kibibit>, 1.307521024)>]
     let ``Convert known Kibibits to Gigabits`` (input, expectation) = 
         kibibit.toGigabits input
         |> should (equalWithin 0.01) expectation
@@ -801,7 +801,7 @@ module DataStorageTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<TestCase(191987578<k>, 0.191987578)>]
+    [<TestCase(191987578.0<k>, 0.191987578)>]
     [<TestCase(9010081903.0<k>, 9.010081903)>]
     [<TestCase(123456789.0<k>, 0.123456789)>]
     let ``Convert known Kilobits to Terabits`` (input, expectation) = 
@@ -929,7 +929,7 @@ module DataStorageTests =
 
     [<TestCase(123.456<KB>, 987648.0)>]
     [<TestCase(900.0<KB>, 7.2e+6)>]
-    [<TestCase(100200.0<KB>, 801600000)>]
+    [<TestCase(100200.0<KB>, 801600000.0)>]
     let ``Convert known Kilobytes to Bits`` (input, expectation) = 
         KB.toBits input
         |> should (equalWithin 0.01) expectation
@@ -1054,7 +1054,7 @@ module DataStorageTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(0.9<KB>, 9e-10)>]
-    [<TestCase(140000000<KB>, 0.14)>]
+    [<TestCase(140000000.0<KB>, 0.14)>]
     [<TestCase(7.0<KB>, 7e-9)>]
     let ``Convert known Kilobytes to Terabytes`` (input, expectation) = 
         KB.toTerabytes input

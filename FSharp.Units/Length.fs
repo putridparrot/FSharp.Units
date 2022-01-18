@@ -57,9 +57,9 @@ module Length =
         /// Converts the supplied Inches value to Centimetres
         static member toCentimetres(value : float<inch>) = cm.create(float value * 2.54)
         /// Converts the supplied Inches value to Metres
-        static member toMetres(value : float<inch>) = m.create(float value * 0.0254)
+        static member toMetres(value : float<inch>) = m.create(float value / 39.3701)
         /// Converts the supplied Inches value to Kilometres
-        static member toKilometres(value : float<inch>) = km.create(float value * 0.0000254)
+        static member toKilometres(value : float<inch>) = km.create(float value / 39370.07874)
         /// Converts the supplied Inches value to Feet
         static member toFeet(value : float<inch>) = ft.create(float value / 12.0)
         /// Converts the supplied Inches value to Yards
@@ -78,7 +78,7 @@ module Length =
         /// Converts the supplied Kilometres value to Metres
         static member toMetres(value : float<km>) = m.create(float value * 1000.0)
         /// Converts the supplied Kilometres value to Inches
-        static member toInches(value : float<km>) = inch.create(float value / 0.0000254)
+        static member toInches(value : float<km>) = inch.create(float value * 39370.07874)
         /// Converts the supplied Kilometres value to Feet
         static member toFeet(value : float<km>) = ft.create(float value / 0.0003048)
         /// Converts the supplied Kilometres value to Yards
@@ -97,7 +97,7 @@ module Length =
         /// Converts the supplied Metres value to Kilometres
         static member toKilometres(value : float<m>) = km.create(float value / 1000.0)
         /// Converts the supplied Metres value to Inches
-        static member toInches(value : float<m>) = inch.create(float value / 0.0254)
+        static member toInches(value : float<m>) = inch.create(float value * 39.3701)
         /// Converts the supplied Metres value to Feet
         static member toFeet(value : float<m>) = ft.create(float value / 0.3048)
         /// Converts the supplied Metres value to Yards

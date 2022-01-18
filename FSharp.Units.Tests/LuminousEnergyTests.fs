@@ -47,7 +47,7 @@ module LuminousEnergyTests =
 
     [<TestCase(1.2<lmh>, 72.0)>]
     [<TestCase(0.8<lmh>, 48.0)>]
-    [<TestCase(109.00<lmh>, 6540)>]
+    [<TestCase(109.00<lmh>, 6540.0)>]
     let ``Convert known LumenHour to LumenMinute`` (input, expectation) = 
         lmh.toLumenMinute input
         |> should (equalWithin 0.01) expectation

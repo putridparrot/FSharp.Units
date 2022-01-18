@@ -1773,7 +1773,7 @@ module VolumeTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<TestCase(67.6<qt>, 2704)>]
+    [<TestCase(67.6<qt>, 2704.0)>]
     [<TestCase(1009.0<qt>, 40360.0)>]
     [<TestCase(6.2<qt>, 248.0)>]
     let ``Convert known Quarts to Fluid Ounces`` (input, expectation) = 

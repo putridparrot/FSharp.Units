@@ -388,7 +388,7 @@ module DataTransferRateTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(0.004<GBps>, 32000000.0)>]
-    [<TestCase(0.012<GBps>, 96000000)>]
+    [<TestCase(0.012<GBps>, 96000000.0)>]
     [<TestCase(3e-9<GBps>, 24.0)>]
     let ``Convert known GigaBytes Per Second to Bits Per Second`` (input, expectation) = 
         GBps.toBitsPerSecond input
@@ -623,7 +623,7 @@ module DataTransferRateTests =
 
     [<TestCase(123456.0<Kibitps>, 0.126418944)>]
     [<TestCase(8000000.0<Kibitps>, 8.192)>]
-    [<TestCase(1276876<Kibitps>, 1.307521024)>]
+    [<TestCase(1276876.0<Kibitps>, 1.307521024)>]
     let ``Convert known Kibibits Per Second to GigaBits Per Second`` (input, expectation) = 
         Kibitps.toGigaBitsPerSecond input
         |> should (equalWithin 0.01) expectation
@@ -801,7 +801,7 @@ module DataTransferRateTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<TestCase(191987578<kbps>, 0.191987578)>]
+    [<TestCase(191987578.0<kbps>, 0.191987578)>]
     [<TestCase(9010081903.0<kbps>, 9.010081903)>]
     [<TestCase(123456789.0<kbps>, 0.123456789)>]
     let ``Convert known KiloBits Per Second to TeraBits Per Second`` (input, expectation) = 
@@ -929,7 +929,7 @@ module DataTransferRateTests =
 
     [<TestCase(123.456<kBps>, 987648.0)>]
     [<TestCase(900.0<kBps>, 7.2e+6)>]
-    [<TestCase(100200.0<kBps>, 801600000)>]
+    [<TestCase(100200.0<kBps>, 801600000.0)>]
     let ``Convert known KiloBytes Per Second to Bits Per Second`` (input, expectation) = 
         kBps.toBitsPerSecond input
         |> should (equalWithin 0.01) expectation
@@ -1054,7 +1054,7 @@ module DataTransferRateTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(0.9<kBps>, 9e-10)>]
-    [<TestCase(140000000<kBps>, 0.14)>]
+    [<TestCase(140000000.0<kBps>, 0.14)>]
     [<TestCase(7.0<kBps>, 7e-9)>]
     let ``Convert known KiloBytes Per Second to TeraBytes Per Second`` (input, expectation) = 
         kBps.toTeraBytesPerSecond input

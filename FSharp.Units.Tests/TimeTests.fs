@@ -463,7 +463,7 @@ module TimeTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<TestCase(90.0<minute>, 5400)>]
+    [<TestCase(90.0<minute>, 5400.0)>]
     [<TestCase(0.9<minute>, 54.0)>]
     [<TestCase(123.0<minute>, 7380.0)>]
     let ``Convert known Minutes to Seconds`` (input, expectation) = 

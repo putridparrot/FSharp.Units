@@ -711,9 +711,9 @@ module AreaTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<TestCase(90.0<m2>, 968.752)>]
-    [<TestCase(180.0<m2>, 1937.52)>]
-    [<TestCase(123.4<m2>, 1328.2775)>]
+    [<TestCase(90.0<m2>, 968.7519375)>]
+    [<TestCase(180.0<m2>, 1937.503875)>]
+    [<TestCase(123.4<m2>, 1328.2665454)>]
     let ``Convert known Square Metres to Square Feet`` (input, expectation) = 
         m2.toSquareFeet input
         |> should (equalWithin 0.01) expectation
@@ -873,7 +873,7 @@ module AreaTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<TestCase(100.0<mile2>, 25900.0)>]
+    [<TestCase(100.0<mile2>, 25899.881103)>]
     [<TestCase(2.3<mile2>, 595.697)>]
     [<TestCase(0.9<mile2>, 233.099)>]
     let ``Convert known Square Miles to Hectares`` (input, expectation) = 

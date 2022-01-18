@@ -101,7 +101,7 @@ module AngleTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(12.0<deg>, 43200.0)>]
-    [<TestCase(910.4<deg>, 3277440)>]
+    [<TestCase(910.4<deg>, 3277440.0)>]
     [<TestCase(5.6<deg>, 20160.0)>]
     let ``Convert known Degrees to Seconds Of Arc`` (input, expectation) = 
         deg.toSecondsOfArc input
