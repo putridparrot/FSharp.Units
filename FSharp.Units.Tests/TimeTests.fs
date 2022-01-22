@@ -648,7 +648,7 @@ module TimeTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(4.5<month>, 136.875)>]
-    [<TestCase(90.0<month>, 2737.53)>]
+    [<TestCase(90.0<month>, 2737.5029)>]
     [<TestCase(0.4<month>, 12.1667)>]
     let ``Convert known Months to Days`` (input, expectation) = 
         month.toDays input
@@ -666,7 +666,7 @@ module TimeTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(0.5<month>, 2.17262)>]
-    [<TestCase(88.0<month>, 382.359)>]
+    [<TestCase(88.0<month>, 382.381120)>]
     [<TestCase(12.6<month>, 54.75006)>]
     let ``Convert known Months to Weeks`` (input, expectation) = 
         month.toWeeks input
@@ -926,7 +926,7 @@ module TimeTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(4.0<week>, 0.920547)>]
-    [<TestCase(900.0<week>, 207.134637)>]
+    [<TestCase(900.0<week>, 207.12319687)>]
     [<TestCase(3.8<week>, 0.87452)>]
     let ``Convert known Weeks to Months`` (input, expectation) = 
         week.toMonths input

@@ -161,6 +161,24 @@ module EnergyTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Btu to Electronvolts and back`` () =
+        let property value =
+            let convertTo = btu.toElectronvolts (btu.create value)
+            let convertBack = eV.toBtu convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.0000000789<btu>, 519567655294184.88)>]
+    [<TestCase(0.000001002<btu>, 6598311667994592.0)>]
+    [<TestCase(0.000000001<btu>, 6585141385224.14)>]
+    let ``Convert known Btu to Electronvolts`` (input, expectation) = 
+        btu.toElectronvolts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Calories to Kilojoules and back`` () =
         let property value =
             let convertTo = cal.toKilojoules (cal.create value)
@@ -302,6 +320,186 @@ module EnergyTests =
     [<TestCase(2.8<cal>, 8.64069)>]
     let ``Convert known Calories to Foot Pounds`` (input, expectation) = 
         cal.toFootPounds input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Calories to Electronvolts and back`` () =
+        let property value =
+            let convertTo = cal.toElectronvolts (cal.create value)
+            let convertBack = eV.toCalories convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.0000091<cal>, 237800626261534.66)>]
+    [<TestCase(0.0008<cal>, 20905549561453600.0)>]
+    [<TestCase(0.00123<cal>, 32142282450734908.0)>]
+    let ``Convert known Calories to Electronvolts`` (input, expectation) = 
+        cal.toElectronvolts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Electronvolts to Kilojoules and back`` () =
+        let property value =
+            let convertTo = eV.toKilojoules (eV.create value)
+            let convertBack = kJ.toElectronvolts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(123456789.0<eV>, 1.9779957413e-14)>]
+    [<TestCase(900900900.0<eV>, 1.4434023094e-13)>]
+    [<TestCase(123456789123456789.0<eV>, 1.977995743237493669e-5)>]
+    let ``Convert known Electronvolts to Kilojoules`` (input, expectation) = 
+        eV.toKilojoules input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Electronvolts to Kilocalories and back`` () =
+        let property value =
+            let convertTo = eV.toKilocalories (eV.create value)
+            let convertBack = kCal.toElectronvolts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(100200300400.0<eV>, 1.6053857310684e-11)>]
+    [<TestCase(123456789.0<eV>, 1.9779957413e-14)>]
+    [<TestCase(900800700600.0<eV>, 1.4432417722369e-10)>]
+    let ``Convert known Electronvolts to Kilocalories`` (input, expectation) = 
+        eV.toKilocalories input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Electronvolts to Joules and back`` () =
+        let property value =
+            let convertTo = eV.toJoules (eV.create value)
+            let convertBack = J.toElectronvolts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(123456789123.0<eV>, 1.9779957432302e-8)>]
+    [<TestCase(900800700600.0<eV>, 1.4432417722369e-7)>]
+    [<TestCase(999888777666.0<eV>, 1.601998367183e-7)>]
+    let ``Convert known Electronvolts to Joules`` (input, expectation) = 
+        eV.toJoules input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Electronvolts to Btu and back`` () =
+        let property value =
+            let convertTo = eV.toBtu (eV.create value)
+            let convertBack = btu.toElectronvolts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(100020003000100020003000.0<eV>, 15.188741377060267723)>]
+    [<TestCase(999888777666999888777666.0<eV>, 151.84014791315084381)>]
+    [<TestCase(12345678912341234567891234.0<eV>, 1874.7782293466862029)>]
+    let ``Convert known Electronvolts to Btu`` (input, expectation) = 
+        eV.toBtu input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Electronvolts to Calories and back`` () =
+        let property value =
+            let convertTo = eV.toCalories (eV.create value)
+            let convertBack = cal.toElectronvolts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(666333111999.0<eV>, 2.5515853167503e-8)>]
+    [<TestCase(999888777666555.0<eV>, 3.8288679904011702e-5)>]
+    [<TestCase(12345678901234.0<eV>, 4.727523282641506e-7)>]
+    let ``Convert known Electronvolts to Calories`` (input, expectation) = 
+        eV.toCalories input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Electronvolts to US Therms and back`` () =
+        let property value =
+            let convertTo = eV.toUSTherms (eV.create value)
+            let convertBack = ustherm.toElectronvolts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(666333111999.0<eV>, 1.0118737258101e-10)>]
+    [<TestCase(999888777666555.0<eV>, 1.5184014791308327e-7)>]
+    [<TestCase(12345678901234.0<eV>, 1.874778227659974e-9)>]
+    let ``Convert known Electronvolts to US Therms`` (input, expectation) = 
+        eV.toUSTherms input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Electronvolts to Watt Hours and back`` () =
+        let property value =
+            let convertTo = eV.toWattHours (eV.create value)
+            let convertBack = Wh.toElectronvolts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(100900700100.0<eV>, 4.490576030342e-12)>]
+    [<TestCase(9000800070006000.0<eV>, 4.00579748289276988e-7)>]
+    [<TestCase(12345678987654321.0<eV>, 5.494432653620188248e-7)>]
+    let ``Convert known Electronvolts to Watt Hours`` (input, expectation) = 
+        eV.toWattHours input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Electronvolts to Kilowatt Hours and back`` () =
+        let property value =
+            let convertTo = eV.toKilowattHours (eV.create value)
+            let convertBack = kWh.toElectronvolts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(100900700100.0<eV>, 4.490576030342e-15)>]
+    [<TestCase(999988887777.0<eV>, 4.4504410034909e-14)>]
+    [<TestCase(12345678987654321.0<eV>, 5.494432653620187834e-10)>]
+    let ``Convert known Electronvolts to Kilowatt Hours`` (input, expectation) = 
+        eV.toKilowattHours input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Electronvolts to Foot Pounds and back`` () =
+        let property value =
+            let convertTo = eV.toFootPounds (eV.create value)
+            let convertBack = ftlb.toElectronvolts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(100900700100.0<eV>, 1.1923484070355e-8)>]
+    [<TestCase(999988887777.0<eV>, 1.1816916594359e-7)>]
+    [<TestCase(12345678987654321.0<eV>, 0.0014588948005427860004)>]
+    let ``Convert known Electronvolts to Foot Pounds`` (input, expectation) = 
+        eV.toFootPounds input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -449,6 +647,24 @@ module EnergyTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Foot Pounds to Electronvolts and back`` () =
+        let property value =
+            let convertTo = ftlb.toElectronvolts (ftlb.create value)
+            let convertBack = eV.toFootPounds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.00123<ftlb>, 10408691651641586.0)>]
+    [<TestCase(0.0009<ftlb>, 7616115842664575.0)>]
+    [<TestCase(0.00000888<ftlb>, 75145676314290.469)>]
+    let ``Convert known Foot Pounds to Electronvolts`` (input, expectation) = 
+        ftlb.toElectronvolts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Joules to Kilojoules and back`` () =
         let property value =
             let convertTo = J.toKilojoules (J.create value)
@@ -590,6 +806,24 @@ module EnergyTests =
     [<TestCase(6.7<J>, 4.94167)>]
     let ``Convert known Joules to Foot Pounds`` (input, expectation) = 
         J.toFootPounds input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Joules to Electronvolts and back`` () =
+        let property value =
+            let convertTo = J.toElectronvolts (J.create value)
+            let convertBack = eV.toJoules convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.00000888<J>, 55424602968504.0)>]
+    [<TestCase(0.00001234<J>, 77020225296322.0)>]
+    [<TestCase(0.00000666<J>, 41568452226378.0)>]
+    let ``Convert known Joules to Electronvolts`` (input, expectation) = 
+        J.toElectronvolts input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -737,6 +971,24 @@ module EnergyTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Kilocalories to Electronvolts and back`` () =
+        let property value =
+            let convertTo = kCal.toElectronvolts (kCal.create value)
+            let convertBack = eV.toKilocalories convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.0000000666<kCal>, 1740388069688132.2)>]
+    [<TestCase(0.000002<kCal>, 52263905996640608.0)>]
+    [<TestCase(0.000000999<kCal>, 26105821045321988.0)>]
+    let ``Convert known Kilocalories to Electronvolts`` (input, expectation) = 
+        kCal.toElectronvolts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Kilojoules to Kilocalories and back`` () =
         let property value =
             let convertTo = kJ.toKilocalories (kJ.create value)
@@ -878,6 +1130,24 @@ module EnergyTests =
     [<TestCase(0.9<kJ>, 663.806)>]
     let ``Convert known Kilojoules to Foot Pounds`` (input, expectation) = 
         kJ.toFootPounds input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Kilojoules to Electronvolts and back`` () =
+        let property value =
+            let convertTo = kJ.toElectronvolts (kJ.create value)
+            let convertBack = eV.toKilojoules convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.000000999<kJ>, 6235268234766989.0)>]
+    [<TestCase(0.0000002<kJ>, 1248301948902300.0)>]
+    [<TestCase(0.00567<kJ>, 3.5389360251380204E+19)>]
+    let ``Convert known Kilojoules to Electronvolts`` (input, expectation) = 
+        kJ.toElectronvolts input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -1025,6 +1295,24 @@ module EnergyTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Kilowatt Hours to Electronvolts and back`` () =
+        let property value =
+            let convertTo = kWh.toElectronvolts (kWh.create value)
+            let convertBack = eV.toKilowattHours convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.000008<kWh>, 179755440000000000000.0)>]
+    [<TestCase(0.0000000128<kWh>, 2.8760870400000003E+17)>]
+    [<TestCase(0.0000000001<kWh>, 2246943000000000.2)>]
+    let ``Convert known Kilowatt Hours to Electronvolts`` (input, expectation) = 
+        kWh.toElectronvolts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From US Therms to Kilojoules and back`` () =
         let property value =
             let convertTo = ustherm.toKilojoules (ustherm.create value)
@@ -1169,6 +1457,24 @@ module EnergyTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From US Therms to Electronvolts and back`` () =
+        let property value =
+            let convertTo = ustherm.toElectronvolts (ustherm.create value)
+            let convertBack = eV.toUSTherms convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.0000009<ustherm>, 592520940098199000000.0)>]
+    [<TestCase(0.000000001339<ustherm>, 8.815394875460983E+17)>]
+    [<TestCase(0.0000000000666<ustherm>, 43846549567266728.0)>]
+    let ``Convert known US Therms to Electronvolts`` (input, expectation) = 
+        ustherm.toElectronvolts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Watt Hours to Kilojoules and back`` () =
         let property value =
             let convertTo = Wh.toKilojoules (Wh.create value)
@@ -1310,5 +1616,23 @@ module EnergyTests =
     [<TestCase(90.1<Wh>, 239235.3219)>]
     let ``Convert known Watt Hours to Foot Pounds`` (input, expectation) = 
         Wh.toFootPounds input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Watt Hours to Electronvolts and back`` () =
+        let property value =
+            let convertTo = Wh.toElectronvolts (Wh.create value)
+            let convertBack = eV.toWattHours convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.0000000000666<Wh>, 1496463565615.39)>]
+    [<TestCase(0.000000008<Wh>, 179755383257104.03)>]
+    [<TestCase(0.0000123<Wh>, 2.7637390175779744E+17)>]
+    let ``Convert known Watt Hours to Electronvolts`` (input, expectation) = 
+        Wh.toElectronvolts input
         |> should (equalWithin 0.01) expectation
 

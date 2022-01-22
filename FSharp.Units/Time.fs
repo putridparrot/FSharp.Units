@@ -23,7 +23,7 @@ module Time =
         /// Converts the supplied Centuries value to Days
         static member toDays(value : float<century>) = day.create(float value * 36500.0)
         /// Converts the supplied Centuries value to Weeks
-        static member toWeeks(value : float<century>) = week.create(float value * 5214.0)
+        static member toWeeks(value : float<century>) = week.create(float value * 5214.29)
         /// Converts the supplied Centuries value to Months
         static member toMonths(value : float<century>) = month.create(float value * 1200.0)
         /// Converts the supplied Centuries value to Years
@@ -42,7 +42,7 @@ module Time =
         /// Converts the supplied Days value to Weeks
         static member toWeeks(value : float<day>) = week.create(float value / 7.0)
         /// Converts the supplied Days value to Months
-        static member toMonths(value : float<day>) = month.create(float value / 30.417)
+        static member toMonths(value : float<day>) = month.create(float value / 30.4167)
         /// Converts the supplied Days value to Years
         static member toYears(value : float<day>) = year.create(float value / 365.0)
         /// Converts the supplied Days value to Decades
@@ -80,7 +80,7 @@ module Time =
         /// Converts the supplied Hours value to Weeks
         static member toWeeks(value : float<hour>) = week.create(float value / 168.0)
         /// Converts the supplied Hours value to Months
-        static member toMonths(value : float<hour>) = month.create(float value / 730.0)
+        static member toMonths(value : float<hour>) = month.create(float value / 730.001)
         /// Converts the supplied Hours value to Years
         static member toYears(value : float<hour>) = year.create(float value / 8760.0)
         /// Converts the supplied Hours value to Decades
@@ -114,11 +114,11 @@ module Time =
         /// Converts the supplied Months value to Minutes
         static member toMinutes(value : float<month>) = minute.create(float value * 43800.0)
         /// Converts the supplied Months value to Hours
-        static member toHours(value : float<month>) = hour.create(float value * 730.0)
+        static member toHours(value : float<month>) = hour.create(float value * 730.001)
         /// Converts the supplied Months value to Days
-        static member toDays(value : float<month>) = day.create(float value * 30.417)
+        static member toDays(value : float<month>) = day.create(float value * 30.4167)
         /// Converts the supplied Months value to Weeks
-        static member toWeeks(value : float<month>) = week.create(float value * 4.345)
+        static member toWeeks(value : float<month>) = week.create(float value * 4.34524)
         /// Converts the supplied Months value to Years
         static member toYears(value : float<month>) = year.create(float value / 12.0)
         /// Converts the supplied Months value to Decades
@@ -156,13 +156,13 @@ module Time =
         /// Converts the supplied Weeks value to Days
         static member toDays(value : float<week>) = day.create(float value * 7.0)
         /// Converts the supplied Weeks value to Months
-        static member toMonths(value : float<week>) = month.create(float value / 4.345)
+        static member toMonths(value : float<week>) = month.create(float value / 4.34524)
         /// Converts the supplied Weeks value to Years
         static member toYears(value : float<week>) = year.create(float value / 52.143)
         /// Converts the supplied Weeks value to Decades
         static member toDecades(value : float<week>) = decade.create(float value / 521.0)
         /// Converts the supplied Weeks value to Centuries
-        static member toCenturies(value : float<week>) = century.create(float value / 5214.0)
+        static member toCenturies(value : float<week>) = century.create(float value / 5214.29)
     and /// Years (year) units
         [<Measure>] year =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<year> value
