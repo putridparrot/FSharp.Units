@@ -84,7 +84,7 @@ Each unit of measure then includes functions to convert to each for example, con
 
 	* Btu (btu)
 	* Calories (cal)
-	* ElectronVolts (eV)
+	* Electronvolts (eV)
 	* Foot Pounds (ftlb)
 	* Joules (J)
 	* Kilocalories (kCal)
@@ -103,6 +103,7 @@ Each unit of measure then includes functions to convert to each for example, con
 ### Fuel Economy
 
 	* Kilometre Per Litre (kml)
+	* Litres per 100 Kilometres (l100km)
 	* Miles Per Gallon (mpg)
 	* US Miles Per Gallon (usmpg)
 

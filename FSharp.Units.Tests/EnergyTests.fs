@@ -46,8 +46,8 @@ module EnergyTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(67.9<btu>, 17.12196)>]
-    [<TestCase(109.9<btu>, 27.7009516484)>]
-    [<TestCase(5000.0<btu>, 1260.279874814)>]
+    [<TestCase(109.9<btu>, 27.712867639325825)>]
+    [<TestCase(5000.0<btu>, 1260.8220036090)>]
     let ``Convert known Btu to Kilocalories`` (input, expectation) = 
         btu.toKilocalories input
         |> should (equalWithin 0.01) expectation
@@ -81,8 +81,8 @@ module EnergyTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<TestCase(56.0<btu>, 14121.184)>]
-    [<TestCase(123.0<btu>, 31016.172)>]
+    [<TestCase(56.0<btu>, 14121.20644042079)>]
+    [<TestCase(123.0<btu>, 31016.221288781402)>]
     [<TestCase(0.9<btu>, 226.9476)>]
     let ``Convert known Btu to Calories`` (input, expectation) = 
         btu.toCalories input
@@ -874,8 +874,8 @@ module EnergyTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(3.4<kCal>, 13.4833)>]
-    [<TestCase(109.0<kCal>, 432.4436269206)>]
-    [<TestCase(22.89<kCal>, 90.8131616)>]
+    [<TestCase(109.0<kCal>, 432.2576846216055)>]
+    [<TestCase(22.89<kCal>, 90.77411377053717)>]
     let ``Convert known Kilocalories to Btu`` (input, expectation) = 
         kCal.toBtu input
         |> should (equalWithin 0.01) expectation
@@ -1341,7 +1341,7 @@ module EnergyTests =
 
         Check.QuickThrowOnFailure (testRange property)
 
-    [<TestCase(1.1<ustherm>, 27731.44)>]
+    [<TestCase(1.1<ustherm>, 27731.484079398004)>]
     [<TestCase(0.04<ustherm>, 1008.417)>]
     [<TestCase(0.0123<ustherm>, 310.088174)>]
     let ``Convert known US Therms to Kilocalories`` (input, expectation) = 

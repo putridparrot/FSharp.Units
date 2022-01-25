@@ -17,11 +17,11 @@ module Energy =
         /// Converts the supplied Btu value to Kilojoules
         static member toKilojoules(value : float<btu>) = kJ.create(float value * 1.0550559)
         /// Converts the supplied Btu value to Kilocalories
-        static member toKilocalories(value : float<btu>) = kCal.create(float value / 3.9673727240424)
+        static member toKilocalories(value : float<btu>) = kCal.create(float value * 0.2521644007218)
         /// Converts the supplied Btu value to Joules
         static member toJoules(value : float<btu>) = J.create(float value * 1055.06)
         /// Converts the supplied Btu value to Calories
-        static member toCalories(value : float<btu>) = cal.create(float value * 252.164)
+        static member toCalories(value : float<btu>) = cal.create(float value * 252.1644007218)
         /// Converts the supplied Btu value to US Therms
         static member toUSTherms(value : float<btu>) = ustherm.create(float value / 99976.12448781215)
         /// Converts the supplied Btu value to Watt Hours
@@ -42,7 +42,7 @@ module Energy =
         /// Converts the supplied Calories value to Joules
         static member toJoules(value : float<cal>) = J.create(float value * 4.184)
         /// Converts the supplied Calories value to Btu
-        static member toBtu(value : float<cal>) = btu.create(float value / 252.164)
+        static member toBtu(value : float<cal>) = btu.create(float value / 252.1644007218)
         /// Converts the supplied Calories value to US Therms
         static member toUSTherms(value : float<cal>) = ustherm.create(float value / 25210420.0)
         /// Converts the supplied Calories value to Watt Hours
@@ -124,11 +124,11 @@ module Energy =
         /// Converts the supplied Kilocalories value to Joules
         static member toJoules(value : float<kCal>) = J.create(float value * 4184.0)
         /// Converts the supplied Kilocalories value to Btu
-        static member toBtu(value : float<kCal>) = btu.create(float value * 3.9673727240424)
+        static member toBtu(value : float<kCal>) = btu.create(float value / 0.2521644007218)
         /// Converts the supplied Kilocalories value to Calories
         static member toCalories(value : float<kCal>) = cal.create(float value * 1000.0)
         /// Converts the supplied Kilocalories value to US Therms
-        static member toUSTherms(value : float<kCal>) = ustherm.create(float value / 25210.4)
+        static member toUSTherms(value : float<kCal>) = ustherm.create(float value / 25210.44007218)
         /// Converts the supplied Kilocalories value to Watt Hours
         static member toWattHours(value : float<kCal>) = Wh.create(float value * 1.16222)
         /// Converts the supplied Kilocalories value to Kilowatt Hours
@@ -185,7 +185,7 @@ module Energy =
         /// Converts the supplied US Therms value to Kilojoules
         static member toKilojoules(value : float<ustherm>) = kJ.create(float value * 105480.04)
         /// Converts the supplied US Therms value to Kilocalories
-        static member toKilocalories(value : float<ustherm>) = kCal.create(float value * 25210.4)
+        static member toKilocalories(value : float<ustherm>) = kCal.create(float value * 25210.44007218)
         /// Converts the supplied US Therms value to Joules
         static member toJoules(value : float<ustherm>) = J.create(float value * 105480400.0)
         /// Converts the supplied US Therms value to Btu

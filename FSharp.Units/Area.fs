@@ -27,7 +27,7 @@ module Area =
         /// Converts the supplied Acres value to Square Inches
         static member toSquareInches(value : float<acre>) = inch2.create(float value * 6272640.0)
         /// Converts the supplied Acres value to Hectares
-        static member toHectares(value : float<acre>) = hectare.create(float value / 2.471)
+        static member toHectares(value : float<acre>) = hectare.create(float value / 2.4710538146717)
     and /// Hectares (hectare) units
         [<Measure>] hectare =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<hectare> value
@@ -44,7 +44,7 @@ module Area =
         /// Converts the supplied Hectares value to Square Inches
         static member toSquareInches(value : float<hectare>) = inch2.create(float value * 15500031.0)
         /// Converts the supplied Hectares value to Acres
-        static member toAcres(value : float<hectare>) = acre.create(float value * 2.471)
+        static member toAcres(value : float<hectare>) = acre.create(float value * 2.4710538146717)
     and /// Square Feet (feet2) units
         [<Measure>] feet2 =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<feet2> value
