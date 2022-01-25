@@ -18,16 +18,16 @@ module FuelEconomy =
         static member toUSMilesPerGallon(value : float<kml>) = usmpg.create(float value * 2.35215)
         /// Converts the supplied Kilometre Per Litre value to Miles Per Gallon
         static member toMilesPerGallon(value : float<kml>) = mpg.create(float value * 2.82481)
-        /// Converts the supplied Kilometre Per Litre value to Litres per 100 Kilometres
-        static member toLitresper100Kilometres(value : float<kml>) = l100km.create(100.0 / float value)
-    and /// Litres per 100 Kilometres (l100km) units
+        /// Converts the supplied Kilometre Per Litre value to Litres Per 100 Kilometres
+        static member toLitresPer100Kilometres(value : float<kml>) = l100km.create(100.0 / float value)
+    and /// Litres Per 100 Kilometres (l100km) units
         [<Measure>] l100km =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<l100km> value
-        /// Converts the supplied Litres per 100 Kilometres value to Kilometre Per Litre
+        /// Converts the supplied Litres Per 100 Kilometres value to Kilometre Per Litre
         static member toKilometrePerLitre(value : float<l100km>) = kml.create(100.0 / float value)
-        /// Converts the supplied Litres per 100 Kilometres value to Miles Per Gallon
+        /// Converts the supplied Litres Per 100 Kilometres value to Miles Per Gallon
         static member toMilesPerGallon(value : float<l100km>) = mpg.create(282.481 / float value)
-        /// Converts the supplied Litres per 100 Kilometres value to US Miles Per Gallon
+        /// Converts the supplied Litres Per 100 Kilometres value to US Miles Per Gallon
         static member toUSMilesPerGallon(value : float<l100km>) = usmpg.create(235.215 / float value)
     and /// Miles Per Gallon (mpg) units
         [<Measure>] mpg =
@@ -36,8 +36,8 @@ module FuelEconomy =
         static member toKilometrePerLitre(value : float<mpg>) = kml.create(float value / 2.82481)
         /// Converts the supplied Miles Per Gallon value to US Miles Per Gallon
         static member toUSMilesPerGallon(value : float<mpg>) = usmpg.create(float value / 1.20095)
-        /// Converts the supplied Miles Per Gallon value to Litres per 100 Kilometres
-        static member toLitresper100Kilometres(value : float<mpg>) = l100km.create(282.481 / float value)
+        /// Converts the supplied Miles Per Gallon value to Litres Per 100 Kilometres
+        static member toLitresPer100Kilometres(value : float<mpg>) = l100km.create(282.481 / float value)
     and /// US Miles Per Gallon (usmpg) units
         [<Measure>] usmpg =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<usmpg> value
@@ -45,5 +45,5 @@ module FuelEconomy =
         static member toKilometrePerLitre(value : float<usmpg>) = kml.create(float value / 2.35215)
         /// Converts the supplied US Miles Per Gallon value to Miles Per Gallon
         static member toMilesPerGallon(value : float<usmpg>) = mpg.create(float value * 1.20095)
-        /// Converts the supplied US Miles Per Gallon value to Litres per 100 Kilometres
-        static member toLitresper100Kilometres(value : float<usmpg>) = l100km.create(235.215 / float value)
+        /// Converts the supplied US Miles Per Gallon value to Litres Per 100 Kilometres
+        static member toLitresPer100Kilometres(value : float<usmpg>) = l100km.create(235.215 / float value)

@@ -53,9 +53,9 @@ module FuelEconomyTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
-    let ``From Kilometre Per Litre to Litres per 100 Kilometres and back`` () =
+    let ``From Kilometre Per Litre to Litres Per 100 Kilometres and back`` () =
         let property value =
-            let convertTo = kml.toLitresper100Kilometres (kml.create value)
+            let convertTo = kml.toLitresPer100Kilometres (kml.create value)
             let convertBack = l100km.toKilometrePerLitre convertTo
 
             convertBack
@@ -66,15 +66,15 @@ module FuelEconomyTests =
     [<TestCase(109.0<kml>, 0.917431)>]
     [<TestCase(0.8<kml>, 125.0)>]
     [<TestCase(2.3<kml>, 43.4783)>]
-    let ``Convert known Kilometre Per Litre to Litres per 100 Kilometres`` (input, expectation) = 
-        kml.toLitresper100Kilometres input
+    let ``Convert known Kilometre Per Litre to Litres Per 100 Kilometres`` (input, expectation) = 
+        kml.toLitresPer100Kilometres input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
-    let ``From Litres per 100 Kilometres to Kilometre Per Litre and back`` () =
+    let ``From Litres Per 100 Kilometres to Kilometre Per Litre and back`` () =
         let property value =
             let convertTo = l100km.toKilometrePerLitre (l100km.create value)
-            let convertBack = kml.toLitresper100Kilometres convertTo
+            let convertBack = kml.toLitresPer100Kilometres convertTo
 
             convertBack
             |> should (equalWithin 0.01) value
@@ -84,15 +84,15 @@ module FuelEconomyTests =
     [<TestCase(0.7<l100km>, 142.857)>]
     [<TestCase(109.0<l100km>, 0.917431)>]
     [<TestCase(0.012<l100km>, 8333.3333)>]
-    let ``Convert known Litres per 100 Kilometres to Kilometre Per Litre`` (input, expectation) = 
+    let ``Convert known Litres Per 100 Kilometres to Kilometre Per Litre`` (input, expectation) = 
         l100km.toKilometrePerLitre input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
-    let ``From Litres per 100 Kilometres to Miles Per Gallon and back`` () =
+    let ``From Litres Per 100 Kilometres to Miles Per Gallon and back`` () =
         let property value =
             let convertTo = l100km.toMilesPerGallon (l100km.create value)
-            let convertBack = mpg.toLitresper100Kilometres convertTo
+            let convertBack = mpg.toLitresPer100Kilometres convertTo
 
             convertBack
             |> should (equalWithin 0.01) value
@@ -102,15 +102,15 @@ module FuelEconomyTests =
     [<TestCase(107.0<l100km>, 2.64001)>]
     [<TestCase(0.8<l100km>, 353.101)>]
     [<TestCase(0.02<l100km>, 14124.05)>]
-    let ``Convert known Litres per 100 Kilometres to Miles Per Gallon`` (input, expectation) = 
+    let ``Convert known Litres Per 100 Kilometres to Miles Per Gallon`` (input, expectation) = 
         l100km.toMilesPerGallon input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
-    let ``From Litres per 100 Kilometres to US Miles Per Gallon and back`` () =
+    let ``From Litres Per 100 Kilometres to US Miles Per Gallon and back`` () =
         let property value =
             let convertTo = l100km.toUSMilesPerGallon (l100km.create value)
-            let convertBack = usmpg.toLitresper100Kilometres convertTo
+            let convertBack = usmpg.toLitresPer100Kilometres convertTo
 
             convertBack
             |> should (equalWithin 0.01) value
@@ -120,7 +120,7 @@ module FuelEconomyTests =
     [<TestCase(12.0<l100km>, 19.6012)>]
     [<TestCase(0.3<l100km>, 784.049)>]
     [<TestCase(1.5<l100km>, 156.81)>]
-    let ``Convert known Litres per 100 Kilometres to US Miles Per Gallon`` (input, expectation) = 
+    let ``Convert known Litres Per 100 Kilometres to US Miles Per Gallon`` (input, expectation) = 
         l100km.toUSMilesPerGallon input
         |> should (equalWithin 0.01) expectation
 
@@ -161,9 +161,9 @@ module FuelEconomyTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
-    let ``From Miles Per Gallon to Litres per 100 Kilometres and back`` () =
+    let ``From Miles Per Gallon to Litres Per 100 Kilometres and back`` () =
         let property value =
-            let convertTo = mpg.toLitresper100Kilometres (mpg.create value)
+            let convertTo = mpg.toLitresPer100Kilometres (mpg.create value)
             let convertBack = l100km.toMilesPerGallon convertTo
 
             convertBack
@@ -174,8 +174,8 @@ module FuelEconomyTests =
     [<TestCase(22.3<mpg>, 12.66731)>]
     [<TestCase(0.4<mpg>, 706.202)>]
     [<TestCase(5.2<mpg>, 54.3233)>]
-    let ``Convert known Miles Per Gallon to Litres per 100 Kilometres`` (input, expectation) = 
-        mpg.toLitresper100Kilometres input
+    let ``Convert known Miles Per Gallon to Litres Per 100 Kilometres`` (input, expectation) = 
+        mpg.toLitresPer100Kilometres input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -215,9 +215,9 @@ module FuelEconomyTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
-    let ``From US Miles Per Gallon to Litres per 100 Kilometres and back`` () =
+    let ``From US Miles Per Gallon to Litres Per 100 Kilometres and back`` () =
         let property value =
-            let convertTo = usmpg.toLitresper100Kilometres (usmpg.create value)
+            let convertTo = usmpg.toLitresPer100Kilometres (usmpg.create value)
             let convertBack = l100km.toUSMilesPerGallon convertTo
 
             convertBack
@@ -228,7 +228,7 @@ module FuelEconomyTests =
     [<TestCase(111.0<usmpg>, 2.11905)>]
     [<TestCase(0.4<usmpg>, 588.036)>]
     [<TestCase(5.2<usmpg>, 45.2336)>]
-    let ``Convert known US Miles Per Gallon to Litres per 100 Kilometres`` (input, expectation) = 
-        usmpg.toLitresper100Kilometres input
+    let ``Convert known US Miles Per Gallon to Litres Per 100 Kilometres`` (input, expectation) = 
+        usmpg.toLitresPer100Kilometres input
         |> should (equalWithin 0.01) expectation
 
