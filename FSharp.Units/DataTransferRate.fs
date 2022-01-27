@@ -56,7 +56,7 @@ module DataTransferRate =
         /// Converts the supplied GigaBits Per Second value to Kibibits Per Second
         static member toKibibitsPerSecond(value : float<Gbps>) = Kibitps.create(float value * 976562.5)
         /// Converts the supplied GigaBits Per Second value to Mebibits Per Second
-        static member toMebibitsPerSecond(value : float<Gbps>) = Mibit.create(float value * 954.0)
+        static member toMebibitsPerSecond(value : float<Gbps>) = Mibit.create(float value * 953.67431640625)
     and /// GigaBytes Per Second (GBps) units
         [<Measure>] GBps =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<GBps> value
@@ -94,7 +94,7 @@ module DataTransferRate =
         /// Converts the supplied Kibibits Per Second value to TeraBits Per Second
         static member toTeraBitsPerSecond(value : float<Kibitps>) = Tbps.create(float value / 976562500.0)
         /// Converts the supplied Kibibits Per Second value to KiloBytes Per Second
-        static member toKiloBytesPerSecond(value : float<Kibitps>) = kBps.create(float value / 7.812)
+        static member toKiloBytesPerSecond(value : float<Kibitps>) = kBps.create(float value / 7.8125)
         /// Converts the supplied Kibibits Per Second value to MegaBytes Per Second
         static member toMegaBytesPerSecond(value : float<Kibitps>) = MBps.create(float value / 7812.5)
         /// Converts the supplied Kibibits Per Second value to GigaBytes Per Second
@@ -146,7 +146,7 @@ module DataTransferRate =
         /// Converts the supplied KiloBytes Per Second value to TeraBytes Per Second
         static member toTeraBytesPerSecond(value : float<kBps>) = TBps.create(float value / 1e+9)
         /// Converts the supplied KiloBytes Per Second value to Kibibits Per Second
-        static member toKibibitsPerSecond(value : float<kBps>) = Kibitps.create(float value * 7.812)
+        static member toKibibitsPerSecond(value : float<kBps>) = Kibitps.create(float value * 7.8125)
         /// Converts the supplied KiloBytes Per Second value to Mebibits Per Second
         static member toMebibitsPerSecond(value : float<kBps>) = Mibit.create(float value * 0.00762939)
     and /// Mebibits Per Second (Mibit) units
@@ -159,7 +159,7 @@ module DataTransferRate =
         /// Converts the supplied Mebibits Per Second value to MegaBits Per Second
         static member toMegaBitsPerSecond(value : float<Mibit>) = Mbps.create(float value * 1.04858)
         /// Converts the supplied Mebibits Per Second value to GigaBits Per Second
-        static member toGigaBitsPerSecond(value : float<Mibit>) = Gbps.create(float value / 954.0)
+        static member toGigaBitsPerSecond(value : float<Mibit>) = Gbps.create(float value / 953.67431640625)
         /// Converts the supplied Mebibits Per Second value to TeraBits Per Second
         static member toTeraBitsPerSecond(value : float<Mibit>) = Tbps.create(float value / 953674.0)
         /// Converts the supplied Mebibits Per Second value to KiloBytes Per Second

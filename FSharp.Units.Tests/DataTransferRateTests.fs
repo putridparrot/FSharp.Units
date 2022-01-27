@@ -370,8 +370,8 @@ module DataTransferRateTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(0.002<Gbps>, 1.9073486)>]
-    [<TestCase(0.9<Gbps>, 858.6)>]
-    [<TestCase(6.1<Gbps>, 5819.4)>]
+    [<TestCase(0.9<Gbps>, 858.3068847656)>]
+    [<TestCase(6.1<Gbps>, 5817.413330078)>]
     let ``Convert known GigaBits Per Second to Mebibits Per Second`` (input, expectation) = 
         Gbps.toMebibitsPerSecond input
         |> should (equalWithin 0.01) expectation
@@ -1072,7 +1072,7 @@ module DataTransferRateTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(0.009<kBps>, 0.0703125)>]
-    [<TestCase(6e+3<kBps>, 46872.0)>]
+    [<TestCase(6e+3<kBps>, 46875.0)>]
     [<TestCase(1.23<kBps>, 9.609375)>]
     let ``Convert known KiloBytes Per Second to Kibibits Per Second`` (input, expectation) = 
         kBps.toKibibitsPerSecond input

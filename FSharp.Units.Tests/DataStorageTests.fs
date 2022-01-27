@@ -370,8 +370,8 @@ module DataStorageTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(0.002<Gb>, 1.9073486)>]
-    [<TestCase(0.9<Gb>, 858.6)>]
-    [<TestCase(6.1<Gb>, 5819.4)>]
+    [<TestCase(0.9<Gb>, 858.30688476562)>]
+    [<TestCase(6.1<Gb>, 5817.413330078125)>]
     let ``Convert known Gigabits to Mebibits`` (input, expectation) = 
         Gb.toMebibits input
         |> should (equalWithin 0.01) expectation
@@ -1072,7 +1072,7 @@ module DataStorageTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<TestCase(0.009<KB>, 0.0703125)>]
-    [<TestCase(6e+3<KB>, 46872.0)>]
+    [<TestCase(6e+3<KB>, 46875.0)>]
     [<TestCase(1.23<KB>, 9.609375)>]
     let ``Convert known Kilobytes to Kibibits`` (input, expectation) = 
         KB.toKibibits input

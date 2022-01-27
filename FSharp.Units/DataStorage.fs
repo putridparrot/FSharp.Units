@@ -56,7 +56,7 @@ module DataStorage =
         /// Converts the supplied Gigabits value to Kibibits
         static member toKibibits(value : float<Gb>) = kibibit.create(float value * 976562.5)
         /// Converts the supplied Gigabits value to Mebibits
-        static member toMebibits(value : float<Gb>) = mebibit.create(float value * 954.0)
+        static member toMebibits(value : float<Gb>) = mebibit.create(float value * 953.67431640625)
     and /// Gigabytes (GB) units
         [<Measure>] GB =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<GB> value
@@ -94,7 +94,7 @@ module DataStorage =
         /// Converts the supplied Kibibits value to Terabits
         static member toTerabits(value : float<kibibit>) = Tb.create(float value / 976562500.0)
         /// Converts the supplied Kibibits value to Kilobytes
-        static member toKilobytes(value : float<kibibit>) = KB.create(float value / 7.812)
+        static member toKilobytes(value : float<kibibit>) = KB.create(float value / 7.8125)
         /// Converts the supplied Kibibits value to Megabytes
         static member toMegabytes(value : float<kibibit>) = MB.create(float value / 7812.5)
         /// Converts the supplied Kibibits value to Gigabytes
@@ -146,7 +146,7 @@ module DataStorage =
         /// Converts the supplied Kilobytes value to Terabytes
         static member toTerabytes(value : float<KB>) = TB.create(float value / 1e+9)
         /// Converts the supplied Kilobytes value to Kibibits
-        static member toKibibits(value : float<KB>) = kibibit.create(float value * 7.812)
+        static member toKibibits(value : float<KB>) = kibibit.create(float value * 7.8125)
         /// Converts the supplied Kilobytes value to Mebibits
         static member toMebibits(value : float<KB>) = mebibit.create(float value * 0.00762939)
     and /// Mebibits (mebibit) units
@@ -159,7 +159,7 @@ module DataStorage =
         /// Converts the supplied Mebibits value to Megabits
         static member toMegabits(value : float<mebibit>) = Mb.create(float value * 1.04858)
         /// Converts the supplied Mebibits value to Gigabits
-        static member toGigabits(value : float<mebibit>) = Gb.create(float value / 954.0)
+        static member toGigabits(value : float<mebibit>) = Gb.create(float value / 953.67431640625)
         /// Converts the supplied Mebibits value to Terabits
         static member toTerabits(value : float<mebibit>) = Tb.create(float value / 953674.0)
         /// Converts the supplied Mebibits value to Kilobytes
