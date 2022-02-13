@@ -7,9 +7,10 @@
      <PackageReadmeFile>README.md</PackageReadmeFile>
      <PackageIcon>FSharp.Units.png</PackageIcon>
      <PackageLicenseExpression>MIT</PackageLicenseExpression>
-     <Version>1.0.10-alpha</Version>
+     <Version>1.0.11-alpha</Version>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Force.fs" />
     <Compile Include="DataStorage.fs" />
     <Compile Include="FuelEconomy.fs" />
     <Compile Include="Angle.fs" />
@@ -17,7 +18,6 @@
     <Compile Include="Frequency.fs" />
     <Compile Include="Energy.fs" />
     <Compile Include="DataTransferRate.fs" />
-    <Compile Include="Health.fs" />
     <Compile Include="Length.fs" />
     <Compile Include="LuminousEnergy.fs" />
     <Compile Include="MagnetomotiveForce.fs" />

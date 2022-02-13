@@ -93,6 +93,13 @@ Each unit of measure then includes functions to convert to each for example, con
 	* US Therms (ustherm)
 	* Watt Hours (Wh)
 
+### Force
+
+	* Dynes (dyn)
+	* Kilogram-force (kp)
+	* Newtons (N)
+	* Poundals (pdl)
+
 ### Frequency
 
 	* Gigahertz (GHz)
@@ -103,7 +110,7 @@ Each unit of measure then includes functions to convert to each for example, con
 ### Fuel Economy
 
 	* Kilometre Per Litre (kml)
-	* Litres per 100 Kilometres (l100km)
+	* Litres Per 100 Kilometres (l100km)
 	* Miles Per Gallon (mpg)
 	* US Miles Per Gallon (usmpg)
 
