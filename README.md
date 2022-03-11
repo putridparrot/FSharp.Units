@@ -16,6 +16,7 @@ Package available via [nuget](https://www.nuget.org/packages/FSharp.Units/)
 ### Unit conversions also available for 
 
 [C#](https://github.com/putridparrot/PutridParrot.Units)  
+[Dart](https://github.com/putridparrot/DartUnits)  
 [Java](https://github.com/putridparrot/JavaUnits)   
 [Python](https://github.com/putridparrot/PyUnits)  
 [Rust](https://github.com/putridparrot/RustUnits)   
