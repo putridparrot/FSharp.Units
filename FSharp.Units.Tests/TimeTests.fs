@@ -17,6 +17,39 @@ module TimeTests =
 
 
     [<Property>]
+    let ``From Centuries to Nanoseconds and back`` () =
+        let property value =
+            let convertTo = century.toNanoseconds (century.create value)
+            let convertBack = nanosecond.toCenturies convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Centuries to Microseconds and back`` () =
+        let property value =
+            let convertTo = century.toMicroseconds (century.create value)
+            let convertBack = microsecond.toCenturies convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Centuries to Milliseconds and back`` () =
+        let property value =
+            let convertTo = century.toMilliseconds (century.create value)
+            let convertBack = millisecond.toCenturies convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
     let ``From Centuries to Seconds and back`` () =
         let property value =
             let convertTo = century.toSeconds (century.create value)
@@ -103,6 +136,46 @@ module TimeTests =
             |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Days to Nanoseconds and back`` () =
+        let property value =
+            let convertTo = day.toNanoseconds (day.create value)
+            let convertBack = nanosecond.toDays convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Days to Microseconds and back`` () =
+        let property value =
+            let convertTo = day.toMicroseconds (day.create value)
+            let convertBack = microsecond.toDays convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Days to Milliseconds and back`` () =
+        let property value =
+            let convertTo = day.toMilliseconds (day.create value)
+            let convertBack = millisecond.toDays convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.0009<day>, 77760.0)>]
+    [<TestCase(0.03<day>, 2592000.0)>]
+    [<TestCase(0.006<day>, 518400.0)>]
+    let ``Convert known Days to Milliseconds`` (input, expectation) = 
+        day.toMilliseconds input
+        |> should (equalWithin 0.01) expectation
 
     [<Property>]
     let ``From Days to Seconds and back`` () =
@@ -235,6 +308,39 @@ module TimeTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<Property>]
+    let ``From Decades to Nanoseconds and back`` () =
+        let property value =
+            let convertTo = decade.toNanoseconds (decade.create value)
+            let convertBack = nanosecond.toDecades convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Decades to Microseconds and back`` () =
+        let property value =
+            let convertTo = decade.toMicroseconds (decade.create value)
+            let convertBack = microsecond.toDecades convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Decades to Milliseconds and back`` () =
+        let property value =
+            let convertTo = decade.toMilliseconds (decade.create value)
+            let convertBack = millisecond.toDecades convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
     let ``From Decades to Seconds and back`` () =
         let property value =
             let convertTo = decade.toSeconds (decade.create value)
@@ -321,6 +427,46 @@ module TimeTests =
             |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Hours to Nanoseconds and back`` () =
+        let property value =
+            let convertTo = hour.toNanoseconds (hour.create value)
+            let convertBack = nanosecond.toHours convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Hours to Microseconds and back`` () =
+        let property value =
+            let convertTo = hour.toMicroseconds (hour.create value)
+            let convertBack = microsecond.toHours convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Hours to Milliseconds and back`` () =
+        let property value =
+            let convertTo = hour.toMilliseconds (hour.create value)
+            let convertBack = millisecond.toHours convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.006<hour>, 21600.0)>]
+    [<TestCase(0.09<hour>, 324000.0)>]
+    [<TestCase(0.007<hour>, 25200.0)>]
+    let ``Convert known Hours to Milliseconds`` (input, expectation) = 
+        hour.toMilliseconds input
+        |> should (equalWithin 0.01) expectation
 
     [<Property>]
     let ``From Hours to Seconds and back`` () =
@@ -453,6 +599,337 @@ module TimeTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<Property>]
+    let ``From Microseconds to Nanoseconds and back`` () =
+        let property value =
+            let convertTo = microsecond.toNanoseconds (microsecond.create value)
+            let convertBack = nanosecond.toMicroseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Microseconds to Milliseconds and back`` () =
+        let property value =
+            let convertTo = microsecond.toMilliseconds (microsecond.create value)
+            let convertBack = millisecond.toMicroseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Microseconds to Seconds and back`` () =
+        let property value =
+            let convertTo = microsecond.toSeconds (microsecond.create value)
+            let convertBack = second.toMicroseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Microseconds to Minutes and back`` () =
+        let property value =
+            let convertTo = microsecond.toMinutes (microsecond.create value)
+            let convertBack = minute.toMicroseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Microseconds to Hours and back`` () =
+        let property value =
+            let convertTo = microsecond.toHours (microsecond.create value)
+            let convertBack = hour.toMicroseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Microseconds to Days and back`` () =
+        let property value =
+            let convertTo = microsecond.toDays (microsecond.create value)
+            let convertBack = day.toMicroseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Microseconds to Weeks and back`` () =
+        let property value =
+            let convertTo = microsecond.toWeeks (microsecond.create value)
+            let convertBack = week.toMicroseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Microseconds to Months and back`` () =
+        let property value =
+            let convertTo = microsecond.toMonths (microsecond.create value)
+            let convertBack = month.toMicroseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Microseconds to Years and back`` () =
+        let property value =
+            let convertTo = microsecond.toYears (microsecond.create value)
+            let convertBack = year.toMicroseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Microseconds to Decades and back`` () =
+        let property value =
+            let convertTo = microsecond.toDecades (microsecond.create value)
+            let convertBack = decade.toMicroseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Microseconds to Centuries and back`` () =
+        let property value =
+            let convertTo = microsecond.toCenturies (microsecond.create value)
+            let convertBack = century.toMicroseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Milliseconds to Nanoseconds and back`` () =
+        let property value =
+            let convertTo = millisecond.toNanoseconds (millisecond.create value)
+            let convertBack = nanosecond.toMilliseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Milliseconds to Microseconds and back`` () =
+        let property value =
+            let convertTo = millisecond.toMicroseconds (millisecond.create value)
+            let convertBack = microsecond.toMilliseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Milliseconds to Seconds and back`` () =
+        let property value =
+            let convertTo = millisecond.toSeconds (millisecond.create value)
+            let convertBack = second.toMilliseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(8.0<millisecond>, 0.008)>]
+    [<TestCase(780.0<millisecond>, 0.78)>]
+    [<TestCase(900.0<millisecond>, 0.9)>]
+    let ``Convert known Milliseconds to Seconds`` (input, expectation) = 
+        millisecond.toSeconds input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Milliseconds to Minutes and back`` () =
+        let property value =
+            let convertTo = millisecond.toMinutes (millisecond.create value)
+            let convertBack = minute.toMilliseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(900.0<millisecond>, 0.015)>]
+    [<TestCase(67000.0<millisecond>, 1.1166667)>]
+    [<TestCase(1234567.0<millisecond>, 20.57611667)>]
+    let ``Convert known Milliseconds to Minutes`` (input, expectation) = 
+        millisecond.toMinutes input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Milliseconds to Hours and back`` () =
+        let property value =
+            let convertTo = millisecond.toHours (millisecond.create value)
+            let convertBack = hour.toMilliseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(1234567.0<millisecond>, 0.3429352778)>]
+    [<TestCase(100900.0<millisecond>, 0.0280277778)>]
+    [<TestCase(46000.0<millisecond>, 0.012777778)>]
+    let ``Convert known Milliseconds to Hours`` (input, expectation) = 
+        millisecond.toHours input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Milliseconds to Days and back`` () =
+        let property value =
+            let convertTo = millisecond.toDays (millisecond.create value)
+            let convertBack = day.toMilliseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(9000000.0<millisecond>, 0.1041666667)>]
+    [<TestCase(123456789.0<millisecond>, 1.42889802083)>]
+    [<TestCase(89008900.0<millisecond>, 1.0301956019)>]
+    let ``Convert known Milliseconds to Days`` (input, expectation) = 
+        millisecond.toDays input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Milliseconds to Weeks and back`` () =
+        let property value =
+            let convertTo = millisecond.toWeeks (millisecond.create value)
+            let convertBack = week.toMilliseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(89008900.0<millisecond>, 0.14717080026)>]
+    [<TestCase(1234567890.0<millisecond>, 2.041282886905)>]
+    [<TestCase(100200300.0<millisecond>, 0.165675099206)>]
+    let ``Convert known Milliseconds to Weeks`` (input, expectation) = 
+        millisecond.toWeeks input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Milliseconds to Months and back`` () =
+        let property value =
+            let convertTo = millisecond.toMonths (millisecond.create value)
+            let convertBack = month.toMilliseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(100200300400.0<millisecond>, 38.102653412154631)>]
+    [<TestCase(90001000.0<millisecond>, 0.034246918329)>]
+    [<TestCase(8888888888.0<millisecond>, 3.382374104552)>]
+    let ``Convert known Milliseconds to Months`` (input, expectation) = 
+        millisecond.toMonths input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Milliseconds to Years and back`` () =
+        let property value =
+            let convertTo = millisecond.toYears (millisecond.create value)
+            let convertBack = year.toMilliseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(8888888888.0<millisecond>, 0.28167767558793383)>]
+    [<TestCase(123456789123.0<millisecond>, 3.9121899074093087)>]
+    [<TestCase(900080007000.0<millisecond>, 28.522399977032002)>]
+    let ``Convert known Milliseconds to Years`` (input, expectation) = 
+        millisecond.toYears input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Milliseconds to Decades and back`` () =
+        let property value =
+            let convertTo = millisecond.toDecades (millisecond.create value)
+            let convertBack = decade.toMilliseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Milliseconds to Centuries and back`` () =
+        let property value =
+            let convertTo = millisecond.toCenturies (millisecond.create value)
+            let convertBack = century.toMilliseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Minutes to Nanoseconds and back`` () =
+        let property value =
+            let convertTo = minute.toNanoseconds (minute.create value)
+            let convertBack = nanosecond.toMinutes convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Minutes to Microseconds and back`` () =
+        let property value =
+            let convertTo = minute.toMicroseconds (minute.create value)
+            let convertBack = microsecond.toMinutes convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Minutes to Milliseconds and back`` () =
+        let property value =
+            let convertTo = minute.toMilliseconds (minute.create value)
+            let convertBack = millisecond.toMinutes convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.007<minute>, 420.0)>]
+    [<TestCase(0.8<minute>, 48000.0)>]
+    [<TestCase(9.0<minute>, 540000.0)>]
+    let ``Convert known Minutes to Milliseconds`` (input, expectation) = 
+        minute.toMilliseconds input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Minutes to Seconds and back`` () =
         let property value =
             let convertTo = minute.toSeconds (minute.create value)
@@ -581,6 +1058,46 @@ module TimeTests =
             |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Months to Nanoseconds and back`` () =
+        let property value =
+            let convertTo = month.toNanoseconds (month.create value)
+            let convertBack = nanosecond.toMonths convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Months to Microseconds and back`` () =
+        let property value =
+            let convertTo = month.toMicroseconds (month.create value)
+            let convertBack = microsecond.toMonths convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Months to Milliseconds and back`` () =
+        let property value =
+            let convertTo = month.toMilliseconds (month.create value)
+            let convertBack = millisecond.toMonths convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.00034<month>, 894113.64)>]
+    [<TestCase(0.001<month>, 2629746.0)>]
+    [<TestCase(0.006<month>, 15778476.0)>]
+    let ``Convert known Months to Milliseconds`` (input, expectation) = 
+        month.toMilliseconds input
+        |> should (equalWithin 0.01) expectation
 
     [<Property>]
     let ``From Months to Seconds and back`` () =
@@ -713,6 +1230,202 @@ module TimeTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<Property>]
+    let ``From Nanoseconds to Microseconds and back`` () =
+        let property value =
+            let convertTo = nanosecond.toMicroseconds (nanosecond.create value)
+            let convertBack = microsecond.toNanoseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(1234.0<nanosecond>, 1.234)>]
+    [<TestCase(90.9<nanosecond>, 0.0909)>]
+    [<TestCase(70000.0<nanosecond>, 70.0)>]
+    let ``Convert known Nanoseconds to Microseconds`` (input, expectation) = 
+        nanosecond.toMicroseconds input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Nanoseconds to Milliseconds and back`` () =
+        let property value =
+            let convertTo = nanosecond.toMilliseconds (nanosecond.create value)
+            let convertBack = millisecond.toNanoseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(70000.0<nanosecond>, 0.07)>]
+    [<TestCase(123456.0<nanosecond>, 0.123456)>]
+    [<TestCase(900900.0<nanosecond>, 0.9009)>]
+    let ``Convert known Nanoseconds to Milliseconds`` (input, expectation) = 
+        nanosecond.toMilliseconds input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Nanoseconds to Seconds and back`` () =
+        let property value =
+            let convertTo = nanosecond.toSeconds (nanosecond.create value)
+            let convertBack = second.toNanoseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(900000000.0<nanosecond>, 0.9)>]
+    [<TestCase(123456789.0<nanosecond>, 0.123456789)>]
+    [<TestCase(800400700.0<nanosecond>, 0.8004007)>]
+    let ``Convert known Nanoseconds to Seconds`` (input, expectation) = 
+        nanosecond.toSeconds input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Nanoseconds to Minutes and back`` () =
+        let property value =
+            let convertTo = nanosecond.toMinutes (nanosecond.create value)
+            let convertBack = minute.toNanoseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(1234567890.0<nanosecond>, 0.0205761315)>]
+    [<TestCase(800400700.0<nanosecond>, 0.0133400116667)>]
+    [<TestCase(800100800.0<nanosecond>, 0.0133350133333)>]
+    let ``Convert known Nanoseconds to Minutes`` (input, expectation) = 
+        nanosecond.toMinutes input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Nanoseconds to Hours and back`` () =
+        let property value =
+            let convertTo = nanosecond.toHours (nanosecond.create value)
+            let convertBack = hour.toNanoseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(1234567890123.0<nanosecond>, 0.3429355250341667)>]
+    [<TestCase(900800700600.0<nanosecond>, 0.250222416833333)>]
+    [<TestCase(66677788999.0<nanosecond>, 0.018521608055278)>]
+    let ``Convert known Nanoseconds to Hours`` (input, expectation) = 
+        nanosecond.toHours input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Nanoseconds to Days and back`` () =
+        let property value =
+            let convertTo = nanosecond.toDays (nanosecond.create value)
+            let convertBack = day.toNanoseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Nanoseconds to Weeks and back`` () =
+        let property value =
+            let convertTo = nanosecond.toWeeks (nanosecond.create value)
+            let convertBack = week.toNanoseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Nanoseconds to Months and back`` () =
+        let property value =
+            let convertTo = nanosecond.toMonths (nanosecond.create value)
+            let convertBack = month.toNanoseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Nanoseconds to Years and back`` () =
+        let property value =
+            let convertTo = nanosecond.toYears (nanosecond.create value)
+            let convertBack = year.toNanoseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Nanoseconds to Decades and back`` () =
+        let property value =
+            let convertTo = nanosecond.toDecades (nanosecond.create value)
+            let convertBack = decade.toNanoseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Nanoseconds to Centuries and back`` () =
+        let property value =
+            let convertTo = nanosecond.toCenturies (nanosecond.create value)
+            let convertBack = century.toNanoseconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Seconds to Nanoseconds and back`` () =
+        let property value =
+            let convertTo = second.toNanoseconds (second.create value)
+            let convertBack = nanosecond.toSeconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Seconds to Microseconds and back`` () =
+        let property value =
+            let convertTo = second.toMicroseconds (second.create value)
+            let convertBack = microsecond.toSeconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Seconds to Milliseconds and back`` () =
+        let property value =
+            let convertTo = second.toMilliseconds (second.create value)
+            let convertBack = millisecond.toSeconds convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(9.0<second>, 9000.0)>]
+    [<TestCase(3.1<second>, 3100.0)>]
+    [<TestCase(0.9<second>, 900.0)>]
+    let ``Convert known Seconds to Milliseconds`` (input, expectation) = 
+        second.toMilliseconds input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Seconds to Minutes and back`` () =
         let property value =
             let convertTo = second.toMinutes (second.create value)
@@ -843,6 +1556,46 @@ module TimeTests =
         Check.QuickThrowOnFailure (testRange property)
 
     [<Property>]
+    let ``From Weeks to Nanoseconds and back`` () =
+        let property value =
+            let convertTo = week.toNanoseconds (week.create value)
+            let convertBack = nanosecond.toWeeks convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Weeks to Microseconds and back`` () =
+        let property value =
+            let convertTo = week.toMicroseconds (week.create value)
+            let convertBack = microsecond.toWeeks convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Weeks to Milliseconds and back`` () =
+        let property value =
+            let convertTo = week.toMilliseconds (week.create value)
+            let convertBack = millisecond.toWeeks convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.001<week>, 604800.0)>]
+    [<TestCase(0.005<week>, 3024000.0)>]
+    [<TestCase(0.0009<week>, 544320.0)>]
+    let ``Convert known Weeks to Milliseconds`` (input, expectation) = 
+        week.toMilliseconds input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Weeks to Seconds and back`` () =
         let property value =
             let convertTo = week.toSeconds (week.create value)
@@ -971,6 +1724,46 @@ module TimeTests =
             |> should (equalWithin 0.01) value
 
         Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Years to Nanoseconds and back`` () =
+        let property value =
+            let convertTo = year.toNanoseconds (year.create value)
+            let convertBack = nanosecond.toYears convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Years to Microseconds and back`` () =
+        let property value =
+            let convertTo = year.toMicroseconds (year.create value)
+            let convertBack = microsecond.toYears convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<Property>]
+    let ``From Years to Milliseconds and back`` () =
+        let property value =
+            let convertTo = year.toMilliseconds (year.create value)
+            let convertBack = millisecond.toYears convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.001<year>, 31556952.0)>]
+    [<TestCase(0.0009<year>, 28401256.8)>]
+    [<TestCase(0.00034<year>, 10729363.680000002)>]
+    let ``Convert known Years to Milliseconds`` (input, expectation) = 
+        year.toMilliseconds input
+        |> should (equalWithin 0.01) expectation
 
     [<Property>]
     let ``From Years to Seconds and back`` () =
