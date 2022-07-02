@@ -211,8 +211,14 @@ Each unit of measure then includes functions to convert to each for example, con
 
 ### Apps
 
-The "My Unit Conversions" app. uses the C# (PutridParrot.Units) version of this library and can be obtained from the following stores/locations.
+The "My Unit Conversions" app. (for Android, iOS and Windows) uses the C# (PutridParrot.Units) version of this library and can be obtained from the following stores/locations.
 
 [![Get it on Google Play](https://apps.putridparrot.com/Images/googleplay153x46.png)](https://play.google.com/store/apps/details?id=com.putridparrot.MyUnitConversion&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1)
 [![Download on the Apple Store](https://apps.putridparrot.com/Images/applestore153x46.png)](https://apps.apple.com/app/my-unit-conversion/id1600275661)
 [![Available on Fire](https://apps.putridparrot.com/Images/fire153x46.png)](https://www.amazon.co.uk/MTBSOFTWARE-LIMITED-My-Unit-Conversion/dp/B09RTBBGNM/)
+[![Available on Windows](https://apps.putridparrot.com/Images/MS_864X312.svg)](https://apps.microsoft.com/store/detail/my-unit-conversion/9NK6CTDN0L2L)
+
+The Mac version of the app. uses this Swift package and can be obtained from the following location
+
+[![Download on the Apple Store](https://apps.putridparrot.com/Images/applestore153x46.png)](https://apps.apple.com/app/my-unit-conversion/id1600275661)
+
