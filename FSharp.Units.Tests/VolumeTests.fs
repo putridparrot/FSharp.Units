@@ -17,6 +17,1032 @@ module VolumeTests =
 
 
     [<Property>]
+    let ``From Cubic Feet to Millilitres and back`` () =
+        let property value =
+            let convertTo = feet3.toMillilitres (feet3.create value)
+            let convertBack = ml.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.08<feet3>, 2265.348)>]
+    [<TestCase(6.0<feet3>, 169900.79)>]
+    [<TestCase(0.2393275<feet3>, 6776.988)>]
+    let ``Convert known Cubic Feet to Millilitres`` (input, expectation) = 
+        feet3.toMillilitres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to Litres and back`` () =
+        let property value =
+            let convertTo = feet3.toLitres (feet3.create value)
+            let convertBack = l.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.3<feet3>, 8.49505)>]
+    [<TestCase(6.0<feet3>, 169.901)>]
+    [<TestCase(56.0<feet3>, 1585.74)>]
+    let ``Convert known Cubic Feet to Litres`` (input, expectation) = 
+        feet3.toLitres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to Kilolitres and back`` () =
+        let property value =
+            let convertTo = feet3.toKilolitres (feet3.create value)
+            let convertBack = kl.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(300.0<feet3>, 8.49505)>]
+    [<TestCase(141.259<feet3>, 4.0)>]
+    [<TestCase(111.0<feet3>, 3.14317)>]
+    let ``Convert known Cubic Feet to Kilolitres`` (input, expectation) = 
+        feet3.toKilolitres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to Teaspoons and back`` () =
+        let property value =
+            let convertTo = feet3.toTeaspoons (feet3.create value)
+            let convertBack = tsp.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.3<feet3>, 1435.12)>]
+    [<TestCase(4.0<feet3>, 19134.95)>]
+    [<TestCase(67.0<feet3>, 320510.579)>]
+    let ``Convert known Cubic Feet to Teaspoons`` (input, expectation) = 
+        feet3.toTeaspoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to Tablespoons and back`` () =
+        let property value =
+            let convertTo = feet3.toTablespoons (feet3.create value)
+            let convertBack = tbsp.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.7<feet3>, 1116.21)>]
+    [<TestCase(1.1<feet3>, 1754.04)>]
+    [<TestCase(0.494174<feet3>, 788.0)>]
+    let ``Convert known Cubic Feet to Tablespoons`` (input, expectation) = 
+        feet3.toTablespoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to Quarts and back`` () =
+        let property value =
+            let convertTo = feet3.toQuarts (feet3.create value)
+            let convertBack = qt.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.6<feet3>, 14.9492)>]
+    [<TestCase(0.20068<feet3>, 5.0)>]
+    [<TestCase(0.301019<feet3>, 7.5)>]
+    let ``Convert known Cubic Feet to Quarts`` (input, expectation) = 
+        feet3.toQuarts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to Pints and back`` () =
+        let property value =
+            let convertTo = feet3.toPints (feet3.create value)
+            let convertBack = pt.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.6<feet3>, 29.8984)>]
+    [<TestCase(0.88299<feet3>, 44.0)>]
+    [<TestCase(18.0612<feet3>, 900.0)>]
+    let ``Convert known Cubic Feet to Pints`` (input, expectation) = 
+        feet3.toPints input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to Gallons and back`` () =
+        let property value =
+            let convertTo = feet3.toGallons (feet3.create value)
+            let convertBack = gal.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(3.0<feet3>, 18.6865)>]
+    [<TestCase(2.08707<feet3>, 13.0)>]
+    [<TestCase(14.1278<feet3>, 88.0)>]
+    let ``Convert known Cubic Feet to Gallons`` (input, expectation) = 
+        feet3.toGallons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to Fluid Ounces and back`` () =
+        let property value =
+            let convertTo = feet3.toFluidOunces (feet3.create value)
+            let convertBack = floz.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(14.0<feet3>, 13952.6)>]
+    [<TestCase(7.0<feet3>, 6976.3)>]
+    [<TestCase(0.34777769<feet3>, 346.6)>]
+    let ``Convert known Cubic Feet to Fluid Ounces`` (input, expectation) = 
+        feet3.toFluidOunces input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to US Teaspoons and back`` () =
+        let property value =
+            let convertTo = feet3.toUSTeaspoons (feet3.create value)
+            let convertBack = ustsp.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(5.0<feet3>, 28725.2)>]
+    [<TestCase(0.4<feet3>, 2298.02)>]
+    [<TestCase(9.2<feet3>, 52854.3679)>]
+    let ``Convert known Cubic Feet to US Teaspoons`` (input, expectation) = 
+        feet3.toUSTeaspoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to US Tablespoons and back`` () =
+        let property value =
+            let convertTo = feet3.toUSTablespoons (feet3.create value)
+            let convertBack = ustbsp.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(1.4<feet3>, 2681.02)>]
+    [<TestCase(4.0<feet3>, 7660.04)>]
+    [<TestCase(0.6443821<feet3>, 1234.0)>]
+    let ``Convert known Cubic Feet to US Tablespoons`` (input, expectation) = 
+        feet3.toUSTablespoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to US Quarts and back`` () =
+        let property value =
+            let convertTo = feet3.toUSQuarts (feet3.create value)
+            let convertBack = usqt.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(6.0<feet3>, 179.532)>]
+    [<TestCase(12.0<feet3>, 359.065)>]
+    [<TestCase(25.9674<feet3>, 777.0)>]
+    let ``Convert known Cubic Feet to US Quarts`` (input, expectation) = 
+        feet3.toUSQuarts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to US Pints and back`` () =
+        let property value =
+            let convertTo = feet3.toUSPints (feet3.create value)
+            let convertBack = uspt.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(6.9<feet3>, 412.925)>]
+    [<TestCase(23.0<feet3>, 1376.42)>]
+    [<TestCase(14.8385<feet3>, 888.0)>]
+    let ``Convert known Cubic Feet to US Pints`` (input, expectation) = 
+        feet3.toUSPints input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to US Gallons and back`` () =
+        let property value =
+            let convertTo = feet3.toUSGallons (feet3.create value)
+            let convertBack = usgal.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(77.0<feet3>, 576.0)>]
+    [<TestCase(45.0<feet3>, 336.623)>]
+    [<TestCase(4.0<feet3>, 29.9221)>]
+    let ``Convert known Cubic Feet to US Gallons`` (input, expectation) = 
+        feet3.toUSGallons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to US Fluid Ounces and back`` () =
+        let property value =
+            let convertTo = feet3.toUSFluidOunces (feet3.create value)
+            let convertBack = usfloz.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(20.0<feet3>, 19150.119)>]
+    [<TestCase(0.359266<feet3>, 344.0)>]
+    [<TestCase(0.699734<feet3>, 670.0)>]
+    let ``Convert known Cubic Feet to US Fluid Ounces`` (input, expectation) = 
+        feet3.toUSFluidOunces input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to US Cups and back`` () =
+        let property value =
+            let convertTo = feet3.toUSCups (feet3.create value)
+            let convertBack = uscup.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(77.0<feet3>, 9084.99)>]
+    [<TestCase(8.0<feet3>, 943.895)>]
+    [<TestCase(4.79714<feet3>, 566.0)>]
+    let ``Convert known Cubic Feet to US Cups`` (input, expectation) = 
+        feet3.toUSCups input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = feet3.toCubicMetres (feet3.create value)
+            let convertBack = m3.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(28.2517<feet3>, 0.8)>]
+    [<TestCase(45.0<feet3>, 1.27426)>]
+    [<TestCase(2719.23<feet3>, 77.0)>]
+    let ``Convert known Cubic Feet to Cubic Metres`` (input, expectation) = 
+        feet3.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = feet3.toCubicInches (feet3.create value)
+            let convertBack = inch3.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(6.8<feet3>, 11750.4)>]
+    [<TestCase(5666.0<feet3>, 9790848.0)>]
+    [<TestCase(0.7<feet3>, 1209.6)>]
+    let ``Convert known Cubic Feet to Cubic Inches`` (input, expectation) = 
+        feet3.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Feet to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = feet3.toOilBarrels (feet3.create value)
+            let convertBack = oilbarrel.toCubicFeet convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(67.0<feet3>, 11.9332)>]
+    [<TestCase(44.0<feet3>, 7.83673)>]
+    [<TestCase(67.375<feet3>, 12.0)>]
+    let ``Convert known Cubic Feet to Oil Barrels`` (input, expectation) = 
+        feet3.toOilBarrels input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to Millilitres and back`` () =
+        let property value =
+            let convertTo = inch3.toMillilitres (inch3.create value)
+            let convertBack = ml.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(3.9<inch3>, 63.9095)>]
+    [<TestCase(4.0<inch3>, 65.5483)>]
+    [<TestCase(5.37009<inch3>, 88.0)>]
+    let ``Convert known Cubic Inches to Millilitres`` (input, expectation) = 
+        inch3.toMillilitres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to Litres and back`` () =
+        let property value =
+            let convertTo = inch3.toLitres (inch3.create value)
+            let convertBack = l.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(560.0<inch3>, 9.17676)>]
+    [<TestCase(555.0<inch3>, 9.09482)>]
+    [<TestCase(7444.9<inch3>, 122.0)>]
+    let ``Convert known Cubic Inches to Litres`` (input, expectation) = 
+        inch3.toLitres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to Kilolitres and back`` () =
+        let property value =
+            let convertTo = inch3.toKilolitres (inch3.create value)
+            let convertBack = kl.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(560.0<inch3>, 0.009176)>]
+    [<TestCase(5555.0<inch3>, 0.09103014)>]
+    [<TestCase(100000.0<inch3>, 1.6387064)>]
+    let ``Convert known Cubic Inches to Kilolitres`` (input, expectation) = 
+        inch3.toKilolitres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to Teaspoons and back`` () =
+        let property value =
+            let convertTo = inch3.toTeaspoons (inch3.create value)
+            let convertBack = tsp.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(5.0<inch3>, 13.8419)>]
+    [<TestCase(6.0<inch3>, 16.6102)>]
+    [<TestCase(11.5591<inch3>, 32.0)>]
+    let ``Convert known Cubic Inches to Teaspoons`` (input, expectation) = 
+        inch3.toTeaspoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to Tablespoons and back`` () =
+        let property value =
+            let convertTo = inch3.toTablespoons (inch3.create value)
+            let convertBack = tbsp.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(34.0<inch3>, 31.3749)>]
+    [<TestCase(11.9204<inch3>, 11.0)>]
+    [<TestCase(99.0<inch3>, 91.3562246)>]
+    let ``Convert known Cubic Inches to Tablespoons`` (input, expectation) = 
+        inch3.toTablespoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to Quarts and back`` () =
+        let property value =
+            let convertTo = inch3.toQuarts (inch3.create value)
+            let convertBack = qt.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(800.0<inch3>, 11.5349)>]
+    [<TestCase(77.0<inch3>, 1.11023)>]
+    [<TestCase(4577.42<inch3>, 66.0)>]
+    let ``Convert known Cubic Inches to Quarts`` (input, expectation) = 
+        inch3.toQuarts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to Pints and back`` () =
+        let property value =
+            let convertTo = inch3.toPints (inch3.create value)
+            let convertBack = pt.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(89.5<inch3>, 2.58093)>]
+    [<TestCase(23095.2<inch3>, 666.0)>]
+    [<TestCase(2670.16<inch3>, 77.0)>]
+    let ``Convert known Cubic Inches to Pints`` (input, expectation) = 
+        inch3.toPints input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to Gallons and back`` () =
+        let property value =
+            let convertTo = inch3.toGallons (inch3.create value)
+            let convertBack = gal.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(900.0<inch3>, 3.24419)>]
+    [<TestCase(666.0<inch3>, 2.4007)>]
+    [<TestCase(21361.3<inch3>, 77.0)>]
+    let ``Convert known Cubic Inches to Gallons`` (input, expectation) = 
+        inch3.toGallons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to Fluid Ounces and back`` () =
+        let property value =
+            let convertTo = inch3.toFluidOunces (inch3.create value)
+            let convertBack = floz.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(77.0<inch3>, 44.4093)>]
+    [<TestCase(55.0<inch3>, 31.7209)>]
+    [<TestCase(27.7419<inch3>, 16.0)>]
+    let ``Convert known Cubic Inches to Fluid Ounces`` (input, expectation) = 
+        inch3.toFluidOunces input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to US Teaspoons and back`` () =
+        let property value =
+            let convertTo = inch3.toUSTeaspoons (inch3.create value)
+            let convertBack = ustsp.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(678.0<inch3>, 2254.13)>]
+    [<TestCase(55.0<inch3>, 182.857)>]
+    [<TestCase(26.4687<inch3>, 88.0)>]
+    let ``Convert known Cubic Inches to US Teaspoons`` (input, expectation) = 
+        inch3.toUSTeaspoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to US Tablespoons and back`` () =
+        let property value =
+            let convertTo = inch3.toUSTablespoons (inch3.create value)
+            let convertBack = ustbsp.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(66.0<inch3>, 73.1429)>]
+    [<TestCase(55.0<inch3>, 60.9524)>]
+    [<TestCase(10.8281<inch3>, 12.0)>]
+    let ``Convert known Cubic Inches to US Tablespoons`` (input, expectation) = 
+        inch3.toUSTablespoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to US Quarts and back`` () =
+        let property value =
+            let convertTo = inch3.toUSQuarts (inch3.create value)
+            let convertBack = usqt.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(345.0<inch3>, 5.97403)>]
+    [<TestCase(33.0<inch3>, 0.571429)>]
+    [<TestCase(3176.25<inch3>, 55.0)>]
+    let ``Convert known Cubic Inches to US Quarts`` (input, expectation) = 
+        inch3.toUSQuarts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to US Pints and back`` () =
+        let property value =
+            let convertTo = inch3.toUSPints (inch3.create value)
+            let convertBack = uspt.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(89.0<inch3>, 3.08225)>]
+    [<TestCase(3176.25<inch3>, 110.0)>]
+    [<TestCase(462.0<inch3>, 16.0)>]
+    let ``Convert known Cubic Inches to US Pints`` (input, expectation) = 
+        inch3.toUSPints input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to US Gallons and back`` () =
+        let property value =
+            let convertTo = inch3.toUSGallons (inch3.create value)
+            let convertBack = usgal.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(600.0<inch3>, 2.5974)>]
+    [<TestCase(462.0<inch3>, 2.0)>]
+    [<TestCase(899.0<inch3>, 3.89177)>]
+    let ``Convert known Cubic Inches to US Gallons`` (input, expectation) = 
+        inch3.toUSGallons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to US Fluid Ounces and back`` () =
+        let property value =
+            let convertTo = inch3.toUSFluidOunces (inch3.create value)
+            let convertBack = usfloz.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(900.0<inch3>, 498.700607)>]
+    [<TestCase(777.0<inch3>, 430.544858)>]
+    [<TestCase(178.664<inch3>, 98.99982822)>]
+    let ``Convert known Cubic Inches to US Fluid Ounces`` (input, expectation) = 
+        inch3.toUSFluidOunces input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to US Cups and back`` () =
+        let property value =
+            let convertTo = inch3.toUSCups (inch3.create value)
+            let convertBack = uscup.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(7.0<inch3>, 0.477956)>]
+    [<TestCase(77.0<inch3>, 5.25752)>]
+    [<TestCase(123.0<inch3>, 8.39837)>]
+    let ``Convert known Cubic Inches to US Cups`` (input, expectation) = 
+        inch3.toUSCups input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = inch3.toCubicMetres (inch3.create value)
+            let convertBack = m3.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(24409.5<inch3>, 0.4)>]
+    [<TestCase(7777.0<inch3>, 0.1274422)>]
+    [<TestCase(366142.0<inch3>, 6.0)>]
+    let ``Convert known Cubic Inches to Cubic Metres`` (input, expectation) = 
+        inch3.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = inch3.toCubicFeet (inch3.create value)
+            let convertBack = feet3.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(11750.4<inch3>, 6.8)>]
+    [<TestCase(57024.0<inch3>, 33.0)>]
+    [<TestCase(1234.0<inch3>, 0.7141204)>]
+    let ``Convert known Cubic Inches to Cubic Feet`` (input, expectation) = 
+        inch3.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Inches to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = inch3.toOilBarrels (inch3.create value)
+            let convertBack = oilbarrel.toCubicInches convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(90000.0<inch3>, 9.2764378)>]
+    [<TestCase(8888.0<inch3>, 0.9160998)>]
+    [<TestCase(11642.4<inch3>, 1.2)>]
+    let ``Convert known Cubic Inches to Oil Barrels`` (input, expectation) = 
+        inch3.toOilBarrels input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to Millilitres and back`` () =
+        let property value =
+            let convertTo = m3.toMillilitres (m3.create value)
+            let convertBack = ml.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.01<m3>, 10000.0)>]
+    [<TestCase(0.2306735<m3>, 230673.5)>]
+    [<TestCase(0.009<m3>, 9000.0)>]
+    let ``Convert known Cubic Metres to Millilitres`` (input, expectation) = 
+        m3.toMillilitres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to Litres and back`` () =
+        let property value =
+            let convertTo = m3.toLitres (m3.create value)
+            let convertBack = l.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.1<m3>, 100.0)>]
+    [<TestCase(0.009<m3>, 9.0)>]
+    [<TestCase(0.08989<m3>, 89.89)>]
+    let ``Convert known Cubic Metres to Litres`` (input, expectation) = 
+        m3.toLitres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to Kilolitres and back`` () =
+        let property value =
+            let convertTo = m3.toKilolitres (m3.create value)
+            let convertBack = kl.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.9<m3>, 0.9)>]
+    [<TestCase(100.9<m3>, 100.9)>]
+    [<TestCase(666.9<m3>, 666.9)>]
+    let ``Convert known Cubic Metres to Kilolitres`` (input, expectation) = 
+        m3.toKilolitres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to Teaspoons and back`` () =
+        let property value =
+            let convertTo = m3.toTeaspoons (m3.create value)
+            let convertBack = tsp.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.1<m3>, 16893.6)>]
+    [<TestCase(3.0<m3>, 506808.0)>]
+    [<TestCase(0.91<m3>, 153731.76)>]
+    let ``Convert known Cubic Metres to Teaspoons`` (input, expectation) = 
+        m3.toTeaspoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to Tablespoons and back`` () =
+        let property value =
+            let convertTo = m3.toTablespoons (m3.create value)
+            let convertBack = tbsp.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.9<m3>, 50680.8899)>]
+    [<TestCase(0.1<m3>, 5631.21)>]
+    [<TestCase(9.0<m3>, 506808.89)>]
+    let ``Convert known Cubic Metres to Tablespoons`` (input, expectation) = 
+        m3.toTablespoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to Quarts and back`` () =
+        let property value =
+            let convertTo = m3.toQuarts (m3.create value)
+            let convertBack = qt.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.8<m3>, 703.902)>]
+    [<TestCase(0.4<m3>, 351.951)>]
+    [<TestCase(6.0<m3>, 5279.26)>]
+    let ``Convert known Cubic Metres to Quarts`` (input, expectation) = 
+        m3.toQuarts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to Pints and back`` () =
+        let property value =
+            let convertTo = m3.toPints (m3.create value)
+            let convertBack = pt.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.7<m3>, 1231.83)>]
+    [<TestCase(4.5<m3>, 7918.875)>]
+    [<TestCase(0.06<m3>, 105.5852)>]
+    let ``Convert known Cubic Metres to Pints`` (input, expectation) = 
+        m3.toPints input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to Gallons and back`` () =
+        let property value =
+            let convertTo = m3.toGallons (m3.create value)
+            let convertBack = gal.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.2<m3>, 43.9938)>]
+    [<TestCase(0.4<m3>, 87.9877)>]
+    [<TestCase(0.0272765<m3>, 6.0)>]
+    let ``Convert known Cubic Metres to Gallons`` (input, expectation) = 
+        m3.toGallons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to Fluid Ounces and back`` () =
+        let property value =
+            let convertTo = m3.toFluidOunces (m3.create value)
+            let convertBack = floz.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.7<m3>, 24636.569)>]
+    [<TestCase(0.09<m3>, 3167.557)>]
+    [<TestCase(4.0<m3>, 140780.399)>]
+    let ``Convert known Cubic Metres to Fluid Ounces`` (input, expectation) = 
+        m3.toFluidOunces input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to US Teaspoons and back`` () =
+        let property value =
+            let convertTo = m3.toUSTeaspoons (m3.create value)
+            let convertBack = ustsp.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.5<m3>, 101442.0)>]
+    [<TestCase(2.0<m3>, 405768.0)>]
+    [<TestCase(0.3<m3>, 60865.199)>]
+    let ``Convert known Cubic Metres to US Teaspoons`` (input, expectation) = 
+        m3.toUSTeaspoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to US Tablespoons and back`` () =
+        let property value =
+            let convertTo = m3.toUSTablespoons (m3.create value)
+            let convertBack = ustbsp.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.2<m3>, 13525.6)>]
+    [<TestCase(0.9<m3>, 60865.2)>]
+    [<TestCase(2.0<m3>, 135256.0)>]
+    let ``Convert known Cubic Metres to US Tablespoons`` (input, expectation) = 
+        m3.toUSTablespoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to US Quarts and back`` () =
+        let property value =
+            let convertTo = m3.toUSQuarts (m3.create value)
+            let convertBack = usqt.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.2<m3>, 211.338)>]
+    [<TestCase(4.0<m3>, 4226.76)>]
+    [<TestCase(0.851718<m3>, 900.0)>]
+    let ``Convert known Cubic Metres to US Quarts`` (input, expectation) = 
+        m3.toUSQuarts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to US Pints and back`` () =
+        let property value =
+            let convertTo = m3.toUSPints (m3.create value)
+            let convertBack = uspt.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.4<m3>, 845.351)>]
+    [<TestCase(7.0<m3>, 14793.66)>]
+    [<TestCase(6.0<m3>, 12680.280)>]
+    let ``Convert known Cubic Metres to US Pints`` (input, expectation) = 
+        m3.toUSPints input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to US Gallons and back`` () =
+        let property value =
+            let convertTo = m3.toUSGallons (m3.create value)
+            let convertBack = usgal.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.7<m3>, 184.92)>]
+    [<TestCase(0.851718<m3>, 225.0)>]
+    [<TestCase(0.02<m3>, 5.283441)>]
+    let ``Convert known Cubic Metres to US Gallons`` (input, expectation) = 
+        m3.toUSGallons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to US Fluid Ounces and back`` () =
+        let property value =
+            let convertTo = m3.toUSFluidOunces (m3.create value)
+            let convertBack = usfloz.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.9<m3>, 30432.6)>]
+    [<TestCase(0.3<m3>, 10144.2)>]
+    [<TestCase(3.3<m3>, 111586.2)>]
+    let ``Convert known Cubic Metres to US Fluid Ounces`` (input, expectation) = 
+        m3.toUSFluidOunces input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to US Cups and back`` () =
+        let property value =
+            let convertTo = m3.toUSCups (m3.create value)
+            let convertBack = uscup.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(7.0<m3>, 29166.7)>]
+    [<TestCase(11.0<m3>, 45833.37)>]
+    [<TestCase(66.0<m3>, 275000.22)>]
+    let ``Convert known Cubic Metres to US Cups`` (input, expectation) = 
+        m3.toUSCups input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = m3.toCubicFeet (m3.create value)
+            let convertBack = feet3.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.8<m3>, 28.2517)>]
+    [<TestCase(5.0<m3>, 176.573)>]
+    [<TestCase(12.12<m3>, 428.014163)>]
+    let ``Convert known Cubic Metres to Cubic Feet`` (input, expectation) = 
+        m3.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = m3.toCubicInches (m3.create value)
+            let convertBack = inch3.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.4<m3>, 24409.48)>]
+    [<TestCase(3.0<m3>, 183071.099)>]
+    [<TestCase(0.99<m3>, 60413.4629)>]
+    let ``Convert known Cubic Metres to Cubic Inches`` (input, expectation) = 
+        m3.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Cubic Metres to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = m3.toOilBarrels (m3.create value)
+            let convertBack = oilbarrel.toCubicMetres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.09<m3>, 0.566083)>]
+    [<TestCase(5.0<m3>, 31.4491)>]
+    [<TestCase(1.2<m3>, 7.547772)>]
+    let ``Convert known Cubic Metres to Oil Barrels`` (input, expectation) = 
+        m3.toOilBarrels input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Fluid Ounces to Millilitres and back`` () =
         let property value =
             let convertTo = floz.toMillilitres (floz.create value)
@@ -284,6 +1310,78 @@ module VolumeTests =
     [<TestCase(6.9<floz>, 0.828655)>]
     let ``Convert known Fluid Ounces to US Cups`` (input, expectation) = 
         floz.toUSCups input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Fluid Ounces to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = floz.toCubicMetres (floz.create value)
+            let convertBack = m3.toFluidOunces convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(316756.0<floz>, 9.00000284)>]
+    [<TestCase(8000.0<floz>, 0.2273043690)>]
+    [<TestCase(123456.0<floz>, 3.5077610)>]
+    let ``Convert known Fluid Ounces to Cubic Metres`` (input, expectation) = 
+        floz.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Fluid Ounces to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = floz.toCubicFeet (floz.create value)
+            let convertBack = feet3.toFluidOunces convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(888.0<floz>, 0.891017)>]
+    [<TestCase(100900.0<floz>, 101.242841)>]
+    [<TestCase(678.0<floz>, 0.680304)>]
+    let ``Convert known Fluid Ounces to Cubic Feet`` (input, expectation) = 
+        floz.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Fluid Ounces to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = floz.toCubicInches (floz.create value)
+            let convertBack = inch3.toFluidOunces convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(7.0<floz>, 12.1371)>]
+    [<TestCase(900.0<floz>, 1560.48)>]
+    [<TestCase(6.0<floz>, 10.4032)>]
+    let ``Convert known Fluid Ounces to Cubic Inches`` (input, expectation) = 
+        floz.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Fluid Ounces to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = floz.toOilBarrels (floz.create value)
+            let convertBack = oilbarrel.toFluidOunces convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(430859.0<floz>, 77.0)>]
+    [<TestCase(777.0<floz>, 0.13886)>]
+    [<TestCase(1234.0<floz>, 0.2205316)>]
+    let ``Convert known Fluid Ounces to Oil Barrels`` (input, expectation) = 
+        floz.toOilBarrels input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -557,6 +1655,78 @@ module VolumeTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Gallons to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = gal.toCubicMetres (gal.create value)
+            let convertBack = m3.toGallons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(9898.62<gal>, 45.0)>]
+    [<TestCase(12345.0<gal>, 56.121481)>]
+    [<TestCase(80.0<gal>, 0.363687)>]
+    let ``Convert known Gallons to Cubic Metres`` (input, expectation) = 
+        gal.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Gallons to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = gal.toCubicFeet (gal.create value)
+            let convertBack = feet3.toGallons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(55.0<gal>, 8.8299)>]
+    [<TestCase(90.5<gal>, 14.5292)>]
+    [<TestCase(123.0<gal>, 19.7469)>]
+    let ``Convert known Gallons to Cubic Feet`` (input, expectation) = 
+        gal.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Gallons to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = gal.toCubicInches (gal.create value)
+            let convertBack = inch3.toGallons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(66.0<gal>, 18309.6539)>]
+    [<TestCase(2.4007<gal>, 666.0)>]
+    [<TestCase(77.0<gal>, 21361.2629)>]
+    let ``Convert known Gallons to Cubic Inches`` (input, expectation) = 
+        gal.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Gallons to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = gal.toOilBarrels (gal.create value)
+            let convertBack = oilbarrel.toGallons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(174.862<gal>, 5.0)>]
+    [<TestCase(19409.6<gal>, 555.0)>]
+    [<TestCase(24.4806<gal>, 0.7)>]
+    let ``Convert known Gallons to Oil Barrels`` (input, expectation) = 
+        gal.toOilBarrels input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Kilolitres to Millilitres and back`` () =
         let property value =
             let convertTo = kl.toMillilitres (kl.create value)
@@ -824,6 +1994,78 @@ module VolumeTests =
     [<TestCase(6.2<kl>, 26205.86759392)>]
     let ``Convert known Kilolitres to US Cups`` (input, expectation) = 
         kl.toUSCups input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Kilolitres to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = kl.toCubicMetres (kl.create value)
+            let convertBack = m3.toKilolitres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(1000.0<kl>, 1000.0)>]
+    [<TestCase(0.9<kl>, 0.9)>]
+    [<TestCase(6.09<kl>, 6.09)>]
+    let ``Convert known Kilolitres to Cubic Metres`` (input, expectation) = 
+        kl.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Kilolitres to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = kl.toCubicFeet (kl.create value)
+            let convertBack = feet3.toKilolitres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.0566337<kl>, 2.0)>]
+    [<TestCase(7.9<kl>, 278.986)>]
+    [<TestCase(88.0<kl>, 3107.69)>]
+    let ``Convert known Kilolitres to Cubic Feet`` (input, expectation) = 
+        kl.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Kilolitres to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = kl.toCubicInches (kl.create value)
+            let convertBack = inch3.toKilolitres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(6.0<kl>, 366142.19999)>]
+    [<TestCase(0.1<kl>, 6102.37)>]
+    [<TestCase(0.8<kl>, 48818.959)>]
+    let ``Convert known Kilolitres to Cubic Inches`` (input, expectation) = 
+        kl.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Kilolitres to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = kl.toOilBarrels (kl.create value)
+            let convertBack = oilbarrel.toKilolitres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.476962<kl>, 3.0)>]
+    [<TestCase(4.0<kl>, 25.1592)>]
+    [<TestCase(6.0<kl>, 37.7389)>]
+    let ``Convert known Kilolitres to Oil Barrels`` (input, expectation) = 
+        kl.toOilBarrels input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -1097,6 +2339,78 @@ module VolumeTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Litres to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = l.toCubicMetres (l.create value)
+            let convertBack = m3.toLitres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(400.5<l>, 0.4005)>]
+    [<TestCase(900.0<l>, 0.9)>]
+    [<TestCase(6090.0<l>, 6.09)>]
+    let ``Convert known Litres to Cubic Metres`` (input, expectation) = 
+        l.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Litres to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = l.toCubicFeet (l.create value)
+            let convertBack = feet3.toLitres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(5.0<l>, 0.176573)>]
+    [<TestCase(84.9505<l>, 3.0)>]
+    [<TestCase(6.0<l>, 0.211888)>]
+    let ``Convert known Litres to Cubic Feet`` (input, expectation) = 
+        l.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Litres to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = l.toCubicInches (l.create value)
+            let convertBack = inch3.toLitres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(666.0<l>, 40641.7842)>]
+    [<TestCase(788.0<l>, 48086.675599)>]
+    [<TestCase(4.0<l>, 244.095)>]
+    let ``Convert known Litres to Cubic Inches`` (input, expectation) = 
+        l.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Litres to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = l.toOilBarrels (l.create value)
+            let convertBack = oilbarrel.toLitres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(8744.3<l>, 55.0)>]
+    [<TestCase(1234.0<l>, 7.761626)>]
+    [<TestCase(953.924<l>, 6.0)>]
+    let ``Convert known Litres to Oil Barrels`` (input, expectation) = 
+        l.toOilBarrels input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Millilitres to Litres and back`` () =
         let property value =
             let convertTo = ml.toLitres (ml.create value)
@@ -1364,6 +2678,420 @@ module VolumeTests =
     [<TestCase(700.0<ml>, 2.95873)>]
     let ``Convert known Millilitres to US Cups`` (input, expectation) = 
         ml.toUSCups input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Millilitres to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = ml.toCubicMetres (ml.create value)
+            let convertBack = m3.toMillilitres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(9999999.0<ml>, 9.999999)>]
+    [<TestCase(123456.0<ml>, 0.123456)>]
+    [<TestCase(400500.0<ml>, 0.4005)>]
+    let ``Convert known Millilitres to Cubic Metres`` (input, expectation) = 
+        ml.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Millilitres to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = ml.toCubicFeet (ml.create value)
+            let convertBack = feet3.toMillilitres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(254852.0<ml>, 9.0)>]
+    [<TestCase(6000.0<ml>, 0.211888)>]
+    [<TestCase(70792.1<ml>, 2.5)>]
+    let ``Convert known Millilitres to Cubic Feet`` (input, expectation) = 
+        ml.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Millilitres to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = ml.toCubicInches (ml.create value)
+            let convertBack = inch3.toMillilitres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(777.0<ml>, 47.4154)>]
+    [<TestCase(98.3224<ml>, 5.999987)>]
+    [<TestCase(12.0<ml>, 0.732285)>]
+    let ``Convert known Millilitres to Cubic Inches`` (input, expectation) = 
+        ml.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Millilitres to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = ml.toOilBarrels (ml.create value)
+            let convertBack = oilbarrel.toMillilitres convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(47696.2<ml>, 0.3)>]
+    [<TestCase(143089.0<ml>, 0.9)>]
+    [<TestCase(317.97459<ml>, 0.002)>]
+    let ``Convert known Millilitres to Oil Barrels`` (input, expectation) = 
+        ml.toOilBarrels input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to Millilitres and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toMillilitres (oilbarrel.create value)
+            let convertBack = ml.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.8<oilbarrel>, 127189.6)>]
+    [<TestCase(6.0<oilbarrel>, 953922.0)>]
+    [<TestCase(0.06289182<oilbarrel>, 9998.981786)>]
+    let ``Convert known Oil Barrels to Millilitres`` (input, expectation) = 
+        oilbarrel.toMillilitres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to Litres and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toLitres (oilbarrel.create value)
+            let convertBack = l.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(12.0<oilbarrel>, 1907.85)>]
+    [<TestCase(6.0<oilbarrel>, 953.924)>]
+    [<TestCase(77.0<oilbarrel>, 12242.0)>]
+    let ``Convert known Oil Barrels to Litres`` (input, expectation) = 
+        oilbarrel.toLitres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to Kilolitres and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toKilolitres (oilbarrel.create value)
+            let convertBack = kl.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(12.0<oilbarrel>, 1.90785)>]
+    [<TestCase(8.0<oilbarrel>, 1.2719)>]
+    [<TestCase(77.0<oilbarrel>, 12.242)>]
+    let ``Convert known Oil Barrels to Kilolitres`` (input, expectation) = 
+        oilbarrel.toKilolitres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to Teaspoons and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toTeaspoons (oilbarrel.create value)
+            let convertBack = tsp.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.6<oilbarrel>, 16115.219)>]
+    [<TestCase(4.0<oilbarrel>, 107434.8)>]
+    [<TestCase(6.7<oilbarrel>, 179953.29)>]
+    let ``Convert known Oil Barrels to Teaspoons`` (input, expectation) = 
+        oilbarrel.toTeaspoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to Tablespoons and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toTablespoons (oilbarrel.create value)
+            let convertBack = tbsp.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.7<oilbarrel>, 6267.04)>]
+    [<TestCase(8.0<oilbarrel>, 71623.279)>]
+    [<TestCase(10.052487<oilbarrel>, 89999.011387)>]
+    let ``Convert known Oil Barrels to Tablespoons`` (input, expectation) = 
+        oilbarrel.toTablespoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to Quarts and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toQuarts (oilbarrel.create value)
+            let convertBack = qt.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(88.0<oilbarrel>, 12310.232)>]
+    [<TestCase(12.0<oilbarrel>, 1678.67)>]
+    [<TestCase(6.0<oilbarrel>, 839.336)>]
+    let ``Convert known Oil Barrels to Quarts`` (input, expectation) = 
+        oilbarrel.toQuarts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to Pints and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toPints (oilbarrel.create value)
+            let convertBack = pt.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(8.0<oilbarrel>, 2238.23)>]
+    [<TestCase(6.0<oilbarrel>, 1678.67)>]
+    [<TestCase(0.275218<oilbarrel>, 77.0)>]
+    let ``Convert known Oil Barrels to Pints`` (input, expectation) = 
+        oilbarrel.toPints input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to Gallons and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toGallons (oilbarrel.create value)
+            let convertBack = gal.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(4.0<oilbarrel>, 139.889)>]
+    [<TestCase(6.0<oilbarrel>, 209.834)>]
+    [<TestCase(18.0<oilbarrel>, 629.502)>]
+    let ``Convert known Oil Barrels to Gallons`` (input, expectation) = 
+        oilbarrel.toGallons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to Fluid Ounces and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toFluidOunces (oilbarrel.create value)
+            let convertBack = floz.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.5<oilbarrel>, 2797.79)>]
+    [<TestCase(6.0<oilbarrel>, 33573.4199)>]
+    [<TestCase(77.0<oilbarrel>, 430858.889)>]
+    let ``Convert known Oil Barrels to Fluid Ounces`` (input, expectation) = 
+        oilbarrel.toFluidOunces input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to US Teaspoons and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toUSTeaspoons (oilbarrel.create value)
+            let convertBack = ustsp.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.3<oilbarrel>, 9676.8)>]
+    [<TestCase(7.0<oilbarrel>, 225792.0)>]
+    [<TestCase(1.5<oilbarrel>, 48384.0)>]
+    let ``Convert known Oil Barrels to US Teaspoons`` (input, expectation) = 
+        oilbarrel.toUSTeaspoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to US Tablespoons and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toUSTablespoons (oilbarrel.create value)
+            let convertBack = ustbsp.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.2<oilbarrel>, 2150.4)>]
+    [<TestCase(6.0<oilbarrel>, 64512.0)>]
+    [<TestCase(77.0<oilbarrel>, 827904.0)>]
+    let ``Convert known Oil Barrels to US Tablespoons`` (input, expectation) = 
+        oilbarrel.toUSTablespoons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to US Quarts and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toUSQuarts (oilbarrel.create value)
+            let convertBack = usqt.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(4.5<oilbarrel>, 756.0)>]
+    [<TestCase(77.0<oilbarrel>, 12936.0)>]
+    [<TestCase(0.7<oilbarrel>, 117.6)>]
+    let ``Convert known Oil Barrels to US Quarts`` (input, expectation) = 
+        oilbarrel.toUSQuarts input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to US Pints and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toUSPints (oilbarrel.create value)
+            let convertBack = uspt.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(7.8<oilbarrel>, 2620.8)>]
+    [<TestCase(0.7<oilbarrel>, 235.2)>]
+    [<TestCase(3.0<oilbarrel>, 1008.0)>]
+    let ``Convert known Oil Barrels to US Pints`` (input, expectation) = 
+        oilbarrel.toUSPints input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to US Gallons and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toUSGallons (oilbarrel.create value)
+            let convertBack = usgal.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(78.0<oilbarrel>, 3276.0)>]
+    [<TestCase(3.0<oilbarrel>, 126.0)>]
+    [<TestCase(777.0<oilbarrel>, 32634.0)>]
+    let ``Convert known Oil Barrels to US Gallons`` (input, expectation) = 
+        oilbarrel.toUSGallons input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to US Fluid Ounces and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toUSFluidOunces (oilbarrel.create value)
+            let convertBack = usfloz.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(4.9<oilbarrel>, 26342.4)>]
+    [<TestCase(0.4<oilbarrel>, 2150.4)>]
+    [<TestCase(3.0<oilbarrel>, 16128.0)>]
+    let ``Convert known Oil Barrels to US Fluid Ounces`` (input, expectation) = 
+        oilbarrel.toUSFluidOunces input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to US Cups and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toUSCups (oilbarrel.create value)
+            let convertBack = uscup.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(55.0<oilbarrel>, 36434.5849)>]
+    [<TestCase(0.686847<oilbarrel>, 455.0)>]
+    [<TestCase(9.2<oilbarrel>, 6094.51)>]
+    let ``Convert known Oil Barrels to US Cups`` (input, expectation) = 
+        oilbarrel.toUSCups input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toCubicMetres (oilbarrel.create value)
+            let convertBack = m3.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(7.0<oilbarrel>, 1.1129112)>]
+    [<TestCase(3.0<oilbarrel>, 0.476962)>]
+    [<TestCase(78.0<oilbarrel>, 12.401)>]
+    let ``Convert known Oil Barrels to Cubic Metres`` (input, expectation) = 
+        oilbarrel.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toCubicFeet (oilbarrel.create value)
+            let convertBack = feet3.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(88.0<oilbarrel>, 494.083)>]
+    [<TestCase(3.0<oilbarrel>, 16.8438)>]
+    [<TestCase(11.0<oilbarrel>, 61.7604)>]
+    let ``Convert known Oil Barrels to Cubic Feet`` (input, expectation) = 
+        oilbarrel.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Oil Barrels to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = oilbarrel.toCubicInches (oilbarrel.create value)
+            let convertBack = inch3.toOilBarrels convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(100.4<oilbarrel>, 974080.8)>]
+    [<TestCase(5.0<oilbarrel>, 48510.0)>]
+    [<TestCase(66.0<oilbarrel>, 640332.0)>]
+    let ``Convert known Oil Barrels to Cubic Inches`` (input, expectation) = 
+        oilbarrel.toCubicInches input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -1637,6 +3365,78 @@ module VolumeTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Pints to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = pt.toCubicMetres (pt.create value)
+            let convertBack = m3.toPints convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(21117.0<pt>, 12.0)>]
+    [<TestCase(14078.0<pt>, 8.0)>]
+    [<TestCase(9999.0<pt>, 5.682044)>]
+    let ``Convert known Pints to Cubic Metres`` (input, expectation) = 
+        pt.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Pints to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = pt.toCubicFeet (pt.create value)
+            let convertBack = feet3.toPints convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(44.0<pt>, 0.88299)>]
+    [<TestCase(1234.0<pt>, 24.76386)>]
+    [<TestCase(8000.0<pt>, 160.5436)>]
+    let ``Convert known Pints to Cubic Feet`` (input, expectation) = 
+        pt.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Pints to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = pt.toCubicInches (pt.create value)
+            let convertBack = inch3.toPints convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(5.0<pt>, 173.387)>]
+    [<TestCase(777.0<pt>, 26944.33979)>]
+    [<TestCase(35.58511<pt>, 1234.0)>]
+    let ``Convert known Pints to Cubic Inches`` (input, expectation) = 
+        pt.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Pints to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = pt.toOilBarrels (pt.create value)
+            let convertBack = oilbarrel.toPints convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(1398.89<pt>, 5.0)>]
+    [<TestCase(122.0<pt>, 0.436059)>]
+    [<TestCase(559.557<pt>, 2.0)>]
+    let ``Convert known Pints to Oil Barrels`` (input, expectation) = 
+        pt.toOilBarrels input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Quarts to Millilitres and back`` () =
         let property value =
             let convertTo = qt.toMillilitres (qt.create value)
@@ -1904,6 +3704,78 @@ module VolumeTests =
     [<TestCase(0.23<qt>, 1.104874)>]
     let ``Convert known Quarts to US Cups`` (input, expectation) = 
         qt.toUSCups input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Quarts to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = qt.toCubicMetres (qt.create value)
+            let convertBack = m3.toQuarts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(7918.89<qt>, 9.0)>]
+    [<TestCase(1200.0<qt>, 1.363827)>]
+    [<TestCase(8000.0<qt>, 9.09218)>]
+    let ``Convert known Quarts to Cubic Metres`` (input, expectation) = 
+        qt.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Quarts to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = qt.toCubicFeet (qt.create value)
+            let convertBack = feet3.toQuarts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(20.0<qt>, 0.802718)>]
+    [<TestCase(800.0<qt>, 32.1087)>]
+    [<TestCase(67.0<qt>, 2.68911)>]
+    let ``Convert known Quarts to Cubic Feet`` (input, expectation) = 
+        qt.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Quarts to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = qt.toCubicInches (qt.create value)
+            let convertBack = inch3.toQuarts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(777.0<qt>, 53888.75729)>]
+    [<TestCase(8.16093<qt>, 566.0)>]
+    [<TestCase(76.0<qt>, 5270.97)>]
+    let ``Convert known Quarts to Cubic Inches`` (input, expectation) = 
+        qt.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Quarts to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = qt.toOilBarrels (qt.create value)
+            let convertBack = oilbarrel.toQuarts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(839.336<qt>, 6.0)>]
+    [<TestCase(41.9668<qt>, 0.3)>]
+    [<TestCase(22.0<qt>, 0.157267)>]
+    let ``Convert known Quarts to Oil Barrels`` (input, expectation) = 
+        qt.toOilBarrels input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -2177,6 +4049,78 @@ module VolumeTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Tablespoons to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = tbsp.toCubicMetres (tbsp.create value)
+            let convertBack = m3.toTablespoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(10000.0<tbsp>, 0.1775817)>]
+    [<TestCase(3378.726<tbsp>, 0.059999995422)>]
+    [<TestCase(800009.0<tbsp>, 14.2066969)>]
+    let ``Convert known Tablespoons to Cubic Metres`` (input, expectation) = 
+        tbsp.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Tablespoons to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = tbsp.toCubicFeet (tbsp.create value)
+            let convertBack = feet3.toTablespoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(780.0<tbsp>, 0.489157)>]
+    [<TestCase(6378.32<tbsp>, 4.0)>]
+    [<TestCase(8451.28<tbsp>, 5.3)>]
+    let ``Convert known Tablespoons to Cubic Feet`` (input, expectation) = 
+        tbsp.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Tablespoons to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = tbsp.toCubicInches (tbsp.create value)
+            let convertBack = inch3.toTablespoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(66.0<tbsp>, 71.5222)>]
+    [<TestCase(123.0<tbsp>, 133.291)>]
+    [<TestCase(56.0<tbsp>, 60.6855)>]
+    let ``Convert known Tablespoons to Cubic Inches`` (input, expectation) = 
+        tbsp.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Tablespoons to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = tbsp.toOilBarrels (tbsp.create value)
+            let convertBack = oilbarrel.toTablespoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(44764.5<tbsp>, 5.0)>]
+    [<TestCase(12222.0<tbsp>, 1.3651429)>]
+    [<TestCase(800.0<tbsp>, 0.0893564)>]
+    let ``Convert known Tablespoons to Oil Barrels`` (input, expectation) = 
+        tbsp.toOilBarrels input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Teaspoons to Millilitres and back`` () =
         let property value =
             let convertTo = tsp.toMillilitres (tsp.create value)
@@ -2387,7 +4331,7 @@ module VolumeTests =
 
     [<TestCase(106.0<tsp>, 1.32605)>]
     [<TestCase(34.0<tsp>, 0.425337)>]
-    [<TestCase(6.21<tsp>, 0.07656059)>]
+    [<TestCase(6.21<tsp>, 0.07768648)>]
     let ``Convert known Teaspoons to US Pints`` (input, expectation) = 
         tsp.toUSPints input
         |> should (equalWithin 0.01) expectation
@@ -2444,6 +4388,78 @@ module VolumeTests =
     [<TestCase(109.9<tsp>, 2.7496761)>]
     let ``Convert known Teaspoons to US Cups`` (input, expectation) = 
         tsp.toUSCups input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Teaspoons to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = tsp.toCubicMetres (tsp.create value)
+            let convertBack = m3.toTeaspoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(152043.0<tsp>, 0.9)>]
+    [<TestCase(3378.726<tsp>, 0.02)>]
+    [<TestCase(8000.0<tsp>, 0.04735512)>]
+    let ``Convert known Teaspoons to Cubic Metres`` (input, expectation) = 
+        tsp.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Teaspoons to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = tsp.toCubicFeet (tsp.create value)
+            let convertBack = feet3.toTeaspoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(600.0<tsp>, 0.125425)>]
+    [<TestCase(1234.0<tsp>, 0.257957)>]
+    [<TestCase(880.0<tsp>, 0.183956)>]
+    let ``Convert known Teaspoons to Cubic Feet`` (input, expectation) = 
+        tsp.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Teaspoons to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = tsp.toCubicInches (tsp.create value)
+            let convertBack = inch3.toTeaspoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(8.0<tsp>, 2.88979)>]
+    [<TestCase(12.0<tsp>, 4.33468)>]
+    [<TestCase(666.0<tsp>, 240.575)>]
+    let ``Convert known Teaspoons to Cubic Inches`` (input, expectation) = 
+        tsp.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Teaspoons to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = tsp.toOilBarrels (tsp.create value)
+            let convertBack = oilbarrel.toTeaspoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(10743.5<tsp>, 0.4)>]
+    [<TestCase(107435.0<tsp>, 4.0)>]
+    [<TestCase(134294.0<tsp>, 5.0)>]
+    let ``Convert known Teaspoons to Oil Barrels`` (input, expectation) = 
+        tsp.toOilBarrels input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -2717,6 +4733,78 @@ module VolumeTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From US Cups to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = uscup.toCubicMetres (uscup.create value)
+            let convertBack = m3.toUSCups convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(4555.0<uscup>, 1.0932)>]
+    [<TestCase(100900.0<uscup>, 24.216)>]
+    [<TestCase(7800.0<uscup>, 1.872)>]
+    let ``Convert known US Cups to Cubic Metres`` (input, expectation) = 
+        uscup.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Cups to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = uscup.toCubicFeet (uscup.create value)
+            let convertBack = feet3.toUSCups convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(88.0<uscup>, 0.745846)>]
+    [<TestCase(471.947<uscup>, 4.0)>]
+    [<TestCase(123.0<uscup>, 1.04249)>]
+    let ``Convert known US Cups to Cubic Feet`` (input, expectation) = 
+        uscup.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Cups to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = uscup.toCubicInches (uscup.create value)
+            let convertBack = inch3.toUSCups convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(6.0<uscup>, 87.8742)>]
+    [<TestCase(2.3<uscup>, 33.6851)>]
+    [<TestCase(0.9<uscup>, 13.1811)>]
+    let ``Convert known US Cups to Cubic Inches`` (input, expectation) = 
+        uscup.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Cups to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = uscup.toOilBarrels (uscup.create value)
+            let convertBack = oilbarrel.toUSCups convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(43721.5<uscup>, 66.0)>]
+    [<TestCase(1111.0<uscup>, 1.677115)>]
+    [<TestCase(3312.24<uscup>, 5.0)>]
+    let ``Convert known US Cups to Oil Barrels`` (input, expectation) = 
+        uscup.toOilBarrels input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From US Fluid Ounces to Millilitres and back`` () =
         let property value =
             let convertTo = usfloz.toMillilitres (usfloz.create value)
@@ -2984,6 +5072,78 @@ module VolumeTests =
     [<TestCase(0.29<usfloz>, 0.03625)>]
     let ``Convert known US Fluid Ounces to US Cups`` (input, expectation) = 
         usfloz.toUSCups input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Fluid Ounces to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = usfloz.toCubicMetres (usfloz.create value)
+            let convertBack = m3.toUSFluidOunces convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(800900.0<usfloz>, 23.6854398)>]
+    [<TestCase(789.0<usfloz>, 0.0233335)>]
+    [<TestCase(100100.0<usfloz>, 2.96031031)>]
+    let ``Convert known US Fluid Ounces to Cubic Metres`` (input, expectation) = 
+        usfloz.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Fluid Ounces to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = usfloz.toCubicFeet (usfloz.create value)
+            let convertBack = feet3.toUSFluidOunces convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(344.0<usfloz>, 0.359266)>]
+    [<TestCase(8009.0<usfloz>, 8.364434)>]
+    [<TestCase(3830.03<usfloz>, 4.0)>]
+    let ``Convert known US Fluid Ounces to Cubic Feet`` (input, expectation) = 
+        usfloz.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Fluid Ounces to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = usfloz.toCubicInches (usfloz.create value)
+            let convertBack = inch3.toUSFluidOunces convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(66.0<usfloz>, 119.109)>]
+    [<TestCase(900.0<usfloz>, 1624.22)>]
+    [<TestCase(8.0<usfloz>, 14.4375)>]
+    let ``Convert known US Fluid Ounces to Cubic Inches`` (input, expectation) = 
+        usfloz.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Fluid Ounces to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = usfloz.toOilBarrels (usfloz.create value)
+            let convertBack = oilbarrel.toUSFluidOunces convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(32256.0<usfloz>, 6.0)>]
+    [<TestCase(1899.0<usfloz>, 0.3532366)>]
+    [<TestCase(6988.8<usfloz>, 1.3)>]
+    let ``Convert known US Fluid Ounces to Oil Barrels`` (input, expectation) = 
+        usfloz.toOilBarrels input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -3257,6 +5417,78 @@ module VolumeTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From US Gallons to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = usgal.toCubicMetres (usgal.create value)
+            let convertBack = m3.toUSGallons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(1849.2<usgal>, 7.0)>]
+    [<TestCase(87.0<usgal>, 0.329331)>]
+    [<TestCase(123456.0<usgal>, 467.331797)>]
+    let ``Convert known US Gallons to Cubic Metres`` (input, expectation) = 
+        usgal.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Gallons to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = usgal.toCubicFeet (usgal.create value)
+            let convertBack = feet3.toUSGallons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(6.0<usgal>, 0.802083)>]
+    [<TestCase(24.0<usgal>, 3.20833)>]
+    [<TestCase(5.0<usgal>, 0.668403)>]
+    let ``Convert known US Gallons to Cubic Feet`` (input, expectation) = 
+        usgal.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Gallons to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = usgal.toCubicInches (usgal.create value)
+            let convertBack = inch3.toUSGallons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(6.0<usgal>, 1386.0)>]
+    [<TestCase(190.0<usgal>, 43890.0)>]
+    [<TestCase(55.0<usgal>, 12705.0)>]
+    let ``Convert known US Gallons to Cubic Inches`` (input, expectation) = 
+        usgal.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Gallons to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = usgal.toOilBarrels (usgal.create value)
+            let convertBack = oilbarrel.toUSGallons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(966.0<usgal>, 23.0)>]
+    [<TestCase(1234.0<usgal>, 29.38095)>]
+    [<TestCase(16.8<usgal>, 0.4)>]
+    let ``Convert known US Gallons to Oil Barrels`` (input, expectation) = 
+        usgal.toOilBarrels input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From US Pints to Millilitres and back`` () =
         let property value =
             let convertTo = uspt.toMillilitres (uspt.create value)
@@ -3524,6 +5756,78 @@ module VolumeTests =
     [<TestCase(45.9<uspt>, 91.8)>]
     let ``Convert known US Pints to US Cups`` (input, expectation) = 
         uspt.toUSCups input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Pints to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = uspt.toCubicMetres (uspt.create value)
+            let convertBack = m3.toUSPints convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(14793.6<uspt>, 7.0)>]
+    [<TestCase(700.0<uspt>, 0.331224)>]
+    [<TestCase(123456.0<uspt>, 58.4164747)>]
+    let ``Convert known US Pints to Cubic Metres`` (input, expectation) = 
+        uspt.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Pints to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = uspt.toCubicFeet (uspt.create value)
+            let convertBack = feet3.toUSPints convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(66.0<uspt>, 1.10286)>]
+    [<TestCase(2692.99<uspt>, 45.0)>]
+    [<TestCase(123.0<uspt>, 2.05534)>]
+    let ``Convert known US Pints to Cubic Feet`` (input, expectation) = 
+        uspt.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Pints to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = uspt.toCubicInches (uspt.create value)
+            let convertBack = inch3.toUSPints convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(66.0<uspt>, 1905.75)>]
+    [<TestCase(900.0<uspt>, 25987.5)>]
+    [<TestCase(6.7<uspt>, 193.463)>]
+    let ``Convert known US Pints to Cubic Inches`` (input, expectation) = 
+        uspt.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Pints to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = uspt.toOilBarrels (uspt.create value)
+            let convertBack = oilbarrel.toUSPints convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(223776.0<uspt>, 666.0)>]
+    [<TestCase(1234.0<uspt>, 3.672619)>]
+    [<TestCase(302.4<uspt>, 0.9)>]
+    let ``Convert known US Pints to Oil Barrels`` (input, expectation) = 
+        uspt.toOilBarrels input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -3797,6 +6101,78 @@ module VolumeTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From US Quarts to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = usqt.toCubicMetres (usqt.create value)
+            let convertBack = m3.toUSQuarts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(8453.51<usqt>, 8.0)>]
+    [<TestCase(5000.0<usqt>, 4.731765)>]
+    [<TestCase(123456.0<usqt>, 116.832949)>]
+    let ``Convert known US Quarts to Cubic Metres`` (input, expectation) = 
+        usqt.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Quarts to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = usqt.toCubicFeet (usqt.create value)
+            let convertBack = feet3.toUSQuarts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(44.0<usqt>, 1.47049)>]
+    [<TestCase(2663.06<usqt>, 89.0)>]
+    [<TestCase(444.0<usqt>, 14.8385)>]
+    let ``Convert known US Quarts to Cubic Feet`` (input, expectation) = 
+        usqt.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Quarts to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = usqt.toCubicInches (usqt.create value)
+            let convertBack = inch3.toUSQuarts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(44.0<usqt>, 2541.0)>]
+    [<TestCase(800.0<usqt>, 46200.0)>]
+    [<TestCase(6.0<usqt>, 346.5)>]
+    let ``Convert known US Quarts to Cubic Inches`` (input, expectation) = 
+        usqt.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Quarts to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = usqt.toOilBarrels (usqt.create value)
+            let convertBack = oilbarrel.toUSQuarts convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(9240.0<usqt>, 55.0)>]
+    [<TestCase(1344.0<usqt>, 8.0)>]
+    [<TestCase(207312.0<usqt>, 1234.0)>]
+    let ``Convert known US Quarts to Oil Barrels`` (input, expectation) = 
+        usqt.toOilBarrels input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From US Tablespoons to Millilitres and back`` () =
         let property value =
             let convertTo = ustbsp.toMillilitres (ustbsp.create value)
@@ -4067,6 +6443,78 @@ module VolumeTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From US Tablespoons to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = ustbsp.toCubicMetres (ustbsp.create value)
+            let convertBack = m3.toUSTablespoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(541024.0<ustbsp>, 8.0)>]
+    [<TestCase(10200.0<ustbsp>, 0.150825)>]
+    [<TestCase(123456.0<ustbsp>, 1.82551483)>]
+    let ``Convert known US Tablespoons to Cubic Metres`` (input, expectation) = 
+        ustbsp.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Tablespoons to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = ustbsp.toCubicFeet (ustbsp.create value)
+            let convertBack = feet3.toUSTablespoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(66.0<ustbsp>, 0.0344645)>]
+    [<TestCase(7660.05<ustbsp>, 4.0)>]
+    [<TestCase(1234.0<ustbsp>, 0.6443821)>]
+    let ``Convert known US Tablespoons to Cubic Feet`` (input, expectation) = 
+        ustbsp.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Tablespoons to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = ustbsp.toCubicInches (ustbsp.create value)
+            let convertBack = inch3.toUSTablespoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(900.0<ustbsp>, 812.109)>]
+    [<TestCase(10.0<ustbsp>, 9.02344)>]
+    [<TestCase(4.0<ustbsp>, 3.60938)>]
+    let ``Convert known US Tablespoons to Cubic Inches`` (input, expectation) = 
+        ustbsp.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Tablespoons to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = ustbsp.toOilBarrels (ustbsp.create value)
+            let convertBack = oilbarrel.toUSTablespoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(591360.0<ustbsp>, 55.0)>]
+    [<TestCase(4300.8<ustbsp>, 0.4)>]
+    [<TestCase(34406.4<ustbsp>, 3.2)>]
+    let ``Convert known US Tablespoons to Oil Barrels`` (input, expectation) = 
+        ustbsp.toOilBarrels input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From US Teaspoons to Millilitres and back`` () =
         let property value =
             let convertTo = ustsp.toMillilitres (ustsp.create value)
@@ -4334,5 +6782,77 @@ module VolumeTests =
     [<TestCase(0.9<ustsp>, 0.01875)>]
     let ``Convert known US Teaspoons to US Cups`` (input, expectation) = 
         ustsp.toUSCups input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Teaspoons to Cubic Metres and back`` () =
+        let property value =
+            let convertTo = ustsp.toCubicMetres (ustsp.create value)
+            let convertBack = m3.toUSTeaspoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(405768.0<ustsp>, 2.0)>]
+    [<TestCase(80808.0<ustsp>, 0.39829617)>]
+    [<TestCase(123456.0<ustsp>, 0.608504748)>]
+    let ``Convert known US Teaspoons to Cubic Metres`` (input, expectation) = 
+        ustsp.toCubicMetres input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Teaspoons to Cubic Feet and back`` () =
+        let property value =
+            let convertTo = ustsp.toCubicFeet (ustsp.create value)
+            let convertBack = feet3.toUSTeaspoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(2000.0<ustsp>, 0.3481263)>]
+    [<TestCase(6894.05<ustsp>, 1.2)>]
+    [<TestCase(12345.0<ustsp>, 2.1488098)>]
+    let ``Convert known US Teaspoons to Cubic Feet`` (input, expectation) = 
+        ustsp.toCubicFeet input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Teaspoons to Cubic Inches and back`` () =
+        let property value =
+            let convertTo = ustsp.toCubicInches (ustsp.create value)
+            let convertBack = inch3.toUSTeaspoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(23.2727<ustsp>, 7.0)>]
+    [<TestCase(219.429<ustsp>, 66.0)>]
+    [<TestCase(39.8961<ustsp>, 12.0)>]
+    let ``Convert known US Teaspoons to Cubic Inches`` (input, expectation) = 
+        ustsp.toCubicInches input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From US Teaspoons to Oil Barrels and back`` () =
+        let property value =
+            let convertTo = ustsp.toOilBarrels (ustsp.create value)
+            let convertBack = oilbarrel.toUSTeaspoons convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(103219.0<ustsp>, 3.2)>]
+    [<TestCase(6666.0<ustsp>, 0.2066592)>]
+    [<TestCase(64512.0<ustsp>, 2.0)>]
+    let ``Convert known US Teaspoons to Oil Barrels`` (input, expectation) = 
+        ustsp.toOilBarrels input
         |> should (equalWithin 0.01) expectation
 

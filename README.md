@@ -193,11 +193,15 @@ Each unit of measure then includes functions to convert to each for example, con
 
 ### Volume
 
+	* Cubic Feet (feet3)
+	* Cubic Inches (inch3)
+	* Cubic Metres (m3)
 	* Fluid Ounces (floz)
 	* Gallons (gal)
 	* Kilolitres (kl)
 	* Litres (l)
 	* Millilitres (ml)
+	* Oil Barrels (oilbarrel)
 	* Pints (pt)
 	* Quarts (qt)
 	* Tablespoons (tbsp)

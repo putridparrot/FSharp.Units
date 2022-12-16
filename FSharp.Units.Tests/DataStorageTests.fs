@@ -713,7 +713,7 @@ module DataStorageTests =
 
     [<TestCase(120000000.0<kibibit>, 0.01536)>]
     [<TestCase(88e12<kibibit>, 11264.0)>]
-    [<TestCase(9000000.0<kibibit>, 0.009216)>]
+    [<TestCase(9000000.0<kibibit>, 0.001152)>]
     let ``Convert known Kibibits to Terabytes`` (input, expectation) = 
         kibibit.toTerabytes input
         |> should (equalWithin 0.01) expectation

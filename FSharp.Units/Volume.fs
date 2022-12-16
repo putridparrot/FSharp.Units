@@ -10,9 +10,132 @@ open Microsoft.FSharp.Core
 
 module Volume =
 
-    /// Fluid Ounces (floz) units
+    /// Cubic Feet (feet3) units
     [<Measure>]
-    type floz =
+    type feet3 =
+        static member create(value : float) = LanguagePrimitives.FloatWithMeasure<feet3> value
+        /// Converts the supplied Cubic Feet value to Millilitres
+        static member toMillilitres(value : float<feet3>) = ml.create(float value * 28316.8)
+        /// Converts the supplied Cubic Feet value to Litres
+        static member toLitres(value : float<feet3>) = l.create(float value * 28.3168)
+        /// Converts the supplied Cubic Feet value to Kilolitres
+        static member toKilolitres(value : float<feet3>) = kl.create(float value / 35.3147)
+        /// Converts the supplied Cubic Feet value to Teaspoons
+        static member toTeaspoons(value : float<feet3>) = tsp.create(float value * 4783.74)
+        /// Converts the supplied Cubic Feet value to Tablespoons
+        static member toTablespoons(value : float<feet3>) = tbsp.create(float value * 1594.58)
+        /// Converts the supplied Cubic Feet value to Quarts
+        static member toQuarts(value : float<feet3>) = qt.create(float value * 24.9153)
+        /// Converts the supplied Cubic Feet value to Pints
+        static member toPints(value : float<feet3>) = pt.create(float value * 49.8307)
+        /// Converts the supplied Cubic Feet value to Gallons
+        static member toGallons(value : float<feet3>) = gal.create(float value * 6.22884)
+        /// Converts the supplied Cubic Feet value to Fluid Ounces
+        static member toFluidOunces(value : float<feet3>) = floz.create(float value * 996.614)
+        /// Converts the supplied Cubic Feet value to US Teaspoons
+        static member toUSTeaspoons(value : float<feet3>) = ustsp.create(float value * 5745.04)
+        /// Converts the supplied Cubic Feet value to US Tablespoons
+        static member toUSTablespoons(value : float<feet3>) = ustbsp.create(float value * 1915.01)
+        /// Converts the supplied Cubic Feet value to US Quarts
+        static member toUSQuarts(value : float<feet3>) = usqt.create(float value * 29.9221)
+        /// Converts the supplied Cubic Feet value to US Pints
+        static member toUSPints(value : float<feet3>) = uspt.create(float value * 59.8442)
+        /// Converts the supplied Cubic Feet value to US Gallons
+        static member toUSGallons(value : float<feet3>) = usgal.create(float value * 7.48052)
+        /// Converts the supplied Cubic Feet value to US Fluid Ounces
+        static member toUSFluidOunces(value : float<feet3>) = usfloz.create(float value * 957.506)
+        /// Converts the supplied Cubic Feet value to US Cups
+        static member toUSCups(value : float<feet3>) = uscup.create(float value * 117.987)
+        /// Converts the supplied Cubic Feet value to Cubic Metres
+        static member toCubicMetres(value : float<feet3>) = m3.create(float value / 35.3147)
+        /// Converts the supplied Cubic Feet value to Cubic Inches
+        static member toCubicInches(value : float<feet3>) = inch3.create(float value * 1728.0)
+        /// Converts the supplied Cubic Feet value to Oil Barrels
+        static member toOilBarrels(value : float<feet3>) = oilbarrel.create(float value / 5.61458)
+    and /// Cubic Inches (inch3) units
+        [<Measure>] inch3 =
+        static member create(value : float) = LanguagePrimitives.FloatWithMeasure<inch3> value
+        /// Converts the supplied Cubic Inches value to Millilitres
+        static member toMillilitres(value : float<inch3>) = ml.create(float value * 16.3871)
+        /// Converts the supplied Cubic Inches value to Litres
+        static member toLitres(value : float<inch3>) = l.create(float value / 61.0237)
+        /// Converts the supplied Cubic Inches value to Kilolitres
+        static member toKilolitres(value : float<inch3>) = kl.create(float value / 61023.7)
+        /// Converts the supplied Cubic Inches value to Teaspoons
+        static member toTeaspoons(value : float<inch3>) = tsp.create(float value * 2.76837)
+        /// Converts the supplied Cubic Inches value to Tablespoons
+        static member toTablespoons(value : float<inch3>) = tbsp.create(float value / 1.08367)
+        /// Converts the supplied Cubic Inches value to Quarts
+        static member toQuarts(value : float<inch3>) = qt.create(float value / 69.3549)
+        /// Converts the supplied Cubic Inches value to Pints
+        static member toPints(value : float<inch3>) = pt.create(float value / 34.6774)
+        /// Converts the supplied Cubic Inches value to Gallons
+        static member toGallons(value : float<inch3>) = gal.create(float value / 277.419)
+        /// Converts the supplied Cubic Inches value to Fluid Ounces
+        static member toFluidOunces(value : float<inch3>) = floz.create(float value / 1.73387)
+        /// Converts the supplied Cubic Inches value to US Teaspoons
+        static member toUSTeaspoons(value : float<inch3>) = ustsp.create(float value * 3.32468)
+        /// Converts the supplied Cubic Inches value to US Tablespoons
+        static member toUSTablespoons(value : float<inch3>) = ustbsp.create(float value * 1.10823)
+        /// Converts the supplied Cubic Inches value to US Quarts
+        static member toUSQuarts(value : float<inch3>) = usqt.create(float value / 57.75)
+        /// Converts the supplied Cubic Inches value to US Pints
+        static member toUSPints(value : float<inch3>) = uspt.create(float value / 28.875)
+        /// Converts the supplied Cubic Inches value to US Gallons
+        static member toUSGallons(value : float<inch3>) = usgal.create(float value / 231.0)
+        /// Converts the supplied Cubic Inches value to US Fluid Ounces
+        static member toUSFluidOunces(value : float<inch3>) = usfloz.create(float value / 1.80469)
+        /// Converts the supplied Cubic Inches value to US Cups
+        static member toUSCups(value : float<inch3>) = uscup.create(float value / 14.6457)
+        /// Converts the supplied Cubic Inches value to Cubic Metres
+        static member toCubicMetres(value : float<inch3>) = m3.create(float value / 61023.7)
+        /// Converts the supplied Cubic Inches value to Cubic Feet
+        static member toCubicFeet(value : float<inch3>) = feet3.create(float value / 1728.0)
+        /// Converts the supplied Cubic Inches value to Oil Barrels
+        static member toOilBarrels(value : float<inch3>) = oilbarrel.create(float value / 9702.0)
+    and /// Cubic Metres (m3) units
+        [<Measure>] m3 =
+        static member create(value : float) = LanguagePrimitives.FloatWithMeasure<m3> value
+        /// Converts the supplied Cubic Metres value to Millilitres
+        static member toMillilitres(value : float<m3>) = ml.create(float value * 1000000.0)
+        /// Converts the supplied Cubic Metres value to Litres
+        static member toLitres(value : float<m3>) = l.create(float value * 1000.0)
+        /// Converts the supplied Cubic Metres value to Kilolitres
+        static member toKilolitres(value : float<m3>) = kl.create(float value * 1.0)
+        /// Converts the supplied Cubic Metres value to Teaspoons
+        static member toTeaspoons(value : float<m3>) = tsp.create(float value * 168936.0)
+        /// Converts the supplied Cubic Metres value to Tablespoons
+        static member toTablespoons(value : float<m3>) = tbsp.create(float value * 56312.1)
+        /// Converts the supplied Cubic Metres value to Quarts
+        static member toQuarts(value : float<m3>) = qt.create(float value * 879.877)
+        /// Converts the supplied Cubic Metres value to Pints
+        static member toPints(value : float<m3>) = pt.create(float value * 1759.75)
+        /// Converts the supplied Cubic Metres value to Gallons
+        static member toGallons(value : float<m3>) = gal.create(float value * 219.969)
+        /// Converts the supplied Cubic Metres value to Fluid Ounces
+        static member toFluidOunces(value : float<m3>) = floz.create(float value * 35195.1)
+        /// Converts the supplied Cubic Metres value to US Teaspoons
+        static member toUSTeaspoons(value : float<m3>) = ustsp.create(float value * 202884.0)
+        /// Converts the supplied Cubic Metres value to US Tablespoons
+        static member toUSTablespoons(value : float<m3>) = ustbsp.create(float value * 67628.0)
+        /// Converts the supplied Cubic Metres value to US Quarts
+        static member toUSQuarts(value : float<m3>) = usqt.create(float value * 1056.69)
+        /// Converts the supplied Cubic Metres value to US Pints
+        static member toUSPints(value : float<m3>) = uspt.create(float value * 2113.38)
+        /// Converts the supplied Cubic Metres value to US Gallons
+        static member toUSGallons(value : float<m3>) = usgal.create(float value * 264.172)
+        /// Converts the supplied Cubic Metres value to US Fluid Ounces
+        static member toUSFluidOunces(value : float<m3>) = usfloz.create(float value * 33814.0)
+        /// Converts the supplied Cubic Metres value to US Cups
+        static member toUSCups(value : float<m3>) = uscup.create(float value * 4166.67)
+        /// Converts the supplied Cubic Metres value to Cubic Feet
+        static member toCubicFeet(value : float<m3>) = feet3.create(float value * 35.3147)
+        /// Converts the supplied Cubic Metres value to Cubic Inches
+        static member toCubicInches(value : float<m3>) = inch3.create(float value * 61023.7)
+        /// Converts the supplied Cubic Metres value to Oil Barrels
+        static member toOilBarrels(value : float<m3>) = oilbarrel.create(float value * 6.28981)
+    and /// Fluid Ounces (floz) units
+        [<Measure>] floz =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<floz> value
         /// Converts the supplied Fluid Ounces value to Millilitres
         static member toMillilitres(value : float<floz>) = ml.create(float value * 28.413074243749994496)
@@ -44,6 +167,14 @@ module Volume =
         static member toUSFluidOunces(value : float<floz>) = usfloz.create(float value / 1.0408423005829883904)
         /// Converts the supplied Fluid Ounces value to US Cups
         static member toUSCups(value : float<floz>) = uscup.create(float value / 8.3267384046639071232)
+        /// Converts the supplied Fluid Ounces value to Cubic Metres
+        static member toCubicMetres(value : float<floz>) = m3.create(float value / 35195.1)
+        /// Converts the supplied Fluid Ounces value to Cubic Feet
+        static member toCubicFeet(value : float<floz>) = feet3.create(float value / 996.614)
+        /// Converts the supplied Fluid Ounces value to Cubic Inches
+        static member toCubicInches(value : float<floz>) = inch3.create(float value * 1.73387)
+        /// Converts the supplied Fluid Ounces value to Oil Barrels
+        static member toOilBarrels(value : float<floz>) = oilbarrel.create(float value / 5595.57)
     and /// Gallons (gal) units
         [<Measure>] gal =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<gal> value
@@ -77,6 +208,14 @@ module Volume =
         static member toUSFluidOunces(value : float<gal>) = usfloz.create(float value / 0.006505264378643677184)
         /// Converts the supplied Gallons value to US Cups
         static member toUSCups(value : float<gal>) = uscup.create(float value / 0.052042115029149417472)
+        /// Converts the supplied Gallons value to Cubic Metres
+        static member toCubicMetres(value : float<gal>) = m3.create(float value / 219.969)
+        /// Converts the supplied Gallons value to Cubic Feet
+        static member toCubicFeet(value : float<gal>) = feet3.create(float value / 6.22884)
+        /// Converts the supplied Gallons value to Cubic Inches
+        static member toCubicInches(value : float<gal>) = inch3.create(float value * 277.419)
+        /// Converts the supplied Gallons value to Oil Barrels
+        static member toOilBarrels(value : float<gal>) = oilbarrel.create(float value / 34.9723)
     and /// Kilolitres (kl) units
         [<Measure>] kl =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<kl> value
@@ -110,6 +249,14 @@ module Volume =
         static member toUSFluidOunces(value : float<kl>) = usfloz.create(float value / 0.0000295735296)
         /// Converts the supplied Kilolitres value to US Cups
         static member toUSCups(value : float<kl>) = uscup.create(float value / 0.000236588236499999989)
+        /// Converts the supplied Kilolitres value to Cubic Metres
+        static member toCubicMetres(value : float<kl>) = m3.create(float value * 1.0)
+        /// Converts the supplied Kilolitres value to Cubic Feet
+        static member toCubicFeet(value : float<kl>) = feet3.create(float value * 35.3147)
+        /// Converts the supplied Kilolitres value to Cubic Inches
+        static member toCubicInches(value : float<kl>) = inch3.create(float value * 61023.7)
+        /// Converts the supplied Kilolitres value to Oil Barrels
+        static member toOilBarrels(value : float<kl>) = oilbarrel.create(float value * 6.28981)
     and /// Litres (l) units
         [<Measure>] l =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<l> value
@@ -143,6 +290,14 @@ module Volume =
         static member toUSFluidOunces(value : float<l>) = usfloz.create(float value / 0.029573529562499997696)
         /// Converts the supplied Litres value to US Cups
         static member toUSCups(value : float<l>) = uscup.create(float value / 0.23658823649999998976)
+        /// Converts the supplied Litres value to Cubic Metres
+        static member toCubicMetres(value : float<l>) = m3.create(float value / 1000.0)
+        /// Converts the supplied Litres value to Cubic Feet
+        static member toCubicFeet(value : float<l>) = feet3.create(float value / 28.3168)
+        /// Converts the supplied Litres value to Cubic Inches
+        static member toCubicInches(value : float<l>) = inch3.create(float value * 61.0237)
+        /// Converts the supplied Litres value to Oil Barrels
+        static member toOilBarrels(value : float<l>) = oilbarrel.create(float value / 158.987)
     and /// Millilitres (ml) units
         [<Measure>] ml =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<ml> value
@@ -176,6 +331,55 @@ module Volume =
         static member toUSFluidOunces(value : float<ml>) = usfloz.create(float value / 29.573529562499997696)
         /// Converts the supplied Millilitres value to US Cups
         static member toUSCups(value : float<ml>) = uscup.create(float value / 236.58823649999998976)
+        /// Converts the supplied Millilitres value to Cubic Metres
+        static member toCubicMetres(value : float<ml>) = m3.create(float value / 1000000.0)
+        /// Converts the supplied Millilitres value to Cubic Feet
+        static member toCubicFeet(value : float<ml>) = feet3.create(float value / 28316.8)
+        /// Converts the supplied Millilitres value to Cubic Inches
+        static member toCubicInches(value : float<ml>) = inch3.create(float value / 16.3871)
+        /// Converts the supplied Millilitres value to Oil Barrels
+        static member toOilBarrels(value : float<ml>) = oilbarrel.create(float value / 158987.0)
+    and /// Oil Barrels (oilbarrel) units
+        [<Measure>] oilbarrel =
+        static member create(value : float) = LanguagePrimitives.FloatWithMeasure<oilbarrel> value
+        /// Converts the supplied Oil Barrels value to Millilitres
+        static member toMillilitres(value : float<oilbarrel>) = ml.create(float value * 158987.0)
+        /// Converts the supplied Oil Barrels value to Litres
+        static member toLitres(value : float<oilbarrel>) = l.create(float value * 158.987)
+        /// Converts the supplied Oil Barrels value to Kilolitres
+        static member toKilolitres(value : float<oilbarrel>) = kl.create(float value / 6.28981)
+        /// Converts the supplied Oil Barrels value to Teaspoons
+        static member toTeaspoons(value : float<oilbarrel>) = tsp.create(float value * 26858.7)
+        /// Converts the supplied Oil Barrels value to Tablespoons
+        static member toTablespoons(value : float<oilbarrel>) = tbsp.create(float value * 8952.91)
+        /// Converts the supplied Oil Barrels value to Quarts
+        static member toQuarts(value : float<oilbarrel>) = qt.create(float value * 139.889)
+        /// Converts the supplied Oil Barrels value to Pints
+        static member toPints(value : float<oilbarrel>) = pt.create(float value * 279.779)
+        /// Converts the supplied Oil Barrels value to Gallons
+        static member toGallons(value : float<oilbarrel>) = gal.create(float value * 34.9723)
+        /// Converts the supplied Oil Barrels value to Fluid Ounces
+        static member toFluidOunces(value : float<oilbarrel>) = floz.create(float value * 5595.57)
+        /// Converts the supplied Oil Barrels value to US Teaspoons
+        static member toUSTeaspoons(value : float<oilbarrel>) = ustsp.create(float value * 32256.0)
+        /// Converts the supplied Oil Barrels value to US Tablespoons
+        static member toUSTablespoons(value : float<oilbarrel>) = ustbsp.create(float value * 10752.0)
+        /// Converts the supplied Oil Barrels value to US Quarts
+        static member toUSQuarts(value : float<oilbarrel>) = usqt.create(float value * 168.0)
+        /// Converts the supplied Oil Barrels value to US Pints
+        static member toUSPints(value : float<oilbarrel>) = uspt.create(float value * 336.0)
+        /// Converts the supplied Oil Barrels value to US Gallons
+        static member toUSGallons(value : float<oilbarrel>) = usgal.create(float value * 42.0)
+        /// Converts the supplied Oil Barrels value to US Fluid Ounces
+        static member toUSFluidOunces(value : float<oilbarrel>) = usfloz.create(float value * 5376.0)
+        /// Converts the supplied Oil Barrels value to US Cups
+        static member toUSCups(value : float<oilbarrel>) = uscup.create(float value * 662.447)
+        /// Converts the supplied Oil Barrels value to Cubic Metres
+        static member toCubicMetres(value : float<oilbarrel>) = m3.create(float value / 6.28981)
+        /// Converts the supplied Oil Barrels value to Cubic Feet
+        static member toCubicFeet(value : float<oilbarrel>) = feet3.create(float value * 5.61458)
+        /// Converts the supplied Oil Barrels value to Cubic Inches
+        static member toCubicInches(value : float<oilbarrel>) = inch3.create(float value * 9702.0)
     and /// Pints (pt) units
         [<Measure>] pt =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<pt> value
@@ -209,6 +413,14 @@ module Volume =
         static member toUSFluidOunces(value : float<pt>) = usfloz.create(float value / 0.052042115029149417472)
         /// Converts the supplied Pints value to US Cups
         static member toUSCups(value : float<pt>) = uscup.create(float value / 0.41633692023319535616)
+        /// Converts the supplied Pints value to Cubic Metres
+        static member toCubicMetres(value : float<pt>) = m3.create(float value / 1759.75)
+        /// Converts the supplied Pints value to Cubic Feet
+        static member toCubicFeet(value : float<pt>) = feet3.create(float value / 49.8307)
+        /// Converts the supplied Pints value to Cubic Inches
+        static member toCubicInches(value : float<pt>) = inch3.create(float value * 34.6774)
+        /// Converts the supplied Pints value to Oil Barrels
+        static member toOilBarrels(value : float<pt>) = oilbarrel.create(float value / 279.779)
     and /// Quarts (qt) units
         [<Measure>] qt =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<qt> value
@@ -242,6 +454,14 @@ module Volume =
         static member toUSFluidOunces(value : float<qt>) = usfloz.create(float value / 0.026021057514574708736)
         /// Converts the supplied Quarts value to US Cups
         static member toUSCups(value : float<qt>) = uscup.create(float value / 0.20816846011659767808)
+        /// Converts the supplied Quarts value to Cubic Metres
+        static member toCubicMetres(value : float<qt>) = m3.create(float value / 879.877)
+        /// Converts the supplied Quarts value to Cubic Feet
+        static member toCubicFeet(value : float<qt>) = feet3.create(float value / 24.9153)
+        /// Converts the supplied Quarts value to Cubic Inches
+        static member toCubicInches(value : float<qt>) = inch3.create(float value * 69.3549)
+        /// Converts the supplied Quarts value to Oil Barrels
+        static member toOilBarrels(value : float<qt>) = oilbarrel.create(float value / 139.889)
     and /// Tablespoons (tbsp) units
         [<Measure>] tbsp =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<tbsp> value
@@ -275,6 +495,14 @@ module Volume =
         static member toUSFluidOunces(value : float<tbsp>) = usfloz.create(float value / 1.6653476809327814656)
         /// Converts the supplied Tablespoons value to US Cups
         static member toUSCups(value : float<tbsp>) = uscup.create(float value / 13.322781447462250496)
+        /// Converts the supplied Tablespoons value to Cubic Metres
+        static member toCubicMetres(value : float<tbsp>) = m3.create(float value / 56312.1)
+        /// Converts the supplied Tablespoons value to Cubic Feet
+        static member toCubicFeet(value : float<tbsp>) = feet3.create(float value / 1594.58)
+        /// Converts the supplied Tablespoons value to Cubic Inches
+        static member toCubicInches(value : float<tbsp>) = inch3.create(float value * 1.08367)
+        /// Converts the supplied Tablespoons value to Oil Barrels
+        static member toOilBarrels(value : float<tbsp>) = oilbarrel.create(float value / 8952.91)
     and /// Teaspoons (tsp) units
         [<Measure>] tsp =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<tsp> value
@@ -308,6 +536,14 @@ module Volume =
         static member toUSFluidOunces(value : float<tsp>) = usfloz.create(float value / 4.9960430427983437824)
         /// Converts the supplied Teaspoons value to US Cups
         static member toUSCups(value : float<tsp>) = uscup.create(float value / 39.968344342386753536)
+        /// Converts the supplied Teaspoons value to Cubic Metres
+        static member toCubicMetres(value : float<tsp>) = m3.create(float value / 168936.0)
+        /// Converts the supplied Teaspoons value to Cubic Feet
+        static member toCubicFeet(value : float<tsp>) = feet3.create(float value / 4783.74)
+        /// Converts the supplied Teaspoons value to Cubic Inches
+        static member toCubicInches(value : float<tsp>) = inch3.create(float value / 2.76837)
+        /// Converts the supplied Teaspoons value to Oil Barrels
+        static member toOilBarrels(value : float<tsp>) = oilbarrel.create(float value / 26858.7)
     and /// US Cups (uscup) units
         [<Measure>] uscup =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<uscup> value
@@ -341,6 +577,14 @@ module Volume =
         static member toUSGallons(value : float<uscup>) = usgal.create(float value / 16.0)
         /// Converts the supplied US Cups value to US Fluid Ounces
         static member toUSFluidOunces(value : float<uscup>) = usfloz.create(float value * 8.0)
+        /// Converts the supplied US Cups value to Cubic Metres
+        static member toCubicMetres(value : float<uscup>) = m3.create(float value / 4166.67)
+        /// Converts the supplied US Cups value to Cubic Feet
+        static member toCubicFeet(value : float<uscup>) = feet3.create(float value / 117.987)
+        /// Converts the supplied US Cups value to Cubic Inches
+        static member toCubicInches(value : float<uscup>) = inch3.create(float value * 14.6457)
+        /// Converts the supplied US Cups value to Oil Barrels
+        static member toOilBarrels(value : float<uscup>) = oilbarrel.create(float value / 662.447)
     and /// US Fluid Ounces (usfloz) units
         [<Measure>] usfloz =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<usfloz> value
@@ -374,6 +618,14 @@ module Volume =
         static member toUSGallons(value : float<usfloz>) = usgal.create(float value / 128.0)
         /// Converts the supplied US Fluid Ounces value to US Cups
         static member toUSCups(value : float<usfloz>) = uscup.create(float value / 8.0)
+        /// Converts the supplied US Fluid Ounces value to Cubic Metres
+        static member toCubicMetres(value : float<usfloz>) = m3.create(float value / 33814.0)
+        /// Converts the supplied US Fluid Ounces value to Cubic Feet
+        static member toCubicFeet(value : float<usfloz>) = feet3.create(float value / 957.506)
+        /// Converts the supplied US Fluid Ounces value to Cubic Inches
+        static member toCubicInches(value : float<usfloz>) = inch3.create(float value * 1.80469)
+        /// Converts the supplied US Fluid Ounces value to Oil Barrels
+        static member toOilBarrels(value : float<usfloz>) = oilbarrel.create(float value / 5376.0)
     and /// US Gallons (usgal) units
         [<Measure>] usgal =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<usgal> value
@@ -407,6 +659,14 @@ module Volume =
         static member toUSFluidOunces(value : float<usgal>) = usfloz.create(float value * 128.0)
         /// Converts the supplied US Gallons value to US Cups
         static member toUSCups(value : float<usgal>) = uscup.create(float value * 16.0)
+        /// Converts the supplied US Gallons value to Cubic Metres
+        static member toCubicMetres(value : float<usgal>) = m3.create(float value / 264.172)
+        /// Converts the supplied US Gallons value to Cubic Feet
+        static member toCubicFeet(value : float<usgal>) = feet3.create(float value / 7.48052)
+        /// Converts the supplied US Gallons value to Cubic Inches
+        static member toCubicInches(value : float<usgal>) = inch3.create(float value * 231.0)
+        /// Converts the supplied US Gallons value to Oil Barrels
+        static member toOilBarrels(value : float<usgal>) = oilbarrel.create(float value / 42.0)
     and /// US Pints (uspt) units
         [<Measure>] uspt =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<uspt> value
@@ -440,6 +700,14 @@ module Volume =
         static member toUSFluidOunces(value : float<uspt>) = usfloz.create(float value * 16.0)
         /// Converts the supplied US Pints value to US Cups
         static member toUSCups(value : float<uspt>) = uscup.create(float value * 2.0)
+        /// Converts the supplied US Pints value to Cubic Metres
+        static member toCubicMetres(value : float<uspt>) = m3.create(float value / 2113.38)
+        /// Converts the supplied US Pints value to Cubic Feet
+        static member toCubicFeet(value : float<uspt>) = feet3.create(float value / 59.8442)
+        /// Converts the supplied US Pints value to Cubic Inches
+        static member toCubicInches(value : float<uspt>) = inch3.create(float value * 28.875)
+        /// Converts the supplied US Pints value to Oil Barrels
+        static member toOilBarrels(value : float<uspt>) = oilbarrel.create(float value / 336.0)
     and /// US Quarts (usqt) units
         [<Measure>] usqt =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<usqt> value
@@ -473,6 +741,14 @@ module Volume =
         static member toUSFluidOunces(value : float<usqt>) = usfloz.create(float value * 32.0)
         /// Converts the supplied US Quarts value to US Cups
         static member toUSCups(value : float<usqt>) = uscup.create(float value * 4.0)
+        /// Converts the supplied US Quarts value to Cubic Metres
+        static member toCubicMetres(value : float<usqt>) = m3.create(float value / 1056.69)
+        /// Converts the supplied US Quarts value to Cubic Feet
+        static member toCubicFeet(value : float<usqt>) = feet3.create(float value / 29.9221)
+        /// Converts the supplied US Quarts value to Cubic Inches
+        static member toCubicInches(value : float<usqt>) = inch3.create(float value * 57.75)
+        /// Converts the supplied US Quarts value to Oil Barrels
+        static member toOilBarrels(value : float<usqt>) = oilbarrel.create(float value / 168.0)
     and /// US Tablespoons (ustbsp) units
         [<Measure>] ustbsp =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<ustbsp> value
@@ -506,6 +782,14 @@ module Volume =
         static member toUSFluidOunces(value : float<ustbsp>) = usfloz.create(float value / 2.0)
         /// Converts the supplied US Tablespoons value to US Cups
         static member toUSCups(value : float<ustbsp>) = uscup.create(float value / 16.0)
+        /// Converts the supplied US Tablespoons value to Cubic Metres
+        static member toCubicMetres(value : float<ustbsp>) = m3.create(float value / 67628.0)
+        /// Converts the supplied US Tablespoons value to Cubic Feet
+        static member toCubicFeet(value : float<ustbsp>) = feet3.create(float value / 1915.01)
+        /// Converts the supplied US Tablespoons value to Cubic Inches
+        static member toCubicInches(value : float<ustbsp>) = inch3.create(float value / 1.10823)
+        /// Converts the supplied US Tablespoons value to Oil Barrels
+        static member toOilBarrels(value : float<ustbsp>) = oilbarrel.create(float value / 10752.0)
     and /// US Teaspoons (ustsp) units
         [<Measure>] ustsp =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<ustsp> value
@@ -539,3 +823,11 @@ module Volume =
         static member toUSFluidOunces(value : float<ustsp>) = usfloz.create(float value / 6.0)
         /// Converts the supplied US Teaspoons value to US Cups
         static member toUSCups(value : float<ustsp>) = uscup.create(float value / 48.0)
+        /// Converts the supplied US Teaspoons value to Cubic Metres
+        static member toCubicMetres(value : float<ustsp>) = m3.create(float value / 202884.0)
+        /// Converts the supplied US Teaspoons value to Cubic Feet
+        static member toCubicFeet(value : float<ustsp>) = feet3.create(float value / 5745.04)
+        /// Converts the supplied US Teaspoons value to Cubic Inches
+        static member toCubicInches(value : float<ustsp>) = inch3.create(float value / 3.32468)
+        /// Converts the supplied US Teaspoons value to Oil Barrels
+        static member toOilBarrels(value : float<ustsp>) = oilbarrel.create(float value / 32256.0)
