@@ -20,6 +20,8 @@ module Temperature =
         static member toKelvin(value : float<C>) = K.create(float value + 273.15)
         /// Converts the supplied Celsius value to Rankine
         static member toRankine(value : float<C>) = R.create(float value * 9.0/5.0 + 491.67)
+        /// Converts the supplied Celsius value to Reaumur
+        static member toReaumur(value : float<C>) = r.create(float value / 1.25)
     and /// Fahrenheit (F) units
         [<Measure>] F =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<F> value
@@ -29,6 +31,8 @@ module Temperature =
         static member toKelvin(value : float<F>) = K.create((((float value - 32.0) * 5.0) / 9.0) + 273.15)
         /// Converts the supplied Fahrenheit value to Rankine
         static member toRankine(value : float<F>) = R.create(float value + 459.67)
+        /// Converts the supplied Fahrenheit value to Reaumur
+        static member toReaumur(value : float<F>) = r.create((float value - 32.0) / 2.25)
     and /// Kelvin (K) units
         [<Measure>] K =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<K> value
@@ -38,6 +42,8 @@ module Temperature =
         static member toFahrenheit(value : float<K>) = F.create(((float value - 273.15) * 1.8) + 32.0)
         /// Converts the supplied Kelvin value to Rankine
         static member toRankine(value : float<K>) = R.create(float value * 1.8)
+        /// Converts the supplied Kelvin value to Reaumur
+        static member toReaumur(value : float<K>) = r.create((float value - 273.15) / 1.25)
     and /// Rankine (R) units
         [<Measure>] R =
         static member create(value : float) = LanguagePrimitives.FloatWithMeasure<R> value
@@ -47,3 +53,16 @@ module Temperature =
         static member toFahrenheit(value : float<R>) = F.create(float value - 459.67)
         /// Converts the supplied Rankine value to Kelvin
         static member toKelvin(value : float<R>) = K.create(float value / 1.8)
+        /// Converts the supplied Rankine value to Reaumur
+        static member toReaumur(value : float<R>) = r.create((float value - 491.67) / 2.25)
+    and /// Reaumur (r) units
+        [<Measure>] r =
+        static member create(value : float) = LanguagePrimitives.FloatWithMeasure<r> value
+        /// Converts the supplied Reaumur value to Kelvin
+        static member toKelvin(value : float<r>) = K.create(float value * 1.25 + 273.15)
+        /// Converts the supplied Reaumur value to Celsius
+        static member toCelsius(value : float<r>) = C.create(float value * 1.25)
+        /// Converts the supplied Reaumur value to Fahrenheit
+        static member toFahrenheit(value : float<r>) = F.create(float value * 2.25 + 32.0)
+        /// Converts the supplied Reaumur value to Rankine
+        static member toRankine(value : float<r>) = R.create(float value * 2.25 + 491.67)

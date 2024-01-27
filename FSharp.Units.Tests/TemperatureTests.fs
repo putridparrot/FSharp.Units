@@ -71,6 +71,24 @@ module TemperatureTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Celsius to Reaumur and back`` () =
+        let property value =
+            let convertTo = C.toReaumur (C.create value)
+            let convertBack = r.toCelsius convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(123.0<C>, 98.4)>]
+    [<TestCase(15.67<C>, 12.536)>]
+    [<TestCase(87.0<C>, 69.6)>]
+    let ``Convert known Celsius to Reaumur`` (input, expectation) = 
+        C.toReaumur input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Fahrenheit to Celsius and back`` () =
         let property value =
             let convertTo = F.toCelsius (F.create value)
@@ -122,6 +140,24 @@ module TemperatureTests =
     [<TestCase(0.2<F>, 459.87)>]
     let ``Convert known Fahrenheit to Rankine`` (input, expectation) = 
         F.toRankine input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Fahrenheit to Reaumur and back`` () =
+        let property value =
+            let convertTo = F.toReaumur (F.create value)
+            let convertBack = r.toFahrenheit convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(67.0<F>, 15.555555556)>]
+    [<TestCase(1.6<F>, -13.511111111)>]
+    [<TestCase(900.0<F>, 385.77777778)>]
+    let ``Convert known Fahrenheit to Reaumur`` (input, expectation) = 
+        F.toReaumur input
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
@@ -179,6 +215,24 @@ module TemperatureTests =
         |> should (equalWithin 0.01) expectation
 
     [<Property>]
+    let ``From Kelvin to Reaumur and back`` () =
+        let property value =
+            let convertTo = K.toReaumur (K.create value)
+            let convertBack = r.toKelvin convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(900.0<K>, 501.48)>]
+    [<TestCase(1.3<K>, -217.48)>]
+    [<TestCase(60.0<K>, -170.52)>]
+    let ``Convert known Kelvin to Reaumur`` (input, expectation) = 
+        K.toReaumur input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
     let ``From Rankine to Celsius and back`` () =
         let property value =
             let convertTo = R.toCelsius (R.create value)
@@ -230,5 +284,95 @@ module TemperatureTests =
     [<TestCase(23.0<R>, 12.777777778)>]
     let ``Convert known Rankine to Kelvin`` (input, expectation) = 
         R.toKelvin input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Rankine to Reaumur and back`` () =
+        let property value =
+            let convertTo = R.toReaumur (R.create value)
+            let convertBack = r.toRankine convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(900.0<R>, 181.48)>]
+    [<TestCase(34.9<R>, -203.00888889)>]
+    [<TestCase(0.7<R>, -218.20888889)>]
+    let ``Convert known Rankine to Reaumur`` (input, expectation) = 
+        R.toReaumur input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Reaumur to Kelvin and back`` () =
+        let property value =
+            let convertTo = r.toKelvin (r.create value)
+            let convertBack = K.toReaumur convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(128.0<r>, 433.15)>]
+    [<TestCase(7.4<r>, 282.4)>]
+    [<TestCase(1.5<r>, 275.025)>]
+    let ``Convert known Reaumur to Kelvin`` (input, expectation) = 
+        r.toKelvin input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Reaumur to Celsius and back`` () =
+        let property value =
+            let convertTo = r.toCelsius (r.create value)
+            let convertBack = C.toReaumur convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(1.5<r>, 1.875)>]
+    [<TestCase(23.9<r>, 29.875)>]
+    [<TestCase(0.3<r>, 0.375)>]
+    let ``Convert known Reaumur to Celsius`` (input, expectation) = 
+        r.toCelsius input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Reaumur to Fahrenheit and back`` () =
+        let property value =
+            let convertTo = r.toFahrenheit (r.create value)
+            let convertBack = F.toReaumur convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(0.3<r>, 32.675)>]
+    [<TestCase(87.0<r>, 227.75)>]
+    [<TestCase(34.1<r>, 108.725)>]
+    let ``Convert known Reaumur to Fahrenheit`` (input, expectation) = 
+        r.toFahrenheit input
+        |> should (equalWithin 0.01) expectation
+
+    [<Property>]
+    let ``From Reaumur to Rankine and back`` () =
+        let property value =
+            let convertTo = r.toRankine (r.create value)
+            let convertBack = R.toReaumur convertTo
+
+            convertBack
+            |> should (equalWithin 0.01) value
+
+        Check.QuickThrowOnFailure (testRange property)
+
+    [<TestCase(34.1<r>, 568.395)>]
+    [<TestCase(10.6<r>, 515.52)>]
+    [<TestCase(1.9<r>, 495.945)>]
+    let ``Convert known Reaumur to Rankine`` (input, expectation) = 
+        r.toRankine input
         |> should (equalWithin 0.01) expectation
 
